@@ -1,0 +1,510 @@
+body {
+	background-position: center; margin: 0px; font-family: Tahoma, Arial; font-size: 12px; background-image: url("../imagenes/bgbody3.jpg");
+}
+#contenido {
+	margin: 5px; overflow: hidden;
+}
+#izquierda {
+	width: 215px; float: left;
+}
+#derecha {
+	width: 710px; float: right;
+}
+#derechaArriba {
+	width: 100%; height: 198px;
+}
+#derechaArribaIzquierda {
+	width: 305px; float: right;
+}
+#derechaArribaDerecha {
+	width: 398px; float: left;
+}
+#derechaAbajo {
+	width: 100%; margin-top: 5px; background-color: rgb(188, 216, 240);
+}
+#contenidoIzquierda {
+	height: 890px; background-color: rgb(188, 216, 240);
+}
+#panelCalendario {
+	width: 203px; height: 192px; background-color: rgb(31, 56, 86);
+}
+#accSecciones {
+	overflow: hidden; border-right-color: currentColor; border-bottom-color: currentColor; border-left-color: currentColor; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-right-style: none; border-bottom-style: none; border-left-style: none;
+}
+#accSecciones .AccordionPanel {
+	margin: 0px; padding: 0px;
+}
+#accSecciones .AccordionPanelTab {
+	margin: 0px; padding: 2px; border: currentColor; color: rgb(31, 56, 86); font-family: Tahoma,Arial; font-size: 11px; font-weight: bold; cursor: pointer; background-color: rgb(188, 216, 240);
+}
+#accSecciones .AccordionPanelTab:hover {
+	color: rgb(94, 120, 147);
+}
+#accSecciones .AccordionPanelTab:hover a {
+	color: rgb(94, 120, 147);
+}
+#accSecciones .AccordionPanelTab a {
+	color: rgb(31, 56, 86); font-weight: bold; text-decoration: none;
+}
+#accSecciones .AccordionPanelTab a:hover {
+	color: rgb(94, 120, 147);
+}
+#accSecciones .AccordionPanelContent {
+	margin: 0px; padding: 0px; width: 203px; height: 78px; color: rgb(188, 216, 240); overflow: hidden; background-color: rgb(31, 56, 86);
+}
+#accSecciones .AccordionPanelOpen .AccordionPanelTab {
+	background-color: rgb(188, 216, 240);
+}
+#accSecciones .AccordionPanelTabHover {
+	color: rgb(94, 120, 147);
+}
+#accSecciones .AccordionPanelOpen .AccordionPanelTabHover {
+	color: rgb(94, 120, 147);
+}
+.seccionesTab {
+	margin: 0px; padding: 6px 2px 6px 4px; border: currentColor; color: rgb(31, 56, 86); font-family: Tahoma,Arial; font-size: 11px; font-weight: bold; background-color: rgb(188, 216, 240);
+}
+.seccionesTab > a {
+	color: rgb(31, 56, 86); font-size: 12px; text-decoration: none; display: block;
+}
+.seccionesTab > a:hover {
+	text-decoration: underline;
+}
+a .seccionesTab {
+	color: rgb(31, 56, 86); font-size: 12px; text-decoration: none;
+}
+a:hover .seccionesTab {
+	color: rgb(94, 120, 147);
+}
+.seccionesTabProcesos {
+	margin: 0px; padding: 2px; border: currentColor; color: rgb(31, 56, 86); font-family: Tahoma,Arial; font-size: 14px; font-weight: bold; background-color: rgb(188, 216, 240);
+}
+.seccionesTabProcesos2 {
+	padding: 2px; width: 100%; color: rgb(188, 216, 240); font-weight: bold; background-color: rgb(31, 56, 86);
+}
+.seccionesTabProcesos2 a {
+	color: rgb(188, 216, 240); text-decoration: none;
+}
+.seccionesTabProcesos2 a:hover {
+	color: rgb(255, 255, 255);
+}
+.seccionesTab2 {
+	padding: 2px 2px 2px 5px; color: rgb(188, 216, 240); background-color: rgb(31, 56, 86);
+}
+.seccionesTab2 a {
+	color: rgb(188, 216, 240); font-weight: bold; text-decoration: underline;
+}
+.seccionesTab2 a:hover {
+	color: rgb(255, 255, 255); text-decoration: underline;
+}
+.seccionesTab2 div {
+	padding: 2px 0px;
+}
+#panelCentral {
+	height: 687px; color: rgb(31, 56, 86); overflow: hidden;
+}
+input {
+	font-family: Tahoma, Arial; font-size: 11px;
+}
+select {
+	font-family: Tahoma, Arial; font-size: 11px;
+}
+table {
+	border: 1px currentColor;
+}
+textarea {
+	font-family: Tahoma, Arial; font-size: 11px;
+}
+#newsContent {
+	font-family: Tahoma, Arial; font-size: 11px;
+}
+.text {
+	font-family: Tahoma, Arial; font-size: 11px;
+}
+.tituloNoticia {
+	margin: 0px 5px 10px 0px; color: rgb(31, 56, 86); font-size: 16px; font-weight: bold;
+}
+.txtavisos {
+	color: rgb(0, 0, 0); font-size: 12px;
+}
+a.avisos {
+	color: rgb(31, 56, 86); font-size: 12px; font-weight: bold; text-decoration: none;
+}
+a.avisos:hover {
+	color: rgb(31, 56, 86); text-decoration: underline;
+}
+.fechaNoticia {
+	color: rgb(31, 56, 86); font-size: 10px;
+}
+.leerMas {
+	color: red; font-size: 10px; font-weight: bold;
+}
+.tituloPanel {
+	color: rgb(188, 216, 240); font-family: Tahoma, Arial; font-size: 10px; font-weight: bold;
+}
+.tituloPanel a {
+	color: rgb(188, 216, 240); font-family: Tahoma, Arial; font-size: 10px; font-weight: bold; text-decoration: none;
+}
+.tituloPanel a:hover {
+	color: rgb(188, 216, 240); font-family: Tahoma, Arial; font-size: 10px; font-weight: bold; text-decoration: underline;
+}
+.tituloPanel td {
+	height: 19px; color: rgb(188, 216, 240); padding-right: 5px; padding-left: 5px; font-family: Tahoma, Arial; font-size: 10px; font-weight: bold; cursor: pointer;
+}
+#contenidoCentral {
+	margin: 0px; padding: 0px; width: 710px; height: 667px; overflow: auto;
+}
+#phnPrincipales {
+	
+}
+.contenidoCentralFullstory {
+	margin: 0px; padding: 3px; color: rgb(31, 56, 86); font-family: Tahoma, Arial; font-size: 12px;
+}
+.contenidoCentralFullstory .subtitulo {
+	background-position: left; margin: 2px 0px 0px; padding: 0px 0px 0px 36px; color: rgb(31, 56, 86); font-family: Tahoma, Arial; font-size: 16px; font-weight: bold; background-image: url("../imagenes/seccion.gif"); background-repeat: no-repeat;
+}
+.contenidoCentralFullstory .subtitulo a {
+	color: rgb(31, 56, 86); text-decoration: none;
+}
+.contenidoCentralFullstory .subtitulo a:hover {
+	color: rgb(94, 120, 147);
+}
+.contenidoCentralFullstory th {
+	text-align: center; color: rgb(188, 216, 240); background-color: rgb(31, 56, 86);
+}
+#contenidoCentral .regresar {
+	color: rgb(31, 56, 86); padding-right: 5px; font-family: Tahoma, Arial; font-size: 11px; font-weight: bold; float: right;
+}
+.contenidoBorderTop {
+	height: 5px; background-color: rgb(238, 238, 238);
+}
+.tabla100 {
+	height: 100%;
+}
+a.elementos {
+	color: rgb(188, 216, 240); font-weight: bold; text-decoration: none;
+}
+a.elementos:hover {
+	color: rgb(255, 255, 255);
+}
+.elementosb {
+	color: rgb(31, 56, 86); font-family: Tahoma, Arial; font-size: 11px; font-weight: bold;
+}
+a.elementosb {
+	padding: 2px; color: rgb(31, 56, 86); font-family: Tahoma, Arial; font-size: 11px; font-weight: bold; text-decoration: none;
+}
+a.elementosb:hover {
+	color: rgb(94, 120, 147);
+}
+a.enlace {
+	color: rgb(0, 0, 255); font-family: Tahoma, Arial; font-size: 12px; font-weight: bold; text-decoration: none;
+}
+a.enlace:hover {
+	text-decoration: underline;
+}
+a.enlace:visited {
+	color: rgb(0, 0, 255);
+}
+.publicado {
+	color: rgb(31, 56, 86); font-family: Tahoma, Arial; font-size: 10px;
+}
+.titulo_ficha {
+	padding: 5px; font-size: 12pt; font-weight: bold; background-color: rgb(255, 204, 102);
+}
+.tituloSPProgramas {
+	margin: 1px 1px 4px; padding: 1px 0px 2px; text-align: center; color: rgb(31, 56, 86); font-size: 12px; font-weight: bold; background-color: rgb(188, 216, 240);
+}
+.tituloSPProgramas a {
+	color: rgb(31, 56, 86); text-decoration: none;
+}
+.tituloSPProgramas a:hover {
+	color: rgb(94, 120, 147);
+}
+.backnext {
+	margin: 0px; padding: 0px;
+}
+.next {
+	float: right;
+}
+.next a {
+	color: rgb(188, 216, 240); font-weight: bold; text-decoration: none;
+}
+.back {
+	float: left;
+}
+.back a {
+	color: rgb(188, 216, 240); font-weight: bold; text-decoration: none;
+}
+.submenuContenedor {
+	margin: 0px 10px 0px 0px; padding: 2px 0px 0px 2px; width: 150px; height: 100%; float: left;
+}
+.submenuIzquierda {
+	margin: 0px 10px 5px 0px; padding: 0px; width: 100px; float: left;
+}
+.submenu {
+	margin: 2px 0px; padding: 4px; text-align: center; color: rgb(188, 216, 240); font-size: 12px; font-weight: bold; background-image: url("../imagenes/submenu.png");
+}
+.submenu:hover {
+	cursor: pointer; background-image: url("../imagenes/submenu1.png");
+}
+.submenu:hover a {
+	color: rgb(255, 255, 255);
+}
+.submenu a {
+	color: rgb(188, 216, 240); font-family: Tahoma, Arial; font-size: 12px; font-weight: bold; text-decoration: none;
+}
+.submenu a:hover {
+	color: rgb(255, 255, 255);
+}
+.submenuSelected {
+	margin: 2px 0px; padding: 4px; text-align: center; color: rgb(31, 56, 86); font-size: 12px; font-weight: bold;
+}
+.submenuSelected:hover {
+	cursor: pointer; background-image: url("../imagenes/submenu1.png");
+}
+.submenuSelected:hover a {
+	color: rgb(255, 255, 255);
+}
+.submenuSelected a {
+	color: rgb(31, 56, 86); font-family: Tahoma, Arial; font-size: 12px; font-weight: bold; text-decoration: none;
+}
+.submenuSelected a:hover {
+	color: rgb(255, 255, 255);
+}
+.submenuDerecha {
+	margin: 0px 0px 5px 10px; width: 60px; float: right;
+}
+.submenuA {
+	margin: 2px 0px; padding: 4px; text-align: center; background-color: rgb(31, 56, 86);
+}
+.submenuA a {
+	color: rgb(188, 216, 240); font-family: Tahoma, Arial; font-size: 11px; font-weight: bold; text-decoration: none;
+}
+.submenuA a:hover {
+	text-decoration: underline;
+}
+a.enlaceProfesor {
+	color: rgb(88, 74, 43); font-family: Tahoma, Arial; font-size: 12px; font-weight: bold; text-decoration: none;
+}
+a.enlaceProfesor:hover {
+	color: rgb(198, 150, 41); text-decoration: underline;
+}
+.tablaProfesores td {
+	padding-right: 5px; padding-left: 5px; font-family: Tahoma, Arial; font-size: 12px;
+}
+th {
+	padding-right: 5px; padding-left: 5px; font-family: Tahoma, Arial; font-size: 12px;
+}
+.cargando {
+	color: rgb(31, 56, 86); font-family: Tahoma, Arial; font-size: 40px; font-weight: bold; text-decoration: none;
+}
+.txtrojo {
+	color: rgb(255, 0, 0); font-size: 12px; font-weight: bold; text-decoration: none;
+}
+a.enlacerojo {
+	color: rgb(255, 0, 0); font-size: 12px; font-weight: bold; text-decoration: none;
+}
+a.enlacerojo:hover {
+	color: rgb(255, 0, 0); font-weight: bold; text-decoration: underline;
+}
+a.enlaceamarillo {
+	color: rgb(207, 121, 0); font-size: 12px; font-weight: bold; text-decoration: none;
+}
+a.enlaceamarillo:hover {
+	color: rgb(207, 121, 0); font-weight: bold; text-decoration: underline;
+}
+.avisostxt {
+	color: rgb(88, 74, 43); font-size: 12px; font-weight: bold;
+}
+a.wive {
+	color: rgb(23, 54, 93); font-family: "Tempus Sans ITC"; font-size: 12px; font-weight: bold; text-decoration: none;
+}
+a.wive:hover {
+	color: rgb(23, 54, 93); font-weight: bold; text-decoration: underline;
+}
+.back {
+	width: 19px; height: 19px; background-image: url("../imagenes/back.png"); background-repeat: no-repeat;
+}
+.back:hover {
+	background-image: url("../imagenes/backhover.png"); background-repeat: no-repeat;
+}
+.foward {
+	width: 19px; height: 19px; float: right; background-image: url("../imagenes/foward.png"); background-repeat: no-repeat;
+}
+.foward:hover {
+	background-image: url("../imagenes/fowardhover.png"); background-repeat: no-repeat;
+}
+VTabbedPanels {
+	width: 100%; background-color: rgb(31, 56, 86);
+}
+.VTabbedPanels .TabbedPanelsTabHover {
+	background-color: rgb(47, 73, 103);
+}
+.VTabbedPanels .TabbedPanelsTabGroup {
+	width: 100px; height: 109px;
+}
+.VTabbedPanels .TabbedPanelsTab {
+	height: 18px; font-family: Tahoma, Arial; font-size: 11px; background-color: rgb(188, 216, 240);
+}
+.VTabbedPanels .TabbedPanelsContentGroup {
+	width: 286px; height: 167px; color: rgb(188, 216, 240); overflow: hidden; background-color: rgb(31, 56, 86);
+}
+.VTabbedPanels .TabbedPanelsContentGroup .TabbedPanelsContent {
+	
+}
+.VTabbedPanels .TabbedPanelsTabSelected {
+	color: rgb(188, 216, 240); border-bottom-color: rgb(31, 56, 86); border-bottom-width: 1px; border-bottom-style: solid; background-color: rgb(31, 56, 86);
+}
+#spLicenciaturas {
+	height: 159px;
+}
+#spLicenciaturas .SlidingPanelsContentGroup {
+	width: 1960px; height: 100%;
+}
+#spLicenciaturas .SlidingPanelsContentGroup .SlidingPanelsContent {
+	width: 279px; height: 100%; float: left; background-color: rgb(31, 56, 86);
+}
+#spLicenciaturas .contenido {
+	height: 144px; color: rgb(188, 216, 240); overflow: hidden;
+}
+#spDiplomados {
+	height: 159px;
+}
+#spDiplomados .SlidingPanels {
+	height: 100%; float: left;
+}
+#spDiplomados .SlidingPanelsContentGroup {
+	width: 5000px; height: 100%; float: left;
+}
+#spDiplomados .SlidingPanelsContent {
+	width: 279px; height: 100%; float: left; background-color: rgb(31, 56, 86);
+}
+#spDiplomados .contenido {
+	height: 144px; color: rgb(188, 216, 240); overflow: auto; font-family: Tahoma,Arial; font-size: 11px;
+}
+.HTMLPanelLoadingContent {
+	display: none;
+}
+.HTMLPanelErrorContent {
+	display: none;
+}
+.formulario label {
+	margin: 0px 0.5em; padding: 0.5em; border: 0px currentColor; width: 10em; height: 1.5em; color: rgb(188, 216, 240); font-weight: bold; float: left; background-color: rgb(31, 56, 86);
+}
+.formulario input {
+	margin: 0px; padding: 0.5em; width: 30em;
+}
+.formulario select {
+	margin: 0px; padding: 0.5em; width: 31em;
+}
+.formulario textarea {
+	margin: 0px; padding: 0.5em; width: 32em; height: 8em; line-height: 1em; overflow: auto;
+}
+.correcto {
+	background: url("http://extension.matematicas.uady.mx/educon/estilos/images/correcto.png") no-repeat left; margin: 1em 3em; padding: 1em 2em 1em 5em; font-weight: bold; border-top-color: rgb(31, 56, 86); border-bottom-color: rgb(31, 56, 86); border-top-width: 2px; border-bottom-width: 2px; border-top-style: solid; border-bottom-style: solid;
+}
+.noticiaEnlace {
+	padding: 4px 0px 2px; background-color: rgb(188, 216, 240);
+}
+.noticiaEnlace:hover {
+	background-color: rgb(232, 241, 250);
+}
+#izquierdaIn {
+	width: 203px; background-color: rgb(188, 216, 240);
+}
+#izquierdaIn a {
+	text-decoration: none;
+}
+#derechaIn {
+	width: 710px; color: rgb(31, 56, 86); background-color: rgb(188, 216, 240);
+}
+.contenedorDocsProcedimientos {
+	margin: 10px;
+}
+.contenedorDocsProcedimientos .titulo {
+	font-size: 16px; font-weight: bold; margin-top: 10px;
+}
+.contenedorDocsProcedimientos .documento {
+	font-size: 12px; font-weight: bold;
+}
+.contenedorDocsProcedimientos .documento a {
+	color: rgb(153, 0, 0); font-size: 12px; font-weight: bold; text-decoration: none;
+}
+.contenedorDocsProcedimientos .documento a:hover {
+	text-decoration: underline;
+}
+.ptitulo {
+	font-size: 14px; font-weight: bold;
+}
+.penlace {
+	color: rgb(153, 0, 0); font-size: 14px; font-weight: bold;
+}
+.penlace a {
+	color: rgb(153, 0, 0); font-size: 14px; font-weight: bold; text-decoration: none;
+}
+.penlace a:hover {
+	text-decoration: underline;
+}
+.content {
+	padding: 5px 10px; color: rgb(31, 56, 86);
+}
+.content a {
+	font-weight: bold; text-decoration: none;
+}
+.content a:hover {
+	text-decoration: underline;
+}
+#izquierdaISO {
+	width: 480px; float: left;
+}
+#derechaISO {
+	width: 200px; text-align: center; float: right;
+}
+#derechaISO .avisos {
+	margin: 10px 0px;
+}
+#derechaISO .avisos .titulo {
+	text-align: center; color: rgb(31, 56, 86); font-size: 14px; font-weight: bold;
+}
+#derechaISO .avisos .items {
+	
+}
+#izquierdaIn .menu {
+	margin: 0px; padding: 0px; list-style-type: none;
+}
+#izquierdaIn .menu > li {
+	color: rgb(31, 56, 86); font-size: 11px; font-weight: bold;
+}
+#izquierdaIn .menu > li a {
+	padding: 3px 2px; color: rgb(31, 56, 86); text-decoration: none; display: block;
+}
+#izquierdaIn .menu > li a:hover {
+	color: rgb(94, 120, 147);
+}
+#izquierdaIn .menu > li > ul {
+	margin: 0px 3px 0px 0px; padding: 0px; color: rgb(188, 216, 240); display: none; list-style-type: none; background-color: rgb(31, 56, 86);
+}
+#izquierdaIn .menu > li:hover > ul {
+	display: block;
+}
+#izquierdaIn .menu > li > ul a {
+	padding: 3px 2px 3px 5px; color: rgb(188, 216, 240);
+}
+#izquierdaIn .menu > li > ul a:hover {
+	color: rgb(255, 255, 255);
+}
+#izquierdaIn .menu > li > ul > li {
+	position: relative;
+}
+#izquierdaIn .menu > li > ul > li > ul {
+	margin: 0px 3px 0px 0px; padding: 0px; left: 200px; top: 0px; width: 200px; color: rgb(188, 216, 240); display: none; list-style-type: none; position: absolute; background-color: rgb(31, 56, 86);
+}
+#izquierdaIn .menu > li > ul > li > ul > li {
+	
+}
+#izquierdaIn .menu > li > ul > li > ul a {
+	padding: 2px 2px 2px 5px; color: rgb(188, 216, 240);
+}
+#izquierdaIn .menu > li > ul > li:hover > ul {
+	display: block;
+}
