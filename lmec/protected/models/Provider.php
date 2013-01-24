@@ -45,7 +45,7 @@ class Provider extends CActiveRecord
 		return array(
 			array('provider_name, contact_name, active', 'required'),
 			array('active', 'numerical', 'integerOnly'=>true),
-			array('provider_name, contact_name, contact_email, address', 'length','min'=>5, 'max'=>45),
+			array('provider_name, contact_name, contact_email, address', 'length','min'=>1, 'max'=>45),
 			array('contact_telephone_number', 'length', 'max'=>15),
                         array('contact_email','email'),
 			// The following rule is used by search().
@@ -73,11 +73,11 @@ class Provider extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'provider_name' => 'Nombre Proveedor',
-			'contact_name' => 'Nombre Contacto',
-			'contact_email' => 'Correo Contacto',
-			'contact_telephone_number' => 'Numero Telefonico Contacto',
-			'address' => 'Direccion',
+			'provider_name' => 'Nombre de proveedor',
+			'contact_name' => 'Nombre de contacto',
+			'contact_email' => 'Correo electrónico de contacto',
+			'contact_telephone_number' => 'Número teléfonico contacto',
+			'address' => 'Dirección',
 			'active' => 'Activo',
 		);
 	}

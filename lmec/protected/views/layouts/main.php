@@ -43,7 +43,8 @@
                                 array('label'=>'Contacto', 'url'=>array('/contact/index')),
 				array('label'=>'Cliente', 'url'=>array('/customer/index')),
 				array('label'=>'Dependencia', 'url'=>array('/dependence/index')),
-				/*array('label'=>'Proveedor', 'url'=>array('/provider/index')),
+				array('label'=>'Proveedor', 'url'=>array('/provider/index')),
+                            /*
                                 array('label'=>'Roles', 'url'=>array('/role/index')),
 				array('label'=>'Usuarios', 'url'=>array('/user/index')),
                                 array('label'=>'Accesorios', 'url'=>array('/accesory/index')),

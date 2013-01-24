@@ -11,7 +11,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'customer_type_id'); ?>
-		<?php echo $form->DropDownList($model,'customer_type_id',CHtml::ListData(CustomerType::model()->findAll(),'id','type')); ?>
+		<?php echo $form->DropDownList($model,'customer_type_id',CHtml::ListData(CustomerType::model()->findAll('t.active = 1'),'id','type')); ?>
 		<?php echo $form->error($model,'customer_type_id'); ?>
 	</div>
             
@@ -67,7 +67,7 @@
 		<?php echo $form->labelEx($model,'dependence_id'); ?>
 		<?php
                     $dependencias = array('-1'=>"Seleccionar");                    
-                    echo $form->DropDownList($model,'dependence_id',$dependencias+CHtml::ListData(Dependence::model()->findAll(),'id','name')); ?>
+                    echo $form->DropDownList($model,'dependence_id',$dependencias+CHtml::ListData(Dependence::model()->findAll('t.active = 1'),'id','name')); ?>
 		<?php echo $form->error($model,'dependence_id'); ?>
 	</div>
 	
