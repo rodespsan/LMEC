@@ -1,0 +1,90 @@
+body {
+    margin: 0; padding: 0;
+    font: 12px normal Arial, Helvetica, sans-serif;
+    background: #FFF url(body_bg.gif) repeat-x;
+}
+container {
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+}
+#header {
+    background: url(header_bg.gif) no-repeat center top;
+    padding-top: 30px;
+}
+#header .disclaimer {
+    color:#666;
+    padding: 10px 0 7px 0;
+    text-align:left;
+    display: block;
+    position: absolute;
+    top: 0; right: 0;
+}
+#header .disclaimer a { color:#003399;}
+ul.menu {
+    list-style: none;
+    padding: 0 20px;   
+    margin: 0;
+    float: left;
+    width: 920px;
+    background: #222;
+    font-size: 1.2em;
+    background: url(topnav_bg.gif) repeat-x;
+}
+ul.menu li {
+    float: left;
+    margin: 0; 
+    padding: 0 15px 0 0;
+    position: relative;
+}
+ul.menu li a{
+    padding: 10px 5px;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    float: left;
+}
+ul.menu li a:hover{
+    background: url(topnav_hover.gif) no-repeat center top;
+}
+ul.menu li span {
+    width: 17px;
+    height: 35px;
+    float: left;
+    background: url(subnav_btn.gif) no-repeat center top;
+}
+ul.menu li span.subhover {background-position: center bottom; cursor: pointer;}
+ul.menu li ul.submenu {
+    list-style: none;
+    position: absolute;
+    left: 0; top: 35px;
+    background: #333;
+    margin: 0; padding: 0;
+    display: none;
+    float: left;
+    width: 170px;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    border: 1px solid #111;
+}
+ul.menu li ul.submenu li{
+    margin: 0; padding: 0;
+    border-top: 1px solid #252525;
+    border-bottom: 1px solid #444;
+    clear: both;
+    width: 170px;
+}
+html ul.menu li ul.submenu li a {
+    float: left;
+    width: 145px;
+    background: #333 url(dropdown_linkbg.gif) no-repeat 10px center;
+    padding-left: 20px;
+}
+html ul.menu li ul.submenu li a:hover {
+    background: #222 url(dropdown_linkbg.gif) no-repeat 10px center;
+}
+#header img {
+    margin: 20px 0 10px;
+}
