@@ -90,7 +90,7 @@ class Customer extends CActiveRecord
 	}
         
         public function seleccionado($attribute,$params){
-            Yii()->app()->end();
+            //Yii()->app()->end();
             if($this->dependence_id === -1 ){
                 $this->addError('dependence_id','Debe seleccionar una dependencia');
             }else{

@@ -75,12 +75,12 @@ class Contact extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Nombre',
-			'email' => 'Correo electrónico',
-			'cell_phone_number' => 'Número teléfono celular',
-			'telephone_number_house' => 'Número teléfono casa',
-			'telephone_number_office' => 'Numero teléfono oficina',
-			'extension_office' => 'Extension de oficina',
+			'name' => 'Nombre de contacto',
+			'email' => 'Correo electrónico de contacto',
+			'cell_phone_number' => 'Número teléfono celular de contacto',
+			'telephone_number_house' => 'Número teléfono casa de contacto',
+			'telephone_number_office' => 'Numero teléfono oficina de contacto',
+			'extension_office' => 'Extension de oficina de contacto',
 			'active' => 'Activo',
 		);
 	}
