@@ -42,15 +42,28 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+		//'id',
 		//'customer_type_id',                
-                'customerType.type',
-		//'contact_id',
-                'contact.name',
+                //'customerType.type',
+                array(
+                        //'name'=>'customerType.type',
+                        'name'=>'customer_type_id',
+                        'value'=>'$data->customerType->type',
+                ),
+		//'contacts',
+                array(
+                        'name'=>'nombreContacto',
+                        'value'=>'$data->contacts[0]->name', // reemplazar acá el campo del modelo Departamento que representa el nombre.
+                ),
+                //'contact.name',
 		'address',
 		//'dependence_id',
-                'dependence.name',
-		//'active',
+                //'dependence.name',
+                array(
+                        'name'=>'dependence_id',
+                        'value'=>'$data->dependence->name', // reemplazar acá el campo del modelo Departamento que representa el nombre.
+                ),
+		'active',
 		array(
 			'class'=>'CButtonColumn',
 		),

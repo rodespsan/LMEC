@@ -15,5 +15,9 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('telephone_number')); ?>:</b>
 	<?php echo CHtml::encode($data->telephone_number); ?>
 	<br />
+        
+        <b><?php echo CHtml::encode($data->getAttributeLabel('extension')); ?>:</b>
+	<?php echo CHtml::encode($data->extension); ?>
+	<br />
 
 </div>

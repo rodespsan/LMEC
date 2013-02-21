@@ -27,6 +27,12 @@
 		<?php echo $form->error($model,'telephone_number'); ?>
 	</div>
         
+        <div class="row">
+		<?php echo $form->labelEx($model,'extension'); ?>
+		<?php echo $form->textField($model,'extension',array('size'=>5,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'extension'); ?>
+	</div>
+        
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
 	</div>

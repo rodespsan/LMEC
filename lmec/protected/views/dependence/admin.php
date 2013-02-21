@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Lista Dependencia', 'url'=>array('index')),
-	array('label'=>'Crear Dependencia', 'url'=>array('create')),
+	array('label'=>'Agregar Dependencia', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -46,7 +46,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'name',
 		'address',
 		'telephone_number',
-		//'active',
+                'extension',
+		'active',
 		array(
 			'class'=>'CButtonColumn',
 		),

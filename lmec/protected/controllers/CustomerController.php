@@ -47,8 +47,10 @@ class CustomerController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+        $model = $this->loadModel($id);
+        $model->contact = $model->contacts[0];
         $this->render('view', array(
-            'model' => $this->loadModel($id),
+            'model' => $model,
         ));
     }
 
@@ -98,11 +100,23 @@ class CustomerController extends Controller {
 		$criteria->compare('active',1);
                 $model->contact = Contact::model()->find($criteria);
                 
-                $model->contact_id = $model->contact->id;
+                //$model->contact_id = $model->contact->id;
                 $correcto = $model->save();
                 if($correcto){
-                    $transaction->commit();
-                    $this->redirect(array('view', 'id' => $model->id));
+                    $connection = Yii::app()->db;
+                    /*var_dump(array($model->id,$model->contact->id));
+                    echo $model->id;
+                    Yii::app()->end();*/
+                    //$sql = "INSERT INTO tbl_customer_contact('customer_id', 'contact_id') VALUES ("+$model->id+", "+$model->contact->id+")";
+                    //$command=$connection->createCommand($sql);
+                    //$rowCount=$command->execute();
+                    $model_customer_contact = new CustomerContact();
+                    $model_customer_contact->customer_id = $model->id;
+                    $model_customer_contact->contact_id = $model->contact->id;
+                    if($model_customer_contact->save()){
+                        $transaction->commit();
+                        $this->redirect(array('view', 'id' => $model->id));
+                    }
                 }
             }            
             $transaction->rollBack();
@@ -120,6 +134,7 @@ class CustomerController extends Controller {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
+        $model->contact = $model->contacts[0];
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
@@ -207,6 +222,7 @@ class CustomerController extends Controller {
         if (isset($_GET['Customer']))
             $model->attributes = $_GET['Customer'];
 
+        
         $this->render('admin', array(
             'model' => $model,
         ));

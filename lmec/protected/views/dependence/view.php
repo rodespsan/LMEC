@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Lista Dependencias', 'url'=>array('index')),
-	array('label'=>'Crear Dependencia', 'url'=>array('create')),
+	array('label'=>'Agregar Dependencia', 'url'=>array('create')),
 	array('label'=>'Actualizar Dependencia', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Eliminar Dependencia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Administrar Dependencias', 'url'=>array('admin')),
@@ -22,6 +22,7 @@ $this->menu=array(
 		'name',
 		'address',
 		'telephone_number',
+                'extension',
 		//'active',
 	),
 )); ?>

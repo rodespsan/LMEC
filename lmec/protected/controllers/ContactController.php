@@ -66,14 +66,33 @@ class ContactController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Contact']))
+		if(isset($_POST['Contact']) && isset($_POST['Contact']['customer_id']))
 		{
-			$model->attributes=$_POST['Contact'];
-                        $model->active = 1;
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                    $transaction = Yii::app()->db->beginTransaction();
+                    $model->attributes=$_POST['Contact'];
+                    $model->active = 1;
+                    //var_dump($_POST['Contact']);
+                    //var_dump($model);///// NO SE RECIBIO A customer_id DESDE EL FORMULARIO
+                    //?? SI SE MANDO PERO EN OTRO ARREGLO                        
+                    
+                    if($model->save()){
+                        $model_customer_contact = new CustomerContact();
+                        
+                        $model_customer_contact->customer_id = $_POST['Contact']['customer_id'];
+                        //var_dump($model->id);
+                        //Yii::app()->end();
+                        $model_customer_contact->contact_id = $model->id;
+                        
+                        if($model_customer_contact->save()){
+                            $transaction->commit();
+                            $this->redirect(array('view','id'=>$model->id));
+                        }else{
+                            $transaction->rollBack();
+                        }                        
+                    }
+                        
 		}
-
+                
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -95,6 +114,7 @@ class ContactController extends Controller
 		{
 			$model->attributes=$_POST['Contact'];
                         $model->active = 1;
+                        
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

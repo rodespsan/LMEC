@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Crear Dependencia</h1>
+<h1>Agregar Dependencia</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

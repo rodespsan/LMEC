@@ -9,16 +9,11 @@
 		<?php echo $form->label($model,'id'); ?>
 		<?php echo $form->textField($model,'id',array('size'=>10,'maxlength'=>10)); ?>
 	</div>
-
+    
 	<div class="row">
 		<?php echo $form->label($model,'customer_type_id'); ?>
 		<?php echo $form->textField($model,'customer_type_id',array('size'=>10,'maxlength'=>10)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'contact_id'); ?>
-		<?php echo $form->textField($model,'contact_id',array('size'=>10,'maxlength'=>10)); ?>
-	</div>
+	</div>	
 
 	<div class="row">
 		<?php echo $form->label($model,'address'); ?>
@@ -32,7 +27,7 @@
 
 	
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('Buscar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

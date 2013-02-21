@@ -31,6 +31,6 @@ $this->menu=array(
 		'address',
 		//'dependence_id',
                 'dependence.name',
-		//'active',
+		'active',
 	),
 )); ?>

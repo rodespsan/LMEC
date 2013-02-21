@@ -14,7 +14,7 @@
  * @property integer $active
  *
  * The followings are the available model relations:
- * @property Customer[] $customers
+ * @property CustomerContact[] $customerContacts
  */
 class Contact extends CActiveRecord
 {
@@ -23,7 +23,9 @@ class Contact extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return Contact the static model class
 	 */
-	public static function model($className=__CLASS__)
+        public $customer_id;
+        
+        public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
@@ -47,9 +49,8 @@ class Contact extends CActiveRecord
 			array('name, email, active', 'required'),
 			array('active', 'numerical', 'integerOnly'=>true),
 			array('name, email', 'length', 'max'=>100),
-			array('cell_phone_number, telephone_number_house, telephone_number_office', 'length', 'max'=>15),
+			array('cell_phone_number, telephone_number_house, telephone_number_office', 'length', 'max'=>35),
 			array('extension_office', 'length', 'max'=>5),
-                        array('email','email'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, email, cell_phone_number, telephone_number_house, telephone_number_office, extension_office, active', 'safe', 'on'=>'search'),
@@ -64,7 +65,7 @@ class Contact extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'customers' => array(self::HAS_MANY, 'Customer', 'contact_id'),
+			'customerContacts' => array(self::HAS_MANY, 'CustomerContact', 'contact_id'),
 		);
 	}
 
@@ -73,16 +74,31 @@ class Contact extends CActiveRecord
 	 */
 	public function attributeLabels()
 	{
+            /*
 		return array(
 			'id' => 'ID',
+			'name' => 'Name',
+			'email' => 'Email',
+			'cell_phone_number' => 'Cell Phone Number',
+			'telephone_number_house' => 'Telephone Number House',
+			'telephone_number_office' => 'Telephone Number Office',
+			'extension_office' => 'Extension Office',
+			'active' => 'Active',
+		);*/
+                
+               
+                return array(
+			'id' => 'ID',
+                        'customer_id' => 'Cliente',
 			'name' => 'Nombre de contacto',
 			'email' => 'Correo electrónico de contacto',
 			'cell_phone_number' => 'Número teléfono celular de contacto',
 			'telephone_number_house' => 'Número teléfono casa de contacto',
 			'telephone_number_office' => 'Numero teléfono oficina de contacto',
-			'extension_office' => 'Extension de oficina de contacto',
+			'extension_office' => 'Extension de oficina',
 			'active' => 'Activo',
 		);
+
 	}
 
 	/**
@@ -103,7 +119,7 @@ class Contact extends CActiveRecord
 		$criteria->compare('telephone_number_house',$this->telephone_number_house,true);
 		$criteria->compare('telephone_number_office',$this->telephone_number_office,true);
 		$criteria->compare('extension_office',$this->extension_office,true);
-		$criteria->compare('active',1,false);
+		$criteria->compare('active',$this->active);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
