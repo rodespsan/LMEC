@@ -1,0 +1,16 @@
+Cuenta para ingresar al sistema.
+
+nombre de usuario: admin
+contraseña: 12345678
+
+Nota:Las carpetas:
+	Entrevistas
+	Especificacion
+	Imagenes de diseño
+Lo obtuve de la cuenta creada en GitHub.
+
+Lo demás lo he agregado.
+
+Se me había olvidado la restricción a ciertos catálogos dependiendo de los roles.
+
+Francisco.
