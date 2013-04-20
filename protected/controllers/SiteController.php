@@ -5,6 +5,12 @@ class SiteController extends Controller
 	/**
 	 * Declares class-based actions.
 	 */
+	 
+	/**
+	 *	Define a login como inicio del sistema.
+	 */
+	var $defaultAction = 'login';
+	 
 	public function actions()
 	{
 		return array(
@@ -37,13 +43,19 @@ class SiteController extends Controller
 	 */
 	public function actionError()
 	{
-	    if($error=Yii::app()->errorHandler->error)
-	    {
-	    	if(Yii::app()->request->isAjaxRequest)
-	    		echo $error['message'];
-	    	else
-	        	$this->render('error', $error);
-	    }
+		if($error=Yii::app()->errorHandler->error)
+		{
+			if($error["code"] == null)
+			{
+				$this->render('errorCrear', $error);
+			}else
+			{
+				if(Yii::app()->request->isAjaxRequest)
+					echo $error['message'];
+				else
+					$this->render('error', $error);
+			}
+		}
 	}
 
 	/**
@@ -57,8 +69,14 @@ class SiteController extends Controller
 			$model->attributes=$_POST['ContactForm'];
 			if($model->validate())
 			{
-				$headers="From: {$model->email}\r\nReply-To: {$model->email}";
-				mail(Yii::app()->params['adminEmail'],$model->subject,$model->body,$headers);
+				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
+				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
+				$headers="From: $name <{$model->email}>\r\n".
+					"Reply-To: {$model->email}\r\n".
+					"MIME-Version: 1.0\r\n".
+					"Content-type: text/plain; charset=UTF-8";
+
+				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
 				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
 				$this->refresh();
 			}
@@ -71,25 +89,38 @@ class SiteController extends Controller
 	 */
 	public function actionLogin()
 	{
-		$model=new LoginForm;
-
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
+		if(Yii::app()->user->isGuest)
 		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
+			$model=new LoginForm;
 
-		// collect user input data
-		if(isset($_POST['LoginForm']))
+			// if it is ajax validation request
+			if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
+			{
+				echo CActiveForm::validate($model);
+				Yii::app()->end();
+			}
+
+			// collect user input data
+			if(isset($_POST['LoginForm']))
+			{
+				$model->attributes=$_POST['LoginForm'];
+
+				// validate user input and redirect to the previous page if valid
+				if($model->validate() && $model->login())
+				{
+					$user = User::model()->findByAttributes(array('user'=>$model->username));
+					$priority = $this->getUserHigherPriority($user);
+					$role = Role::model()->findByAttributes(array('priority'=>$priority));
+					$urlByPriority = $role->url_initial;
+					$this->redirect(array($urlByPriority));
+				}
+			}
+			// display the login form
+			$this->render('login',array('model'=>$model));
+		}else
 		{
-			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+			$this->redirect(array('site/index'));
 		}
-		// display the login form
-		$this->render('login',array('model'=>$model));
 	}
 
 	/**
@@ -98,6 +129,22 @@ class SiteController extends Controller
 	public function actionLogout()
 	{
 		Yii::app()->user->logout();
-		$this->redirect(Yii::app()->homeUrl);
+		$this->redirect(array('site/login'));
+	}	
+	
+	private function getUserHigherPriority($user)
+	{
+		$priority = 0;
+		foreach ($user->roles as $role) 
+		{
+			if($role->active == 1)
+			{
+				if($priority < (int)$role->priority)
+				{
+					$priority = (int)$role->priority;
+				}
+			}
+        }
+		return $priority;
 	}
 }
