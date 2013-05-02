@@ -81,7 +81,7 @@ class ServiceType extends CActiveRecord
 		);
 	}
 	
-	public function getActive($active)
+	public static function getActive($active)
 	{
 		if($active=='1'){
 			return 'Si';

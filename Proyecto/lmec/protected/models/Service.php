@@ -117,7 +117,7 @@ class Service extends CActiveRecord
 		));*/
 	}
 	
-	public function getActive($active)
+	public static function getActive($active)
 	{
 		if($active == '1'){
 			return 'Si';
@@ -127,13 +127,13 @@ class Service extends CActiveRecord
 		}
 	}
 	
-	public function getServiceType($serviceTypeId)
+	public static function getServiceType($serviceTypeId)
 	{
 		$serviceType = ServiceType::model()->findByPk($serviceTypeId);
 		return $serviceType->name;
 	}
 	
-	public function getAllServices()
+	public static function getAllServices()
 	{
 		return Service::model()->count();
 	}
