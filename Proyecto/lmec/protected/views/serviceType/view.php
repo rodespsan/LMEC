@@ -25,7 +25,7 @@ $this->menu=array(
 		'name',
 		array(
 			'name'=>'active',
-			'value'=>Service::getActive($model->active),
+			'value'=>$model->getActive($model->active),
 		),
 	),
 )); ?>
