@@ -31,5 +31,9 @@ $this->menu=array(
 			'name'=>'service_type_id',
 			'value'=>$model->serviceType->name,
 			 ),
+		array(
+			'name'=>'active',
+			'value'=>$model->getActive($model->active),
+		),
 	),
 )); ?>
