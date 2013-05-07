@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN"
-"http://style.tigris.org/tigris_transitional.dtd">
-<html>
-<head>
+<!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN" "http://style.tigris.org/tigris_transitional.dtd">
+<html><head>
+
+
+
  <style type="text/css">
 /* <![CDATA[ */ 
 @import "css/readyset.css"; 
@@ -10,27 +10,23 @@
 /*  ]]> */
  </style>
 
-<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
- <title>Caracter&iacute;sticas</title>
-</head>
-
-<body>
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" /><title>Características</title></head><body>
 <div class="app">
 <div class="readyset">
 
 
-<h2><a href="srs.html">Especificaci&oacute;n de Requerimientos de Software</a> &gt;
-    <a href="feature-set.html">Conjunto de Caracter&iacute;sticas</a> &gt; Caracter&iacute;sticas</h2>
+<h2><a href="srs.html">Especificación de Requerimientos de Software</a> &gt;
+    <a href="feature-set.html">Conjunto de Características</a> &gt; Características</h2>
 
  <div id="releaseinfo">
- <h3>Informaci&oacute;n de la Versi&oacute;n</h3>
- <table border="1" cellpadding="3" cellspacing="2" class="axial">
-  <tr>
+ <h3>Información de la Versión</h3>
+ <table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody><tr>
    <th>Proyecto:</th> 
    <td><a href="index.html">NOMBRE DEL PROYECTO</a></td> 
   </tr>
   <tr>
-   <th>N&uacute;mero Interno de la Versi&oacute;n:</th> 
+   <th>Número Interno de la Versión:</th> 
    <td>X.Y.Z</td> 
   </tr>
   <tr>
@@ -38,14 +34,14 @@
    <td>
     <div><a href="proposal.html">Propuesta del proyecto</a> &gt;
          <a href="user-needs.html">Necesidades del Usuario</a></div>
-    <div><a href="srs.html">Especificaci&oacute;n de Requerimientos de Software</a> &gt;
+    <div><a href="srs.html">Especificación de Requerimientos de Software</a> &gt;
          <a href="use-case-suite.html">Conjunto de casos de uso</a></div>
-    <div><a href="feature-format.html">Formato de Caracter&iacute;sticas</a></div>
-    <div>ENLACES A EST&Aacute;NDARES RELEVANTES</div>
+    <div><a href="feature-format.html">Formato de Características</a></div>
+    <div>ENLACES A ESTÁNDARES RELEVANTES</div>
     <div>ENLACES A OTROS DOCUMENTOS</div>
    </td>
   </tr>
- </table>
+ </tbody></table>
  </div> <!-- /releaseinfo -->
 
 
@@ -55,8 +51,7 @@
  </div> <!-- /processimpact -->
 
 <div class="todo">
- TODO: For each feature listed in the <a
- href="feature-set.html">feature set</a>, give a detailed description
+ TODO: For each feature listed in the <a href="feature-set.html">feature set</a>, give a detailed description
  of the feature here.  Describe each feature in enough detail that it
  could be implemented by any member of the development team (not only
  someone who already informally knows what to do).
@@ -83,49 +78,65 @@
 
 <div class="sample1">
 <div id="F-00"> 
-<h3>F-00: Configuraci&oacute;n del Sitio</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<h3>F-00: Administración de usuarios<br />
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Prioridad:</th>
   <td>Esencial</td>
  </tr>
  <tr>
   <th>Esfuerzo:</th>
-  <td>D&iacute;as</td>
+  <td>Días</td>
  </tr>
  <tr>
   <th>Riesgo:</th>
   <td>Seguro</td>
  </tr>
  <tr>
-  <th>&Aacute;rea(s) Funcional(es):</th>
-  <td>Administraci&oacute;n</td>
+  <th>Área(s) Funcional(es):</th>
+  <td>Gestión de usuarios<br />
+</td>
  </tr>
  <tr>
   <th>Caso(s) de Uso:</th>
   <td><a href="use-cases.html#UC-00">CU-00</a> <a href="use-cases.html#UC-11">CU-11</a> </td>
  </tr>
  <tr>
-  <th>Descripci&oacute;n:</th>
-  <td>
-   The site administrators will be able to configure:
+  <th>Descripción:</th>
+  <td>La administración de usuarios permitirá:
    <ul>
-    <li>The site appearance by choosing a predefined CSS file</li>
-    <li>Whether the site makes new clans public or private by default</li>
-    <li>The email address to be used to send critical error reports</li> 
-   </ul>
+    <li>Crear usuarios<br />
+</li>
+    <li>Eliminar usuarios<br />
+</li>
+    <li>Actualizar usuarios</li>
+        <li>Listar usuarios</li>
+ 
+   </ul>Los usuarios contendrán los siguientes campos:<br />
+      <ul>
+        <li>Usuario (entre 3 y 20 caracteres)</li>
+        <li>Contraseña (entre 8 y 20 caracteres)</li>
+        <li>Nombres</li>
+        <li>Apellidos</li>
+        <li>Correo electrónico<br />
+        </li>
+      </ul>
+
   </td>
  </tr>
  <tr>
   <th>Notas y Preguntas:</th>
   <td>
    <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
+    <li>La contraseña debe encriptarse en la base de datos usando MD5<br />
+</li>
+    <li>¿La contraseña deberá forzar a usar caracteres alfanuméricos y no alfanuméricos?<br />
+</li>
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 </div>
 
@@ -133,8 +144,8 @@
 <div class="sample1">
 <div id="F-01"> 
 <h3>F-01: User registration</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential</td>
  </tr>
@@ -187,15 +198,15 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 </div>
 
 
 <div id="F-02"> 
 <h3>F-02: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -238,13 +249,13 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 <div id="F-03"> 
 <h3>F-03: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -287,13 +298,13 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 <div id="F-10"> 
 <h3>F-10: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -336,13 +347,13 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 <div id="F-11"> 
 <h3>F-11: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -385,13 +396,13 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 <div id="F-12"> 
 <h3>F-12: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -434,13 +445,13 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 <div id="F-13"> 
 <h3>F-13: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -483,14 +494,14 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 
 <div id="F-20"> 
 <h3>F-20: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -533,13 +544,13 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 <div id="F-21"> 
 <h3>F-21: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -582,13 +593,13 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 <div id="F-22"> 
 <h3>F-22: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -631,13 +642,13 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 <div id="F-23"> 
 <h3>F-23: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -680,14 +691,14 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 
 <div id="F-30"> 
 <h3>F-30: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -730,13 +741,13 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 <div id="F-31"> 
 <h3>F-31: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -779,13 +790,13 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 <div id="F-32"> 
 <h3>F-32: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -828,13 +839,13 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 <div id="F-33"> 
 <h3>F-33: FEATURE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+ <tbody><tr>
   <th>Priority:</th>
   <td>Essential | Expected | Desired | Optional </td>
  </tr>
@@ -877,7 +888,7 @@
    </ul>
   </td>
  </tr>
-</table>
+</tbody></table>
 </div>
 
 
@@ -888,22 +899,18 @@
 </div>
 
   <div class="todo">
-  TODO:  Check for <a
-  href="http://readyset.tigris.org/words-of-wisdom/features.html">words
+  TODO:  Check for <a href="http://readyset.tigris.org/words-of-wisdom/features.html">words
   of wisdom</a> and discuss ways to improve this template.
-  Or, evaluate the ReadySET Pro <a title="pro use case template and sample test plan"
-  href="http://www.readysetpro.com/">professional feature specification template</a>.
+  Or, evaluate the ReadySET Pro <a title="pro use case template and sample test plan" href="http://www.readysetpro.com/">professional feature specification template</a>.
   </div>
 
 <div class="legal1">Company Proprietary</div>
 
 <div class="footnote">
- Copyright &#169; 2003-2004 Jason Robbins.  All rights reserved. <a href="readyset-license.html">License terms</a>.
+ Copyright © 2003-2004 Jason Robbins.  All rights reserved. <a href="readyset-license.html">License terms</a>.
  Retain this copyright statement whenever this file is used as a
  template.
 </div>
 
 </div>
-</body>
-
-</html>
+</body></html>
