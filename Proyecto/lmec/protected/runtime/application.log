@@ -7487,3 +7487,701 @@ Stack trace:
 REQUEST_URI=/lmec/work/create
 HTTP_REFERER=http://localhost/lmec/work/admin
 ---
+2013/05/12 04:56:44 [error] [exception.CHttpException.] exception 'CHttpException' with message 'Primero debe <a href="/lmec/customerType/create">crear un Tipo de Servicio</a>.' in C:\wamp\www\lmec\protected\controllers\CustomerController.php:64
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): CustomerController->actionCreate()
+#1 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#10 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/create')
+#11 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/lmec/customer/create
+HTTP_REFERER=http://localhost/lmec/customer/index
+---
+2013/05/12 04:57:12 [error] [exception.CHttpException.] exception 'CHttpException' with message 'Primero debe <a href="/lmec/customerType/create">crear un Tipo de Servicio</a>.' in C:\wamp\www\lmec\protected\controllers\CustomerController.php:64
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): CustomerController->actionCreate()
+#1 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#10 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/create')
+#11 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/lmec/customer/create
+HTTP_REFERER=http://localhost/lmec/customer/index
+---
+2013/05/12 04:58:27 [error] [exception.CHttpException.] exception 'CHttpException' with message 'Primero debe <a href="/lmec/customerType/create">crear un Tipo de Cliente</a>.' in C:\wamp\www\lmec\protected\controllers\CustomerController.php:64
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): CustomerController->actionCreate()
+#1 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#10 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/create')
+#11 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/lmec/customer/create
+HTTP_REFERER=http://localhost/lmec/customer/index
+---
+2013/05/12 04:59:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='1'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (152)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 04:59:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='1'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('1', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(152): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('1')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/1
+HTTP_REFERER=http://localhost/lmec/customer/update/1
+---
+2013/05/12 05:01:12 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='1'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (152)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:01:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='1'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('1', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(152): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('1')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/1
+HTTP_REFERER=http://localhost/lmec/customer/update/1
+---
+2013/05/12 05:01:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='1'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (152)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:01:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='1'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('1', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(152): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('1')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/1
+HTTP_REFERER=http://localhost/lmec/customer/update/1
+---
+2013/05/12 05:04:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (152)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:04:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('2', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(152): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('2')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/2
+HTTP_REFERER=http://localhost/lmec/customer/update/2
+---
+2013/05/12 05:07:40 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (152)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:07:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('2', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(152): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('2')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/2
+HTTP_REFERER=http://localhost/lmec/customer/update/2
+---
+2013/05/12 05:09:27 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (152)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:09:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('2', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(152): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('2')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/2
+HTTP_REFERER=http://localhost/lmec/customer/update/2
+---
+2013/05/12 05:13:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (152)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:13:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('2', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(152): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('2')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/2
+HTTP_REFERER=http://localhost/lmec/customer/update/2
+---
+2013/05/12 05:13:48 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (152)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:13:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('2', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(152): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('2')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/2
+HTTP_REFERER=http://localhost/lmec/customer/update/2
+---
+2013/05/12 05:14:09 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (152)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:14:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('2', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(152): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('2')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/2
+HTTP_REFERER=http://localhost/lmec/customer/update/2
+---
+2013/05/12 05:14:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (152)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:14:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('2', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(152): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('2')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/2
+HTTP_REFERER=http://localhost/lmec/customer/update/2
+---
+2013/05/12 05:14:43 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (152)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:14:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('2', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(152): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('2')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/2
+HTTP_REFERER=http://localhost/lmec/customer/update/2
+---
+2013/05/12 05:15:31 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (152)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:15:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('2', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(152): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('2')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/2
+HTTP_REFERER=http://localhost/lmec/customer/update/2
+---
+2013/05/12 05:23:46 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (154)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:23:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='2'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('2', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(154): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('2')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/2
+HTTP_REFERER=http://localhost/lmec/customer/update/2
+---
+2013/05/12 05:24:06 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='1'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (154)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:24:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='1'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('1', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(154): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('1')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/1
+HTTP_REFERER=http://localhost/lmec/customer/update/1
+---
+2013/05/12 05:26:09 [error] [exception.CException] exception 'CException' with message 'Customer tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\wamp\www\yii\framework\base\CModel.php:287
+Stack trace:
+#0 C:\wamp\www\yii\framework\base\CModel.php(259): CModel->createValidators()
+#1 C:\wamp\www\yii\framework\base\CModel.php(302): CModel->getValidators('name')
+#2 C:\wamp\www\yii\framework\web\helpers\CHtml.php(1185): CModel->isAttributeRequired('name')
+#3 C:\wamp\www\yii\framework\web\widgets\CActiveForm.php(560): CHtml::activeLabelEx(Object(Customer), 'name', Array)
+#4 C:\wamp\www\lmec\protected\views\customer\_form.php(14): CActiveForm->labelEx(Object(Customer), 'name')
+#5 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\lme...')
+#6 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\lme...', Array, true)
+#7 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\lme...', Array, true)
+#8 C:\wamp\www\lmec\protected\views\customer\update.php(18): CController->renderPartial('_form', Array)
+#9 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\lme...')
+#10 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\lme...', Array, true)
+#11 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\lme...', Array, true)
+#12 C:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('update', Array, true)
+#13 C:\wamp\www\lmec\protected\controllers\CustomerController.php(171): CController->render('update', Array)
+#14 [internal function]: CustomerController->actionUpdate('1')
+#15 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#16 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#17 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#24 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#26 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#27 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/lmec/customer/update/1
+HTTP_REFERER=http://localhost/lmec/customer/1
+---
+2013/05/12 05:26:13 [error] [exception.CException] exception 'CException' with message 'Customer tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\wamp\www\yii\framework\base\CModel.php:287
+Stack trace:
+#0 C:\wamp\www\yii\framework\base\CModel.php(259): CModel->createValidators()
+#1 C:\wamp\www\yii\framework\base\CModel.php(302): CModel->getValidators('name')
+#2 C:\wamp\www\yii\framework\web\helpers\CHtml.php(1185): CModel->isAttributeRequired('name')
+#3 C:\wamp\www\yii\framework\web\widgets\CActiveForm.php(560): CHtml::activeLabelEx(Object(Customer), 'name', Array)
+#4 C:\wamp\www\lmec\protected\views\customer\_form.php(14): CActiveForm->labelEx(Object(Customer), 'name')
+#5 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\lme...')
+#6 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\lme...', Array, true)
+#7 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\lme...', Array, true)
+#8 C:\wamp\www\lmec\protected\views\customer\update.php(18): CController->renderPartial('_form', Array)
+#9 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\lme...')
+#10 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\lme...', Array, true)
+#11 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\lme...', Array, true)
+#12 C:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('update', Array, true)
+#13 C:\wamp\www\lmec\protected\controllers\CustomerController.php(171): CController->render('update', Array)
+#14 [internal function]: CustomerController->actionUpdate('1')
+#15 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#16 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#17 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#24 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#26 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#27 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/lmec/customer/update/1
+HTTP_REFERER=http://localhost/lmec/customer/1
+---
+2013/05/12 05:27:18 [error] [exception.CException] exception 'CException' with message 'Customer tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\wamp\www\yii\framework\base\CModel.php:287
+Stack trace:
+#0 C:\wamp\www\yii\framework\base\CModel.php(259): CModel->createValidators()
+#1 C:\wamp\www\yii\framework\base\CModel.php(302): CModel->getValidators('name')
+#2 C:\wamp\www\yii\framework\web\helpers\CHtml.php(1185): CModel->isAttributeRequired('name')
+#3 C:\wamp\www\yii\framework\web\widgets\CActiveForm.php(560): CHtml::activeLabelEx(Object(Customer), 'name', Array)
+#4 C:\wamp\www\lmec\protected\views\customer\_form.php(14): CActiveForm->labelEx(Object(Customer), 'name')
+#5 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\lme...')
+#6 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\lme...', Array, true)
+#7 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\lme...', Array, true)
+#8 C:\wamp\www\lmec\protected\views\customer\update.php(18): CController->renderPartial('_form', Array)
+#9 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\lme...')
+#10 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\lme...', Array, true)
+#11 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\lme...', Array, true)
+#12 C:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('update', Array, true)
+#13 C:\wamp\www\lmec\protected\controllers\CustomerController.php(171): CController->render('update', Array)
+#14 [internal function]: CustomerController->actionUpdate('1')
+#15 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#16 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#17 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#24 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#26 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#27 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/lmec/customer/update/1
+HTTP_REFERER=http://localhost/lmec/customer/1
+---
+2013/05/12 05:27:19 [error] [exception.CException] exception 'CException' with message 'Customer tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.' in C:\wamp\www\yii\framework\base\CModel.php:287
+Stack trace:
+#0 C:\wamp\www\yii\framework\base\CModel.php(259): CModel->createValidators()
+#1 C:\wamp\www\yii\framework\base\CModel.php(302): CModel->getValidators('name')
+#2 C:\wamp\www\yii\framework\web\helpers\CHtml.php(1185): CModel->isAttributeRequired('name')
+#3 C:\wamp\www\yii\framework\web\widgets\CActiveForm.php(560): CHtml::activeLabelEx(Object(Customer), 'name', Array)
+#4 C:\wamp\www\lmec\protected\views\customer\_form.php(14): CActiveForm->labelEx(Object(Customer), 'name')
+#5 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\lme...')
+#6 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\lme...', Array, true)
+#7 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\lme...', Array, true)
+#8 C:\wamp\www\lmec\protected\views\customer\update.php(18): CController->renderPartial('_form', Array)
+#9 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\lme...')
+#10 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\lme...', Array, true)
+#11 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\lme...', Array, true)
+#12 C:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('update', Array, true)
+#13 C:\wamp\www\lmec\protected\controllers\CustomerController.php(171): CController->render('update', Array)
+#14 [internal function]: CustomerController->actionUpdate('1')
+#15 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#16 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#17 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#24 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#26 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#27 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/lmec/customer/update/1
+HTTP_REFERER=http://localhost/lmec/customer/1
+---
+2013/05/12 05:35:45 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='1'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (154)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:35:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='1'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('1', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(154): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('1')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/1
+HTTP_REFERER=http://localhost/lmec/customer/update/1
+---
+2013/05/12 05:38:01 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='1'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (154)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:38:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='1'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('1', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(154): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('1')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/1
+HTTP_REFERER=http://localhost/lmec/customer/update/1
+---
+2013/05/12 05:40:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='4'.
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (154)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:40:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: UPDATE `tbl_customer` SET `id`=:yp0, `customer_type_id`=:yp1, `name`=:yp2, `address`=:yp3, `dependence_id`=:yp4, `active`=:yp5 WHERE `tbl_customer`.`id`='4'' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1681): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1061): CActiveRecord->updateByPk('4', Array)
+#2 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#3 C:\wamp\www\lmec\protected\controllers\CustomerController.php(154): CActiveRecord->save()
+#4 [internal function]: CustomerController->actionUpdate('4')
+#5 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(CustomerController), Array)
+#6 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(CustomerController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#16 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/update')
+#17 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/lmec/customer/update/4
+HTTP_REFERER=http://localhost/lmec/customer/update/4
+---
+2013/05/12 05:42:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tbl_customer` (`active`, `name`, `customer_type_id`, `dependence_id`, `address`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in C:\wamp\www\lmec\protected\controllers\CustomerController.php (110)
+in C:\wamp\www\lmec\index.php (13)
+2013/05/12 05:42:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lmec`.`tbl_customer`, CONSTRAINT `fk_tbl_customer_tbl_dependence` FOREIGN KEY (`dependence_id`) REFERENCES `tbl_dependence` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `tbl_customer` (`active`, `name`, `customer_type_id`, `dependence_id`, `address`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\wamp\www\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\lmec\protected\controllers\CustomerController.php(110): CActiveRecord->save()
+#3 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): CustomerController->actionCreate()
+#4 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#13 C:\wamp\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('customer/create')
+#14 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\lmec\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/lmec/customer/create
+HTTP_REFERER=http://localhost/lmec/customer/create
+---

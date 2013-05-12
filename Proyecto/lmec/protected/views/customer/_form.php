@@ -23,7 +23,7 @@
             <div class="row">
                     <?php echo $form->labelEx($model,'dependence_id'); ?>
                     <?php
-                        $dependencias = array(null => "Seleccionar");
+                        $dependencias = array( '' => "Seleccionar");
                         echo $form->DropDownList($model,'dependence_id',$dependencias+CHtml::ListData(Dependence::model()->findAll('t.active = 1'),'id','name')); ?>
                     <?php echo $form->error($model,'dependence_id'); ?>
             </div>

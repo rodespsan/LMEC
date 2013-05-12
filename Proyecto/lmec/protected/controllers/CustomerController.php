@@ -61,7 +61,7 @@ class CustomerController extends Controller {
     public function actionCreate() {
         
         if (CustomerType::model()->count('active=1') == 0) {            
-            throw new CHttpException('', 'Primero debe ' . CHtml::link('crear un Tipo de Servicio', array('customerType/create')) . '.');
+            throw new CHttpException('', 'Primero debe ' . CHtml::link('crear un Tipo de Cliente', array('customerType/create')) . '.');
         }
         
         $model = new Customer;
@@ -74,7 +74,7 @@ class CustomerController extends Controller {
             //var_dump( $_POST['Contact']);
             //Yii::app()->end();
             $model->attributes = $_POST['Customer'];
-            $model->dependence_id = ($model->dependence_id == '')?null:$model->dependence_id;
+            $model->dependence_id = ($model->dependence_id == '')?NULL:$model->dependence_id;
             //var_dump( $model->attributes );
             //Yii::app()->end();
             //$model->active = 1;
@@ -146,12 +146,18 @@ class CustomerController extends Controller {
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['Customer'])) {
+			//var_dump($model->dependence_id);
+            //Yii::app()->end();
             $model->attributes = $_POST['Customer'];
+			$model->dependence_id = ($model->dependence_id == '')?NULL:$model->dependence_id;
             //$model->active = 1;
             $transaction = Yii::app()->db->beginTransaction();
             $successful = $model->save();
             if(isset($_POST['Customer'])){
                 $model->contact->setAttributes($_POST['Contact']);
+				//var_dump($model->dependence_id);
+            	//Yii::app()->end();
+	            
                 $model->contact->active = 1;
             }
             $successful = $successful && $model->contact->save();
