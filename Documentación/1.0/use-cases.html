@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN" "http://style.tigris.org/tigris_transitional.dtd">
-<html><head>
-
-
-
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN"
+"http://style.tigris.org/tigris_transitional.dtd">
+<html>
+<head>
  <style type="text/css">
 /* <![CDATA[ */ 
 @import "css/readyset.css"; 
@@ -10,22 +10,26 @@
 /*  ]]> */
  </style>
 
-<link rel="stylesheet" type="text/css" href="css/print.css" media="print" /><title>Casos de Uso</title></head><body>
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+ <title>Casos de Uso</title>
+</head>
+
+<body>
 <div class="app">
 <div class="readyset">
 
 
-<h2><a href="srs.html">Especificación de Requerimientos de Software</a> &gt; <a href="use-case-suite.html">Conjunto de Casos de Uso</a> &gt; Casos de Uso</h2>
+<h2><a href="srs.html">Especificaci&oacute;n de Requerimientos de Software</a> &gt; <a href="use-case-suite.html">Conjunto de Casos de Uso</a> &gt; Casos de Uso</h2>
 
  <div id="releaseinfo">
- <h3>Información de la Versión</h3>
- <table class="axial" border="1" cellpadding="3" cellspacing="2">
-  <tbody><tr>
+ <h3>Informaci&oacute;n de la Versi&oacute;n</h3>
+ <table border="1" cellpadding="3" cellspacing="2" class="axial">
+  <tr>
    <th>Proyecto:</th> 
    <td><a href="index.html">NOMBRE DEL PROYECTO</a></td> 
   </tr>
   <tr>
-   <th>Número Interno de Versión:</th> 
+   <th>N&uacute;mero Interno de Versi&oacute;n:</th> 
    <td>X.Y.Z</td> 
   </tr>
   <tr>
@@ -33,14 +37,14 @@
    <td>
     <div><a href="proposal.html">Propuesta del proyecto</a> &gt;
          <a href="user-needs.html">Necesidades del usuario</a></div>
-    <div><a href="srs.html">Especificación de Requerimientos de Software</a> &gt; <a href="feature-set.html">Conjunto de Características</a></div>
+    <div><a href="srs.html">Especificaci&oacute;n de Requerimientos de Software</a> &gt; <a href="feature-set.html">Conjunto de Caracter&iacute;sticas</a></div>
     <div><a href="use-case-format.html">Formato de caso de uso</a></div>
     <div><a href="LINK-TO-DIAGRAM">Diagrama de caso de uso</a></div>
-    <div>ENLACES A ESTÁNDARES RELEVANTES</div>
+    <div>ENLACES A EST&Aacute;NDARES RELEVANTES</div>
     <div>ENLACES A OTROS DOCUMENTOS</div>
    </td>
   </tr>
- </tbody></table>
+ </table>
 </div> <!-- /releaseinfo -->
 
 <div class="todo">
@@ -51,14 +55,14 @@
 
 <div id="defaults">
 <h3>Aspectos Predeterminados de Todos los Casos de Uso</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Actores Directos:</th>
   <td>
    <div>User: end-user in any role</div>
    <div>System: The system being built</div>
    <div>When actors are not listed, assume User is doing it.</div>
-   <div>Items beginning with "see" indicate that System has presented a new screen.</div>
+   <div>Items beginning with &quot;see&quot; indicate that System has presented a new screen.</div>
   </td>
  </tr>
  <tr>
@@ -69,11 +73,12 @@
  <th>Prerequisitos:</th>
   <td>User is logged in</td>
  </tr>
-</tbody></table>
+</table>
 </div> <!-- /defaults -->
 
 <div class="todo">
- TODO: For each use case listed in the <a href="use-case-suite.html">use case suite</a>, create an HTML anchor
+ TODO: For each use case listed in the <a
+ href="use-case-suite.html">use case suite</a>, create an HTML anchor
  and heading with it's unique ID, then fill in the rows of the table
  to specify the use case in detail.  
 </div>
@@ -87,102 +92,82 @@
 </div>
 
 <div class="tip">
- TIP: See detailed tips in the <a href="use-case-format.html#guidelines">guidelines for writing use
+ TIP: See detailed tips in the <a
+ href="use-case-format.html#guidelines">guidelines for writing use
  cases</a>.
 </div>
 
 
 <div id="UC-00">
-<h3>CU-00: Crear usuario<br />
-</h3>
+<h3>CU-00: Configurar el sitio</h3>
 <div>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2"  class="axial">
+ <tr>
   <th>Resumen:</th>
 
-  <td>El administrador navega al módulo de administración de usuarios y agrega el usuario con los campos solicitados.</td>
+  <td>The administrator navigates to the site configuration page and
+  uses it to change the behavior of the web application.
+  Specifically, the user-visible timezone is being set.</td>
 
  </tr>
  <tr>
   <th>Prioridad:</th>
-  <td>Esencial</td>
+  <td>Essential</td>
  </tr>
  <tr>
   <th>Frecuencia de Uso:</th>
-  <td>Rara vez<br />
-</td>
+  <td>Rarely</td>
  </tr>
  <tr>
   <th>Actores Directos:</th>
   <td>
-   <div>Administrador del sistema<br />
-</div>
+   <div>Admin: Web-site administrator</div>
   </td>
  </tr>
  <tr>
-  <th>Escenario Principal de Éxito:</th>
+  <th>Escenario Principal de &Eacute;xito:</th>
   <td>
    <ol>
-    <li>Ingresar al módulo Usuarios<br />
-</li>
-    <li>Ingresar a la opción crear usuario</li>
-    <li>Llenar los campos del formulario:</li>
-        <ol>
-          <li>Usuario (EA1)<br />
-          </li>
-          <li>Contraseña</li>
-          <li>Confirmar contraseña (EA2)<br />
-          </li>
-          <li>Nombres</li>
-          <li>Apellidos</li>
-          <li>Correo electrónico</li>
-          <li>Roles (EA3)<br />
-          </li>
-          <li>Activo<br />
-          </li>
-        </ol>
-
-    <li>Enviar formulario</li>
-    <li>Visualizar la información ingresada<br />
-</li>
-    
+    <li>visit SiteConfiguration page</li>
+    <li>see site configuration options</li>
+    <li>enter timezone abbreviation for date displays</li>
+    <li>submit form</li>
+    <li>confirm changes</li>
+    <li>see SiteConfiguration page again, with updated values</li>
    </ol>
   </td>
  </tr>
  <tr>
   <th>Extensiones del Escenario Alternativo:</th>
   <td>
-      <ol>
-<li>Si el usuario ya existe en la base de datos, no se guarda el
-usuario en la base de datos, se regresa al formulario de captura y se
-despliega el mensaje de error.<br /></li><li>Si la confirmación de la
-contraseña no coincide con la contraseña establecida el sistema no
-guardará el usuario e indicará el error en el formulario.</li><li>Si no se selecciona al menos un rol, el sistema no guardará el usuario e indicará el error en el formulario.<br /></li>
-      </ol>
-</td>
+   <ul>
+    <li>If the timezone abbreviation is incorrect, an error message
+    will be displayed and no changes will be made.
+    </li>
+   </ul>
+  </td>
  </tr>
  <tr>
   <th>Notas y Preguntas</th>
   <td>
    <ul>
 
-    <li>Se debe haber iniciado sesión con un usuario con rol de administrador para poder ejecutar este caso de uso.<br />
-</li>
-        <li>La contraseña deberá encriptarse en la base de datos usando MD5.<br />
-        </li>
-
+    <li>How will administrators know the right timezone abbreviation?
+    They would know it if they live in that timezone.  Maybe we could
+    provide a drop-down list of all choices, but each would need some
+    explanation.</li>
 
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 </div>
 
 <div id="UC-01"> 
 <h3>UC-01: Register as a new user</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>Users need to register themselves in this web application.</td>
  </tr>
@@ -227,14 +212,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-02"> 
 <h3>UC-02: Request new password</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>If a user forgets their password, they can request a new one be
   emailed to them.</td>
@@ -263,15 +248,15 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 
 <div id="UC-03"> 
 <h3>UC-03: Edit user profile</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>Users can edit their own account preferences.</td>
  </tr>
@@ -291,15 +276,15 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ol>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 
 <div id="UC-04"> 
 <h3>UC-04: View user profile</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>Users can view the profiles of other users under certain circumstances.</td>
  </tr>
@@ -325,14 +310,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ol>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-10"> 
 <h3>UC-10: Create course</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>An administrator creates dozens of course offerings before the
   beginning of each school term.</td>
@@ -363,14 +348,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ol>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-11"> 
 <h3>UC-11: View catalog description</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>Students may view the course catalog description of a course
   before registering.  They are especially likely to view it if they
@@ -404,14 +389,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-20"> 
 <h3>UC-20: Enroll in course</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>Students will enroll in courses</td>
  </tr>
@@ -451,14 +436,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-21"> 
 <h3>UC-21: Drop a course</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>A student may drop a course that they are enrolled in.</td>
  </tr>
@@ -494,13 +479,13 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 <div id="UC-30"> 
 <h3>UC-30: View room description</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>Users can view descriptions of classrooms.  E.g., is it a
   lecture hall or a lab?  E.g., does it have a built-in LCD projector?</td>
@@ -521,13 +506,13 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ol>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 <div id="UC-31"> 
 <h3>UC-31: Assign course to room</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>An administrator assigns each course to a room.  This is often
   done after a course is created, but it can be redone at any time.</td>
@@ -548,25 +533,24 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ol>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-40"> 
 <h3>UC-40: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
  <tr>
   <th>Priority:</th>
-  <td>Esencial | Esperado | Deseado | Opcional</td>
+  <td>Essential | Expected | Desired | Optional</td>
  </tr>
  <tr>
   <th>Use Frequency:</th>
-  <td>Siempre | Casi siempre | Algunas veces | Rara vez | Una vez<br />
-</td>
+  <td>Always | Often | Sometimes | Rarely | Once</td>
  </tr>
  <tr>
   <th>Main Success Scenario:</th>
@@ -604,14 +588,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-41"> 
 <h3>UC-41: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -659,13 +643,13 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 <div id="UC-42"> 
 <h3>UC-42: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -713,14 +697,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-50"> 
 <h3>UC-50: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -768,14 +752,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-51"> 
 <h3>UC-51: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -823,13 +807,13 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 <div id="UC-52"> 
 <h3>UC-52: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -877,14 +861,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-60"> 
 <h3>UC-60: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -932,14 +916,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-61"> 
 <h3>UC-61: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -987,13 +971,13 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 <div id="UC-62"> 
 <h3>UC-62: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -1041,14 +1025,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-70"> 
 <h3>UC-70: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -1096,14 +1080,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-71"> 
 <h3>UC-71: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -1151,13 +1135,13 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 <div id="UC-72"> 
 <h3>UC-72: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -1205,15 +1189,15 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 
 <div id="UC-80">
 <h3>UC-80: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -1261,13 +1245,13 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 <div id="UC-81">
 <h3>UC-81: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -1315,14 +1299,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-82">
 <h3>UC-82: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -1370,15 +1354,15 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 
 <div id="UC-90">
 <h3>UC-90: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -1426,14 +1410,14 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
 <div id="UC-91">
 <h3>UC-91: USE CASE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+ <tr>
   <th>Summary:</th>
   <td>1-3 SENTENCES</td>
  </tr>
@@ -1481,7 +1465,7 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
    </ul>
   </td>
  </tr>
-</tbody></table>
+</table>
 </div>
 
 
@@ -1490,18 +1474,21 @@ guardará el usuario e indicará el error en el formulario.</li><li>Si no se selec
 </div>
 
   <div class="todo">
-  TODO:  Check for <a href="http://readyset.tigris.org/words-of-wisdom/use-cases.html">words
+  TODO:  Check for <a
+  href="http://readyset.tigris.org/words-of-wisdom/use-cases.html">words
   of wisdom</a> and discuss ways to improve this template.
-  Or, evaluate the ReadySET Pro <a href="http://www.readysetpro.com/">professional use case template</a>.
+  Or, evaluate the ReadySET Pro <a
+  href="http://www.readysetpro.com/">professional use case template</a>.
   </div>
 
 <div class="legal1">Company Proprietary</div>
 
 <div class="footnote">
- Copyright © 2003-2004 Jason Robbins.  All rights reserved. <a href="readyset-license.html">License terms</a>.
+ Copyright &#169; 2003-2004 Jason Robbins.  All rights reserved. <a href="readyset-license.html">License terms</a>.
  Retain this copyright statement whenever this file is used as a
  template.
 </div>
 
 </div>
-</body></html>
+</body>
+</html>
