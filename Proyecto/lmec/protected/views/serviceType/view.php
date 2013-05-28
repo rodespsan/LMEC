@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar tipo de servicios', 'url'=>array('index')),
+	array('label'=>'Listar tipos de servicios', 'url'=>array('index')),
 	array('label'=>'Crear tipo de servicio', 'url'=>array('create')),
 	array('label'=>'Actualizar tipo de servicio', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Desactivar tipo de servicio', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea desactivar este servicio?')),
-	array('label'=>'Administar tipo de servicios', 'url'=>array('admin')),
+	array('label'=>'Administar tipos de servicios', 'url'=>array('admin')),
 );
 ?>
 

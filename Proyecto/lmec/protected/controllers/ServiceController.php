@@ -105,9 +105,15 @@ class ServiceController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
+		if(ServiceType::model()->count('active = 1') > 0)
+		{
 		$this->render('update',array(
 			'model'=>$model,
 		));
+		}else
+		{
+			throw new CHttpException('','Primero debe ' . CHtml::link('crear un Tipo de Servicio',array('servicetype/create')) . '.');
+		}
 	}
 
 	/**
