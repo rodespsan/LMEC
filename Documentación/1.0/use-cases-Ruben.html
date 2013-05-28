@@ -1,21 +1,6 @@
 <!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN" "http://style.tigris.org/tigris_transitional.dtd">
 <html><head>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
   <style type="text/css">
 /* <![CDATA[ */ 
@@ -101,6 +86,8 @@ later.
 <div class="tip"> TIP: See detailed tips in the <a href="use-case-format.html#guidelines">guidelines for writing use cases</a>.
 </div>
 
+
+
 <div id="UC-00">
 <h3>CU-11: Crear cliente<br />
 </h3>
@@ -152,9 +139,7 @@ administrador o recepcionista.</div>
       <th>Escenario Principal de Éxito:</th>
       <td>
       <ol>
-        <li>El actor ingresa al módulo de clientes.<br />
-        </li>
-        <li>El actor selecciona la opción crear cliente.</li>
+        <li>El actor ingresa al módulo de clientes y selecciona la opción crear cliente.</li>
         <li>El sistema muestra el formulario para capturar los datos del cliente.<br />
         </li>
         <li>El actor captura los campos del formulario:</li>
@@ -196,8 +181,8 @@ administrador o recepcionista.</div>
         
         <li>El nombre de cliente no puede ser vacío o únicamente contener caracteres
 vacíos, el número de caracteres mínimo y máximo son: 1 y 100,
-respectivamente. En caso de no cumplir con lo requerido se desplegará
-el mensaje de error correspondiente en el formulario y no se guardará
+respectivamente. En caso de no cumplir con lo requerido se despliega
+el mensaje de error correspondiente en el formulario y no se guarda
 el cliente.<br />
         </li>
 
@@ -205,15 +190,13 @@ el cliente.<br />
         
         <li>El nombre de contacto no puede ser vacío o únicamente contener caracteres vacíos, el número de caracteres mínimo
 y máximo son: 1 y 100, respectivamente. En caso de no cumplir con lo
-requerido se desplegará el mensaje de error correspondiente.</li>
+requerido se despliega el mensaje de error correspondiente.</li>
 
         
         <li>El correo electrónico no puede ser vacío o únicamente
 contener caracteres
-vacíos y debe ser un correo válido, de lo contrario el sistema
-desplegará un mensaje informando el error y no guardará el cliente.</li>
-        <li>Si ocurre algún error al enviar el formulario, no se
-guardará el cliente, ni redireccionará a la otra vista donde se muestra
+vacíos y debe ser un formato de correo válido, de lo contrario el sistema despliega un mensaje informando el error y no guarda el cliente.</li>
+        <li>Si ocurre algún error al enviar el formulario, no se guarda el cliente, ni se redirecciona a la otra vista donde se muestra
 la información ingresada.</li>
 
 
@@ -232,7 +215,7 @@ la información ingresada.</li>
         
         
         <li>El campo activo por defecto inicia seleccionado.</li>
-        <li>Al desactivar el campo activo se le impide al usuario el acceso al sistema pero existe el proceso de activación.</li>
+        <li>Al desactivar el campo activo el cliente no se visualiza para otros usuarios del sistema pero existe el proceso de activación.</li>
         <li>Los
 campos(Nombre, Tipo de cliente, Nombre de contacto, Correo electrónico)
 son obligatorios y los campos (Dependencia, Dirección, Teléfono de
@@ -303,6 +286,7 @@ Recepcionista.<br />
 <td>
 <div>Se debe haber iniciado sesión con un usuario con rol de
 administrador ó recepcionista.<br />
+      <span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;;">Debe existir al menos un tipo de cliente activo.</span><br />
 </div>
 
 
@@ -312,10 +296,8 @@ administrador ó recepcionista.<br />
       <th>Escenario Principal de Éxito:</th>
       <td>
       <ol>
-        <li>El actor ingresa al módulo de clientes.<br />
-        </li>
-        <li>El actor selecciona la opción actualizar cliente.</li>
-        <li>El sistema muestra el formulario con los datos actuales del cliente selecionado.<br />
+        <li>El actor ingresa al módulo de clientes y selecciona la opción actualizar cliente.</li>
+        <li>El sistema muestra el formulario con los datos actuales del cliente seleccionado.<br />
         </li>
         <li>El actor actualiza los datos del cliente en los campos del formulario:<br />
           <br />
@@ -352,18 +334,21 @@ administrador ó recepcionista.<br />
         <li>El nombre de cliente no puede ser vacío o únicamente contener caracteres
 vacíos, el número de caracteres mínimo y máximo son: 1 y 100,
 respectivamente. En caso de no cumplir con lo requerido se desplegará
-el mensaje de error correspondiente en el formulario y no se guardan los cambios realizados. (Cambiar el tiempo de los verbos)<br />
+el mensaje de error correspondiente en el formulario y no se guardan los cambios realizados. <br />
         </li>
         <li>El nombre de contacto no puede ser vacío o únicamente contener caracteres vacíos, el número de caracteres mínimo
 y máximo son: 1 y 100, respectivamente. En caso de no cumplir con lo
 requerido se despliega el mensaje de error correspondiente.</li>
-        <li>El correo electrónico no puede ser vacío o únicamente
+        <li>El
+correo electrónico no puede ser vacío o únicamente
 contener caracteres
-vacíos y debe ser un formato de correo válido, de lo contrario el sistema
-desplegará un mensaje informando el error y no guarda los cambios realizados. ****(Formato para todos)<br />
+vacíos y debe ser un formato de correo válido, de lo contrario el
+sistema despliega un mensaje informando el error y no guarda los
+cambios realizados.<br />
 </li>
         <li>Si ocurre algún error al enviar el formulario, no se
-guardarán los cambios realizados en los datos del cliente, ni redireccionará a la otra vista donde se muestra
+guardan los cambios realizados en los datos del cliente, ni se
+redirecciona a la otra vista donde se muestra
 la información ingresada.</li>
       </ol>
 
@@ -400,205 +385,6 @@ de casa, Extension de oficina, Activo) no son obligatorios.
 </div>
 </div>
 
-
-<div id="UC-00">
-<h3>CU-13: Desactivar cliente<br />
-</h3>
-<div>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
-  <tbody>
-    <tr>
-      <th>Resumen:</th>
-      <td>El actor desactiva un cliente activado para impedir su uso en el sistema.</td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-    <tr>
-      <th>Prioridad:</th>
-      <td>Esencial</td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-    <tr>
-      <th>Frecuencia de Uso:</th>
-      <td>Rara vez<br />
-      </td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-    <tr>
-      <th>Actores Directos:</th>
-      <td>
-      <div>Administrador del sistema.<br />
-Recepcionista.<br />
-      </div>
-      </td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-    <tr>
-<th>Prerequisitos:</th>
-<td>
-<div>Se debe haber iniciado sesión con un usuario con rol de
-administrador o recepcionista.</div>
-<div><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;;">El cliente debe estar activado.</span></div>
-
-</td>
-</tr>
-    <tr>
-      <th>Escenario Principal de Éxito:</th>
-      <td>
-      <ol>
-        
-        <li>El actor ingresa al módulo de clientes y seleciona la opción administrar clientes.</li>
-        <li>El sistema muestra la lista de clientes.</li>
-
-        
-
-        <li>El actor elije de la lista el cliente que desea desactivar y presiona sobre la opción desactivar.</li>
-        <li>El sistema despliega un mensaje al actor para que confirme la acción desactivar cliente.<br />
-        </li>
-        <li>El actor confirma la acción desactivar. (EA1)<br />
-</li>
-        
-        <li>El sistema desactiva el cliente.<br />
-</li>
-
-</ol>
-      </td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-    <tr>
-      <th>Extensiones del Escenario Alternativo:</th>
-      <td>
-      
-      <ol>
-
-        
-        <li>Si el actor cancela la acción, el sistema no desactiva
-el cliente.<br />
-        </li>
-
-      
-      </ol>
-
-      </td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-    <tr>
-      <th>Notas y Preguntas</th>
-      <td>
-      
-      <br />
-</td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-
-<div id="UC-00">
-<h3>CU-14: Activar cliente<br />
-</h3>
-<div>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
-  <tbody>
-    <tr>
-      <th>Resumen:</th>
-      <td>El actor activa un cliente desactivado para permitir su uso en el sistema.<br />
-</td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-    <tr>
-      <th>Prioridad:</th>
-      <td>Esencial</td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-    <tr>
-      <th>Frecuencia de Uso:</th>
-      <td>Rara vez<br />
-      </td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-    <tr>
-      <th>Actores Directos:</th>
-      <td>
-      <div>Administrador del sistema.<br />
-Recepcionista.<br />
-      </div>
-      </td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-    <tr>
-<th>Prerequisitos:</th>
-<td>
-<div>Se debe haber iniciado sesión con un usuario con rol de
-administrador o recepcionista.</div>
-<div><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;;">El cliente debe estar desactivado.<br />
-</span></div>
-
-</td>
-</tr>
-    <tr>
-      <th>Escenario Principal de Éxito:</th>
-      <td>
-      <ol>
-        <li>El actor ingresa al módulo de clientes y seleciona la opción administrar clientes.</li>
-        <li>El sistema muestra la lista de clientes.</li>
-        <li>El actor elije de la lista el cliente que desea activar y presiona sobre la opción activar.</li>
-        <li>El sistema despliega un mensaje al actor para que&nbsp; confirme la acción activar cliente.<br />
-        </li>
-        <li>El actor confirma la acción activar. (EA1)<br />
-        </li>
-        <li>El sistema activa el cliente.</li>
-</ol>
-      </td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-    <tr>
-      <th>Extensiones del Escenario Alternativo:</th>
-      <td>
-      
-      <ol>
-
-        
-        <li>Si el actor cancela la acción, el sistema no activa
-el cliente.
-        </li>
-
-      
-      </ol>
-
-      </td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-    <tr>
-      <th>Notas y Preguntas</th>
-      <td>
-      <ul>
-        
-        <li>Notas<br />
-        </li>
-      </ul>
-      </td>
-      <td style="vertical-align: top;"><br />
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
 
 
 <div id="UC-00">
@@ -715,6 +501,7 @@ administrador o recepcionista.<br />
 </div>
 
 
+
 <div id="UC-00">
 <h3>CU-16: Listar clientes<br />
 </h3>
@@ -812,6 +599,7 @@ Si no existe algún cliente activo, el sistema despliega un mensaje donde se info
 </table>
 </div>
 </div>
+
 
 
 <div id="UC-00">
@@ -924,6 +712,205 @@ sistema despliega un mensaje indicando que no se encontraron resultados.
 </div>
 
 
+<div id="UC-00">
+<h3>CU-14: Activar cliente<br />
+</h3>
+<div>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Resumen:</th>
+      <td>El actor activa un cliente desactivado para permitir su uso en el sistema.<br />
+</td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Prioridad:</th>
+      <td>Esencial</td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Frecuencia de Uso:</th>
+      <td>Rara vez<br />
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Actores Directos:</th>
+      <td>
+      <div>Administrador del sistema.<br />
+Recepcionista.<br />
+      </div>
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol de
+administrador o recepcionista.</div>
+<div><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;;">El cliente debe estar desactivado.<br />
+</span></div>
+
+</td>
+</tr>
+    <tr>
+      <th>Escenario Principal de Éxito:</th>
+      <td>
+      <ol>
+        <li>El actor ingresa al módulo de clientes y selecciona la opción administrar clientes.</li>
+        <li>El sistema muestra la lista de clientes.</li>
+        <li>El actor elije de la lista el cliente que desea activar y presiona sobre la opción activar.</li>
+        <li>El sistema despliega un mensaje al actor para que&nbsp; confirme la acción activar cliente.<br />
+        </li>
+        <li>El actor confirma la acción activar. (EA1)<br />
+        </li>
+        <li>El sistema activa el cliente.</li>
+</ol>
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Extensiones del Escenario Alternativo:</th>
+      <td>
+      
+      <ol>
+
+        
+        <li>Si el actor cancela la acción, el sistema no activa
+el cliente.
+        </li>
+
+      
+      </ol>
+
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Notas y Preguntas</th>
+      <td>
+      <ul>
+        
+        <li>Notas<br />
+        </li>
+      </ul>
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+<div id="UC-00">
+<h3>CU-13: Desactivar cliente<br />
+</h3>
+<div>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Resumen:</th>
+      <td>El actor desactiva un cliente activado para impedir su uso en el sistema.</td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Prioridad:</th>
+      <td>Esencial</td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Frecuencia de Uso:</th>
+      <td>Rara vez<br />
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Actores Directos:</th>
+      <td>
+      <div>Administrador del sistema.<br />
+Recepcionista.<br />
+      </div>
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol de
+administrador o recepcionista.</div>
+<div><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;;">El cliente debe estar activado.</span></div>
+
+</td>
+</tr>
+    <tr>
+      <th>Escenario Principal de Éxito:</th>
+      <td>
+      <ol>
+        
+        <li>El actor ingresa al módulo de clientes y seleciona la opción administrar clientes.</li>
+        <li>El sistema muestra la lista de clientes.</li>
+
+        
+
+        <li>El actor elije de la lista el cliente que desea desactivar y presiona sobre la opción desactivar.</li>
+        <li>El sistema despliega un mensaje al actor para que confirme la acción desactivar cliente.<br />
+        </li>
+        <li>El actor confirma la acción desactivar. (EA1)<br />
+</li>
+        
+        <li>El sistema desactiva el cliente.<br />
+</li>
+
+</ol>
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Extensiones del Escenario Alternativo:</th>
+      <td>
+      
+      <ol>
+
+        
+        <li>Si el actor cancela la acción, el sistema no desactiva
+el cliente.<br />
+        </li>
+
+      
+      </ol>
+
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Notas y Preguntas</th>
+      <td>
+      
+      <br />
+</td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
 
 
 
