@@ -29,10 +29,12 @@
 	<?php echo CHtml::encode($data->price); ?>
 	<br />
 	
-	<b><?php/* echo CHtml::encode($data->getAttributeLabel('active')); ?>:</b>
-	<?php echo CHtml::encode($data->getActiveText());*/ ?>
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('active')); ?>:</b>
+	<?php echo CHtml::encode($data->getActiveText()); */?>
 	<br />
 
+	
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date_hour')); ?>:</b>
 	<?php echo CHtml::encode($data->date_hour); ?>
