@@ -22,11 +22,12 @@ $this->menu=array(
 	'itemView'=>'_view',
 	'enableSorting' => true,
 	'sortableAttributes'=>array(
-            'brand',
+            'name',
 			'spare_parts_status_id',
+			'brand',
 			'provider_id',
-			'name',
-			'serial_number'
+			'serial_number',
+			'precio',
             
         ),
 )); ?>
