@@ -72,9 +72,15 @@ class UserController extends Controller
 			$model->attributes=$_POST['User'];
 			$model->encryptPassword();
 			
+			$transaction = Yii::app()->db->beginTransaction();
+			try{
 			if($model->save()){
-				$model->addRolesToUser($model->id);
+				$model->assignRolesToUser($model->id);
+				$transaction->commit();
 				$this->redirect(array('view','id'=>$model->id));
+			}
+			}catch(Exception $e){
+				$transaction->rollBack();
 			}
 		}
 		
@@ -127,7 +133,7 @@ class UserController extends Controller
 				if($model->save())
 				{
 					$model->deleteRolesOfUser($model->id);
-					$model->addRolesToUser($model->id);
+					$model->assignRolesToUser($model->id);
 					$transaction->commit();
 					$this->redirect(array('view','id'=>$model->id));
 				}

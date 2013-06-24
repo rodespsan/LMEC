@@ -15,10 +15,9 @@
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($model,'url_initial'); ?>
-		<?php echo $form->textField($model,'url_initial',array('size'=>100,'maxlength'=>100)) .
-		' Cat&aacute;logo/acci&oacute;n, '.
-		'ambas en ingl&eacute;s. Ejemplo: role/create '; ?>
+		<?php echo $form->labelEx($model,'url_initial') . ' Controlador/acci&oacute;n, '.
+		'ambas en ingl&eacute;s. Ejemplo: role/create ' ; ?>
+		<?php echo $form->textField($model,'url_initial',array('size'=>100,'maxlength'=>100));?>
 		<?php echo $form->error($model,'url_initial'); ?>
 	</div>
 	
@@ -32,10 +31,8 @@
 	</div>
 
 	<div class="row" id="active" > 
-	<?php //echo $form->checkbox($model,'active',array('value'=>1,'uncheckValue'=>0,'checked'=>'checked'));?>
-		<?php $htmlParams = array('value'=> 1, 'uncheckValue'=>0); ?>
-		<?php if($model->isNewRecord) $htmlParams += array('checked'=>'checked'); ?>
-		<?php echo $form->checkbox($model,'active', $htmlParams). '   Activo'; ?>
+		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
+    	<?php echo $form->checkbox($model,'active'); ?>
 		<?php echo $form->error($model,'active'); ?>
 	</div>
 
