@@ -30,8 +30,7 @@ class User extends CActiveRecord
 	public $_password2;
 	public $_confirm_password;
 	public $_selected_roles;
-	public $_Roles = "";
-	private $_currentPassword;
+	public $_roles = "";
 	
 	
 	/**
@@ -64,21 +63,23 @@ class User extends CActiveRecord
 			
 			array('user, name, last_name, email, active', 'required'),
 			array('name, last_name, email', 'length', 'max'=>100),
-			array('user', 'unique','message'=>'Usuario no disponible, favor de elegir otro.','on'=>array('scenarioCreate','scenarioUpdate')),
+			array('user', 'unique','message'=>'Usuario no disponible, elegir otro.','on'=>array('scenarioCreate','scenarioUpdate')),
+			array('user', 'validateSpacesOnUser','on'=>array('scenarioCreate','scenarioUpdate')),
+			array('_password2', 'validateSpacesOnPassword','on'=>array('scenarioCreate','scenarioUpdate')),
 			array('_password2, _confirm_password', 'required','on'=>'scenarioCreate'),
 			array('_confirm_password', 'compare', 'compareAttribute'=>'_password2','on'=>'scenarioCreate'),
-			array('user', 'unique','message'=>'Usuario no disponible, favor de elegir otro.','on'=>'scenarioCreate'),
+			array('_password2', 'validateSpacesOnConfirmPassword','on'=>array('scenarioCreate','scenarioUpdate')),
 			array('user', 'length', 'min'=>3, 'max'=>20),
 			array('_password2', 'length', 'min'=>8, 'max'=>20),
 			array('_confirm_password', 'length', 'min'=>8, 'max'=>20),
-			array('_selected_roles','required','message'=>'Favor de seleccionar al menos un rol.','on'=>array('scenarioCreate','scenarioUpdate')),
+			array('_selected_roles','required','message'=>'Seleccionar al menos un rol.','on'=>array('scenarioCreate','scenarioUpdate')),
 			array('_selected_roles','validateRoles','on'=>'scenarioCreate','scenarioUpdate'),
-			array('email', 'email'),
+			array('email', 'email','message'=>'El correo no está en formato válido.','on'=>array('scenarioCreate','scenarioUpdate')),
 			array('active', 'numerical', 'integerOnly'=>true),
 
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, user, _Roles ,name, last_name, email, active', 'safe', 'on'=>'search'),
+			array('id, user, _roles ,name, last_name, email, active', 'safe', 'on'=>'search'),
 			
 	);
 	}
@@ -114,7 +115,7 @@ class User extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id' => 'Id',
 			'user' => 'Usuario',
 			'_password2' => 'Contraseña',
 			'_confirm_password' => 'Confirmar contraseña',
@@ -142,7 +143,7 @@ class User extends CActiveRecord
 		
 		$criteria->select='t.id, t.user, t.name, t.last_name, t.email, t.active, roles.name';
 		
-		$criteria->compare('roles.name',$this->_Roles,true);		
+		$criteria->compare('roles.name',$this->_roles,true);		
 		$criteria->compare('t.id',$this->id,true);	
 		$criteria->compare('t.user',$this->user,true);
 		$criteria->compare('t.name',$this->name,true);
@@ -157,7 +158,7 @@ class User extends CActiveRecord
 			),
 			'sort'=>array(
 				'attributes'=>array(
-					'_Roles'=>array(
+					'_roles'=>array(
 						'asc'=>'roles.name',
 						'desc'=>'roles.name DESC',
 					),
@@ -167,7 +168,41 @@ class User extends CActiveRecord
 		));
 	}
 	
-
+	public function validateSpacesOnUser($attribute,$params)
+	{
+		$space = " ";
+		$user_contain_space = strstr($this->user,$space);
+		$not_contain_spaces = false;
+		
+		if( $user_contain_space != $not_contain_spaces )
+		{
+			$this->addError('user','El usuario no debe contener espacios.');
+		}
+	}
+	
+	public function validateSpacesOnPassword($attribute,$params)
+	{
+		$space = " ";
+		$password_contain_space = strstr($this->_password2,$space);
+		$not_contain_spaces = false;
+		
+		if( $password_contain_space != $not_contain_spaces )
+		{
+			$this->addError('_password2','La contraseña no debe contener espacios.');
+		}
+	}
+	
+	public function validateSpacesOnConfirmPassword($attribute,$params)
+	{
+		$space = " ";
+		$password_contain_space = strstr($this->_password2,$space);
+		$not_contain_spaces = false;
+		
+		if( $password_contain_space != $not_contain_spaces )
+		{
+			$this->addError('_confirm_password','Confirmar contraseña no debe contener espacios.');
+		}
+	}
 	
 	public function validateRoles($attribute,$params)
 	{
@@ -203,13 +238,14 @@ class User extends CActiveRecord
 	
 	public function getActiveRoles()
 	{
-		return Role::model()->findAll('active = 1');						
+		return Role::model()->findAll('active = 1');
 	}
 	
-	public function addRolesToUser($user_id)
+	
+	public function assignRolesToUser($user_id)
 	{
 		foreach($this->_selected_roles as $id_selected_role)
-		{		
+		{
 			$model = new UserRole;
 			$model->user_id = $user_id;
 			$model->role_id = $id_selected_role;
@@ -234,16 +270,10 @@ class User extends CActiveRecord
 	
 	public function deleteRolesOfUser($user_id)
 	{
-		UserRole::model()->deleteAll('user_id =' . $user_id);//retorna el número de líneas afectadas
-	}
-	/**
-	 * Descripcion: Guarda el password en otra variable.
-	 */
-	protected function afterFind()
-	{
-		$this->_currentPassword = $this->password;
+		UserRole::model()->deleteAll('user_id =' . $user_id);//return number affected line 
 	}
 
+	
 	public function encryptPassword()
 	{
 		$this->password = $this->encrypt($this->_password2);

@@ -104,6 +104,7 @@ class Role extends CActiveRecord
 			),
 		));
 	}
+
 	
 	public function getActive($active)
 	{
@@ -117,6 +118,17 @@ class Role extends CActiveRecord
 		}
 	}
 	
-	
-	
+	public function userHasThisRole($role_id)
+	{
+		$role = Role::model()->findByPk($role_id);
+		
+			if(empty($role->users))
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+	}
 }

@@ -22,11 +22,9 @@
 	</div>
 		
     <div class="row">
-    <?php //echo CHtml::encode($model->getAttributeLabel('active')); ?>
-	<?php $htmlParams = array('value'=> 1, 'uncheckValue'=> 0 ); ?>
-	<?php if($model->isNewRecord) $htmlParams += array('checked'=>'checked'); ?>
-	<?php echo $form->checkbox($model,'active',$htmlParams). '	Activo'; ?>
-    <?php echo $form->error($model,'active'); ?>
+		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
+    	<?php echo $form->checkbox($model,'active'); ?>
+		<?php echo $form->error($model,'active'); ?>
 	</div>
     
 	<div class="row buttons">

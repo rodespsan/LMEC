@@ -73,8 +73,9 @@ $pageSize=Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageS
 						'options' =>array('title'=> 'Actualizar'),
 					),
 					'delete' =>array(
-						'options' =>array('title'=> 'Desactivar'), 
-						'url'=>'Yii::app()->createUrl("brand/deactive", array("id"=>$data->id))',
+						'label' => 'Desactivar',
+						//'options' =>array('title'=> 'Desactivar'), 
+						//'url'=>'Yii::app()->createUrl("brand/deactive", array("id"=>$data->id))',
 						'imageUrl'=> Yii::app()->request->baseUrl.'/images/deactive.png',
 						'visible'=>'$data->active == 1',
 						
