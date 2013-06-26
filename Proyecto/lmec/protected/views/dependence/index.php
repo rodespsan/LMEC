@@ -4,8 +4,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Dependencia', 'url'=>array('create')),
-	array('label'=>'Administrar Dependencia', 'url'=>array('admin')),
+	array('label'=>'Crear dependencia', 'url'=>array('create')),
+	array('label'=>'Administrar dependencias', 'url'=>array('admin')),
 );
 ?>
 
@@ -14,8 +14,7 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
-        'sortableAttributes'=>array(
-            'id',
+        'sortableAttributes'=>array(            
             'name',
             'telephone_number',
             'extension',

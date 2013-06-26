@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
 	'Clientes'=>array('index'),
-	'Administrar Cliente',
+	'Administrar clientes',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Cliente', 'url'=>array('index')),
-	array('label'=>'Crear Cliente', 'url'=>array('create')),
+	array('label'=>'Listar clientes', 'url'=>array('index')),
+	array('label'=>'Crear cliente', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -23,21 +23,13 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar Cliente</h1>
+<h1>Administrar cliente</h1>
 
 <p>
 Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
     o <b>=</b>) al comienzo de cada uno de los valores de su búsqueda para especificar cómo la comparación se debe hacer.
 </p>
 
-<?php /*?>
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-<?php */?>
 
 <?php 
 	$pageSize=Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageSize']); 
@@ -50,40 +42,30 @@ Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=
 	'columns'=>array(
 		'id',
                 'name',
-		//'customer_type_id',                
-                //'customerType.type',
-                array(
-                        //'name'=>'customerType.type',
+                array(                        
                         'name'=>'customer_type_id',
                         'value'=>'$data->customerType->type',
-                ),
-		//'contacts',
+                ),		
                 array(
                         'type' => 'raw',
                         'name'=>'nombreContacto',
-                        //'value'=>'$data->contacts[0]->name',
                         'value'=>'$data->getContacts($data->id)', 
                     
                 ),
-                //'contact.name',
-		//'address',
-		//'dependence_id',
-                //'dependence.name',
                 array(
                         'name'=>'dependence_id',
                         'value'=>'($data->dependence == null)?"Sin dependencia":$data->dependence->name',
                 ),
-		//'active',
                 array(
                     'name' => 'active',
-                    'value'=>'($data->active == 1)? \'Si\': \'No\'',
+                    'value'=>'Customer::getActive($data->active)',
                     'filter' => array('1'=>'Si','0'=>'No'),
                 ),
                 array(
                     'class'=>'CButtonColumn',
                     'header'=>CHtml::dropDownList('pageSize',$pageSize,array(10=>10,20=>20,30=>30,40=>40,50=>50),array('class'=>'change-pagesize')),
                     'template'=>"{update}{view}{delete}{activate}",
-                    'deleteConfirmation' => '¿Esta seguro que desea desactivar este Cliente?',
+                    'deleteConfirmation' => '¿Esta seguro que desea desactivar este Cliente y su(s) Contacto(s)?',
                     'buttons' => array(
 
                             'activate'=>array(
@@ -93,7 +75,7 @@ Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=
                                     'visible'=>'$data->active == 0',
                                     'click'=>'function()
                                                     {
-                                                            return confirm(\'¿Esta seguro que desea activar esta Cliente?\');
+                                                            return confirm(\'¿Esta seguro que desea activar esta Cliente y su(s) Contacto(s)?\');
                                                     }',
                             ),                            
                             'delete'=>array(

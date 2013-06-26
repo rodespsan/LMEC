@@ -7,20 +7,10 @@
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
-	<?php /*echo $form->errorSummary($model);*/?>
-        
+	        
         <div class="row">
                 <?php echo $form->labelEx($model,'customer_id')?>
-                <?php 
-                      /*$sql = "SELECT C.id, CONCAT( CO.name, '   |   ' , C.address,  '   |   ' , T.type ) AS address
-                                FROM tbl_customer AS C
-                                INNER JOIN tbl_customer_type AS T ON C.customer_type_id = T.id
-                                INNER JOIN tbl_dependence AS D ON C.customer_type_id = D.id
-                                INNER JOIN tbl_customer_contact AS CC ON CC.customer_id = C.id                                
-                                INNER JOIN tbl_contact AS CO ON CC.contact_id = CO.id 
-                                WHERE C.active = 1 GROUP BY CC.customer_id";
-                      */
-                      echo $form->DropDownList($model,'customer_id',CHtml::ListData(Customer::model()->findAll(),'id','name')); ?>
+                <?php echo $form->DropDownList($model,'customer_id', Customer::getActiveCustomers()); ?>
                 <?php echo $form->error($model,'customer_id'); ?>        
         </div>
 
@@ -62,7 +52,7 @@
         
         <div class="row">
 		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
-                <?php echo $form->checkbox($model,'active',array('value'=>1,'uncheckValue'=>0,'checked'=>'checked'));?>
+                <?php echo $form->checkbox($model,'active');?>
                 <?php echo $form->error($model,'active'); ?>
         </div>
         

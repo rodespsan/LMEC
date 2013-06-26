@@ -5,11 +5,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Dependencia', 'url'=>array('index')),
-	array('label'=>'Crear Dependencia', 'url'=>array('create')),
-	array('label'=>'Actualizar Dependencia', 'url'=>array('update', 'id'=>$model->id)),
-	($model->active == 1)?array('label'=>'Desactivar Dependencia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar esta Dependencia?')):NULL,
-	array('label'=>'Administrar Dependencia', 'url'=>array('admin')),
+	array('label'=>'Listar dependencias', 'url'=>array('index')),
+	array('label'=>'Crear dependencia', 'url'=>array('create')),
+	array('label'=>'Actualizar dependencia', 'url'=>array('update', 'id'=>$model->id)),
+	($model->active == 1)?array('label'=>'Desactivar dependencia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar esta Dependencia?')):NULL,
+	array('label'=>'Administrar dependencias', 'url'=>array('admin')),
 );
 ?>
 
@@ -23,7 +23,6 @@ $this->menu=array(
 		'address',
 		'telephone_number',
                 'extension',
-		//'active',
                 array(
                     'label' => 'Activo',
                     'type' => 'raw',

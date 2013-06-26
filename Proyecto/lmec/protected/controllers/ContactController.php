@@ -57,31 +57,38 @@ class ContactController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        if (Customer::model()->count('active=1') == 0) {            
+        if (Customer::model()->count('active=1') == 0) {
             throw new CHttpException('', 'Primero debe ' . CHtml::link('crear un Cliente', array('customer/create')) . '.');
         }
 
         $model = new Contact;
-
+        $model->scenario = 'scenarioCreate';
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['Contact']) && isset($_POST['Contact']['customer_id'])) {
             $transaction = Yii::app()->db->beginTransaction();
             $model->attributes = $_POST['Contact'];
-            //$model->active = 1;
-            //var_dump($_POST['Contact']);
-            //var_dump($model);///// NO SE RECIBIO A customer_id DESDE EL FORMULARIO
-            //?? SI SE MANDO PERO EN OTRO ARREGLO                        
 
             if ($model->save()) {
+
                 $model_customer_contact = new CustomerContact();
 
-                $model_customer_contact->customer_id = $_POST['Contact']['customer_id'];
-                //var_dump($model->id);
-                //Yii::app()->end();
-                $model_customer_contact->contact_id = $model->id;
+                $criteria = new CDbCriteria;                
+                $criteria->compare('name', $model->name, true);
+                $criteria->compare('email', $model->email, true);
+                $criteria->compare('cell_phone_number', $model->cell_phone_number, true);
+                $criteria->compare('telephone_number_house', $model->telephone_number_house, true);
+                $criteria->compare('telephone_number_office', $model->telephone_number_office, true);
+                $criteria->compare('extension_office', $model->extension_office, true);
+                $criteria->compare('active', $model->active);
 
+                $model = Contact::model()->find($criteria);
+
+
+                $model_customer_contact->customer_id = $_POST['Contact']['customer_id'];
+                $model_customer_contact->contact_id = $model->id;
+                
                 if ($model_customer_contact->save()) {
                     $transaction->commit();
                     $this->redirect(array('view', 'id' => $model->id));
@@ -90,6 +97,8 @@ class ContactController extends Controller {
                 }
             }
         }
+        //var_dump($model);
+        //var_dump($model_customer_contact->errors);
 
         $this->render('create', array(
             'model' => $model,
@@ -103,7 +112,7 @@ class ContactController extends Controller {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
-
+        $model->scenario = 'scenarioUpdate';
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
@@ -128,7 +137,7 @@ class ContactController extends Controller {
     public function actionDelete($id) {
         if (Yii::app()->request->isPostRequest) {
             // we only allow deletion via POST request
-            //$this->loadModel($id)->delete();
+
             $model = $this->loadModel($id);
             $model->active = 0;
             $model->save();
@@ -141,6 +150,7 @@ class ContactController extends Controller {
     }
 
     public function actionActivate($id) {
+
         $model = $this->loadModel($id);
         $model->active = 1;
         $model->save();

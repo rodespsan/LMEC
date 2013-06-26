@@ -4,8 +4,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Proveedor', 'url'=>array('create')),
-	array('label'=>'Administrar Proveedor', 'url'=>array('admin')),
+	array('label'=>'Crear proveedor', 'url'=>array('create')),
+	array('label'=>'Administrar proveedores', 'url'=>array('admin')),
 );
 ?>
 
@@ -15,9 +15,9 @@ $this->menu=array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
         'sortableAttributes'=>array(
-            'id',
             'name',
             'contact_name',
+            'contact_email',
             'contact_telephone_number',
         ),
     

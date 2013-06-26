@@ -22,8 +22,6 @@ class Provider extends CActiveRecord {
      * @param string $className active record class name.
      * @return Provider the static model class
      */
-    public $total = 10;
-
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
@@ -43,6 +41,7 @@ class Provider extends CActiveRecord {
         // will receive user inputs.
         return array(
             array('name, contact_name, active', 'required'),
+            array('name', 'unique'),
             array('active', 'numerical', 'integerOnly' => true),
             array('name, contact_name, contact_email, address', 'length', 'min' => 1, 'max' => 45),
             array('contact_telephone_number', 'length', 'max' => 15),
@@ -72,8 +71,8 @@ class Provider extends CActiveRecord {
             'id' => 'ID',
             'name' => 'Nombre de proveedor',
             'contact_name' => 'Nombre de contacto',
-            'contact_email' => 'Correo electrónico de contacto',
-            'contact_telephone_number' => 'Número teléfonico contacto',
+            'contact_email' => 'Correo electrónico',
+            'contact_telephone_number' => 'Teléfono de contacto',
             'address' => 'Dirección',
             'active' => 'Activo',
         );
@@ -111,6 +110,12 @@ class Provider extends CActiveRecord {
         } else if ($active == '0') {
             return 'No';
         }
+    }
+    
+    
+    public function onBeforeValidate(){
+        foreach($this->getIterator() as $atributo=>$valor)
+            $this[$atributo] = trim($valor);
     }
 
 }

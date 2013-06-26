@@ -13,11 +13,11 @@
 	<?php echo CHtml::encode($data->sparePartsStatus->description); ?>
 	<br />
 	
-	<b><?php echo CHtml::encode($data->brand->getAttributeLabel('Marca')); ?>:</b>
+	<b><?php echo CHtml::encode($data->brand->getAttributeLabel('name')); ?>:</b>
 	<?php echo CHtml::encode($data->brand->name); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->provider->getAttributeLabel('Proveedor')); ?>:</b>
+	<b><?php echo CHtml::encode($data->provider->getAttributeLabel('name')); ?>:</b>
 	<?php echo CHtml::encode($data->provider->name); ?>
 	<br />
 
@@ -29,12 +29,10 @@
 	<?php echo CHtml::encode($data->price); ?>
 	<br />
 	
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('active')); ?>:</b>
-	<?php echo CHtml::encode($data->getActiveText()); */?>
+	<?php echo CHtml::encode($data->getActiveText()); ?>
 	<br />
 
-	
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date_hour')); ?>:</b>
 	<?php echo CHtml::encode($data->date_hour); ?>

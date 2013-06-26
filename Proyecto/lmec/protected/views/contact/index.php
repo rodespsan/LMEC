@@ -4,8 +4,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Contacto', 'url'=>array('create')),
-	array('label'=>'Administrar Contacto', 'url'=>array('admin')),
+	array('label'=>'Crear contacto', 'url'=>array('create')),
+	array('label'=>'Administrar contactos', 'url'=>array('admin')),
 );
 ?>
 
@@ -14,13 +14,11 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
-        'sortableAttributes'=>array(
-            'id',
+        'sortableAttributes'=>array(            
             'name',
             'email',
             'cell_phone_number',
             'telephone_number_house',
             'telephone_number_office',
-            //'extension_office',
         ),
 )); ?>

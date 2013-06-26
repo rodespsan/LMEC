@@ -7,7 +7,7 @@
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
-	<?php /*echo $form->errorSummary(array($model, $model->contact)); */?>
+	
         <h2>Datos del cliente</h2>
         <div class="view">
             <div class="row">
@@ -16,15 +16,14 @@
 		<?php echo $form->error($model,'name'); ?>
             </div>
             <div class="row">
+                
                     <?php echo $form->labelEx($model,'customer_type_id'); ?>
-                    <?php echo $form->DropDownList($model,'customer_type_id',CHtml::ListData(CustomerType::model()->findAll('t.active = 1'),'id','type')); ?>
+                    <?php echo $form->DropDownList($model,'customer_type_id', CustomerType::getActiveCustomerTypes());                    ?>
                     <?php echo $form->error($model,'customer_type_id'); ?>            
             </div>
             <div class="row">
                     <?php echo $form->labelEx($model,'dependence_id'); ?>
-                    <?php
-                        $dependencias = array( '' => "Seleccionar");
-                        echo $form->DropDownList($model,'dependence_id',$dependencias+CHtml::ListData(Dependence::model()->findAll('t.active = 1'),'id','name')); ?>
+                    <?php echo $form->DropDownList($model,'dependence_id', Dependence::getActiveDependencies()); ?>
                     <?php echo $form->error($model,'dependence_id'); ?>
             </div>
             <div class="row">
@@ -32,7 +31,12 @@
                     <?php echo $form->textArea($model,'address',array('size'=>60,'maxlength'=>200)); ?>
                     <?php echo $form->error($model,'address'); ?>
             </div>
-                        
+            
+            <div class="row">
+		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
+                <?php echo $form->checkbox($model,'active');?>
+                <?php echo $form->error($model,'active'); ?>
+            </div>
         </div>
         
         <h2>Datos del contacto</h2>
@@ -76,11 +80,6 @@
                     <?php echo $form->error($model->contact,'telephone_number_house'); ?>
             </div>            
             
-            <div class="row">
-		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
-                <?php echo $form->checkbox($model,'active',array('value'=>1,'uncheckValue'=>0,'checked'=>'checked'));?>
-                <?php echo $form->error($model,'active'); ?>
-            </div>
         </div>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>

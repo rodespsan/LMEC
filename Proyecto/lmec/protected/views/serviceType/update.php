@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar tipos de servicios', 'url'=>array('index')),
-	array('label'=>'Crear tipo de servicio', 'url'=>array('create')),
-	array('label'=>'Ver tipo de servicio', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Administrar tipos de servicios', 'url'=>array('admin')),
+	array('label'=>'Listar tipo de servicios', 'url'=>array('index')),
+	array('label'=>'Crear tipo de servicios', 'url'=>array('create')),
+	array('label'=>'Ver tipo de servicios', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar tipo de servicios', 'url'=>array('admin')),
 );
 ?>
 

@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs = array(
     'Dependencias' => array('index'),
-    'Administrar Dependencia',
+    'Administrar dependencias',
 );
 
 $this->menu = array(
-    array('label' => 'Listar Dependencia', 'url' => array('index')),
-    array('label' => 'Crear Dependencia', 'url' => array('create')),
+    array('label' => 'Listar dependencias', 'url' => array('index')),
+    array('label' => 'Crear dependencia', 'url' => array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -24,7 +24,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar Dependencia</h1>
+<h1>Administrar dependencia</h1>
 
 <p>
     Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -43,13 +43,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'columns' => array(
         'id',
         'name',
-//'address',
         'telephone_number',
         'extension',
-//'active',
         array(
             'name' => 'active',
-            'value' => '($data->active == 1)? \'Si\': \'No\'',
+            'value' => 'Dependence::getActive($data->active)',
             'filter' => array('1' => 'Si', '0' => 'No'),
         ),
         array(

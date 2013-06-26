@@ -1,13 +1,13 @@
 <?php
 $this->breadcrumbs=array(
 	'Tipos de cliente'=>array('index'),
-	'Administrar Tipo Cliente',
+	'Administrar tipos de cliente',
 );
 
 
 $this->menu=array(
-	array('label'=>'Listar Tipo Cliente', 'url'=>array('index')),
-	array('label'=>'Crear Tipo Cliente', 'url'=>array('create')),
+	array('label'=>'Listar tipos de cliente', 'url'=>array('index')),
+	array('label'=>'Crear tipo de cliente', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -24,7 +24,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar Tipo de Cliente</h1>
+<h1>Administrar tipo de cliente</h1>
 
 <p>
 Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -51,10 +51,9 @@ Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=
 	'columns'=>array(
 		'id',
 		'type',
-		//'active',
                  array(
                     'name' => 'active',
-                    'value'=>'($data->active == 1)? \'Si\': \'No\'',
+                    'value'=>'CustomerType::getActive($data->active)',
                     'filter' => array('1'=>'Si','0'=>'No'),
                 ),
                 array(

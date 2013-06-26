@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs = array(
     'Proveedores' => array('index'),
-    'Administrar Proveedor',
+    'Administrar proveedores',
 );
 
 $this->menu = array(
-    array('label' => 'Listar Proveedor', 'url' => array('index')),
-    array('label' => 'Crear Proveedor', 'url' => array('create')),
+    array('label' => 'Listar proveedores', 'url' => array('index')),
+    array('label' => 'Crear proveedor', 'url' => array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -23,22 +23,13 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar Proveedor</h1>
+<h1>Administrar proveedor</h1>
 
 <p>
     Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
     o <b>=</b>) al comienzo de cada uno de los valores de su búsqueda para especificar cómo la comparación se debe hacer.
 </p>
 
-
-<?php /* ?>
-  <?php echo CHtml::link('Busqueda Avanzada','#',array('class'=>'search-button')); ?>
-  <div class="search-form" style="display:none">
-  <?php $this->renderPartial('_search',array(
-  'model'=>$model,
-  )); ?>
-  </div><!-- search-form -->
-  <?php */ ?>
 
 
 <?php
@@ -55,10 +46,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
         'contact_name',
         'contact_email',
         'contact_telephone_number',
-        //'address',
-        /*
-          'active',
-         */
+       
         array(
             'name' => 'active',
             'value' => 'Provider::getActive($data->active)',
