@@ -93,7 +93,7 @@ class Modelo extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
+		$criteria->compare('t.id',$this->id,true);
 		$criteria->with =array('Brand','EquipmentType');
 		$criteria->addSearchCondition('LOWER(Brand.name)', strtolower($this->brand_id));
 		$criteria->addSearchCondition('LOWER(EquipmentType.type)', strtolower($this->equipment_type_id));
