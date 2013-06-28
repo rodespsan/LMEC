@@ -2,13 +2,11 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'contact-form',
-	'enableClientValidation'=>true,
 	'enableAjaxValidation'=>false,
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
-	        
         <div class="row">
                 <?php echo $form->labelEx($model,'customer_id')?>
                 <?php echo $form->DropDownList($model,'customer_id', Customer::getActiveCustomers()); ?>
@@ -52,9 +50,9 @@
 	</div>
         
         <div class="row">
-		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
-                <?php echo $form->checkbox($model,'active');?>
-                <?php echo $form->error($model,'active'); ?>
+			<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
+            <?php echo $form->checkbox($model,'active');?>
+            <?php echo $form->error($model,'active'); ?>
         </div>
         
         <div class="row buttons">

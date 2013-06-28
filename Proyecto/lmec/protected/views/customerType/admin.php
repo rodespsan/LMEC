@@ -10,18 +10,6 @@ $this->menu=array(
 	array('label'=>'Crear tipo de cliente', 'url'=>array('create')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('customer-type-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Administrar tipo de cliente</h1>
@@ -31,15 +19,6 @@ Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=
     o <b>=</b>) al comienzo de cada uno de los valores de su búsqueda para especificar cómo la comparación se debe hacer.
 </p>
 
-
-<?php /* ?>
-<?php echo CHtml::link('Busqueda avanzada','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-<?php */ ?>
 
 <?php 
 	$pageSize=Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageSize']); 

@@ -3,8 +3,6 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'role-form',
 	'enableAjaxValidation'=>false,
-	'enableClientValidation'=>true,
-    'focus'=>array($model,'name'),
 )); ?>
 
 	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
@@ -31,7 +29,7 @@
 	<div class="row">
 	</div>
 
-	<div class="row" id="active" > 
+	<div class="row"> 
 		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
     	<?php echo $form->checkbox($model,'active'); ?>
 		<?php echo $form->error($model,'active'); ?>

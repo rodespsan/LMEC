@@ -2,7 +2,6 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'equipment-type-form',
-	'enableClientValidation'=>true,
 	'enableAjaxValidation'=>false,
 )); ?>
 

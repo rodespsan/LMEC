@@ -8,13 +8,10 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'service-type-form',
-	'enableClientValidation'=>true,
 	'enableAjaxValidation'=>false,
 )); ?>
 
 	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
-
-	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>
@@ -23,9 +20,8 @@
 	</div>
 
 	<div class="row">
-		<?php $htmlParams = array('value'=> 1, 'uncheckValue'=>0); ?>
-		<?php if($model->isNewRecord) $htmlParams += array('checked'=>'checked'); ?>
-		<?php echo $form->checkbox($model,'active', $htmlParams). ' Activo'; ?>
+		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
+    	<?php echo $form->checkbox($model,'active'); ?>
 		<?php echo $form->error($model,'active'); ?>
 	</div>
 

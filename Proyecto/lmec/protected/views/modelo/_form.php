@@ -3,7 +3,6 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'modelo-form',
-	'enableClientValidation'=>true,
 	'enableAjaxValidation'=>false,
 )); ?>
 

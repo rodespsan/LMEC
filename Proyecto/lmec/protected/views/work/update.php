@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Trabajos', 'url'=>array('index')),
-	array('label'=>'Crear Trabajos', 'url'=>array('create')),
-	array('label'=>'Ver Trabajos', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Administrar Trabajos', 'url'=>array('admin')),
+	array('label'=>'Listar trabajos', 'url'=>array('index')),
+	array('label'=>'Crear trabajos', 'url'=>array('create')),
+	array('label'=>'Ver trabajos', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar trabajos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Actualizar Trabajo <?php echo $model->id; ?></h1>
+<h1>Actualizar trabajo <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

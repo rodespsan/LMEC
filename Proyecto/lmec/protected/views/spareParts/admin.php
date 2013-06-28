@@ -8,25 +8,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Refacciones', 'url'=>array('index')),
-	array('label'=>'Crear Refacción', 'url'=>array('create')),
-	array('label'=>'Listar Estados de Refacción', 'url'=>array('sparePartsStatus/index')),
-	array('label'=>'Crear Estado de Refacción', 'url'=>array('sparePartsStatus/create')),
-	array('label'=>'Administrar Estados de Refacción', 'url'=>array('sparePartsStatus/admin')),
+	array('label'=>'Listar refacciones', 'url'=>array('index')),
+	array('label'=>'Crear refacción', 'url'=>array('create')),
+	array('label'=>'Listar estados de refacción', 'url'=>array('sparePartsStatus/index')),
+	array('label'=>'Crear estado de refacción', 'url'=>array('sparePartsStatus/create')),
+	array('label'=>'Administrar estados de refacción', 'url'=>array('sparePartsStatus/admin')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#spare-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Administrar Refacciones</h1>

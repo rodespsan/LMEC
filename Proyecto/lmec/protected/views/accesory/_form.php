@@ -8,9 +8,7 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'accesory-form',
-	'enableClientValidation'=>true,
 	'enableAjaxValidation'=>false,
-	'focus'=>array($model,'name'),
 )); 
 ?>
 

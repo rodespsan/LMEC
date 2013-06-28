@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Trabajos', 'url'=>array('index')),
-	array('label'=>'Administrar Trabajos', 'url'=>array('admin')),
+	array('label'=>'Listar trabajos', 'url'=>array('index')),
+	array('label'=>'Administrar trabajos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Crear Trabajos</h1>
+<h1>Crear trabajos</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

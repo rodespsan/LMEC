@@ -39,7 +39,7 @@ class SparePartsStatus extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('description', 'required'),
+			array('description, active', 'required'),
 			array('active', 'numerical', 'integerOnly'=>true),
 			array('description', 'length', 'max'=>200),
 			// The following rule is used by search().

@@ -8,13 +8,11 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'spare-parts-form',
-	'enableClientValidation'=>true,
 	'enableAjaxValidation'=>false,
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
-	
 	<div class="row">
 		<?php echo $form->labelEx($model,'brand_id'); ?>
 		<?php echo $form->dropDownList($model,'brand_id',CHtml::listData(Brand::model()->findAll('active = 1'),'id','name'), array('empty'=>'Seleccionar Marca')); ?>
@@ -115,11 +113,8 @@
 	</div>
 
 	<div class="row">
-		<?php $htmlParams = array('value'=> 1, 'uncheckValue'=>0); ?>
-		<!--Si es un nuevo registro mantener el activo seleccionado-->
-		<?php if($model->isNewRecord) $htmlParams += array('checked'=>'checked'); ?>
-		<?php echo $form->labelEx($model,'active'); ?>
-		<?php echo $form->checkbox($model,'active', $htmlParams); ?>
+		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
+    	<?php echo $form->checkbox($model,'active'); ?>
 		<?php echo $form->error($model,'active'); ?>
 	</div>
 

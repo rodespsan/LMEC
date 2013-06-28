@@ -2,13 +2,11 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'customer-form',
-	'enableClientValidation'=>true,
 	'enableAjaxValidation'=>false,
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
-	
         <h2>Datos del cliente</h2>
         <div class="view">
             <div class="row">

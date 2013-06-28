@@ -1,26 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Tipos de Equipo'=>array('index'),
+	'Tipos de equipo'=>array('index'),
 	'Administrar',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Tipo de Equipo', 'url'=>array('index')),
-	array('label'=>'Crear Tipo de Equipo', 'url'=>array('create')),
+	array('label'=>'Listar tipo de equipo', 'url'=>array('index')),
+	array('label'=>'Crear tipo de equipo', 'url'=>array('create')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('equipment-type-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
+
 ?>
 
 <h1>Administrar Tipo de Equipo</h1>

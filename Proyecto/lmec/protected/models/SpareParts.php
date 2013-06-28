@@ -52,7 +52,7 @@ class SpareParts extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('brand_id, spare_parts_status_id, provider_id, name, price, date_hour, guarantee_period', 'required'),
+			array('brand_id, spare_parts_status_id, provider_id, name, price, date_hour, guarantee_period, active', 'required'),
 			array('invoice', 'length', 'max'=>20),
 			array('brand_id, spare_parts_status_id, provider_id', 'length', 'max'=>10),
 			array('name', 'length', 'max'=>100),
@@ -63,7 +63,7 @@ class SpareParts extends CActiveRecord
 			array('guarantee_period', 'date', 'format' => 'yyyy-MM-dd'),
 			array('guarantee_period', 'compare', 'compareAttribute'=>'date_hour', 'operator'=>'>='),
 			array('guarantee_period', 'safe'),
-			array('active', 'boolean'),
+			array('active', 'numerical', 'integerOnly' => true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, brand_id, spare_parts_status_id, provider_id, name, serial_number, price, date_hour, guarantee_period, invoice, description, active', 'safe', 'on'=>'search'),

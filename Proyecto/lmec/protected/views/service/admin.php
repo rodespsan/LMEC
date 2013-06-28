@@ -8,12 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Servicios', 'url'=>array('index')),
-	array('label'=>'Crear Servicio', 'url'=>array('create')),
+	array('label'=>'Listar servicios', 'url'=>array('index')),
+	array('label'=>'Crear servicio', 'url'=>array('create')),
 );
 ?>
 
-<h1>Administrar Servicios</h1>
+<h1>Administrar servicios</h1>
 
 <p>
 Si lo desea, puede escribir un operador de comparaci&oacute;n (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
