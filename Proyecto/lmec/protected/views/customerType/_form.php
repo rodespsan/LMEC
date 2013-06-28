@@ -2,6 +2,7 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'customer-type-form',
+	'enableClientValidation'=>true,
 	'enableAjaxValidation'=>false,
 )); ?>
 

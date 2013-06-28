@@ -8,6 +8,7 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'spare-parts-form',
+	'enableClientValidation'=>true,
 	'enableAjaxValidation'=>false,
 )); ?>
 

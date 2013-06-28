@@ -8,6 +8,7 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'brand-form',
+	'enableClientValidation'=>true,
 	'enableAjaxValidation'=>false,
 )); ?>
 

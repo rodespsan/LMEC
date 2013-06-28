@@ -3,6 +3,7 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'role-form',
 	'enableAjaxValidation'=>false,
+	'enableClientValidation'=>true,
     'focus'=>array($model,'name'),
 )); ?>
 
