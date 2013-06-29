@@ -78,8 +78,8 @@ class Service extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'service_type_id' => 'Tipo de Servicio',
+			'id' => 'Id',
+			'service_type_id' => 'Tipo de servicio',
 			'name' => 'Nombre',
 			'price' => 'Precio',
 			'active' => 'Activo',
@@ -111,10 +111,6 @@ class Service extends CActiveRecord
 			),
 			'criteria'=>$criteria,
 		));
-		
-		/*return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));*/
 	}
 	
 	public static function getActive($active)

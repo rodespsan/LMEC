@@ -75,7 +75,7 @@ class Contact extends CActiveRecord {
     public function attributeLabels() {
        
         return array(
-            'id' => 'ID',
+            'id' => 'Id',
             'customer_id' => 'Cliente',
             'name' => 'Nombre de contacto',
             'email' => 'Correo electrónico',

@@ -66,7 +66,7 @@ class Dependence extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => 'ID',
+            'id' => 'Id',
             'name' => 'Nombre de dependencia',
             'address' => 'Dirección',
             'telephone_number' => 'Número telefónico',

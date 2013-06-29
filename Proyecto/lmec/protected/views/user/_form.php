@@ -66,9 +66,13 @@ if ( ! $model->isNewRecord ) {
 			CHtml::listData( $model->getActiveRoles(),
 								'id',
                                 'name'
-                           )
-			);
-		?>
+                           ),
+			array(
+				'style'=>'float: left; 
+						  margin-right: 5px; 
+						  margin-top: 0px;'
+				)
+			); ?>
 		<?php echo $form->error($model,'_selected_roles')?>
 	</div>
 

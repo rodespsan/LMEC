@@ -62,7 +62,7 @@ class CustomerType extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => 'ID',
+            'id' => 'Id',
             'type' => 'Tipo de cliente',
             'active' => 'Activo',
         );

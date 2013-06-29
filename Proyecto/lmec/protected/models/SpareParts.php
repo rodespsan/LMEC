@@ -92,16 +92,16 @@ class SpareParts extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id' => 'Id',
 			'brand_id' => 'Marca',
-			'spare_parts_status_id' => 'Estado de Refacción',
+			'spare_parts_status_id' => 'Estado de refacción',
 			'provider_id' => 'Proveedor',
-			'name' => 'Nombre Refacción',
-			'serial_number' => 'Número de Serie',
+			'name' => 'Nombre refacción',
+			'serial_number' => 'Número de serie',
 			'price' => 'Precio',
-			'date_hour' => 'Fecha de Compra',
-			'guarantee_period' => 'Fecha de Vencimiento de Garantía',
-			'invoice' => 'Número de Factura',
+			'date_hour' => 'Fecha de compra',
+			'guarantee_period' => 'Fecha de vencimiento de garantía',
+			'invoice' => 'Número de factura',
 			'description' => 'Descripción',
 			'active' => 'Activo',
 		);
@@ -120,11 +120,8 @@ class SpareParts extends CActiveRecord
 		$criteria->with=array('brand','sparePartsStatus','provider');
 
 		$criteria->compare('t.id',$this->id,true);
-		//$criteria->compare('brand_id',$this->brand_id,true);
 		$criteria->compare('brand.name',$this->brand->name,true);
-		//$criteria->compare('spare_parts_status_id',$this->spare_parts_status_id,true);
 		$criteria->compare('sparePartsStatus.description',$this->sparePartsStatus->description,true);
-		//$criteria->compare('provider_id',$this->provider_id,true);
 		$criteria->compare('provider.name',$this->provider->name,true);
 		$criteria->compare('t.name',$this->name,true);
 		$criteria->compare('serial_number',$this->serial_number,true);

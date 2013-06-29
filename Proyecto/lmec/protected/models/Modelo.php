@@ -74,9 +74,9 @@ class Modelo extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id' => 'Id',
 			'brand_id' => 'Marca',
-			'equipment_type_id' => 'Tipo de Equipo',
+			'equipment_type_id' => 'Tipo de equipo',
 			'name' => 'Nombre',
 			'active' => 'Activo',
 		);

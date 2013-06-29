@@ -74,9 +74,9 @@ class Work extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'service_type_id' => 'Tipo de Servicio',
-			'name' => 'Nombre del Trabajo',
+			'id' => 'Id',
+			'service_type_id' => 'Tipo de servicio',
+			'name' => 'Nombre del trabajo',
 			'description' => 'Descripción',
 			'active' => 'Activo',
 		);
@@ -94,7 +94,6 @@ class Work extends CActiveRecord
 		$criteria=new CDbCriteria;
 		$criteria->with=array('serviceType');
 		$criteria->compare('t.id',$this->id,true);
-		//$criteria->compare('service_type_id',$this->service_type_id,true);
 		$criteria->compare('serviceType.name',$this->serviceType->name,true);
 		$criteria->compare('t.name',$this->name,true);
 		$criteria->compare('description',$this->description,true);

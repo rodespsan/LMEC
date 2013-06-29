@@ -68,7 +68,7 @@ class Provider extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => 'ID',
+            'id' => 'Id',
             'name' => 'Nombre de proveedor',
             'contact_name' => 'Nombre de contacto',
             'contact_email' => 'Correo electrónico',

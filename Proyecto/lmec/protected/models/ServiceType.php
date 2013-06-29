@@ -75,8 +75,8 @@ class ServiceType extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Tipo de Servicio',
+			'id' => 'Id',
+			'name' => 'Tipo de servicio',
 			'active' => 'Activo',
 		);
 	}

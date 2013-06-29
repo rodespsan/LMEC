@@ -69,7 +69,7 @@ class EquipmentType extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id' => 'Id',
 			'type' => 'Tipo',
 			'active' => 'Activo',
 		);
