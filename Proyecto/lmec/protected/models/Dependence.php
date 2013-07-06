@@ -66,7 +66,7 @@ class Dependence extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => 'Id',
+            'id' => 'ID',
             'name' => 'Nombre de dependencia',
             'address' => 'Dirección',
             'telephone_number' => 'Número telefónico',
@@ -91,7 +91,7 @@ class Dependence extends CActiveRecord {
         $criteria->compare('telephone_number', $this->telephone_number, true);
         $criteria->compare('extension', $this->extension, true);
         $criteria->compare('active', $this->active);
-        
+
         return new CActiveDataProvider($this, array(
                     'criteria' => $criteria,
                     'pagination' => array(
@@ -109,14 +109,14 @@ class Dependence extends CActiveRecord {
     }
 
     public static function getActiveDependencies() {
-        $dependencies = array( '' => "Seleccionar");
-        $dependencies += CHtml::ListData(Dependence::model()->findAll('t.active = 1'),'id','name');
+        $dependencies = array('' => "Seleccionar");
+        $dependencies += CHtml::ListData(Dependence::model()->findAll('t.active = 1'), 'id', 'name');
         return $dependencies;
     }
-    
-    
-    public function onBeforeValidate(){
-        foreach($this->getIterator() as $atributo=>$valor)
+
+    public function onBeforeValidate() {
+        foreach ($this->getIterator() as $atributo => $valor)
             $this[$atributo] = trim($valor);
     }
+
 }

@@ -9,6 +9,18 @@ $this->menu=array(
 	array('label'=>'Crear cliente', 'url'=>array('create')),
 );
 
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$.fn.yiiGridView.update('customer-grid', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
 ?>
 
 <h1>Administrar cliente</h1>
@@ -17,6 +29,8 @@ $this->menu=array(
 Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
     o <b>=</b>) al comienzo de cada uno de los valores de su búsqueda para especificar cómo la comparación se debe hacer.
 </p>
+
+<p>Los clientes sin algún contacto únicamente se muestran en listar clientes.</p>
 
 
 <?php 

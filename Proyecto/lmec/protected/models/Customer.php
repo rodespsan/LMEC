@@ -44,11 +44,10 @@ class Customer extends CActiveRecord {
     public function rules() {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
-        return array(       
-            
+        return array(
             array('name, active', 'required'),
             array('active', 'numerical', 'integerOnly' => true),
-            array('name', 'length', 'min' => 1, 'max' => 100),            
+            array('name', 'length', 'min' => 1, 'max' => 100),
             array('customer_type_id', 'required', 'message' => 'Seleccione un tipo de cliente.'),
             array('address', 'length', 'max' => 200),
             array('dependence_id', 'safe'),
@@ -79,7 +78,7 @@ class Customer extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => 'Id',
+            'id' => 'ID',
             'name' => 'Nombre',
             'customer_type_id' => 'Tipo de cliente',
             'contact_id' => 'Contacto',
@@ -102,12 +101,16 @@ class Customer extends CActiveRecord {
         $criteria->select = "t.id, t.name, t.dependence_id, t.address, t.customer_type_id, t.active";
         $criteria->compare('t.id', $this->id, true);
         $criteria->compare('t.name', $this->name, true);
+        //$criteria->compare('dependence_id',$this->dependence_id,true);
         $criteria->compare('D.name', $this->dependence_id, true);
         $criteria->compare('t.address', $this->address, true);
+        //$criteria->compare('customer_type_id',$this->customer_type_id,true);
         $criteria->compare('CO.name', $this->nombreContacto, true);
         $criteria->compare('C.type', $this->customer_type_id, true);
         $criteria->compare('t.active', $this->active);
 
+        //$criteria->compare('D.name',$this->dependence_id,true);
+        //$criteria->compare('CO.name',$this->nombreContacto,true);
         $criteria->join = 'INNER JOIN tbl_customer_type AS C ON C.id = t.customer_type_id LEFT JOIN tbl_dependence AS D ON D.id = t.dependence_id INNER JOIN tbl_customer_contact AS CC ON CC.customer_id=t.id INNER JOIN tbl_contact AS CO ON CO.id = CC.contact_id';
         $criteria->group = 't.id, t.customer_type_id, t.address, t.dependence_id';
 
@@ -121,7 +124,7 @@ class Customer extends CActiveRecord {
 
     public static function getContacts($iClient_id) {
 
-        $sql = "SELECT C.name from tbl_contact as C inner join tbl_customer_contact as CC on C.id = CC.contact_id inner join tbl_customer as CS on CC.customer_id = CS.id where CS.id = $iClient_id";
+        $sql = "SELECT C.name from tbl_contact as C INNER JOIN tbl_customer_contact as CC on C.id = CC.contact_id INNER JOIN tbl_customer as CS on CC.customer_id = CS.id where CS.id = $iClient_id";
 
         $sContacts = "";
         $dataReader = Yii::app()->db->createCommand($sql)->query();
@@ -140,20 +143,11 @@ class Customer extends CActiveRecord {
             return 'No';
         }
     }
-    
+
     public static function getActiveCustomers() {
-        $customers = array( '' => "Seleccionar");
-        $customers += CHtml::ListData(Customer::model()->findAll('t.active = 1'),'id','name');
+        $customers = array('' => "Seleccionar");
+        $customers += CHtml::ListData(Customer::model()->findAll('t.active = 1'), 'id', 'name');
         return $customers;
-    }
-    
-    
-    public function onBeforeValidate(){
-        foreach($this->getIterator() as $atributo=>$valor){
-            if($valor != NULL){
-                $this[$atributo] = trim($valor);
-            }
-        }
     }
 
 }

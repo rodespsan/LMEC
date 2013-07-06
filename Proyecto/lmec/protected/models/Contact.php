@@ -23,9 +23,11 @@ class Contact extends CActiveRecord {
      * @param string $className active record class name.
      * @return Contact the static model class
      */
+    public $old_customer_id;
     public $customer_id;
 
     public static function model($className = __CLASS__) {
+        
         return parent::model($className);
     }
 
@@ -33,13 +35,16 @@ class Contact extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
+        
         return '{{contact}}';
+        
     }
 
     /**
      * @return array validation rules for model attributes.
      */
     public function rules() {
+        
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
@@ -50,7 +55,8 @@ class Contact extends CActiveRecord {
             array('cell_phone_number, telephone_number_house, telephone_number_office', 'length', 'max' => 35),
             array('extension_office', 'length', 'max' => 5),
             array('email', 'email'),
-            array('customer_id', 'required', 'message' => 'Seleccione un cliente.', 'on'=>array('scenarioCreate','scenarioUpdate')),
+            array('customer_id', 'required', 'message' => 'Seleccione un cliente.', 'on' => array('scenarioCreate', 'scenarioUpdate')),
+            array('old_customer_id', 'required', 'message' => 'Seleccione un cliente.', 'on' => array('scenarioUpdate')),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('customer_id, id, name, email, cell_phone_number, telephone_number_house, telephone_number_office, extension_office, active', 'safe', 'on' => 'search'),
@@ -64,8 +70,8 @@ class Contact extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'customerContacts' => array(self::HAS_MANY, 'CustomerContact', 'contact_id'),            
-            'customers' => array(self::MANY_MANY, 'Customer', 'tbl_customer_contact(customer_id,contact_id)'),            
+            'customerContacts' => array(self::HAS_MANY, 'CustomerContact', 'contact_id'),
+            'customers' => array(self::MANY_MANY, 'Customer', 'tbl_customer_contact(customer_id,contact_id)'),
         );
     }
 
@@ -73,9 +79,9 @@ class Contact extends CActiveRecord {
      * @return array customized attribute labels (name=>label)
      */
     public function attributeLabels() {
-       
+
         return array(
-            'id' => 'Id',
+            'id' => 'ID',
             'customer_id' => 'Cliente',
             'name' => 'Nombre de contacto',
             'email' => 'Correo electrónico',
@@ -115,17 +121,16 @@ class Contact extends CActiveRecord {
     }
 
     public static function getActive($active) {
-        if ($active == '1') {
-            return 'Si';
-        } else if ($active == '0') {
-            return 'No';
-        }
-    }
-
-    
-    public function onBeforeValidate(){      
         
-        foreach($this->getIterator() as $atributo=>$valor)
-            $this[$atributo] = trim($valor);
-    }
+        if ($active == '1') {
+            
+            return 'Si';
+            
+        } else if ($active == '0') {
+            
+            return 'No';
+            
+        }
+    }   
+
 }

@@ -17,20 +17,12 @@ $this->menu=array(
 
 ?>
 
-<h1>Administrar Refacciones</h1>
+<h1>Administrar refacciones</h1>
 
 <p>
 Si lo desea, puede escribir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
 o <b>=</b>) al principio de cada uno de los valores de busqueda, para especificar como se debe realizar la comparación
 </p>
-
-
-
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 
 <?php 
 $pageSize=Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageSize']);

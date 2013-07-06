@@ -11,7 +11,7 @@ $this->menu=array(
 
 ?>
 
-<h1>Administrar Modelos</h1>
+<h1>Administrar modelos</h1>
 
 <p>
 Si lo desea, puede escribir un operador de comparaci&oacute;n (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

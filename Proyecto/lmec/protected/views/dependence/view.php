@@ -8,7 +8,8 @@ $this->menu=array(
 	array('label'=>'Listar dependencias', 'url'=>array('index')),
 	array('label'=>'Crear dependencia', 'url'=>array('create')),
 	array('label'=>'Actualizar dependencia', 'url'=>array('update', 'id'=>$model->id)),
-	($model->active == 1)?array('label'=>'Desactivar dependencia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar esta Dependencia?')):NULL,
+	array('label'=>'Desactivar dependencia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar esta dependencia?'),'visible'=>$model->active==1),
+	array('label'=>'Activar dependencia',  'url'=>'#', 'linkOptions'=>array('submit'=>array('activate','id'=>$model->id),'confirm'=>'¿Esta seguro que desea activar esta dependencia?'),'visible'=>$model->active==0),
 	array('label'=>'Administrar dependencias', 'url'=>array('admin')),
 );
 ?>

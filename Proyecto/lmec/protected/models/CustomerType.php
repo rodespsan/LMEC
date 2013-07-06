@@ -62,7 +62,7 @@ class CustomerType extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => 'Id',
+            'id' => 'ID',
             'type' => 'Tipo de cliente',
             'active' => 'Activo',
         );
@@ -99,13 +99,14 @@ class CustomerType extends CActiveRecord {
     }
 
     public static function getActiveCustomerTypes() {
-        $customer_types = array( '' => "Seleccionar");
-        $customer_types += CHtml::ListData(CustomerType::model()->findAll('t.active = 1'),'id','type');
+        $customer_types = array('' => "Seleccionar");
+        $customer_types += CHtml::ListData(CustomerType::model()->findAll('t.active = 1'), 'id', 'type');
         return $customer_types;
     }
 
-    public function onBeforeValidate(){
-        foreach($this->getIterator() as $atributo=>$valor)
+    public function onBeforeValidate() {
+        foreach ($this->getIterator() as $atributo => $valor)
             $this[$atributo] = trim($valor);
     }
+
 }

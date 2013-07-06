@@ -1,5 +1,5 @@
 <div class="form">
-
+   
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'user-form',
 	'enableAjaxValidation'=>false,

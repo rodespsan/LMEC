@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Iniciar Sesión</h1>
+<h1>Iniciar sesión</h1>
 
 <p>Por favor complete el siguiente formulario con sus datos de inicio de sesión:</p>
 

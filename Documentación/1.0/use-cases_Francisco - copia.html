@@ -1,0 +1,3045 @@
+<!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN" "http://style.tigris.org/tigris_transitional.dtd">
+<html><head>
+  
+  <style type="text/css">
+/* <![CDATA[ */ 
+@import "css/readyset.css"; 
+@import "css/inst.css";
+/*  ]]> */
+ </style>
+  
+  <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+  <title>Casos de Uso</title>
+
+  
+</head><body>
+<div class="app">
+<div class="readyset">
+<h2><a href="srs.html">Especificación de Requerimientos de Software</a>
+&gt; <a href="use-case-suite.html">Conjunto de Casos de Uso</a> &gt;
+Casos de Uso</h2>
+<div id="releaseinfo">
+<h3>Información de la Versión</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Proyecto:</th>
+      <td><a href="index.html">Sistema de Control de Laboratorio de
+Mantenimiento de Equipo de Cómputo<br />
+      </a></td>
+    </tr>
+    <tr>
+      <th>Número Interno de Versión:</th>
+      <td>X.Y.Z</td>
+    </tr>
+    <tr>
+      <th>Documentos Relacionados:</th>
+      <td>
+      <div><a href="proposal.html">Propuesta del proyecto</a> &gt; <a href="user-needs.html">Necesidades del usuario</a></div>
+      <div><a href="srs.html">Especificación de Requerimientos de
+Software</a> &gt; <a href="feature-set.html">Conjunto de
+Características</a></div>
+      <div><a href="use-case-format.html">Formato de caso de uso</a></div>
+      <div><a href="LINK-TO-DIAGRAM">Diagrama de caso de uso</a></div>
+      <div>ENLACES A ESTÁNDARES RELEVANTES</div>
+      <div>ENLACES A OTROS DOCUMENTOS</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<!-- /releaseinfo -->
+<div class="todo"> TODO: Note any aspects that are common to all use
+cases here. This helps keep the use cases themselves short. If any use
+case is an exception, note it's specific value to replace or add to the
+default.
+</div>
+<div id="defaults">
+<h3>Aspectos Predeterminados de Todos los Casos de Uso</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Actores Directos:</th>
+      <td>
+      <div>User: end-user in any role</div>
+      <div>System: The system being built</div>
+      <div>When actors are not listed, assume User is doing it.</div>
+      <div>Items beginning with "see" indicate that System has
+presented a new screen.</div>
+      </td>
+    </tr>
+    <tr>
+      <th>Partes Interesadas:</th>
+      <td>Project Owners and other members</td>
+    </tr>
+    <tr>
+      <th>Prerequisitos:</th>
+      <td>User is logged in</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<!-- /defaults -->
+<div class="todo"> TODO: For each use case listed in the <a href="use-case-suite.html">use case suite</a>, create an HTML anchor
+and heading with it's unique ID, then fill in the rows of the table to
+specify the use case in detail. </div>
+<div class="tip"> TIP: It is OK to simply list the names of a lot of
+use cases without actually writing the use case in detail. Document the
+most important use cases first and come back to less important ones
+later.
+</div>
+<div class="tip"> TIP: See detailed tips in the <a href="use-case-format.html#guidelines">guidelines for writing use cases</a>.
+</div>
+<div id="UC-00">
+<h3>CU-00: Crear usuario<br />
+</h3>
+<div>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Resumen:</th>
+      <td><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">El
+actor navega al módulo de usuarios y crea el usuario con los campos
+solicitados.</span></td>
+    </tr>
+    <tr>
+      <th>Prioridad:</th>
+      <td>Esencial</td>
+    </tr>
+    <tr>
+      <th>Frecuencia de Uso:</th>
+      <td>Rara vez<br />
+      </td>
+    </tr>
+    <tr>
+      <th>Actores Directos:</th>
+      <td>
+      <div>Administrador del sistema<br />
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span><br />
+      </td>
+      <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador. </td>
+    </tr>
+    <tr>
+      <th>Escenario Principal de Éxito:</th>
+      <td>
+      <ol>
+        <li>El actor ingresa al módulo Usuarios.<br />
+        </li>
+        <li>El actor ingresa a la opción crear usuario.</li>
+        <li>El sistema muestra el formulario para capturar los datos
+del usuario. (AE1)<br />
+        </li>
+        <li>El actor captura los campos del formulario:</li>
+        <ol>
+          <li>Usuario (EA2,EA3)<br />
+          </li>
+          <li>Contraseña (EA4)</li>
+          <li>Confirmar contraseña (EA5)<br />
+          </li>
+          <li>Nombres (EA6)</li>
+          <li>Apellidos (EA7)</li>
+          <li>Correo electrónico(EA8)</li>
+          <li>Roles (EA9)<br />
+          </li>
+          <li>Activo<br />
+          </li>
+        </ol>
+        <li>El actor envia el formulario.</li>
+        <li>El sistema despliega la información capturada. (EA10)<br />
+        </li>
+      </ol>
+      </td>
+    </tr>
+    <tr>
+      <th>Extensiones del Escenario Alternativo:</th>
+      <td>
+      <ol>
+        <li>Si&nbsp; no existen roles activos el sistema no permitirá
+visualizar el formulario y emitirá una advertencia.<br />
+        </li>
+        <li>El usuario no puede ser vacío o únicamente contener
+caracteres
+vacíos, el número de caracteres mínimo y máximo son: 3 y 20,
+respectivamente. En caso de no cumplir con lo requerido se desplegará
+el mensaje de error correspondiente en el formulario y no se guardará
+el usuario.<br />
+        </li>
+        <li>Si el usuario ya existe no se guardará, se regresará al
+formulario de captura y se
+desplegará el mensaje de error.</li>
+        <li>La contraseña no puede ser vacía o únicamente contener
+caracteres vacíos, el número de caracteres mínimo
+y máximo son: 8 y 20, respectivamente. En caso de no cumplir con lo
+requerido se desplegará el mensaje de error correspondiente.</li>
+        <li>Si confirmar contraseña es vacía, únicamente contiene
+caracteres vacíos o no coincide con la contraseña, el sistema no
+guardará el usuario e indicará el error correspondiente en el
+formulario.</li>
+        <li>Los nombres no pueden ser vacíos o únicamente contener
+caracteres vacíos, de no cumplir lo requerido, el sistema desplegará el
+mensaje y no
+guadará el usuario.</li>
+        <li>Los apellidos no pueden ser vacíos o únicamente contener
+caracteres
+vacíos, de no cumplir lo requerido, el sistema desplegará el mensaje y
+no guadará el
+usuario.</li>
+        <li>El correo electrónico no puede ser vacío o únicamente
+contener caracteres
+vacíos y debe ser un correo válido, de lo contrario el sistema
+desplegará un mensaje informando el error y no guardará el usuario.<br />
+        </li>
+        <li>Si no se selecciona al menos un rol, el sistema no guardará
+el usuario e indicará el error en el formulario.</li>
+        <li>Si ocurre algún error al enviar el formulario, el usuario
+no se
+guardará, ni redireccionará a la otra vista donde se muestra
+la información capturada.<br />
+        </li>
+      </ol>
+      </td>
+    </tr>
+    <tr>
+      <th>Notas y Preguntas:</th>
+      <td>
+      <ul>
+        <li>El campo activo por defecto inicia seleccionado.</li>
+        <li>Al desactivar el campo activo se le impide al usuario el
+acceso al sistema pero existe el proceso de activación.</li>
+        <li>La contraseña deberá encriptarse en la base de datos usando
+MD5.<br />
+        </li>
+      </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<div id="UC-01">
+<h3>CU-01: Visualizar usuario<br />
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Resumen:</th>
+      <td>El actor visualiza la información de un usuario.<br />
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Prioridad:</th>
+      <td>Esperado<br />
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Frecuencia de Uso:</th>
+      <td>Rara vez<br />
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; background-color: rgb(204, 204, 204); text-align: right;"><span style="color: black; font-weight: bold;">Actores Directos:</span><br />
+      </td>
+      <td style="vertical-align: top;">Administrador del sistema<br />
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+      <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador. </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Escenario Principal de Éxito:</th>
+      <td>
+      <ol>
+        <li>El actor ingresa al módulo Usuarios</li>
+        <li>Existen tres formas de acceder a esta vista.</li>
+        <ol>
+          <li>El actor accede automáticamente después de crear un
+usuario.</li>
+          <li>El actor selecciona un usuario desde la vista Usuarios
+(EA1)</li>
+          <li>El actor selecciona mostrar desde la vista Administrar
+usuarios (EA2)<br />
+          </li>
+        </ol>
+        <li>Se observa la siguiente información de un usuario:</li>
+        <ol>
+          <li>Id</li>
+          <li>Usuario</li>
+          <li>Nombres</li>
+          <li>Apellidos</li>
+          <li>Correo electrónico</li>
+          <li>Roles</li>
+          <li>Activo</li>
+        </ol>
+      </ol>
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Extensiones del Escenario Alternativo:</th>
+      <td>
+      <ol>
+        <li>El sistema únicamente muestra los usuarios activos,
+en caso de no
+existir, se desplegará un mensaje informando que no se
+encontraron resultados.<br />
+        </li>
+      </ol>
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Notas y Preguntas:<br />
+      </th>
+      <td>
+      <ul>
+        <li>No se permite la actualización directa de la información
+desde esta vista.<br />
+        </li>
+      </ul>
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="UC-03">
+<h3>CU-02: Listar usuarios<br />
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Resumen:</th>
+      <td><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">El
+actor visualiza todos los usuarios activos.</span></td>
+    </tr>
+    <tr>
+      <th>Prioridad:</th>
+      <td><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Esperado</span><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Frecuencia de uso:</th>
+      <td>Algunas veces<br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Actores Directos:</span><br />
+      </td>
+      <td style="vertical-align: top;">Administrador del sistema.<br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+      <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador. </td>
+    </tr>
+    <tr>
+      <th>Escenario Principal de Éxito:</th>
+      <td>
+      <ol>
+        <li>Existen dos formas de acceder a listar usuarios.</li>
+        <ol>
+          <li>El actor ingresa al módulo usuarios.</li>
+          <li>El actor selecciona la opción listar usuarios.</li>
+        </ol>
+        <li>El sistema despliega la siguiente información de los
+usuarios
+activos: (EA1).</li>
+        <ol>
+          <li>Usuario</li>
+          <li>Nombres</li>
+          <li>Apellidos</li>
+          <li>Correo electrónico</li>
+          <li>Roles<br />
+          </li>
+        </ol>
+      </ol>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario&nbsp; Alternativo:</td>
+      <td style="vertical-align: top;">El sistema únicamente muestra
+los
+usuarios activos, en caso de no existir se desplegará un mensaje
+informando que no se encontraron resultados.<br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y Preguntas:</td>
+      <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de administrador.<br />
+El usuario tiene un link para que el actor visualice la información de
+un usuario
+específico.<br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br />
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="UC-02">
+<h3>CU-03: Actualizar usuario<br />
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Resumen:</th>
+      <td>&nbsp;El actor actualiza la información de un usuario.<br />
+      </td>
+    </tr>
+    <tr>
+      <th>Prioridad:</th>
+      <td>Opcional<br />
+      </td>
+    </tr>
+    <tr>
+      <th>Frecuencia de Uso:</th>
+      <td>Rara vez<br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><span style="color: black; font-weight: bold;">Actores Directos:</span></td>
+      <td style="vertical-align: top;">El administrador del sistema<br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+      <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador. </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+      <td style="vertical-align: top;">
+      <ol>
+        <li>El actor ingresa al módulo Usuarios.</li>
+        <li>El actor ingresa a la opción Administrar usuarios.</li>
+        <li>El actor selecciona la opción actualiza.</li>
+        <li>El sistema despliega la siguiente información del usuario
+permitiendo la actualización. (EA1)</li>
+        <ol>
+          <li>Usuario (EA2,EA3)</li>
+          <li>Nombres (EA4)</li>
+          <li>Apellidos (EA5)</li>
+          <li>Correo electrónico (EA6)</li>
+          <li>Roles (EA7)</li>
+          <li>Activo <br />
+          </li>
+        </ol>
+        <li>El actor envia el formulario.</li>
+        <li>El sistema despliega la información capturada.(EA8)</li>
+        <ol>
+
+        </ol>
+        </ol></td>
+      </tr>
+      <tr>
+        <th>Extensiones del Escenario Alternativo:</th>
+        <td>
+        <ol>
+          <li>Si
+el usuario ha sido relacionado con alguna operación, se impide la
+actualización del usuario y se desplega un mensaje mencionando que se
+contacte al administrador del sistema.<br />
+          </li>
+          <li>El usuario no puede ser vacío o únicamente contener
+caracteres
+vacíos, el número de caracteres mínimo y máximo son: 3 y 20,
+respectivamente. En caso de no cumplir con lo requerido se desplegará
+el mensaje de error correspondiente en el formulario y no se guardará
+el usuario.<br />
+          </li>
+          <li>Si el usuario es actualizado y existe, no se guardará, se
+regresará al formulario de captura y se
+desplegará el mensaje de error.</li>
+          <li>Los nombres no pueden ser vacíos o únicamente contener
+caracteres vacíos, de ser así, el sistema desplegará el mensaje y no
+guadará el usuario.</li>
+          <li>Los apellidos no pueden ser vacíos o únicamente contener
+caracteres
+vacíos, de ser así, el sistema desplegará el mensaje y no guadará el
+usuario.</li>
+          <li>El correo electrónico no puede ser vacío o únicamente
+contener
+caracteres
+vacíos y debe ser un correo válido, de lo contrario el sistema
+desplegará un mensaje informando el error y no guardará el usuario.<br />
+          </li>
+          <li>Si no se selecciona al menos un rol, el sistema no
+guardará
+el usuario e indicará el error en el formulario.</li>
+          <li>Si ocurre algún error al enviar el formulario, el rol no
+se
+guardará, ni redireccionará a la otra vista donde se muestra
+la información capturada.</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>Notas y Preguntas:</th>
+        <td>
+        <ul>
+          <li>Se omite actualizar la contraseña del usuario.<br />
+          </li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-04">
+  <h3>CU-04: Desactivar usuario<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El actor le impide el acceso al sistema a un usuario.</td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Prioridad:</td>
+        <td style="vertical-align: top;">Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Frecuencia
+de uso:</td>
+        <td style="vertical-align: top;">Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td>
+        <div>Administrador del sistema.<br />
+        </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador.<br />
+El usuario debe estar inactivo.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Escenario Principal de Éxito:</th>
+        <td>
+        <ol>
+          <li>El actor ingresa al módulo Usuarios.</li>
+          <li>El actor ingresa a la opción Administrar usuarios.</li>
+          <li>El actor selecciona la opción desactivar.</li>
+          <li>El sistema muestra un mensaje para que el administrador
+confirme la acción.</li>
+          <li>El actor tiene la opción
+de desactivar o no al usuario (EA1)<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>Extensiones del Escenario Alternativo:</th>
+        <td>
+        <ol>
+          <li>Si elige cancelar, el usuario no se desactivará.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>Notas y Preguntas:</th>
+        <td>
+        <ul>
+          <li>Al desactivar un usuario se le impide el acceso al
+sistema
+pero existe el proceso de activación.<br />
+          </li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-10">
+  <h3>CU-05: Activar usuario(acá seguimos)<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El actor desactiva el acceso al sistema a un usuario.</td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Prioridad:<br />
+        </span></th>
+        <td>
+        <div>Opcional</div>
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso:<br />
+        </th>
+        <td>Rara vez</td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td>Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador. </td>
+      </tr>
+      <tr>
+        <th>Escenario Principal de Éxito:</th>
+        <td>
+        <ol>
+          <li>El actor ingresa al módulo usuarios.</li>
+          <li>El actor ingresa a la opción Administrar usuarios.</li>
+          <li>El actor selecciona la opción activar.</li>
+          <li>El sistema despliega un mensaje para que el administrador
+confirme la acción.</li>
+          <li>El actor tiene la opción
+de activar o no al usuario. (EA1)<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Si se cancela, el usuario no se activará.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y Preguntas:</td>
+        <td style="vertical-align: top;">
+        <ul>
+          <li>El usuario debe estar desactivado.</li>
+          <li>Al activar un usuario se le permite el acceso al sistema,
+pero existe el proceso de desactivación.<br />
+          </li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-11">
+  <h3>CU-06: Buscar usuarios<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El actor busca los usuarios con características
+específicas. <br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso:</th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Actores Directos:</span><br />
+        </td>
+        <td style="vertical-align: top;">Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador. </td>
+      </tr>
+      <tr>
+        <th>Escenario Principal de Éxito:</th>
+        <td>
+        <ol>
+          <li>El actor ingresa al módulo Usuarios.</li>
+          <li>El actor ingresa a la opción Administrar usuarios.</li>
+          <li>En los campos vacíos de Id, Usuario, Nombres, Apellidos,
+Correo electrónico, Roles, se pueden introducir las características de
+los usuarios a encontrar, de igual se puede intriducir un operador de
+comparación (&lt;, &lt;=, &gt;, &gt;=, &lt;&gt; o = ) al principio de
+cada uno de los valores de búsqueda. A excepción del campo activo que
+tiene por defecto dos valores definidos (si, no).</li>
+          <li>El sistema mostrará los usuarios que cumplan con las
+características específicas. (EA1)<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>En caso de no encontrar usuarios con las características
+introducidas, el sistema mostrará un mensaje indicando que no se
+encontraron resultados.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>Notas y Preguntas:</th>
+        <td>
+        <ul>
+          <li>Se debe haber iniciado sesión con usuario con rol de
+administrador.<br />
+          </li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-20">
+  <h3>CU-07: Ordenar usuarios<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El actor ordena los usuarios a través de alguna
+característica.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Esperado.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso:</th>
+        <td>Rara vez.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Actores Directos:</span></td>
+        <td style="vertical-align: top;">Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador. </td>
+      </tr>
+      <tr>
+        <th>Escenario Principal de Éxito:</th>
+        <td>
+        <ol>
+          <li>El actor ingresa al módulo Usuarios.</li>
+          <li>El actor ingresa a la opción Administrar usuarios o
+listar
+usuarios.</li>
+          <li>El actor selecciona
+la columna por la cual se desean ordenar los usuarios (Id, Usuario,
+Nombres, Apellidos, Correo electrónico, Roles, Activo ) para ejecutar
+el ordenamiento.</li>
+          <li>El sistema muestra los usuarios ordenados con la
+característica específica.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>Extensiones del Escenario Alternativo:</th>
+        <td>&nbsp;&nbsp; Ninguna<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y Preguntas:</td>
+        <td style="vertical-align: top;">
+        <ul>
+          <li>Se debe haber iniciado sesión con un usuario con rol de
+administrador.<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><br />
+            </span></li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+<div id="UC-20">
+<h3>CU-08: Paginación de usuarios<br />
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Resumen:</th>
+<td>El actor ordena los usuarios a través de alguna
+característica.<br />
+</td>
+</tr>
+<tr>
+<th>Prioridad:</th>
+<td>Esperado.<br />
+</td>
+</tr>
+<tr>
+<th>Frecuencia de uso:</th>
+<td>Rara vez.<br />
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Actores Directos:</span></td>
+<td style="vertical-align: top;">Administrador del sistema.<br />
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+<td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador. </td>
+</tr>
+<tr>
+<th>Escenario Principal de Éxito:</th>
+<td>
+<ol>
+<li>El actor ingresa al módulo Usuarios.</li>
+<li>El actor ingresa a la opción Administrar usuarios o
+listar
+usuarios.</li>
+<li>El actor selecciona
+la columna por la cual se desean ordenar los usuarios (Id, Usuario,
+Nombres, Apellidos, Correo electrónico, Roles, Activo ) para ejecutar
+el ordenamiento.</li>
+<li>El sistema muestra los usuarios ordenados con la
+característica específica.<br />
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Extensiones del Escenario Alternativo:</th>
+<td>&nbsp;&nbsp; Ninguna<br />
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y Preguntas:</td>
+<td style="vertical-align: top;">
+<ul>
+<li>Se debe haber iniciado sesión con un usuario con rol de
+administrador.<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><br />
+</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+  <div id="UC-21">
+  <h3>CU-08: Crear rol<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El actor navega al módulo Roles y crea el rol con los
+campos solicitados.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Esencial</td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso:</th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Actores Directos:</span></td>
+        <td style="vertical-align: top;">Administrador del sistema<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador. </td>
+      </tr>
+      <tr>
+        <th>Escenario Principal de Éxito:</th>
+        <td>
+        <ol>
+          <li>El actor ingresa al módulo Roles.</li>
+          <li>El actor ingresa a la opción crear rol.</li>
+          <li>El sistema muestra el formulario para capturar los
+datos del rol.</li>
+          <li>El actor captura los campos del formulario:</li>
+          <ol>
+            <li>Rol (EA1,EA2)</li>
+            <li>Url inicial (EA3,EA4)</li>
+            <li>Prioridad (EA5)</li>
+            <li>Activo</li>
+          </ol>
+          <li>El actor envia el formulario.</li>
+          <li>El sistema despliega la información capturada. (EA6)<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>El rol no puede ser vacío o únicamente contener
+caracteres
+vacíos, el número de
+caracteres mínimo y máximo son: 1 y 45, respectivamente. En caso de no
+cumplir con lo requerido se desplegará un mensaje con el error
+correspondiente en el formulario y no se guardará el rol.</li>
+          <li>Si el rol ya existe no se guardará, se regresará al
+formulario de captura y se desplegará el mensaje indicado.</li>
+          <li>La Url inicial no puede ser vacío o únicamente contener
+caracteres vacíos, el número de caracteres mínimo y máximo son: 1 y 100
+respectivamente. En caso de no cumplir con lo requerido se desplegará
+el mensaje de error correspondiente en el formulario y no se guardará
+el rol.</li>
+          <li>Asegurarse de introducir la url inicial correctamente
+para
+evitar que posteriormente los usuarios con el rol a crear sean
+direccionados a una página no existente.</li>
+          <li>La prioridad debe ser un número entero, en caso de no
+serlo, el sistema desplegará un mensaje de error y no guardará el rol.</li>
+          <li>Si
+ocurre algún error al intentar enviar el formulario, no se guardará el
+usuario, ni redireccionará a la otra vista donde se muestra la
+información ingresada.</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>Notas y preguntas:<br />
+        </th>
+        <td>
+        <ul>
+          <li>Se debe haber iniciado sesión con un usuario con rol de
+administrador.</li>
+          <li>El activo está seleccionado por defecto para
+automáticamente esté activado el rol a crear.<br />
+          </li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-30">
+  <h3>CU-09: Visualizar rol<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El actor visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Esperado<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: <br />
+        </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Actores Directos:</span></td>
+        <td style="vertical-align: top;">Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador. </td>
+      </tr>
+      <tr>
+        <th>Escenario Principal de Éxito:</th>
+        <td>
+        <ol>
+          <li>El actor ingresa al módulo Roles.</li>
+          <li>Existen tres formas de acceder a esta vista.</li>
+          <ol>
+            <li>El actor accede automáticamente después de de crear un
+rol.</li>
+            <li>El actor selecciona un rol de la vista Roles (EA1)</li>
+            <li>El actor selecciona mostrar desde la vista Administrar
+roles.<br />
+            </li>
+          </ol>
+          <li>El sistema despliega la siguiente información de un rol:</li>
+          <ol>
+            <li>Id</li>
+            <li>Rol</li>
+            <li>Url inicial</li>
+            <li>Prioridad</li>
+            <li>Activo<br />
+            </li>
+          </ol>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>El sistema únicamente muestra los roles activos, en
+caso de no existir, se desplegará un mensaje informando que no se
+encontraron resultados.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:</td>
+        <td style="vertical-align: top;">
+        <ul>
+          <li>No se permite la actualización directa de la información
+desde esta vista.<br />
+          </li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-40">
+  <h3>CU-10: Listar roles<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El actor visualiza todos los roles activos.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Esperado</td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso:</th>
+        <td>Algunas veces<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Actores Directos:</span></td>
+        <td style="vertical-align: top;">Administrador del sistema<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador. </td>
+      </tr>
+      <tr>
+        <th>Escenario Principal de Éxito:</th>
+        <td>
+        <ol>
+          <li>Existen dor formas de acceder a listar roles.</li>
+          <ol>
+            <li>El actor ingresa al módulo roles.</li>
+            <li>El actor selecciona la opción listar usuarios.<br />
+            </li>
+          </ol>
+          <li>El sistema despliega la siguiente información de los
+roles activos.(EA1)</li>
+          <ol>
+            <li>Rol</li>
+            <li>Url inicial<br />
+            </li>
+          </ol>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Extensiones del Escenario Alternativo:</div>
+        </th>
+        <td>
+        <ul>
+        </ul>
+        <ol>
+          <li>El sistema únicamente muestra los roles activos, en caso
+de
+no existir se desplegará un mensaje informando que no se encontraron
+resultados.<br />
+          </li>
+        </ol>
+        <ul>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notas y preguntas:</th>
+        <td>
+        <ul>
+          <li>El rol tiene un link&nbsp; para que el actor visualice la
+información&nbsp; de un rol específico.<br />
+          </li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Actualizar rol<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El actor actualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuario con rol de
+administrador. </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>El actor ingresa al módulo Roles.</li>
+          <li>El actor ingresa a la opción Administrar roles.</li>
+          <li>El actor selecciona la opción actualiza.</li>
+          <li>El sistema despliega la siguiente información del rol
+permitiendo la actualización.(EA1)</li>
+          <ol>
+            <li>Rol (EA2,EA3)</li>
+            <li>Url inicial (EA4,EA5)<br />
+            </li>
+            <li>Prioridad (EA6)<br />
+            </li>
+            <li>Activo<br />
+            </li>
+          </ol>
+          <li>El actor envia el formulario.</li>
+          <li>El sistema despliega la información capturda. (EA7)<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Si el rol ha sido asignado a algún usuario, se impide la
+actualización del rol y se desplega un mensaje mencionando que se
+contacte al administrador del sistema.</li>
+          <li>El rol no puede ser vacío o únicamente contener
+caracteres
+vacíos, el número de
+caracteres mínimo y máximo son: 1 y 45, respectivamente. En caso de no
+cumplir con lo requerido se desplegará un mensaje con el error
+correspondiente en el formulario y no se guardará el rol.</li>
+          <li>Si el rol es actualizado y existe, no se guardará, se
+regresará al formulario de captura y se despliega el mensaje de error.</li>
+          <li>La Url inicial no puede ser vacío o únicamente contener
+caracteres vacíos, el número de caracteres mínimo y máximo son: 1 y 100
+respectivamente. En caso de no cumplir con lo requerido se desplegará
+el mensaje de error correspondiente en el formulario y no se guardará
+el rol.</li>
+          <li>Asegurarse de introducir la url inicial correctamente
+para
+evitar que posteriormente los usuarios con el rol a crear sean
+direccionados a una página no existente.</li>
+          <li>La prioridad debe ser un número entero, en caso de no
+serlo, el sistema desplegará un mensaje de error y no guardará el rol.</li>
+          <li>Si ocurre algún error al enviar el formulario, el rol no
+se
+guardará, ni redireccionará a la otra vista donde se muestra
+la información capturada.</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Desactivar rol<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El actor impide la asignación de este rol a los usuarios.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;">Se debe haber iniciado sesión
+con un usuarios con rol administrador.<br />
+El usuario debe estar inactivo.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>El actor ingresa al módulo Roles.</li>
+          <li>El actor ingresa a la opción Administrar roles.</li>
+          <li>El actor selecciona la opción desactivar.</li>
+          <li>El sistema muestra un mensaje para que el administrador
+confirme la acción.</li>
+          <li>El actor tiene la opción de desactivar o no el rol. (EA1)<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Si elige cancelar, el rol no se desactivará.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;">El actor impide la asignación
+del rol a todos los usuarios.<br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Activar rol<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El administrador visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Ingresar al módulo Roles.</li>
+          <li>Ingresar a la opción Administrar roles</li>
+          <li>Seleccionar la opción actualiza.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Buscar roles<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El administrador visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Ingresar al módulo Roles.</li>
+          <li>Ingresar a la opción Administrar roles</li>
+          <li>Seleccionar la opción actualiza.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Ordenar roles<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El administrador visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Ingresar al módulo Roles.</li>
+          <li>Ingresar a la opción Administrar roles</li>
+          <li>Seleccionar la opción actualiza.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Paginación de roles<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El administrador visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Ingresar al módulo Roles.</li>
+          <li>Ingresar a la opción Administrar roles</li>
+          <li>Seleccionar la opción actualiza.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: <br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El administrador visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Ingresar al módulo Roles.</li>
+          <li>Ingresar a la opción Administrar roles</li>
+          <li>Seleccionar la opción actualiza.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Actualizar rol<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El administrador visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Ingresar al módulo Roles.</li>
+          <li>Ingresar a la opción Administrar roles</li>
+          <li>Seleccionar la opción actualiza.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Actualizar rol<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El administrador visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Ingresar al módulo Roles.</li>
+          <li>Ingresar a la opción Administrar roles</li>
+          <li>Seleccionar la opción actualiza.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Actualizar rol<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El administrador visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Ingresar al módulo Roles.</li>
+          <li>Ingresar a la opción Administrar roles</li>
+          <li>Seleccionar la opción actualiza.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Actualizar rol<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El administrador visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Ingresar al módulo Roles.</li>
+          <li>Ingresar a la opción Administrar roles</li>
+          <li>Seleccionar la opción actualiza.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Actualizar rol<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El administrador visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Ingresar al módulo Roles.</li>
+          <li>Ingresar a la opción Administrar roles</li>
+          <li>Seleccionar la opción actualiza.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Actualizar rol<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El administrador visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Ingresar al módulo Roles.</li>
+          <li>Ingresar a la opción Administrar roles</li>
+          <li>Seleccionar la opción actualiza.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-31">
+  <h3>CU-10: Actualizar rol<br />
+  </h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Resumen:</th>
+        <td>El administrador visualiza la información de un rol.<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Prioridad:</th>
+        <td>Opcional<br />
+        </td>
+      </tr>
+      <tr>
+        <th>Frecuencia de uso: </th>
+        <td>Rara vez<br />
+        </td>
+      </tr>
+      <tr>
+        <th><span style="font-weight: bold;">Actores Directos:</span></th>
+        <td> Administrador del sistema.<br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;"><span style="font-weight: bold;">Prerequisitos:</span></td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Escenario
+Principal de Éxito:</td>
+        <td style="vertical-align: top;">
+        <ol>
+          <li>Ingresar al módulo Roles.</li>
+          <li>Ingresar a la opción Administrar roles</li>
+          <li>Seleccionar la opción actualiza.<br />
+          </li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; font-weight: bold; text-align: right;">Extensiones
+del Escenario Alternativo:</td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+        <table style="text-align: left; margin-left: auto; margin-right: 0px;" class="axial" border="1" cellpadding="3" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold; text-align: right;">Notas
+y preguntas:<br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+        <td style="vertical-align: top;"><br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-41">
+  <h3>UC-41: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-42">
+  <h3>UC-42: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-50">
+  <h3>UC-50: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-51">
+  <h3>UC-51: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-52">
+  <h3>UC-52: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-60">
+  <h3>UC-60: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-61">
+  <h3>UC-61: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-62">
+  <h3>UC-62: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-70">
+  <h3>UC-70: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-71">
+  <h3>UC-71: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-72">
+  <h3>UC-72: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-80">
+  <h3>UC-80: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-81">
+  <h3>UC-81: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-82">
+  <h3>UC-82: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-90">
+  <h3>UC-90: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div id="UC-91">
+  <h3>UC-91: USE CASE NAME</h3>
+  <table class="axial" border="1" cellpadding="3" cellspacing="2">
+    <tbody>
+      <tr>
+        <th>Summary:</th>
+        <td>1-3 SENTENCES</td>
+      </tr>
+      <tr>
+        <th>Priority:</th>
+        <td>Essential | Expected | Desired | Optional</td>
+      </tr>
+      <tr>
+        <th>Use Frequency:</th>
+        <td>Always | Often | Sometimes | Rarely | Once</td>
+      </tr>
+      <tr>
+        <th>Main Success Scenario:</th>
+        <td>
+        <ol>
+          <li>STEP</li>
+          <li>STEP</li>
+          <li>STEP</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <th>
+        <div>Alternative</div>
+Scenario Extensions:</th>
+        <td>
+        <ul>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+          <li>If CONDITION, then ALTERNATIVE STEPS.
+            <ul>
+              <li>NOTES or DETAILS.</li>
+            </ul>
+          </li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Notes and Questions</th>
+        <td>
+        <ul>
+          <li>NOTE</li>
+          <li>QUESTION</li>
+        </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </div>
+  <div class="todo"> TODO: Check for <a href="http://readyset.tigris.org/words-of-wisdom/use-cases.html">words
+of wisdom</a> and discuss ways to improve this template. Or, evaluate
+the ReadySET Pro <a href="http://www.readysetpro.com/">professional
+use case template</a>. </div>
+  <div class="legal1">Company Proprietary</div>
+  <div class="footnote"> Copyright © 2003-2004 Jason Robbins. All
+rights
+reserved. <a href="readyset-license.html">License terms</a>. Retain
+this copyright statement whenever this file is used as a template.
+  </div>
+  </div>
+
+  </body></html>

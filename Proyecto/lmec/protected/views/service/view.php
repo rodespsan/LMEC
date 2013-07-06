@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Ver servicio: <?php echo $model->name; ?></h1>
+<h1>Servicio: <?php echo $model->name; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

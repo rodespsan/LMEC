@@ -5,11 +5,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Modelos', 'url'=>array('index')),
-	array('label'=>'Administrar Modelo', 'url'=>array('admin')),
+	array('label'=>'Listar modelos', 'url'=>array('index')),
+	array('label'=>'Administrar modelo', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Crear Modelo</h1>
+<h1>Crear modelo</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

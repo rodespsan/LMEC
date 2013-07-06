@@ -5,12 +5,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Modelos', 'url'=>array('index')),
-	array('label'=>'Crear Modelo', 'url'=>array('create')),
-	array('label'=>'Actualizar Modelo', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Desactivar Modelo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar este Modelo?'),'visible'=>$model->active==1),
-	array('label'=>'Activar Accesorio',  'url'=>'#', 'linkOptions'=>array('submit'=>array('activate','id'=>$model->id),'confirm'=>'¿Esta seguro que desea activar este Accesorio?'),'visible'=>$model->active==0),
-	array('label'=>'Administrar Modelo', 'url'=>array('admin')),
+	array('label'=>'Listar modelos', 'url'=>array('index')),
+	array('label'=>'Crear modelo', 'url'=>array('create')),
+	array('label'=>'Actualizar modelo', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Desactivar modelo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar este Modelo?'),'visible'=>$model->active==1),
+	array('label'=>'Activar modelo',  'url'=>'#', 'linkOptions'=>array('submit'=>array('activate','id'=>$model->id),'confirm'=>'¿Esta seguro que desea activar este Accesorio?'),'visible'=>$model->active==0),
+	array('label'=>'Administrar modelos', 'url'=>array('admin')),
 );
 ?>
 

@@ -8,7 +8,8 @@ $this->menu=array(
 	array('label'=>'Listar proveedores', 'url'=>array('index')),
 	array('label'=>'Crear proveedor', 'url'=>array('create')),
 	array('label'=>'Actualizar proveedor', 'url'=>array('update', 'id'=>$model->id)),
-	($model->active == 1)?array('label'=>'Desactivar proveedor', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar este Proveedor?')):NULL,
+	array('label'=>'Desactivar proveedor', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar este Proveedor?'),'visible'=>$model->active==1),
+	array('label'=>'Activar proveedor',  'url'=>'#', 'linkOptions'=>array('submit'=>array('activate','id'=>$model->id),'confirm'=>'¿Esta seguro que desea activar este Proveedor?'),'visible'=>$model->active==0),	
 	array('label'=>'Administrar proveedores', 'url'=>array('admin')),
 );
 ?>

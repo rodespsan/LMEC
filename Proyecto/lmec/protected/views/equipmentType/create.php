@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Tipos de Equipo'=>array('index'),
+	'Tipos de equipo'=>array('index'),
 	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Tipo de Equipo', 'url'=>array('index')),
-	array('label'=>'Administrar Tipo de Equipo', 'url'=>array('admin')),
+	array('label'=>'Listar tipos de equipo', 'url'=>array('index')),
+	array('label'=>'Administrar tipos de equipo', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Crear Tipo de Equipo</h1>
+<h1>Crear tipo de equipo</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

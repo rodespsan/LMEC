@@ -5,14 +5,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar tipo de equipo', 'url'=>array('index')),
+	array('label'=>'Listar tipos de equipo', 'url'=>array('index')),
 	array('label'=>'Crear tipo de equipo', 'url'=>array('create')),
 );
 
 
 ?>
 
-<h1>Administrar Tipo de Equipo</h1>
+<h1>Administrar tipos de equipo</h1>
 
 <p>
 Si lo desea, puede escribir un operador de comparaci&oacute;n (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

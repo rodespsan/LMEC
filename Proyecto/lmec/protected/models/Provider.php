@@ -68,7 +68,7 @@ class Provider extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => 'Id',
+            'id' => 'ID',
             'name' => 'Nombre de proveedor',
             'contact_name' => 'Nombre de contacto',
             'contact_email' => 'Correo electrónico',
@@ -111,10 +111,9 @@ class Provider extends CActiveRecord {
             return 'No';
         }
     }
-    
-    
-    public function onBeforeValidate(){
-        foreach($this->getIterator() as $atributo=>$valor)
+
+    public function onBeforeValidate() {
+        foreach ($this->getIterator() as $atributo => $valor)
             $this[$atributo] = trim($valor);
     }
 

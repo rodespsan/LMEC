@@ -153,7 +153,7 @@ class ProviderController extends Controller {
         }
         $model = new Provider('search');
         $model->unsetAttributes();  // clear any default values
-        
+
         if (isset($_GET['Provider']))
             $model->attributes = $_GET['Provider'];
 

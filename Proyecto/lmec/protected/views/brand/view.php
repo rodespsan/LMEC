@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Marcas', 'url'=>array('index')),
-	array('label'=>'Crear Marca', 'url'=>array('create')),
-	array('label'=>'Actualizar Marca', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Desactivar Marca', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea desactivar la marca?')),
-	array('label'=>'Administrar Marcas', 'url'=>array('admin')),
+	array('label'=>'Listar marcas', 'url'=>array('index')),
+	array('label'=>'Crear marca', 'url'=>array('create')),
+	array('label'=>'Actualizar marca', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Desactivar marca', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea desactivar la marca?')),
+	array('label'=>'Administrar marcas', 'url'=>array('admin')),
 );
 ?>
 

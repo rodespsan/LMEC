@@ -48,7 +48,7 @@ class CustomerController extends Controller {
      */
     public function actionView($id) {
         $model = $this->loadModel($id);
-        $model->contact = $model->contacts[0];
+        $model->contact = ($model->contacts != NULL)?$model->contacts[0]:NULL;
         $this->render('view', array(
             'model' => $model,
         ));
@@ -75,7 +75,7 @@ class CustomerController extends Controller {
             $model->attributes = $_POST['Customer'];
             $model->dependence_id = ($model->dependence_id == '') ? NULL : $model->dependence_id;
 
-            $model->contact->active = 1;
+            $model->contact->active = $model->active;
 
             if (isset($_POST['Contact'])) {
                 $model->contact->attributes = $_POST['Contact'];
@@ -85,33 +85,28 @@ class CustomerController extends Controller {
             $successful = $model->validate() && $successful;
 
             $transaction = Yii::app()->db->beginTransaction();
-            $successful = $successful && $model->contact->save();
 
-            if ($successful) {
-                $criteria = new CDbCriteria;
-                $criteria->compare('name', $model->contact->name);
-                $criteria->compare('email', $model->contact->email);
-                $criteria->compare('cell_phone_number', $model->contact->cell_phone_number);
-                $criteria->compare('telephone_number_house', $model->contact->telephone_number_house);
-                $criteria->compare('telephone_number_office', $model->contact->telephone_number_office);
-                $criteria->compare('extension_office', $model->contact->extension_office);
-                $criteria->compare('active', 1);
+            try {
+                $successful = $successful && $model->contact->save();
 
-                $model->contact = Contact::model()->find($criteria);
-
-                $successful = $model->save();
                 if ($successful) {
-                    $successful = Yii::app()->db;
-                    $model_customer_contact = new CustomerContact();
-                    $model_customer_contact->customer_id = $model->id;
-                    $model_customer_contact->contact_id = $model->contact->id;
-                    if ($model_customer_contact->save()) {
-                        $transaction->commit();
-                        $this->redirect(array('view', 'id' => $model->id));
+
+                    $successful = $model->save();
+                    if ($successful) {
+
+                        $model_customer_contact = new CustomerContact();
+                        $model_customer_contact->customer_id = $model->id;
+                        $model_customer_contact->contact_id = $model->contact->id;
+                        if ($model_customer_contact->save()) {
+                            $transaction->commit();
+                            $this->redirect(array('view', 'id' => $model->id));
+                        }
                     }
                 }
+                $transaction->rollBack();
+            } catch (Exception $e) {
+                $transaction->rollBack();
             }
-            $transaction->rollBack();
         }
 
         $this->render('create', array(
@@ -127,28 +122,36 @@ class CustomerController extends Controller {
     public function actionUpdate($id) {
 
         $model = $this->loadModel($id);
-        $model->contact = $model->contacts[0];
+        
+        $transaction = Yii::app()->db->beginTransaction();
+        
+        try {            
+            $model->contact = ($model->contacts != NULL)?$model->contacts[0]:NULL;
 
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
 
-        if (isset($_POST['Customer'])) {
-            $model->attributes = $_POST['Customer'];
-            $model->dependence_id = ($model->dependence_id == '') ? NULL : $model->dependence_id;
+            // Uncomment the following line if AJAX validation is needed
+            // $this->performAjaxValidation($model);
 
-            $transaction = Yii::app()->db->beginTransaction();
-            $successful = $model->save();
             if (isset($_POST['Customer'])) {
-                $model->contact->setAttributes($_POST['Contact']);
-                $model->contact->active = 1;
-            }
-            $successful = $successful && $model->contact->save();
-            if ($successful) {
-                $transaction->commit();
-                $this->redirect(array('view', 'id' => $model->id));
-            }
+                $model->attributes = $_POST['Customer'];
+                $model->dependence_id = ($model->dependence_id == '') ? NULL : $model->dependence_id;
 
-            $transaction->rollBack();
+                
+                $successful = $model->save();
+                if (isset($_POST['Customer'])) {
+                    $model->contact->setAttributes($_POST['Contact']);
+                    $model->contact->active = 1;
+                }
+                $successful = $successful && $model->contact->save();
+                if ($successful) {
+                    $transaction->commit();
+                    $this->redirect(array('view', 'id' => $model->id));
+                }
+
+                $transaction->rollBack();
+            }
+        } catch (Exception $e) {
+            $transaction->rollBack();            
         }
 
         $this->render('update', array(
@@ -171,7 +174,7 @@ class CustomerController extends Controller {
 
             $transaction = Yii::app()->db->beginTransaction();
             $successful = true;
-            
+
             foreach ($model->contacts as $contact) {
                 $contact->active = 0;
                 $successful = $contact->save();

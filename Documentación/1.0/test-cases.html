@@ -1,502 +1,6109 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN"
-"http://style.tigris.org/tigris_transitional.dtd">
-<html>
-<head>
- <style type="text/css">
-/* <![CDATA[ */ 
-@import "css/readyset.css"; 
-@import "css/inst.css";
-/*  ]]> */
- </style>
+<!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN" "http://style.tigris.org/tigris_transitional.dtd">
+<html><head>
+<style type="text/css">
+/* <![CDATA[ */ @import "css/readyset.css"; @import "css/inst.css";
+/* ]]> */
+</style>
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print"><title>Casos de Prueba</title>
 
-<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
- <title>Casos de Prueba</title>
 </head>
-
 <body>
 <div class="app">
 <div class="readyset">
-
-<h2><a href="qa-plan.html">Plan de Aseguramiento de la Calidad</a> &gt;
-    <a href="test-suite.html">Conjunto de Pruebas</a> &gt; Casos de Prueba</h2>
-
- <div id="releaseinfo">
- <h3>Informaci&oacute;n de la Versi&oacute;n</h3>
-  <table border="1" cellpadding="3" cellspacing="2" class="axial">
-  <tr>
-   <th>Proyecto:</th> 
-   <td><a href="index.html">NOMBRE DEL PROYECTO</a></td> 
-  </tr>
-  <tr>
-   <th>N&uacute;mero Interno de Versi&oacute;n:</th> 
-   <td>X.Y.Z</td> 
-  </tr>
-  <tr>
-   <th>Documentos Relacionados:</th> 
-   <td>
-    <div><a href="test-case-format.html">Formato de caso de prueba</a></div>
-    <div>ENLACES A EST&Aacute;NDARES RELEVANTES</div>
-    <div>ENLACES A OTROS DOCUMENTOS</div>
-   </td>
-  </tr>
- </table>
- </div> <!-- /releaseinfo -->
-
-
+<h2><a href="qa-plan.html">Plan de Aseguramiento de
+la Calidad</a> &gt; <a href="test-suite.html">Conjunto
+de Pruebas</a> &gt; Casos de Prueba</h2>
+<div id="releaseinfo">
+<h3>Información de la Versión</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Proyecto:</th>
+<td><a href="index.html">NOMBRE DEL PROYECTO</a></td>
+</tr>
+<tr>
+<th>Número Interno de Versión:</th>
+<td>X.Y.Z</td>
+</tr>
+<tr>
+<th>Documentos Relacionados:</th>
+<td>
+<div><a href="test-case-format.html">Formato
+de caso de prueba</a></div>
+<div>ENLACES A ESTÁNDARES RELEVANTES</div>
+<div>ENLACES A OTROS DOCUMENTOS</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /releaseinfo -->
 <div class="sample1">
-<div id="login-1">
-<h3>TC-00: Inicio de Sesi&oacute;n de Usuario Normal</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Prop&oacute;sito:</th>
-  <td>
-   Test that users can log in with the proper username or email
-   address and their password.
-  </td>
- </tr>
-
- <tr>
-  <th>Prerequisitos:</th>
-  <td>
-   <div>User is not already logged in.</div>
-   <div>User testuser exists, and account is in good standing.</div>
-  </td>
- </tr>
-
- <tr>
-  <th>Datos de Prueba:</th>
-  <td>
-   <div>usernameOrEmail = {testuser, bogususer, testuser@nospam.com, test@user@nospam.com, empty}</div> 
-   <div>password = {valid, invalid, empty}</div>
-  </td>
- </tr>
-
- <tr>
-  <th>Pasos:</th>
-  <td>
-   <ol>
-    <li>visit LoginPage</li>
-    <li>enter usernameOrEmail</li>
-    <li>enter password</li>
-    <li>click Login</li>
-    <li>see the terms-of-use page</li>
-    <li>click Agree at page bottom</li>
-    <li>click Submit</li>
-    <li>see PersonalPage</li>
-    <li>verify welcome message is correct username</li>
-   </ol>
-  </td>
- </tr>
-
- <tr>
-  <th>Notas y Preguntas:</th>
-  <td>
-   <ul>
-    <li>This assumes that user has not agreed to terms-of-use already.</li>
-    <li>Does this work without browser cookies?</li>
-   </ul>
-  </td>
- </tr>
-
+<div id="CP-01">
+<h3>CP-01: Crear usuario<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+crear
+un usuario. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.<br>
+</div>
+<div><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;;">Debe
+existir al menos un rol activo.</span></div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Usuario = {válido, inválido, vacío}</li>
+<li>Contraseña = {válido, inválido, vacío}</li>
+<li>Confirmar contraseña = {válido, inválido, vacío}</li>
+<li>Nombres = {válido, inválido, vacío}</li>
+<li>Apellidos = {válido, inválido, vacío}</li>
+<li>Correo electrónico = {válido, inválido, vacío}</li>
+<li>Roles = {marcado(s), no marcado(s)}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de usuarios y seleccionar la
+opción
+crear usuario</li>
+<li>Introducir el usuario</li>
+<li>Introducir la contraseña<br>
+</li>
+<li>Confirmar contraseña</li>
+<li> Introducir los nombres</li>
+<li> Introducir los apellidos</li>
+<li>Introducir el correo electrónico</li>
+<li>Marcar el(los) rol(es)</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar
+que se visualice el usuario que se acaba de crear y que los datos
+mostrados sean los mismos que se proporcionaron en el formulario.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
-
-
 <div class="sample1">
-<div id="login-2">
-<h3>login-2: Locked-out User Login</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Purpose:</th>
-  <td>
-   Test that a user who has been locked out by a moderator, cannot
-   log in,  They should see a message indicating that they were locked out.
-  </td>
- </tr>
-
- <tr>
-  <th>Prereq:</th>
-  <td>
-   <div>User is not already logged in.</div>
-   <div>User testuser2 exists, and has been locked out</div>
-  </td>
- </tr>
-
- <tr>
-  <th>Test Data:</th>
-  <td>
-   <div>usernameOrEmail = {testuser2, testuser2@nospam.com}</div> 
-   <div>password = {valid}</div>
-  </td>
- </tr>
-
- <tr>
-  <th>Steps:</th>
-  <td>
-   <ol>
-    <li>visit LoginPage</li>
-    <li>enter usernameOrEmail</li>
-    <li>enter password</li>
-    <li>click Login</li>
-    <li>see LoginPage</li>
-    <li>verify warning message is the locked-out message</li>
-   </ol>
-  </td>
- </tr>
-
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>Does this work without browser cookies?</li>
-   </ul>
-  </td>
- </tr>
-
+<div id="CP-02">
+<h3>CP-02: Actualizar usuario<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+actualizar los datos de un usuario. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.</div>
+<div><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;;">Debe
+existir al menos un rol activo.</span></div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Usuario = {válido, inválido, vacío}</li>
+<li>Nombres = {válido, inválido, vacío}</li>
+<li>Apellidos = {válido, inválido, vacío}</li>
+<li>Correo electrónico = {válido, inválido, vacío}</li>
+<li>Roles = {marcado(s), no marcado(s)}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de usuarios y seleccionar la
+opción
+actualizar usuario.</li>
+<li>Introducir el usuario</li>
+<li> Introducir los nombres</li>
+<li> Introducir los apellidos</li>
+<li>Introducir el correo electrónico</li>
+<li>Marcar o desmarcar el(los) rol(es)</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar
+que se visualice el usuario que se acaba de crear y que los datos
+mostrados sean los mismos que se proporcionaron en el formulario.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
-
-
-<div id="unique-test-case-id1">
-<h3>unique-test-case-id1: Test Case Title</h3>
-
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Purpose:</th>
-  <td>
-   
-  </td>
- </tr>
-
- <tr>
-  <th>Prereq:</th>
-  <td>
-   
-  </td>
- </tr>
-
- <tr>
-  <th>Test Data:</th>
-  <td>
-   <div>VAR = {VALUES}</div> 
-   <div>VAR = {VALUES}</div> 
-  </td>
- </tr>
-
- <tr>
-  <th>Steps:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>verify ...</li>
-   </ol>
-  </td>
- </tr>
-
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-
+<div class="sample1">
+<div id="CP-03">
+<h3>CP-03: Visualizar usuario<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+visualizar los datos de un usuario. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.<br>
+Debe existir al menos un usuario.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un usuario.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de usuarios.</li>
+<li>Elegir y presionar sobre el nombre del usuario.</li>
+<li>Verificar
+que todos los datos del usuario sean desplegados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar usuarios activos e inactivos<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
 </table>
 </div>
-
-
-
-<div id="unique-test-case-id2">
-<h3>unique-test-case-id2: Test Case Title</h3>
-
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Purpose:</th>
-  <td>
-   SENTENCES
-  </td>
- </tr>
-
- <tr>
-  <th>Prereq:</th>
-  <td>
-   SENTENCES
-  </td>
- </tr>
-
- <tr>
-  <th>Test Data:</th>
-  <td>
-   <div>VAR = {VALUES}</div> 
-   <div>VAR = {VALUES}</div> 
-  </td>
- </tr>
-
- <tr>
-  <th>Steps:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>verify ...</li>
-   </ol>
-  </td>
- </tr>
-
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-
+</div>
+<div class="sample1">
+<div id="CP-04">
+<h3>CP-04: Listar usuarios
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+visualizar la lista de usuarios activos. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.<br>
+Debe existir al menos un usuario activo.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Usuarios activos.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de usuarios.</li>
+<li>Verificar
+que la lista de usuarios sea desplegada correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan sólo los usuarios activos.</li>
+<li>Si
+no existe algún usuario activo el sistema
+despliega un mensaje indicando que no se encontraron resultados.</li>
+</ul>
+</td>
+</tr>
+</tbody>
 </table>
 </div>
-
-
-
-<div id="unique-test-case-id3">
-<h3>unique-test-case-id3: Test Case Title</h3>
-
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Purpose:</th>
-  <td>
-   SENTENCES
-  </td>
- </tr>
-
- <tr>
-  <th>Prereq:</th>
-  <td>
-   SENTENCES
-  </td>
- </tr>
-
- <tr>
-  <th>Test Data:</th>
-  <td>
-   <div>VAR = {VALUES}</div> 
-   <div>VAR = {VALUES}</div> 
-  </td>
- </tr>
-
- <tr>
-  <th>Steps:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>verify ...</li>
-   </ol>
-  </td>
- </tr>
-
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-
+</div>
+<div class="sample1">
+<div id="CP-05">
+<h3>CP-05: Buscar usuarios<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+buscar usuarios con características específicas. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Usuario = {vacío, no vacío}</li>
+<li>Nombres = {vacío, no vacío}</li>
+<li>Apellidos = {vacío, no vacío}</li>
+<li>Correo electrónico = {vacío, no vacío}</li>
+<li>Roles = {vacío, no vacío}</li>
+<li>Activo = {si, no} </li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de usuarios y
+seleccionar la opción administrar usuarios.</li>
+<li>Introducir el id</li>
+<li>Introducir los nombres</li>
+<li>Introducir los apellidos<br>
+</li>
+<li>Introducir el correo electrónico<br>
+</li>
+<li>Introducir los roles<br>
+</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco.<br>
+</li>
+<li>Verificar
+que en la lista de usuarios desplegada los usuarios fueron filtrados
+correctamente de acuerdo a los criterios de búsqueda.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si
+no coincide algún usuario con los criterios de búsqueda, el sistema
+despliega un mensaje indicando que no se encontraron resultados. <br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
 </table>
 </div>
-
-
-
-<div id="unique-test-case-id4">
-<h3>unique-test-case-id4: Test Case Title</h3>
-
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Purpose:</th>
-  <td>
-   SENTENCES
-  </td>
- </tr>
-
- <tr>
-  <th>Prereq:</th>
-  <td>
-   SENTENCES
-  </td>
- </tr>
-
- <tr>
-  <th>Test Data:</th>
-  <td>
-   <div>VAR = {VALUES}</div> 
-   <div>VAR = {VALUES}</div> 
-  </td>
- </tr>
-
- <tr>
-  <th>Steps:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>verify ...</li>
-   </ol>
-  </td>
- </tr>
-
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-
+</div>
+<div class="sample1">
+<div id="CP-06">
+<h3>CP-06: Activar usuario<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+activar un usuario desactivado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.<br>
+El usuario debe estar desactivado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un usuario desactivado.<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de usuarios y seleccionar la
+opción
+administrar usuarios.</li>
+<li>Elegir de la lista de usuarios el usuario que desea
+activar y presionar sobre la opción activar.</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón
+aceptar.</li>
+<li>Verificar que el usuario sea activado correctamente y
+que
+el sistema active la opción desactivar usuario.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
 </table>
 </div>
-
-
-
-<div id="unique-test-case-id5">
-<h3>unique-test-case-id5: Test Case Title</h3>
-
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Purpose:</th>
-  <td>
-   SENTENCES
-  </td>
- </tr>
-
- <tr>
-  <th>Prereq:</th>
-  <td>
-   SENTENCES
-  </td>
- </tr>
-
- <tr>
-  <th>Test Data:</th>
-  <td>
-   <div>VAR = {VALUES}</div> 
-   <div>VAR = {VALUES}</div> 
-  </td>
- </tr>
-
- <tr>
-  <th>Steps:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>verify ...</li>
-   </ol>
-  </td>
- </tr>
-
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-
+</div>
+<div class="sample1">
+<div id="CP-07">
+<h3>CP-07: Desactivar usuario
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+desactivar un usuario activado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.<br>
+El usuario debe estar activado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un usuario activado.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de usuarios y seleccionar la
+opción
+administrar usuarios.</li>
+<li>Elegir de la lista de usuarios el usuario que desea
+desactivar y presiona sobre la opción desactivar.</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el usuario sea desactivado
+correctamente y
+que el sistema active la opción activar usuario.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
 </table>
 </div>
-
-
-
-<div id="unique-test-case-id6">
-<h3>unique-test-case-id6: Test Case Title</h3>
-
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Purpose:</th>
-  <td>
-   SENTENCES
-  </td>
- </tr>
-
- <tr>
-  <th>Prereq:</th>
-  <td>
-   SENTENCES
-  </td>
- </tr>
-
- <tr>
-  <th>Test Data:</th>
-  <td>
-   <div>VAR = {VALUES}</div> 
-   <div>VAR = {VALUES}</div> 
-  </td>
- </tr>
-
- <tr>
-  <th>Steps:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>verify ...</li>
-   </ol>
-  </td>
- </tr>
-
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-
+</div>
+<div class="sample1">
+<div id="CP-08">
+<h3>CP-08: Crear rol<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+crear un rol. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.</div>
+<div> </div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Rol = {válido, inválido, vacío}</li>
+<li>Url inicial = {válido, inválido, vacío}</li>
+<li>Prioridad = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de roles y seleccionar la opción
+crear
+rol.</li>
+<li>Introducir el rol</li>
+<li>Introducir la url inicial<br>
+</li>
+<li>Introducir la prioridad<br>
+</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar
+que se visualice el rol que se acaba de crear y que los datos
+mostrados sean los mismos que se proporcionaron en el formulario.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
 </table>
 </div>
-
-
-<div class="todo">
-  TODO:  Check for <a
-  href="http://readyset.tigris.org/words-of-wisdom/test-runs.html">words
-  of wisdom</a> and discuss ways to improve this template.
-  Or, evaluate the ReadySET Pro <a title="pro use case template and sample test plan"
-  href="http://www.readysetpro.com/">professional test case template</a>.
-</div> <!-- /todo -->
-
-  </div>
-
 </div>
-
+<div class="sample1">
+<div id="CP-09">
+<h3>CP-09: Actualizar rol<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+actualizar los datos de un rol. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.</div>
+<div> </div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Rol = {válido, inválido, vacío}</li>
+<li>Url inicial = {válido, inválido, vacío}</li>
+<li>Prioridad = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de roles y seleccionar la opción
+actualizar rol.</li>
+<li>Modificar el rol</li>
+<li>Modificar la url inicial<br>
+</li>
+<li>Modificar la prioridad<br>
+</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar
+que se visualice el rol y que los datos
+mostrados han sido actualizados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-10">
+<h3>CP-10: Visualizar rol<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+visualizar los datos de un rol. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.<br>
+Debe existir al menos un rol.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un rol<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de roles</li>
+<li>Elegir y presionar sobre el rol.</li>
+<li>Verificar
+que todos los datos del rol sean desplegados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar los roles activos e inactivos.<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-11">
+<h3>CP-11: Listar roles</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+visualizar la lista de roles activos. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.<br>
+Debe existir al menos un rol activo.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Roles activos.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de roles.<br>
+</li>
+<li>Verificar
+que la lista de roles sea desplegada correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan sólo los roles activos.</li>
+<li>Si
+no existe algún rol activo el sistema
+despliega un mensaje indicando que no se encontraron resultados. </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-12">
+<h3>CP-12: Buscar roles<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+buscar roles con características específicas. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Rol = {vacío, no vacío}</li>
+<li>Url inicial = {vacío, no vacío}</li>
+<li>Activo = {si, no} </li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de roles y seleccionar la opción
+administrar roles.</li>
+<li>Introducir&nbsp; el id</li>
+<li>Introducir el rol</li>
+<li>Introducir la url inicial<br>
+</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco.<br>
+</li>
+<li>Verificar
+que en la lista de roles desplegada los roles
+fueron filtrados correctamente de acuerdo a los criterios de búsqueda.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si
+no coincide algún rol con los criterios de búsqueda, el sistema
+despliega un mensaje indicando que no se encontraron resultados. <br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-13">
+<h3>CP-13: Activar rol<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador pueden
+activar un rol desactivado.</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.<br>
+El rol debe estar desactivado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un rol desactivado.<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de roles y seleccionar la opción
+administrar roles.</li>
+<li>Elegir de la lista de roles el rol que desea activar
+y
+presionar sobre la opción activar.</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón
+aceptar.</li>
+<li>Verificar que el rol sea activado correctamente y que
+el
+sistema active la opción desactivar rol.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-14">
+<h3>CP-14: Desactivar rol<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de
+administrador&nbsp;
+pueden desactivar un rol activado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador.<br>
+El rol debe estar activado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un rol activado.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de roles y seleccionar la opción
+administrar roles.</li>
+<li>Elegir de la lista de roles el rol que desea
+desactivar y
+presiona sobre la opción desactivar.</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el rol sea desactivado correctamente y
+que
+el sistema active la opción activar rol.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-17">
+<h3>CP-17: Crear tipo de equipo<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden crear un tipo de equipo. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de equipo y seleccionar
+la opción crear tipo de equipo</li>
+<li>Introducir el nombre del tipo de equipo</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar
+que se visualice el tipo de equipo que se acaba de crear y que los
+datos
+mostrados sean los mismos que se proporcionaron en el formulario.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-18">
+<h3>CP-18: Actualizar tipo de equipo<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden actualizar los datos de un tipo de equipo. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de equipo y seleccionar
+la opción actualizar tipo de equipo</li>
+<li>Modificar el nombre del tipo de equipo</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar
+que se visualice el tipo de equipo y que los datos
+mostrados han sido actualizados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A.<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-19">
+<h3>CP-19: Visualizar tipo de equipo<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar los datos de un tipo de equipo. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos un tipo de equipo</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un tipo de equipo<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de equipo.</li>
+<li>Elegir y presionar sobre el nombre del tipo de equipo.</li>
+<li>Verificar
+que todos los datos del tipo de equipo sean desplegados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar tipos de equipo activos e
+inactivos<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-20">
+<h3>CP-20: Listar tipos de equipo<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar la lista de tipos de equipo. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Tipos de equipo activos.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de equipo.</li>
+<li>Verificar
+que la lista de tipos de equipo sea desplegada correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan solo los tipos de equipo activos</li>
+<li>Si no existe algún tipo de equipo el sistema
+despliega un mensaje indicando que no se encontraron resultados.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-21">
+<h3>CP-21: Buscar tipos de equipo<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden buscar tipos de equipo con caracteristicas
+especificas. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Nombre = {vacío, no vacío}</li>
+<li>Activo = {si, no} </li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de equipo y seleccionar
+la
+opción administrar tipos de equipo.</li>
+<li>Introducir&nbsp; el Id</li>
+<li>Introducir el nombre</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco.<br>
+</li>
+<li>Verificar
+que en la lista de tipos de equipo desplegada los tipos de equipo
+fueron filtrados correctamente de acuerdo a los criterios de búsqueda.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si
+no coincide algún tipo de equipo con los criterios de búsqueda, el
+sistema
+despliega un mensaje indicando que no se encontraron resultados. <br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-22">
+<h3>CP-22: Activar tipo de equipo<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden activar un tipo de equipo. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El tipo de equipo debe estar desactivado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un tipo de equipo desactivado.<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de equipo y seleccionar
+la opción administrar tipos de equipo.</li>
+<li>Elegir de la lista de tipos de equipo el tipo de
+equipo que desea activar y presionar sobre la opción activar.</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el tipo de equipo sea activado
+correctamente y que el sistema active la opción desactivar tipo de
+equipo.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-23">
+<h3>CP-23: Desactivar tipo de equipo<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden desactivar un tipo de equipo. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El tipo de equipo debe estar activado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un tipo de equipo activado.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de equipo y seleccionar
+la opción administrar tipos de equipo.</li>
+<li>Elegir de la lista de tipos de equipo el tipo de
+equipo que desea desactivar y presionar sobre la opción desactivar.</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el tipo de equipo sea desactivado
+correctamente y que el sistema active la opción activar tipo de equipo.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-24">
+<h3>CP-24: Crear marca<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden crear una marca. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de marcas y seleccionar
+la opción crear marca.</li>
+<li>Introducir el nombre de la marca.</li>
+<li>Marcar o desmarcar activo.</li>
+<li>Hacer clic en crear</li>
+<li>Verificar
+que se visualice la marca que se acaba de crear y que los
+datos
+mostrados sean los mismos que se proporcionaron en el formulario.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-25">
+<h3>CP-25: Actualizar marca<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden actualizar los datos de una marca. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de marcas y seleccionar
+la opción actualizar marca.</li>
+<li>Modificar el nombre de la marca</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar
+que se visualice la marca y que los datos
+mostrados han sido actualizados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A.<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-26">
+<h3>CP-26: Visualizar marca<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar los datos de una marca. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos una marca</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Una marca<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de marcas.</li>
+<li>Elegir y presionar sobre el nombre de la marca.</li>
+<li>Verificar
+que todos los datos de la marca sean desplegados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar marcas activas e
+inactivas<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-27">
+<h3>CP-27: Listar marcas<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar la lista de marcas. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Marcas activas.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de marcas.</li>
+<li>Verificar
+que la lista de marcas sea desplegada correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan solo las marcas activas.</li>
+<li>Si no existe alguna marca el sistema
+despliega un mensaje indicando que no se encontraron resultados.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-28">
+<h3>CP-28: Buscar marcas<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden buscar marcas con caracteristicas
+especificas. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Nombre = {vacío, no vacío}</li>
+<li>Activo = {si, no} </li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de marcas y seleccionar la
+opción administrar marcas.</li>
+<li>Introducir&nbsp;el Id</li>
+<li>Introducir el nombre</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco.<br>
+</li>
+<li>Verificar
+que en la lista de marcas desplegada las marcas
+fueron filtradas correctamente de acuerdo a los criterios de búsqueda.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si
+no coincide alguna marca con los criterios de búsqueda, el
+sistema
+despliega un mensaje indicando que no se encontraron resultados. <br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-29">
+<h3>CP-29: Activar marca<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden activar una marca. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+La marca debe estar desactivada.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Una marca desactivada.<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de marcas y seleccionar
+la opción administrar marcas.</li>
+<li>Elegir de la lista de marcas la marca que desea
+activar y presionar sobre la opción activar.</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que la marca sea activada
+correctamente y que el sistema active la opción desactivar marca.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-30">
+<h3>CP-30: Desactivar marca<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden desactivar una marca. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+La marca debe estar activada.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Una marca activada.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de marcas y seleccionar
+la opción administrar marcas.</li>
+<li>Elegir de la lista de marcas la marca que desea
+desactivar y presionar sobre la opción desactivar.</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que la marca sea desactivada
+correctamente y que el sistema active la opción activar marca.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-31">
+<h3>CP-31: Crear modelo<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden crear un modelo. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Dede existir al menos un tipo de equipo activo y al menos una marca
+activa.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Tipo de equipo = {seleccionado, no seleccionado}</li>
+<li>Marca = {seleccionado, no seleccionado}</li>
+<li>Nombre = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de modelos y seleccionar
+la opción crear modelo.</li>
+<li>Seleccionar el tipo de equipo.</li>
+<li>Seleccionar la marca.</li>
+<li>Introducir el nombre del modelo</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar
+que se visualice el modelo que se acaba de crear y que los
+datos
+mostrados sean los mismos que se proporcionaron en el formulario.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-32">
+<h3>CP-32: Actualizar modelo<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden actualizar los datos de un tipo de equipo. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Dede existir al menos un tipo de equipo activo y al menos una marca
+activa.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Tipo de equipo = {seleccionado, no seleccionado}</li>
+<li>Marca = {seleccionado, no seleccionado}</li>
+<li>Nombre = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de modelos y seleccionar
+la opción actualizar modelo.</li>
+<li>Seleccionar el tipo de equipo</li>
+<li>Seleccionar la marca</li>
+<li>Modificar el nombre del modelo</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar
+que se visualice el modelo y que los datos
+mostrados han sido actualizados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A.<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-33">
+<h3>CP-33: Visualizar modelo<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar los datos de un modelo. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos un modelo</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un modelo<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de modelos.</li>
+<li>Elegir y presionar sobre el nombre del modelo.</li>
+<li>Verificar
+que todos los datos del modelo sean desplegados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar modelos activos e
+inactivos<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-34">
+<h3>CP-34: Listar modelos<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar la lista de modelos. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Modelos activos.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de modelos.</li>
+<li>Verificar
+que la lista de modelos sea desplegada correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan solo los modelos activos</li>
+<li>Si no existe algún modelo el sistema
+despliega un mensaje indicando que no se encontraron resultados.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-35">
+<h3>CP-35: Buscar modelos<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden buscar modelos con caracteristicas
+especificas. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Tipo de equipo = {vacío, no vacío}</li>
+<li>Marca = {vacía, no vacía}</li>
+<li>Nombre = {vacío, no vacío}</li>
+<li>Activo = {si, no} </li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de modelos y seleccionar la
+opción administrar modelos.</li>
+<li>Introducir&nbsp;el Id</li>
+<li>Introducir el tipo de equipo</li>
+<li>Introducir la marca</li>
+<li>Introducir el nombre</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco.<br>
+</li>
+<li>Verificar
+que en la lista de modelos desplegada los modelos
+fueron filtrados correctamente de acuerdo a los criterios de búsqueda.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si
+no coincide algún modelo con los criterios de búsqueda, el
+sistema
+despliega un mensaje indicando que no se encontraron resultados. <br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-36">
+<h3>CP-36: Activar modelo<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden activar un modelo desactivado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El modelo debe estar desactivado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un modelo desactivado.<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de modelos y seleccionar
+la opción administrar modelos.</li>
+<li>Elegir de la lista de modelos el modelo que desea
+activar y presionar sobre la opción activar.</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el modelo sea activado
+correctamente y que el sistema active la opción desactivar el modelo.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-37">
+<h3>CP-37: Desactivar modelo<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden desactivar un modelo activado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El modelo debe estar activado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un modelo activado.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de modelos y seleccionar
+la opción administrar modelos.</li>
+<li>Elegir de la lista de modelos el modelo que desea
+desactivar y presionar sobre la opción desactivar.</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el modelo sea desactivado
+correctamente y que el sistema active la opción activar modelo.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-38">
+<h3>CP-38: Crear accesorio<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden crear un accesorio. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+<div> </div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre = {válido, inválido, vacío} </li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de accesorios y seleccionar la
+opción
+crear accesorio.</li>
+<li>Introducir el nombre.</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar
+que se visualice el accesorio que se acaba de crear y que los datos
+mostrados sean los mismos que se proporcionaron en el formulario.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-39">
+<h3>CP-39: Actualizar accesorio
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden actualizar los datos de un accesorio. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+<div> </div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de accesorios y seleccionar la
+opción
+actualizar accesorio</li>
+<li>Modificar el nombre</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar
+que se visualice el accesorio y que los datos
+mostrados han sido actualizados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-40">
+<h3>CP-40: Visualizar accesorio
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar los datos de un accesorio. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos un accesorio.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un accesorio.</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de accesorios</li>
+<li>Elegir y presionar sobre el nombre del accesorio.</li>
+<li>Verificar
+que todos los datos del accesorio sean desplegados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar accesorios activos e inactivos.<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-41">
+<h3>CP-41: Listar accesorios</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar la lista de accesorios activos. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos un accesorio activo.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Accesorios activos.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de accesorios.</li>
+<li>Verificar
+que la lista de accesorios sea desplegada correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan sólo los accesorio activos</li>
+<li>Si
+no existe algún accesorio activo el sistema
+despliega un mensaje indicando que no se encontraron resultados.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-42">
+<h3>CP-42: Buscar accesorios</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden buscar accesorios con características específicas.
+</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Nombre = {vacío, no vacío}</li>
+<li>Activo = {si, no} </li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de accesorios y seleccionar la
+opción
+administrar accesorios.</li>
+<li>Introducir el id</li>
+<li>Introducir el nombre </li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco.<br>
+</li>
+<li>Verificar
+que en la lista de accesorios desplegada los accesorios
+fueron filtradas correctamente de acuerdo a los criterios de búsqueda.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si
+no coincide algún accesorio con los criterios de búsqueda, el sistema
+despliega un mensaje indicando que no se encontraron resultados. <br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-43">
+<h3>CP-43: Activar accesorio
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden activar un accesorio desactivado.</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+&nbsp;
+El accesorio debe estar desactivado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un accesorio desactivado.<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de accesorios y seleccionar la
+opción
+administrar accesorios.</li>
+<li>Elegir de la lista de accesorios el accesorio que
+desea
+activar y presionar sobre la opción activar.</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón
+aceptar.</li>
+<li>Verificar que el accesorio sea activado correctamente
+y
+que el sistema active la opción desactivar accesorio.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-44">
+<h3>CP-44: Desactivar accesorio
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden desactivar un accesorio activado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El accesorio debe estar activado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un accesorio activado.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de accesorios y seleccionar la
+opción
+administrar accesorios.</li>
+<li>Elegir de la lista de accesorios el accesorio que
+desea
+desactivar y presiona sobre la opción desactivar.</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el accesorio sea desactivado
+correctamente
+y que el sistema active la opción activar accesorio.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-45">
+<h3>CP-45: Crear tipo de cliente<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden crear un tipo de cliente. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+<div> </div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li> Tipo de cliente = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de cliente y seleccionar
+la opción crear tipo de cliente</li>
+<li>Introducir el tipo de cliente</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar
+que se visualice el tipo de cliente que se acaba de crear y que los
+datos
+mostrados sean los mismos que se proporcionaron en el formulario.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-46">
+<h3>CP-46: Actualizar tipo de cliente<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden actualizar los datos de un tipo de cliente. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+<div> </div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li> Tipo de cliente = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de cliente y seleccionar
+la opción actualizar tipo de cliente</li>
+<li>Modificar el tipo de cliente</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar
+que se visualice el tipo de cliente y que los datos
+mostrados han sido actualizados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-47">
+<h3>CP-47: Visualizar tipo de cliente<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar los datos de un tipo de cliente. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos un tipo de cliente.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un tipo de cliente</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de clientes</li>
+<li>Elegir y presionar sobre el nombre del tipo de
+cliente.</li>
+<li>Verificar
+que todos los datos del tipo de cliente sean desplegados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar tipos de cliente activos e
+inactivos<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-48">
+<h3>CP-48: Listar tipos de cliente</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar la lista de tipos de cliente activos. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos un tipo de cliente activo.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Tipos de clientes activos.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de cliente</li>
+<li>Verificar
+que la lista de tipos de cliente sea desplegada correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan sólo los tipos de cliente activos</li>
+<li>Si
+no existe algún tipo de cliente activo el sistema
+despliega un mensaje indicando que no se encontraron resultados. </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-49">
+<h3>CP-49: Buscar tipos de cliente</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden buscar tipos de cliente con características
+específicas. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Tipo de cliente = {vacío, no vacío}</li>
+<li>Activo = {si, no} </li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de cliente y seleccionar
+la opción administrar tipos de cliente.</li>
+<li>Introducir&nbsp; el Id</li>
+<li>Introducir el tipo de cliente</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco.<br>
+</li>
+<li>Verificar
+que en la lista de tipos de clientes desplegada los tipos de cliente
+fueron filtrados correctamente de acuerdo a los criterios de búsqueda.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si
+no coincide algún tipo de cliente con los criterios de búsqueda, el
+sistema
+despliega un mensaje indicando que no se encontraron resultados. <br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-50">
+<h3>CP-50: Activar tipo de cliente<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden activar un tipo de cliente desactivado.</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El tipo de cliente debe estar desactivado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un tipo de cliente desactivado.<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de cliente y seleccionar
+la opción administrar tipos de cliente.</li>
+<li>Elegir de la lista de tipos de cliente el tipo de
+cliente que desea activar y presionar sobre la opción activar.</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el tipo de cliente sea activado
+correctamente y que el sistema active la opción desactivar tipo de
+cliente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-51">
+<h3>CP-51: Desactivar tipo de cliente<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden desactivar un tipo de cliente activado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El tipo de cliente debe estar activado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un tipo de cliente activado.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de tipos de cliente y seleccionar
+la opción administrar tipos de clientes.</li>
+<li>Elegir de la lista de tipos de cliente el tipo de
+cliente que desea desactivar y presiona sobre la opción desactivar.</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el tipo de cliente sea desactivado
+correctamente y que el sistema active la opción activar tipo de cliente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-52">
+<h3>CP-52: Crear cliente<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden crear un cliente. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+<div><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;;">Debe
+existir al menos un tipo de cliente activo.</span></div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre de cliente = {válido, inválido, vacío}</li>
+<li> Tipo de cliente = {seleccionado, no seleccionado}</li>
+<li>Dependencia = {seleccionado, no seleccionado}</li>
+<li>Dirección del cliente = {válido, inválido, vacío}</li>
+<li> Nombre de contacto = {válido, inválido, vacío}</li>
+<li>Correo electrónico = {válido, inválido, vacío}</li>
+<li> Teléfono de oficina = {válido, inválido, vacío}</li>
+<li>Teléfono celular = {válido, inválido, vacío}</li>
+<li>Teléfono de casa = {válido, inválido, vacío}</li>
+<li> Extensión de oficina = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de clientes y seleccionar la
+opción crear cliente</li>
+<li>Introducir el nombre de cliente</li>
+<li>Seleccionar el tipo de cliente</li>
+<li>Seleccionar la dependencia</li>
+<li>Introducir la dirección del cliente</li>
+<li>Introducir el nombre de contacto</li>
+<li>Introducir el correo electrónico</li>
+<li> Introducir el teléfono de oficina</li>
+<li>Introducir el teléfono celular</li>
+<li>Introducir el teléfono de casa</li>
+<li>Introducir la extensión de oficina</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar
+que se visualice el cliente que se acaba de crear y que los datos
+mostrados sean los mismos que se proporcionaron en el formulario.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-53">
+<h3>CP-53: Actualizar cliente<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden actualizar los datos de un cliente. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+<div><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;;">Debe
+existir al menos un tipo de cliente activo.</span></div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre de cliente = {válido, inválido, vacío}</li>
+<li> Tipo de cliente = {seleccionado, no seleccionado}</li>
+<li>Dependencia = {seleccionado, no seleccionado}</li>
+<li>Dirección del cliente = {válido, inválido, vacío}</li>
+<li> Nombre de contacto = {válido, inválido, vacío}</li>
+<li>Correo electrónico = {válido, inválido, vacío}</li>
+<li> Teléfono de oficina = {válido, inválido, vacío}</li>
+<li>Teléfono celular = {válido, inválido, vacío}</li>
+<li>Teléfono de casa = {válido, inválido, vacío}</li>
+<li> Extensión de oficina = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de clientes y seleccionar la
+opción actualizar cliente</li>
+<li>Modificar el nombre de cliente</li>
+<li>Seleccionar el tipo de cliente</li>
+<li>Seleccionar la dependencia</li>
+<li>Modificar la dirección del cliente</li>
+<li>Modificar el nombre de contacto</li>
+<li>Modificar el correo electrónico</li>
+<li> Modificar el teléfono de oficina</li>
+<li>Modificar el teléfono celular</li>
+<li>Modificar el teléfono de casa</li>
+<li>Modificar la extensión de oficina</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar
+que se visualice el cliente y que los datos
+mostrados han sido actualizados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si el cliente tiene más de un contacto se actualiza
+la información del primer contacto.<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-54">
+<h3>CP-54: Visualizar cliente<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar los datos de un cliente. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos un cliente.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un cliente<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de clientes</li>
+<li>Elegir y presionar sobre el nombre del cliente.</li>
+<li>Verificar
+que todos los datos del cliente sean desplegados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar clientes activos e inactivos<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-55">
+<h3>CP-55: Listar clientes<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar la lista de clientes activos. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos un cliente activo.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Clientes activos.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de clientes</li>
+<li>Verificar
+que la lista de clientes sea desplegada correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan sólo los clientes activos</li>
+<li>Si
+no existe algún cliente activo el sistema
+despliega un mensaje indicando que no se encontraron resultados.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-56">
+<h3>CP-56: Buscar clientes<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden buscar clientes con características específicas. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Nombre = {vacío, no vacío}</li>
+<li>Tipo de cliente = {vacío, no vacío}</li>
+<li>Nombre de contacto = {vacío, no vacío}</li>
+<li>Dependencia = {vacío, no vacío}</li>
+<li>Activo = {si, no} </li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de clientes y seleccionar la
+opción administrar clientes.</li>
+<li>Introducir&nbsp; el Id</li>
+<li>Introducir el nombre</li>
+<li>Introducir el tipo de cliente</li>
+<li>Introducir el nombre de contacto</li>
+<li>Introducir la dependencia</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco.<br>
+</li>
+<li>Verificar
+que en la lista de clientes desplegada los clientes fueron filtrados
+correctamente de acuerdo a los criterios de búsqueda.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si
+no coincide algún cliente con los criterios de búsqueda, el sistema
+despliega un mensaje indicando que no se encontraron resultados. <br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-57">
+<h3>CP-57: Activar cliente<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden activar un cliente desactivado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El cliente debe estar desactivado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un cliente desactivado.<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de clientes y seleccionar la
+opción administrar clientes.</li>
+<li>Elegir de la lista de clientes el cliente que desea
+activar y presionar sobre la opción activar.</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el cliente sea activado correctamente y
+que el sistema active la opción desactivar cliente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-58">
+<h3>CP-58: Desactivar cliente<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden desactivar un cliente activado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El cliente debe estar activado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un cliente activado.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de clientes y seleccionar la
+opción administrar clientes.</li>
+<li>Elegir de la lista de clientes el cliente que desea
+desactivar y presiona sobre la opción desactivar.</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el cliente sea desactivado
+correctamente y que el sistema active la opción activar cliente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-59">
+<h3>CP-59: Crear contacto<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden crear un contacto. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+<div><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;;">Debe
+existir al menos un cliente activo.</span></div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Cliente = {seleccionado, no seleccionado}</li>
+<li> Nombre de contacto = {válido, inválido, vacío}</li>
+<li>Correo electrónico = {válido, inválido, vacío}<br>
+</li>
+<li>Teléfono celular = {válido, inválido, vacío}<br>
+</li>
+<li>Teléfono de casa = {válido, inválido, vacío}</li>
+<li> Teléfono de oficina = {válido, inválido, vacío}</li>
+<li> Extensión de oficina = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de contactos y seleccionar la
+opción crear contacto<br>
+</li>
+<li>Seleccionar el cliente</li>
+<li>Introducir el nombre de contacto</li>
+<li>Introducir el correo electrónico<br>
+</li>
+<li>Introducir el teléfono celular</li>
+<li>Introducir el teléfono de casa</li>
+<li> Introducir el teléfono de oficina</li>
+<li>Introducir la extensión de oficina</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar
+que se visualice el contacto que se acaba de crear y que los datos
+mostrados sean los mismos que se proporcionaron en el formulario.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-60">
+<h3>CP-60: Actualizar contacto<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden actualizar los datos de un contacto. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+<div><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;;">Debe
+existir al menos un cliente activo.</span></div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Cliente = {seleccionado, no seleccionado}</li>
+<li> Nombre de contacto = {válido, inválido, vacío}</li>
+<li>Correo electrónico = {válido, inválido, vacío}<br>
+</li>
+<li>Teléfono celular = {válido, inválido, vacío}<br>
+</li>
+<li>Teléfono de casa = {válido, inválido, vacío}</li>
+<li> Teléfono de oficina = {válido, inválido, vacío}</li>
+<li> Extensión de oficina = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de contactos y seleccionar la
+opción actualizar contacto</li>
+<li>Seleccionar el cliente</li>
+<li>Modificar el nombre de contacto</li>
+<li>Modificar el correo electrónico<br>
+</li>
+<li>Modificar el teléfono celular</li>
+<li>Modificar el teléfono de casa</li>
+<li> Modificar el teléfono de oficina</li>
+<li>Modificar la extensión de oficina</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar
+que se visualice el contacto y que los datos
+mostrados han sido actualizados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-61">
+<h3>CP-61: Visualizar contacto<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar los datos de un contacto. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos un contacto.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un contacto<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de contactos</li>
+<li>Elegir y presionar sobre el nombre del contacto.</li>
+<li>Verificar
+que todos los datos del contacto sean desplegados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar contactos activos e inactivos<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-62">
+<h3>CP-62: Listar contactos<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar la lista de contactos activos. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos un contacto activo.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Contactos activos.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de contactos</li>
+<li>Verificar
+que la lista de contactos sea desplegada correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan sólo los contactos activos</li>
+<li>Si
+no existe algún contacto activo el sistema
+despliega un mensaje indicando que no se encontraron resultados.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-63">
+<h3>CP-63: Buscar contactos<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden buscar contactos con características específicas. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li> Nombre de contacto = {vacío, no vacío}</li>
+<li>Correo electrónico = {vacío, no vacío} </li>
+<li>Teléfono celular = {vacío, no vacío} </li>
+<li>Teléfono de casa = {vacío, no vacío}</li>
+<li> Teléfono de oficina = {vacío, no vacío}</li>
+<li> Extensión de oficina = {vacío, no vacío}</li>
+<li>Activo = {si, no}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de contactos y seleccionar la
+opción administrar contactos.</li>
+<li>Introducir el id</li>
+<li>Introducir el nombre de contacto</li>
+<li>Introducir el correo electrónico </li>
+<li>Introducir el teléfono celular </li>
+<li>Introducir el teléfono de casa</li>
+<li>Introducir el teléfono de oficina</li>
+<li>Introducir la extensión de oficina</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco.<br>
+</li>
+<li>Verificar
+que en la lista de contactos desplegada los contactos fueron filtrados
+correctamente de acuerdo a los criterios de búsqueda.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si
+no coincide algún contacto con los criterios de búsqueda, el sistema
+despliega un mensaje indicando que no se encontraron resultados. <br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-64">
+<h3>CP-64: Activar contacto<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden activar un contacto desactivado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El contacto debe estar desactivado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un contacto desactivado.<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de contactos y seleccionar la
+opción administrar contactos.</li>
+<li>Elegir de la lista de contactos el contacto que desea
+activar y presionar sobre la opción activar.</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el contacto sea activado correctamente
+y que el sistema active la opción desactivar contacto.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-65">
+<h3>CP-65: Desactivar contacto<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden desactivar un contacto activado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El contacto debe estar activado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un contacto activado.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de contactos y seleccionar la
+opción administrar contactos.</li>
+<li>Elegir de la lista de contactos el contacto que desea
+desactivar y presionar sobre la opción desactivar.</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el contacto sea desactivado
+correctamente y que el sistema active la opción activar contacto.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-66">
+<h3>CP-66: Crear dependencia<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden crear una dependencia. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+<div> </div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre de dependencia = {válido, inválido, vacío} </li>
+<li>Dirección = {válido, inválido, vacío}</li>
+<li>Número telefónico = {válido, inválido, vacío} </li>
+<li>Extensión = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de dependencias y seleccionar la
+opción crear dependencia</li>
+<li>Introducir el nombre de la dependencia </li>
+<li>Introducir la dirección</li>
+<li>Introducir el número telefónico </li>
+<li>Introducir la extensión </li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar
+que se visualice dependencia que se acaba de crear y que los datos
+mostrados sean los mismos que se proporcionaron en el formulario.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-67">
+<h3>CP-67: Actualizar dependencia<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden actualizar los datos de una dependencia. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+<div> </div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre de dependencia = {válido, inválido, vacío} </li>
+<li>Dirección = {válido, inválido, vacío}</li>
+<li>Número telefónico = {válido, inválido, vacío} </li>
+<li>Extensión = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de dependencias y seleccionar la
+opción actualizar dependencia</li>
+<li>Modificar el nombre de la dependencia </li>
+<li>Modificar la dirección</li>
+<li>Modificar el número telefónico </li>
+<li>Modificar la extensión </li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar
+que se visualice la dependencia y que los datos
+mostrados han sido actualizados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-68">
+<h3>CP-68: Visualizar dependencia<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar los datos de una dependencia. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos una dependencia.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Una dependencia</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de dependencias</li>
+<li>Elegir y presionar sobre el nombre de la dependencia</li>
+<li>Verificar
+que todos los datos de la dependencia sean desplegados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar dependencias activas e inactivas<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-69">
+<h3>CP-69: Listar dependencias</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar la lista de dependencias activas. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos una dependencia activa.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Dependencias activas.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de dependencias</li>
+<li>Verificar
+que la lista de dependencias sea desplegada correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan sólo las dependencias activas</li>
+<li>Si
+no existe algúna dependencia activa el sistema
+despliega un mensaje indicando que no se encontraron resultados.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-70">
+<h3>CP-70: Buscar dependencias</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden buscar dependencias con características
+específicas. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Nombre de dependencia = {vacío, no vacío} </li>
+<li>Número telefónico = {vacío, no vacío} </li>
+<li>Extensión = {vacío, no vacío}</li>
+<li>Activo = {si, no} </li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de dependencias y seleccionar la
+opción administrar dependencias.</li>
+<li>Introducir el Id</li>
+<li>Introducir el nombre de la dependencia </li>
+<li>Introducir la dirección</li>
+<li>Introducir el número telefónico </li>
+<li>Introducir la extensión</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco.<br>
+</li>
+<li>Verificar
+que en la lista de dependencias desplegada las dependencias
+fueron filtradas correctamente de acuerdo a los criterios de búsqueda.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si
+no coincide alguna dependencia con los criterios de búsqueda, el
+sistema
+despliega un mensaje indicando que no se encontraron resultados. <br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-71">
+<h3>CP-71: Activar dependencia<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden activar una dependencia.</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+La dependencia debe estar desactivada.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Una dependencia desactivada.<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de dependencias y seleccionar la
+opción administrar dependencias.</li>
+<li>Elegir de la lista de dependencias la dependencia que
+desea activar y presionar sobre la opción activar.</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que la dependencia sea activada
+correctamente y que el sistema active la opción desactivar dependencia.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-72">
+<h3>CP-72: Desactivar dependencia<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden desactivar una dependencia activada. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+La dependencia debe estar activada.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Una dependencia activada.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de dependencias y seleccionar la
+opción administrar dependencias.</li>
+<li>Elegir de la lista de dependencias la dependencia que
+desea desactivar y presiona sobre la opción desactivar.</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que la dependencia sea desactivada
+correctamente y que el sistema active la opción activar dependencia.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-87">
+<h3>CP-87: Crear trabajo</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de administrador o
+técnico puedan crear un trabajo.. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de administrador o técnico.</div>
+<div>Debe existir al menos un tipo de servicio activo</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre del trabajo = {válido, inválido, vacío}</li>
+</ul>
+</div>
+<div>
+<ul>
+<li>Tipo de Servicio = {seleccionado, no seleccionado}</li>
+<li> Descripción = {válido, inválido, vacío}</li>
+<li> Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de trabajos y seleccionar crear
+trabajo</li>
+<li>Introducir nombre del trabajo</li>
+<li>Seleccionar tipo de servicio</li>
+<li>Introducir descripción</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar que se visualice el trabajo que se acaba de
+crear y que los datos mostrados sean los mismos que se proporcionaron
+en el formulario</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-88">
+<h3>CP-88: Actualizar trabajo</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de administrador o
+técnico pueden actualizar los datos de un trabajo</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de administrador o técnico</div>
+<div>Debe existir al menos un tipo de servicio activo</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre del trabajo = {válido, inválido, vacío}</li>
+<li> Tipo de servicio = {seleccionado, no seleccionado}</li>
+<li> Descripción = {válido, inválido, vacío}</li>
+<li> Activo = {activo, inactivo}<br>
+<br>
+</li>
+</ul>
+</div>
+<br>
+<div></div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de trabajos y seleccionar la
+opción actualizar trabajos</li>
+<li>Modificar el nombre del trabajo</li>
+<li>Seleccionar el tipo de servicio</li>
+<li>Modificar la descipción</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar que se visualice el trabajo y que los datos
+mostrados han sido actualizados correctamente</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-89">
+<h3>CP-89: Visualizar trabajo</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+técnico pueden visualizar los datos de un trabajo </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<p>Se debe haber iniciado sesión con un usuario de
+administrador o técnico </p>
+<p>Debe existir al menos un trabajo</p>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<ul>
+<li>Un trabajo</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de trabajos</li>
+<li>Elegir y presionar sobre el nombre del trabajo</li>
+<li>Verificar que todos los datos del trabajo sean
+desplegados correctamente</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar trabajos activos e inactivos </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-90">
+<h3>CP-90: Listar trabajos</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+técnico pueden visualizar la lista de trabajos</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<p>Se debe haber iniciado sesión con un usuario con rol de
+administrador o técnico</p>
+<p>Debe existir al menos un trabajo activo</p>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Trabajos activos</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de trabajos</li>
+<li>Verificar que la lista de trabajos sea desplegada
+correctamente</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan sólo los trabajos activos</li>
+<li>Si no existe algún trabajo, el sistema despliega un
+mensaje indicando que no se encontraron resultados.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-91">
+<h3>CP-91: Buscar trabajos</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de administrador o
+técnico pueden buscar trabajos con características específicas</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>Se debe haber iniciado sesión con un usuario con rol de
+administrador o técnico</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Nombre del trabajo = {vacío, no vacío}</li>
+<li>Tipo de servicio = {vacío, no vacío}</li>
+<li>Activo = {si, no}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de trabajos y seleccionar la
+opción administrar trabajos</li>
+<li>Introducir el Id</li>
+<li>Introducir el nombre del trabajo</li>
+<li>Introducir el tipo de servicio</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco</li>
+<li>Verificar que en la lista de trabajo desplegada los
+trabajos fueron filtrados correctamente de acuerdo a los criterios de
+búsqueda</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si no coincide algún trabajo con los criterios de
+búsqueda, el sistema despliega un mensaje indicando que no se
+encontraron resultados. </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-92">
+<h3>CP-92: Activar trabajo</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de administrador o
+técnico pueden activar un trabajo desactivado</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td> Se debe haber iniciado sesión con un usuario con rol
+de administrador o técnico<br>
+El trabajo debe estar desactivado</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un trabajo desactivado</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de trabajos y seleccionar la
+opción administrar trabajos</li>
+<li>Elegir de la lista de trabajos el trabajo que desea
+activar y presionar sobre la opción activar</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el trabajo sea activado correctamente y
+que el sistema active la opción desactivar trabajo</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-93">
+<h3>CP-93: Desactivar trabajo</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+técnico pueden desactivar un trabajo activado</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>Se debe haber iniciado sesión con un usuario con rol de
+administrador o técnico<br>
+El trabajo debe estar desactivado</td>
+</tr>
+<tr>
+<th>Datos de prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un trabajo activado</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de trabajos y seleccionar la
+opción administrar trabajos.</li>
+<li>Elegir de la lista de trabajos, el trabajo que desea
+desactivar y presionar sobre la opción desactivar</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el trabajo sea desactivado
+correctamente y que el sistema active la opción activar trabajo</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-94">
+<h3>CP-94: Crear estado de refacción</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden crear un estado de refacción </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td> Se debe haber iniciado sesión con un usuario con rol
+de administrador o recepcionista </td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Descripción = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones y seleccionar crear
+estado de refacción</li>
+<li>Introducir la descripción</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar que se visualice el estado de refacción que
+se acaba de crear y que los datos mostrados sean los mismos que se
+proporcionaron en el formulario</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-95">
+<h3>CP-95: Actualizar estado de refacción</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de administrador o
+recepcionista pueden actualizar los datos de un estado de refacción</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td> Se debe haber iniciado sesión con un usuario con rol
+de administrador o recepcionista</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Descripción = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al modulo de refacciones y seleccionar la
+opción actualizar estado de refacción </li>
+<li>Modificar la descripción</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar que se visualice el estado de refacción y
+que los datos mostrados han sido actualizados correctamente</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-96">
+<h3>CP-96: Visualizar estado de refacción</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar los datos de un estado de refacción</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<p>Se debe haber iniciado sesión con un usuario con rol de
+administrador o recepcionista</p>
+<p>Debe existir al menos un estado de refacción</p>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un estado de refacción</li>
+</ul>
+</div>
+<div> </div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones y seleccionar la
+opción listar estados de refacción</li>
+<li>Elegir y presionar sobre el nombre del estado de
+refacción</li>
+<li>Verificar que todos los datos del estado de refacción
+sean desplegados correctamente</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar estados de refacción activos e
+inactivos </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-97">
+<h3>CP-97: Listar estados de refacción</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar la lista de estados de refacción</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<p>Se debe haber iniciado sesión con un usuario con rol de
+administrador o recepcionista</p>
+<p>Debe existir al menos un estado de refacción activo</p>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Estados de refacción activos</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones y seleccionar la
+opción listar estados de refacción</li>
+<li>Verificar que la lista de estados de refacción sea
+desplegada correctamente</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan sólo los estados de refacción activos. </li>
+<li>Si no existe algún estado de refacción, el sistema
+despliega un mensaje indicando que no se encontraron resultados.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-98">
+<h3>CP-98: Buscar estados de refacción</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden buscar estados de refacción con características
+específicas</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td> Se debe haber iniciado sesión con un usuario con rol
+de administrador o recepcionista</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Descripción = {vacío, no vacío}</li>
+<li>Activo = {si, no}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones y seleccionar la
+opción administrar estados de refacción</li>
+<li>Introducir el Id</li>
+<li>Introducir la descripción</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco</li>
+<li>Verificar que en la lista de estados de refacción
+desplegada los estados de refacción fueron filtrados correctamente de
+acuerdo con los criterios de búsqueda</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si no coincide algún estado de refacción con los
+criterios de búsqueda, el sistema despliega un mensaje indicando que no
+se encontraron resultados</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-99">
+<h3>CP-99: Activar estado de refacción</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de administrador o
+recepcionista pueden activar un estado de refacción</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>Se debe haber iniciado sesión con un usuario con rol de
+administrador o recepcionista<br>
+El estado de refacción debe estar desactivado</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un estado de refacción desactivado</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones y seleccionar la
+opción administrar estados de refacción</li>
+<li>Elegir de la lista de estados de refacción el estado
+que desea activar y presionar sobre la opción activar</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el estado de refacción sea activado
+correctamente y que el sistema active la opción desactivar estado de
+refacción</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-100">
+<h3>CP-100: Desactivar estado de refacción</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de administrador o
+recepcionista pueden desactivar un estado de refacción activado</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td> Se debe haber iniciado sesión con un usuario con rol
+de administrador o recepcionista</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un estado de refacción activado</li>
+</ul>
+</div>
+<div> </div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones y seleccionar la
+opción administrar estados de refacción</li>
+<li>Elegir de la lista de estados de refacción el estado
+que desea desactivar y presionar sobre la opción desactivar</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar</li>
+<li>Verificar que el estado de refacción sea desactivado
+correctamente y que el sistema active la opción activar estado de
+refacción</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-101">
+<h3>CP-101: Crear proveedor<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden crear un proveedor. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Nombre de proveedor = {válido, inválido, vacío}</li>
+<li>Nombre de contacto = {válido, inválido, vacío} </li>
+<li>Correo electrónico = {válido, inválido, vacío}</li>
+<li>Teléfono de contacto = {válido, inválido, vacío}</li>
+<li>Dirección = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de proveedores y seleccionar la
+opción crear proveedor
+</li>
+<li>Introducir el nombre de proveedor</li>
+<li>Introducir el nombre de contacto </li>
+<li>Introducir el correo electrónico</li>
+<li>Introducir el teléfono de contacto</li>
+<li>Introducir la dirección</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar
+que se visualice el proveedor que se acaba de crear y que los datos
+mostrados sean los mismos que se proporcionaron en el formulario.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-102">
+<h3>CP-102: Actualizar proveedor<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden actualizar los datos de un proveedor. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<div>
+<ul>
+<li>Nombre de proveedor = {válido, inválido, vacío}</li>
+<li>Nombre de contacto = {válido, inválido, vacío} </li>
+<li>Correo electrónico = {válido, inválido, vacío}</li>
+<li>Teléfono de contacto = {válido, inválido, vacío}</li>
+<li>Dirección = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de proveedores y seleccionar la
+opción actualizar proveedor</li>
+<li>Modificar el nombre de proveedor</li>
+<li>Modificar el nombre de contacto </li>
+<li>Modificar el correo electrónico</li>
+<li>Modificar el teléfono de contacto</li>
+<li>Modificar la dirección</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar
+que se visualice el proveedor y que los datos
+mostrados han sido actualizados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-103">
+<h3>CP-103: Visualizar proveedor<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar los datos de un proveedor. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos un proveedor.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un proveedor<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de proveedores</li>
+<li>Elegir y presionar sobre el nombre del proveedor.</li>
+<li>Verificar
+que todos los datos del proveedor sean desplegados correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar proveedores activos e inactivos<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-104">
+<h3>CP-104: Listar proveedores<br>
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar la lista de proveedores activos. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+Debe existir al menos un proveedor activo.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Proveedores activos.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de proveedores</li>
+<li>Verificar
+que la lista de proveedores sea desplegada correctamente.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan sólo los proveedores activos</li>
+<li>Si
+no existe algún proveedor activo el sistema
+despliega un mensaje indicando que no se encontraron resultados.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-105">
+<h3>CP-105: Buscar proveedores
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden buscar proveedores con características
+específicas. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Nombre de proveedor = {vacío, no vacío}</li>
+<li>Nombre de contacto = {vacío, no vacío}</li>
+<li>Correo electrónico = {vacío, no vacío}</li>
+<li>Télefono de contacto = {vacío, no vacío}</li>
+<li>Activo = {si, no}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de proveedores y seleccionar la
+opción administrar proveedores.</li>
+<li>Introducir el id</li>
+<li>Introducir el nombre de proveedor</li>
+<li>Introducir el nombre de contacto </li>
+<li>Introducir el correo electrónico</li>
+<li>Introducir el teléfono de contacto</li>
+<li>Introducir la dirección</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco.<br>
+</li>
+<li>Verificar
+que en la lista de proveedores desplegada los proveedores fueron
+filtrados correctamente de acuerdo a los criterios de búsqueda.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si
+no coincide algún proveedor con los criterios de búsqueda, el sistema
+despliega un mensaje indicando que no se encontraron resultados. <br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-106">
+<h3>CP-106: Activar proveedor
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden activar un proveedor desactivado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El proveedor debe estar desactivado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un proveedor desactivado.<br>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de proveedores y seleccionar la
+opción administrar proveedores.</li>
+<li>Elegir de la lista de proveedores el proveedor que
+desea activar y presionar sobre la opción activar.</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el proveedor sea activado correctamente
+y que el sistema active la opción desactivar proveedor.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-107">
+<h3>CP-107: Desactivar proveedor
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden desactivar un proveedor activado. </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<div>Se debe haber iniciado sesión con un usuario con rol
+de
+administrador o recepcionista.<br>
+El proveedor debe estar activado.<br>
+</div>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Un proveedor activado.
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de proveedores y seleccionar la
+opción administrar proveedores.</li>
+<li>Elegir de la lista de proveedores el proveedor que
+desea desactivar y presionar sobre la opción desactivar.</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que el proveedor sea desactivado
+correctamente y que el sistema active la opción activar proveedor.<br>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-108">
+<h3>CP-108: Crear refacción</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de administrador o
+recepcionista pueden crear una refacción</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td> Se debe haber iniciado sesión con un usuario con rol
+de administrador o recepcionista<br>
+Debe existir al menos una marca activa<br>
+Debe existir al menos un estado de refacción activo<br>
+Debe existir al menos un proveedor activo</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Marca = {seleccionado, no seleccionado}</li>
+<li>Estado de refacción = {seleccionado, no seleccionado}</li>
+<li>Proveedor = {seleccionado, no seleccionado}</li>
+<li>Nombre de la refacción = {válido, inválido, vacío}</li>
+<li>Número de serie = {válido, inválido, vacío}</li>
+<li>Precio = {válido, inválido, vacío}</li>
+<li>Fecha de compra = {seleccionado, no seleccionado}</li>
+<li>Fecha de vencimiento de garantía = {seleccionado, no
+seleccionado}</li>
+<li>Número de factura = {válido, inválido, vacío}</li>
+<li>Descripción = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones y seleccionar la
+opción crear refacción</li>
+<li>Seleccionar la marca</li>
+<li>seleccionar el estado de refacción</li>
+<li>seleccionar el proveedor</li>
+<li>Introducir el nombre de la refacción</li>
+<li>Introducir el número de serie</li>
+<li>Introducir el precio</li>
+<li>Seleccionar fecha de compra</li>
+<li>Seleccionar fecha de vencimiento de garantía</li>
+<li>Introducir número de factura</li>
+<li>Introducir descripción</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en crear</li>
+<li>Verificar que se visualice la refacción que se acaba
+de crear y que los datos mostrados sean los mismos que se
+proporcionaron en el formulario.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-109">
+<h3>CP-109 Actualizar refacción</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden actualizar los datos de una refacción</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>Se debe haber iniciado sesión con un usuario con rol de
+administrador o recepcionista<br>
+Debe existir al menos una marca activa<br>
+Debe existir al menos un estado de refacción activo<br>
+Debe existir al menos un proveedor activo</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Marca = {seleccionado, no seleccionado}</li>
+<li>Estado de refacción = {seleccionado, no seleccionado}</li>
+<li>Proveedor = {seleccionado, no seleccionado}</li>
+<li>Nombre de la refacción = {válido, inválido, vacío}</li>
+<li>Número de serie = {válido, inválido, vacío}</li>
+<li>Precio = {válido, inválido, vacío}</li>
+<li>Fecha de compra = {seleccionado, no seleccionado}</li>
+<li>Fecha de vencimiento de garantía = {seleccionado, no
+seleccionado}</li>
+<li>Número de factura = {válido, inválido, vacío}</li>
+<li>Descripción = {válido, inválido, vacío}</li>
+<li>Activo = {activo, inactivo}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones y seleccionar la
+opción actualizar refacción</li>
+<li>Seleccionar la marca</li>
+<li>Seleccionar el estado de refacción</li>
+<li>Seleccionar el proveedor</li>
+<li>Modificar el nombre de la refacción</li>
+<li>Modificar el número de serie</li>
+<li>Modificar el precio</li>
+<li>Seleccionar fecha de compra</li>
+<li>Seleccionar fecha de vencimiento de garantía</li>
+<li>Modificar número de factura</li>
+<li>Modificar descripción</li>
+<li>Marcar o desmarcar activo</li>
+<li>Hacer clic en guardar</li>
+<li>Verificar que se visualice la refacción y que los
+datos mostrados han sido actualizados correctamente</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-110">
+<h3>CP-110: Visualizar refacción</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar los datos de una refacción </td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<p>Se debe haber iniciado sesión con un usuario con rol de
+administrador o recepcionista</p>
+<p>Debe existir al menos una refacción</p>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Una refacción</li>
+</ul>
+</div>
+<div> </div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones</li>
+<li>Elegir y presionar sobre el nombre de la refacción</li>
+<li>Verificar que todos los datos de la refacción sean
+desplegados correctamente</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se pueden visualizar refacciones activas e inactivas</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-111">
+<h3>CP-111: Listar refacciones</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden visualizar la lista de refacciones.</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td>
+<p>Se debe haber iniciado sesión con un usuario con rol de
+administrador o recepcionista</p>
+<p>Debe existir al menos una refacción activa</p>
+</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Refacciones activas</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones</li>
+<li>Verificar que la lista de refacciones sea desplegada
+correctamente</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Se visualizan sólo las refacciones activas</li>
+<li>Si no existe alguna refacción, el sistema despliega
+un mensaje indicando que no se encontraron resultados.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-112">
+<h3>CP-112: Buscar refacciones</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td>Probar que los usuarios con rol de administrador o
+recepcionista pueden buscar refacciones con características específicas.</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td> Se debe haber iniciado sesión con un usuario con rol
+de administrador o recepcionista</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Id = {vacío, no vacío}</li>
+<li>Marca = {vacío, no vacío}</li>
+<li>Estado de refacción = {vacío, no vacío}</li>
+<li>Proveedor = {vacío, no vacío}</li>
+<li>Nombre de refacción = {vacío, no vacío}</li>
+<li>Número de serie = {vacío, no vacío}</li>
+<li>Activo = {si, no}</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones y seleccionar la
+opción administrar refacciones</li>
+<li>Introducir el Id</li>
+<li>Introducir la marca</li>
+<li>Introducir el estado de refacción</li>
+<li>Introducir el proveedor</li>
+<li>Introducir el nombre de refacción</li>
+<li>Introducir el número de serie</li>
+<li>Seleccionar una opción en el campo activo</li>
+<li>Presionar la tecla ENTER o hacer que el campo
+seleccionado pierda el foco</li>
+<li>Verificar que en la lista de refacciones desplegada
+las refacciones fueron filtradas correctamente de acuerdo a los
+criterios de búsqueda</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Si no coincide alguna refacción con los criterios de
+búsqueda, el sistema despliega un mensaje indicando que no se
+encontraron resultados</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-113">
+<h3>CP-113: Activar refacciones</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de adminstrador o
+recepcionista pueden activar una refacción desactivada</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td> Se debe haber iniciado sesión con un usuario con rol
+de administrador o recepcionista<br>
+La refacción debe estar desactivada</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Una refacción desactivada</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones y seleccionar la
+opción administrar refacciones</li>
+<li>Elegir de la lista de refacciones, la refacción que
+desea activar y presionar sobre la opción activar</li>
+<li>Confirmar la acción activar haciendo clic sobre el
+botón aceptar.</li>
+<li>Verificar que la refacción sea activada correctamente
+y que el sistema active la opción desactivar refacción</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sample1">
+<div id="CP-114">
+<h3>CP-114: Desactivar refacción</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Propósito:</th>
+<td> Probar que los usuarios con rol de administrador o
+recepcionista pueden desactivar una refacción activada</td>
+</tr>
+<tr>
+<th>Prerequisitos:</th>
+<td> Se debe haber iniciado sesión con un usuario con rol
+de administrador o recepcionista<br>
+La refacción debe estar activada</td>
+</tr>
+<tr>
+<th>Datos de Prueba:</th>
+<td>
+<div>
+<ul>
+<li>Una refacción activada</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th>Pasos:</th>
+<td>
+<ol>
+<li>Ingresar al módulo de refacciones y seleccionar la
+opción administrar refacciones</li>
+<li>Elegir de la lista de refacciones, la refacción que
+desea desactivar y presionar sobre la opción desactivar</li>
+<li>Confirmar la acción desactivar haciendo clic sobre el
+botón aceptar</li>
+<li>Verificar que la refacción sea desactivada
+correctamente y que el sistema active la opción activar refacción</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>N/A</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="todo"> TODO: Check for <a href="http://readyset.tigris.org/words-of-wisdom/test-runs.html">words
+of wisdom</a> and discuss ways to improve this template. Or,
+evaluate the ReadySET Pro <a title="pro use case template and sample test plan" href="http://www.readysetpro.com/">professional test case
+template</a>.
+</div>
+<!-- /todo --> </div>
+</div>
 <div class="legal1">Company Proprietary</div>
-
-<div class="footnote">
- Copyright &#169; 2003-2004 Jason Robbins.  All rights reserved. <a href="readyset-license.html">License terms</a>.
- Retain this copyright statement whenever this file is used as a
- template.
+<div class="footnote"> Copyright © 2003-2004 Jason
+Robbins. All rights reserved. <a href="readyset-license.html">License
+terms</a>. Retain this copyright statement whenever this file is
+used as a template.
 </div>
-
-</div>
-</body>
-</html>
+</body></html>

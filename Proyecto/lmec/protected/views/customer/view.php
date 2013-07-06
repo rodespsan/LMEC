@@ -8,7 +8,9 @@ $this->menu=array(
 	array('label'=>'Listar clientes', 'url'=>array('index')),
 	array('label'=>'Crear cliente', 'url'=>array('create')),
 	array('label'=>'Actualizar cliente', 'url'=>array('update', 'id'=>$model->id)),
-	($model->active == 1)?array('label'=>'Desactivar cliente', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar este Cliente y su(s) Contacto(s)?')):NULL,
+        array('label'=>'Desactivar cliente', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar este Cliente y su(s) Contacto(s)?'),'visible'=>$model->active==1),
+	array('label'=>'Activar cliente',  'url'=>'#', 'linkOptions'=>array('submit'=>array('activate','id'=>$model->id),'confirm'=>'¿Esta seguro que desea activar este Cliente y su(s) Contacto(s)?'),'visible'=>$model->active==0),	
+	
 	array('label'=>'Administrar clientes', 'url'=>array('admin')),
 );
 ?>

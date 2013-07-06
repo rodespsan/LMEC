@@ -1,916 +1,1179 @@
 <!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN" "http://style.tigris.org/tigris_transitional.dtd">
 <html><head>
+<style type="text/css">
+/* <![CDATA[ */ @import "css/readyset.css"; @import "css/inst.css";
+/* ]]> */
+</style>
+<link media="print" href="css/print.css" type="text/css" rel="stylesheet"><title>Características</title>
 
-
-
- <style type="text/css">
-/* <![CDATA[ */ 
-@import "css/readyset.css"; 
-@import "css/inst.css";
-/*  ]]> */
- </style>
-
-<link rel="stylesheet" type="text/css" href="css/print.css" media="print" /><title>Características</title></head><body>
+</head>
+<body>
 <div class="app">
 <div class="readyset">
-
-
-<h2><a href="srs.html">Especificación de Requerimientos de Software</a> &gt;
-    <a href="feature-set.html">Conjunto de Características</a> &gt; Características</h2>
-
- <div id="releaseinfo">
- <h3>Información de la Versión</h3>
- <table class="axial" border="1" cellpadding="3" cellspacing="2">
-  <tbody><tr>
-   <th>Proyecto:</th> 
-   <td><a href="index.html">NOMBRE DEL PROYECTO</a></td> 
-  </tr>
-  <tr>
-   <th>Número Interno de la Versión:</th> 
-   <td>X.Y.Z</td> 
-  </tr>
-  <tr>
-   <th>Documentos Relacionados:</th> 
-   <td>
-    <div><a href="proposal.html">Propuesta del proyecto</a> &gt;
-         <a href="user-needs.html">Necesidades del Usuario</a></div>
-    <div><a href="srs.html">Especificación de Requerimientos de Software</a> &gt;
-         <a href="use-case-suite.html">Conjunto de casos de uso</a></div>
-    <div><a href="feature-format.html">Formato de Características</a></div>
-    <div>ENLACES A ESTÁNDARES RELEVANTES</div>
-    <div>ENLACES A OTROS DOCUMENTOS</div>
-   </td>
-  </tr>
- </tbody></table>
- </div> <!-- /releaseinfo -->
-
-
- <div id="processimpact">
-  <b>Process impact:</b> This is a set of detailed
-  feature descriptions.
- </div> <!-- /processimpact -->
-
-<div class="todo">
- TODO: For each feature listed in the <a href="feature-set.html">feature set</a>, give a detailed description
- of the feature here.  Describe each feature in enough detail that it
- could be implemented by any member of the development team (not only
- someone who already informally knows what to do).
+<h2><a href="srs.html">Especificación de
+Requerimientos de Software</a>
+&gt; <a href="feature-set.html">Conjunto de
+Características</a> &gt;
+Características</h2>
+<div id="releaseinfo">
+<h3>Información de la Versión</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+<tbody>
+<tr>
+<th>Proyecto:</th>
+<td><a href="index.html">Sistema de Control de
+Laboratorio de
+Mantenimiento de Equipo de Cómputo<br>
+</a></td>
+</tr>
+<tr>
+<th>Número Interno de la Versión:</th>
+<td>X.Y.Z</td>
+</tr>
+<tr>
+<th>Documentos Relacionados:</th>
+<td>
+<div><a href="proposal.html">Propuesta del
+proyecto</a> &gt; <a href="user-needs.html">Necesidades
+del Usuario</a></div>
+<div><a href="srs.html">Especificación de
+Requerimientos de
+Software</a> &gt; <a href="use-case-suite.html">Conjunto
+de casos de
+uso</a></div>
+<div><a href="feature-format.html">Formato de
+Características</a></div>
+<div>ENLACES A ESTÁNDARES RELEVANTES</div>
+<div>ENLACES A OTROS DOCUMENTOS</div>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<div class="tip">
- TIP: Start with a short textual description of each feature.  Then,
- add more formal information as needed to make each
- description precise and unambiguous.  E.g.,
-    <ul>
-     <li>Precisely define valid inputs, and error handling</li>
-     <li>Specify data structures with UML or logical schema</li>
-     <li>Specify UI aspects of features with tiny mock-ups</li>
-     <li>Specify key decisions with decision trees or tables</li>
-     <li>Specify key algorithms with pseudo-code or flow charts</li>
-     <li>Specify state-based behavior with state machines or tables</li>
-     <li>Specify sequences of events with scenario diagrams</li>
-    </ul>
+<!-- /releaseinfo -->
+<div id="processimpact"> <b>Process impact:</b>
+This is a set of
+detailed feature descriptions. </div>
+<!-- /processimpact -->
+<div class="todo"> TODO: For each feature listed in the <a href="feature-set.html">feature set</a>, give a
+detailed description
+of the feature here. Describe each feature in enough detail that it
+could be implemented by any member of the development team (not only
+someone who already informally knows what to do).
 </div>
-
-
-
-
-
+<div class="tip"> TIP: Start with a short textual
+description of each
+feature. Then, add more formal information as needed to make each
+description precise and unambiguous. E.g.,
+<ul>
+<li>Precisely define valid inputs, and error handling</li>
+<li>Specify data structures with UML or logical schema</li>
+<li>Specify UI aspects of features with tiny mock-ups</li>
+<li>Specify key decisions with decision trees or tables</li>
+<li>Specify key algorithms with pseudo-code or flow charts</li>
+<li>Specify state-based behavior with state machines or tables</li>
+<li>Specify sequences of events with scenario diagrams</li>
+</ul>
+</div>
 <div class="sample1">
-<div id="F-00"> 
-<h3>F-00: Administración de usuarios<br />
+<div id="C-01">
+<h3>C-01: Administración de usuarios<br>
 </h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Prioridad:</th>
-  <td>Esencial</td>
- </tr>
- <tr>
-  <th>Esfuerzo:</th>
-  <td>Días</td>
- </tr>
- <tr>
-  <th>Riesgo:</th>
-  <td>Seguro</td>
- </tr>
- <tr>
-  <th>Área(s) Funcional(es):</th>
-  <td>Gestión de usuarios<br />
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial</td>
+<td style="vertical-align: top;"><br>
 </td>
- </tr>
- <tr>
-  <th>Caso(s) de Uso:</th>
-  <td><a href="use-cases.html#UC-00">CU-00</a> <a href="use-cases.html#UC-11">CU-11</a> </td>
- </tr>
- <tr>
-  <th>Descripción:</th>
-  <td>La administración de usuarios permitirá:
-   <ul>
-    <li>Crear usuarios<br />
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>170 Horas</td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Área(s) Funcional(es):</th>
+<td>Gestión de usuarios<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso:</th>
+<td>
+<a href="use-cases.html#CU-01">CU-01</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-02">CU-02</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-03">CU-03</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-04">CU-04</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-05">CU-05</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-06">CU-06</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-07">CU-07</a> <span style="text-decoration: underline;"> <span style="text-decoration: underline;">
+<span style="text-decoration: underline;"><span style="text-decoration: underline;"><span style="text-decoration: underline;"><span style="text-decoration: underline;"><span style="text-decoration: underline;"><span style="text-decoration: underline;"><span style="text-decoration: underline;"> </span></span></span></span></span></span></span></span></span></td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td>La administración de usuarios permitirá:
+<ul>
+<li>Crear usuarios</li>
+<li>Actualizar usuarios</li>
+<li>Visualizar usuarios<br>
 </li>
-    <li>Eliminar usuarios<br />
+<li>Listar usuarios</li>
+<li>Buscar usuarios</li>
+<li>Activar usuarios</li>
+<li>Desactivar usuarios</li>
+</ul>
+Los usuarios contendrán los siguientes campos:<br>
+<ul>
+<li>Usuario (entre 3 y 20 caracteres, debe ser único en
+el
+sistema)</li>
+<li>Contraseña (entre 8 y 20 caracteres, debe encriptarse
+en la
+base de datos usando
+MD5)</li>
+<li>Nombres (entre 1 y 100 caracteres)<br>
 </li>
-    <li>Actualizar usuarios</li>
-        <li>Listar usuarios</li>
- 
-   </ul>Los usuarios contendrán los siguientes campos:<br />
-      <ul>
-        <li>Usuario (entre 3 y 20 caracteres)</li>
-        <li>Contraseña (entre 8 y 20 caracteres)</li>
-        <li>Nombres</li>
-        <li>Apellidos</li>
-        <li>Correo electrónico<br />
-        </li>
-      </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notas y Preguntas:</th>
-  <td>
-   <ul>
-    <li>La contraseña debe encriptarse en la base de datos usando MD5<br />
+<li>Apellidos (entre 1 y 100 caracteres)<br>
 </li>
-    <li>¿La contraseña deberá forzar a usar caracteres alfanuméricos y no alfanuméricos?<br />
+<li>Correo electrónico (con formato válido de correo
+electrónico)<br>
 </li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<li>Roles (al menos se debe seleccionar un rol)<br>
+</li>
+<li>Activo (indica que el usuario se encuentra activo o
+inactivo)<br>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Ningún campo debe estar vacío o únicamente contener
+caracteres vacíos.<br>
+</li>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas.<br>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-
-
 <div class="sample1">
-<div id="F-01"> 
-<h3>F-01: User registration</h3>
+<div id="C-02">
+<h3>C-02: Administración de roles<br>
+</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential</td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Days</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>Administration</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   Visitors can come to the site and register themselves.  They must
-   provide the following information:
-   <ul>
-    <li>username</li>
-    <li>email address (twice to catch typos)</li>
-    <li>real name</li>
-   </ul>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>username must be unique (not equal to any other existing user name)</li>
-    <li>username must be of the form <tt>[a-zA-Z0-9]{2,16}</tt> and is not case sensitive</li>
-    <li>email address must be of the form <tt>[-a-zA-Z0-9_.]{2,16}@[-a-zA-Z0-9_.]{6,64}</tt></li>
-    <li>both entries of the email address must match</li>
-    <li>email address will be verified by sending the user's initial password there</li>
-    <li>real name must not be empty</li>
-    <li>leading and trailing spaces are stripped from all fields</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial</td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>140 Horas<br>
+</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+</tr>
+<tr>
+<th>Área(s) Funcional(es):</th>
+<td>Gestión de roles<br>
+</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso:</th>
+<td>
+<a href="use-cases.html#CU-08">CU-08</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-09">CU-09</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-10">CU-10</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-11">CU-11</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-12">CU-12</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-13">CU-13</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-14">CU-14</a> <span style="text-decoration: underline;"> <span style="text-decoration: underline;">
+<span style="text-decoration: underline;"><span style="text-decoration: underline;"><span style="text-decoration: underline;"><span style="text-decoration: underline;"><span style="text-decoration: underline;"><span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span></td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td><br>
+La administración de roles permitirá:<br>
+<ul>
+<li>Crear roles</li>
+<li>Actualizar roles</li>
+<li>Visualizar roles<br>
+</li>
+<li>Listar roles<br>
+</li>
+<li>Buscar roles </li>
+<li>Activar roles</li>
+<li>Desactivar roles</li>
+</ul>
+<p>Los roles contendrán los siguientes campos:</p>
+<ul>
+<li>Rol (entre 1 y 45 caracteres, debe ser único en el
+sistema)</li>
+<li>Url inicial (entre 1 y 100 caracteres)<br>
+</li>
+<li>Prioridad (número entero, número mayor prioridad
+mayor)<br>
+</li>
+<li>Activo (indica que el rol se encuentra activo o
+inactivo) </li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Ningún campo debe estar vacío o únicamente contener
+caracteres vacíos.<br>
+</li>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas.</li>
+<li>La prioridad más alta se establece con el número más
+alto.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-
-
-<div id="F-02"> 
-<h3>F-02: FEATURE NAME</h3>
+<div class="sample1">
+<div id="C-05">
+<h3>C-05: Administración de tipos de equipo<br>
+</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial</td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>60 Horas</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+</tr>
+<tr>
+<th>Área(s) Funcional(es):</th>
+<td>Gestión de equipos</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso(s):</th>
+<td><a href="use-cases.html#CU-17">CU-17</a>
+<span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-18">CU-18</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-19">CU-19</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-20">CU-20</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-21">CU-21</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-22">CU-22</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-23">CU-23</a> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span></td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td><br>
+La administración de tipos de equipo permitirá:<br>
+<ul>
+<li>Crear tipos de equipo<br>
+</li>
+<li>Actualizar tipos de equipo<br>
+</li>
+<li>Visualizar tipos de equipo</li>
+<li>Listar tipos de equipo</li>
+<li>Buscar tipos de equipo</li>
+<li>Activar tipos de equipo</li>
+<li>Desactivar tipos de equipo</li>
+</ul>
+Los tipos de equipo contendrán los siguientes campos:<br>
+<br>
+<ul>
+<li>Nombre (entre 1 y 100 caracteres, debe ser unico en
+el sistema)</li>
+<li>Activo</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li> Ningún campo debe estar vacío o únicamente contener
+caracteres vacíos.
+</li>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas.
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<div id="F-03"> 
-<h3>F-03: FEATURE NAME</h3>
+</div>
+<div class="sample1">
+<div id="C-06">
+<h3>C-06: Administración de marcas<br>
+</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial</td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>60 Horas</td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Área(s) Funcional(es):</th>
+<td>Gestión de equipos<br>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso:</th>
+<td> <a href="use-cases.html#CU-24">CU-24</a>
+<span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-25">CU-25</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-26">CU-26</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-27">CU-27</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-28">CU-28</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-29">CU-29</a> <span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-30">CU-30</a> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span></td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td><br>
+La administración de marcas permitirá:<br>
+<ul>
+<li>Crear marcas<br>
+</li>
+<li>Actualizar marcas<br>
+</li>
+<li>Visualizar marcas</li>
+<li>Listar marcas</li>
+<li>Buscar marcas</li>
+<li>Activar marcas</li>
+<li>Desactivar marcas</li>
+</ul>
+Las marcas contendrán los siguientes campos:<br>
+<ul>
+<li>Nombre (entre 1 y 100 caracteres, dede ser unico en
+el sistema)</li>
+<li>Activo<br>
+</li>
+</ul>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td> <br>
+<ul>
+<li>Ningún campo debe estar vacío o únicamente contener
+caracteres vacíos.<br>
+</li>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas.</li>
+</ul>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<div id="F-10"> 
-<h3>F-10: FEATURE NAME</h3>
+</div>
+<div class="sample1">
+<div id="C-07">
+<h3>C-07: Administración de modelos</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial </td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>100 Horas</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+</tr>
+<tr>
+<th>Área(s) funcional(es):</th>
+<td>Gestión de equipos</td>
+</tr>
+<tr>
+<th>Caso(s) de uso:</th>
+<td><a href="use-cases.html#CU-31">CU-31</a>
+<span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-32">CU-32</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-33">CU-33</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-34">CU-34</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-35">CU-35</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-36">CU-36</a> <span style="text-decoration: underline;"> </span>
+<a href="use-cases.html#CU-37">CU-37</a> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td>
+<p>La administración de modelos permitirá.
+</p>
+<ul>
+<li>Crear modelos<br>
+</li>
+<li>Actualizar modelos
+</li>
+<li>Visualizar&nbsp;modelos</li>
+<li>Listar&nbsp;modelos</li>
+<li>Buscar&nbsp;modelos</li>
+<li>Activar&nbsp;modelos</li>
+<li>Desactivar&nbsp;modelos</li>
+</ul>
+Los modelos contendrán los siguientes campos:<br>
+<br>
+<ul>
+<li>Tipo de equipo (debe ser seleccionado dentro de la
+lista de tipos de equipo del sistema)</li>
+<li>Marca&nbsp;(debe ser seleccionado dentro de la
+lista de marcas del sistema)</li>
+<li>Nombre (entre 1 y 100 caracteres, dede ser unico en
+&nbsp;el sistema)</li>
+<li>Activo</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notas y preguntas:</th>
+<td>
+<ul>
+<li>Ningún campo debe estar vacío o únicamente contener
+caracteres vacíos.<br>
+</li>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<div id="F-11"> 
-<h3>F-11: FEATURE NAME</h3>
+</div>
+<div id="C-08">
+<h3>C-08: Administración de accesorios<br>
+</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial </td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>100 Horas</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+</tr>
+<tr>
+<th>Área(s) Funcional(es):</th>
+<td>Gestión de accesorios<br>
+</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso:</th>
+<td> <a href="use-cases.html#CU-38">CU-38</a>
+<span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-39">CU-39</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-40">CU-40</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-41">CU-41</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-42">CU-42</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-43">CU-43</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-44">CU-44</a><span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span>
+</td>
+<td style="vertical-align: top;"><br>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td>
+<p>La administración de accesorios permitirá:<br>
+</p>
+<ul>
+<li>Crear accesorios<br>
+</li>
+<li>Actualizar accesorios<br>
+</li>
+<li>Visualizar accesorios</li>
+<li>Listar accesorios</li>
+<li>Buscar accesorios</li>
+<li>Activar accesorios</li>
+<li>Desactivar accesorios</li>
+</ul>
+Los accesorios contendrán los siguientes campos:<br>
+<ul>
+<li>Nombre (entre 1 y 100 caracteres, debe ser único en
+el sistema)</li>
+<li>Activo (indica que el accesorio se encuentra activo o
+inactivo) </li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notas y preguntas:</th>
+<td>
+<ul>
+<li>El campo Nombre no debe estar vacío o únicamente
+contener caracteres vacíos.</li>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<div id="F-12"> 
-<h3>F-12: FEATURE NAME</h3>
+</div>
+<div class="sample1">
+<div id="C-09">
+<h3>C-09: Administración de tipos de cliente
+</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial</td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>80 Horas</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+</tr>
+<tr>
+<th>Área(s) Funcional(es):</th>
+<td>Gestión de clientes<br>
+</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso:</th>
+<td> <a href="use-cases.html#CU-45">CU-45</a>
+<span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-46">CU-46</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-47">CU-47</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-48">CU-48</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-49">CU-49</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-50">CU-50</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-51">CU-51</a><span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td>La administración de tipos de cliente permitirá:<br>
+<br>
+<ul>
+<li>Crear tipos de cliente </li>
+<li>Actualizar tipos de cliente </li>
+<li>Visualizar tipos de cliente </li>
+<li>Listar tipos de cliente </li>
+<li>Buscar tipos de cliente </li>
+<li>Activar tipos de cliente </li>
+<li>Desactivar tipos de cliente </li>
+</ul>
+Los tipos de cliente contendrán los siguientes campos:<br>
+<br>
+<ul>
+<li>Tipo de cliente (entre 1 y 45 caracteres)</li>
+<li>
+<p>Activo (únicamente puede estar activo o inactivo)</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas.</li>
+<li>El campo tipo de cliente es obligatorio y el campo
+activo no es obligatorio.<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<div id="F-13"> 
-<h3>F-13: FEATURE NAME</h3>
+</div>
+<div class="sample1">
+<div id="C-10">
+<h3>C-10: Administración de clientes<br>
+</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial</td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>170 Horas</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+</tr>
+<tr>
+<th>Área(s) Funcional(es):</th>
+<td>Gestión de clientes<br>
+</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso:</th>
+<td> <a href="use-cases.html#CU-52">CU-52</a>
+<span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-53">CU-53</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-54">CU-54</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-55">CU-55</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-56">CU-56</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-57">CU-57</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-58">CU-58</a><span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td>La administración de clientes permitirá:<br>
+<br>
+<ul>
+<li>Crear clientes<br>
+</li>
+<li>Actualizar clientes<br>
+</li>
+<li>Visualizar clientes<br>
+</li>
+<li>Listar clientes<br>
+</li>
+<li>Buscar clientes<br>
+</li>
+<li>Activar clientes<br>
+</li>
+<li>Desactivar clientes<br>
+</li>
+</ul>
+Los clientes contendrán los siguientes campos:<br>
+<br>
+<ul>
+<li>Nombre de cliente (entre 1 y 100 caracteres)<br>
+</li>
+<li>Tipo de cliente (debe ser seleccionado de la lista de
+tipos
+de cliente del sistema)<br>
+</li>
+<li>Dependencia (debe ser seleccionado de la lista de
+dependencias del sistema)<br>
+</li>
+<li>Dirección(entre 1 y 200 caracteres)<br>
+</li>
+<li>Nombre de contacto (entre 1 y 100 caracteres) </li>
+<li>Correo electrónico (debe ser un formato de correo
+válido)<br>
+</li>
+<li>Teléfono de oficina (entre 0 y 35 caracteres)</li>
+<li>Teléfono celular (entre 0 y 35 caracteres) </li>
+<li>Teléfono de casa (entre 0 y 35 caracteres) </li>
+<li>Extensión de oficina (entre 0 y 5 caracteres)</li>
+<li>Activo (únicamente puede estar activo o inactivo) </li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas.</li>
+<li>Los
+campos(Nombre de cliente, Tipo de cliente, Nombre de contacto, Correo
+electrónico)
+son obligatorios y los campos (Dependencia, Dirección, Teléfono de
+oficina, Extension de oficina, Teléfono celular, Teléfono de casa,
+Activo) no son obligatorios.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-
-<div id="F-20"> 
-<h3>F-20: FEATURE NAME</h3>
+</div>
+<div class="sample1">
+<div id="C-11">
+<h3>C-11: Administración de contactos<br>
+</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial</td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>150 Horas</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+</tr>
+<tr>
+<th>Área(s) Funcional(es):</th>
+<td>Gestión de clientes<br>
+</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso:</th>
+<td> <a href="use-cases.html#CU-59">CU-59</a>
+<span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-60">CU-60</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-61">CU-61</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-62">CU-62</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-63">CU-63</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-64">CU-64</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-65">CU-65</a><span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td>La administración de contactos permitirá:<br>
+<br>
+<ul>
+<li>Crear contactos<br>
+</li>
+<li>Actualizar contactos </li>
+<li>Visualizar contactos </li>
+<li>Listar contactos </li>
+<li>Buscar contactos </li>
+<li>Activar contactos </li>
+<li>Desactivar contactos </li>
+</ul>
+Los contactos contendrán los siguientes campos:<br>
+<br>
+<ul>
+<li>Cliente (debe ser seleccionado de la lista de
+clientes del
+sistema) </li>
+<li>Nombre de contacto (entre 1 y 100 caracteres) </li>
+<li>Correo electrónico (debe ser un formato de correo
+válido)<br>
+</li>
+<li>Teléfono de oficina (entre 0 y 35 caracteres)</li>
+<li>Teléfono celular (entre 0 y 35 caracteres) </li>
+<li>Teléfono de casa (entre 0 y 35 caracteres) </li>
+<li>Extensión de oficina (entre 0 y 5 caracteres)</li>
+<li>Activo (únicamente puede estar activo o inactivo) </li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas.</li>
+<li>Los
+campos (Cliente, Nombre de contacto, Correo electrónico)
+son obligatorios y los campos (Teléfono celular, Teléfono de casa,
+Teléfono de
+oficina, Extension de oficina, Activo) no son obligatorios.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<div id="F-21"> 
-<h3>F-21: FEATURE NAME</h3>
+</div>
+<div class="sample1">
+<div id="C-12">
+<h3>C-12: Administración de dependencias
+</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial</td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>70 Horas</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+</tr>
+<tr>
+<th>Área(s) Funcional(es):</th>
+<td>Gestión de clientes<br>
+</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso:</th>
+<td> <a href="use-cases.html#CU-66">CU-66</a>
+<span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-67">CU-67</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-68">CU-68</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-69">CU-69</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-70">CU-70</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-71">CU-71</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-72">CU-72</a><span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td>La administración de dependencias permitirá:<br>
+<br>
+<ul>
+<li>Crear dependencias </li>
+<li>Actualizar dependencias </li>
+<li>Visualizar dependencias </li>
+<li>Listar dependencias </li>
+<li>Buscar dependencias </li>
+<li>Activar dependencias </li>
+<li>Desactivar dependencias </li>
+</ul>
+Las dependencias contendrán los siguientes campos:<br>
+<br>
+<ul>
+<li>Nombre de dependencia (entre 1 y 45 caracteres)</li>
+<li>Dirección (entre 1 y 45 caracteres)</li>
+<li>Número telefónico (entre 1 y 15 caracteres)</li>
+<li>Extensión (entre 0 y 5 caracteres)</li>
+<li>
+<p>Activo (únicamente puede estar activo o inactivo)</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas.</li>
+<li>Los
+campos (Nombre de dependencia, Dirección, Número telefónico)
+son obligatorios y los campos (Extensión, Activo) no son obligatorios.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<div id="F-22"> 
-<h3>F-22: FEATURE NAME</h3>
+</div>
+<div class="sample1">
+<div id="C-15">
+<h3>C-15: Administración de trabajos<br>
+</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial</td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>100 Horas</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+</tr>
+<tr>
+<th>Área(s) Funcional(es):</th>
+<td>Gestión de servicios<br>
+</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso:</th>
+<td> <a href="use-cases.html#CU-87">CU-87</a>
+<span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-88">CU-88</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-89">CU-89</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-90">CU-90</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-91">CU-91</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-92">CU-92</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-93">CU-93</a><span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td>La administración de trabajos permitirá:
+<ul>
+<li>Crear trabajos</li>
+<li>Actualizar trabajos<br>
+</li>
+<li>Visualizar trabajos<br>
+</li>
+<li>Listar trabajos</li>
+<li>Buscar trabajos</li>
+<li>Activar trabajos</li>
+<li>Desactivar trabajos</li>
+</ul>
+Los trabajos contendrán los siguientes campos:<br>
+<ul>
+<li>Nombre del Trabajo (entre 1 y 100 caracteres)</li>
+<li>Tipo de Servicio (al menos se debe seleccionar un
+tipo de servicio)</li>
+<li>Descripción (entre 1 y 500 caracteres)</li>
+<li>Activo (indica que el trabajo se encuentra activo o
+inactivo)<br>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Los campos (Nombre de trabajo, Tipo de servicio) son
+obligatorios y los campos (Descripción, Activo) no son obligatorios</li>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas<br>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<div id="F-23"> 
-<h3>F-23: FEATURE NAME</h3>
+</div>
+<div class="sample1">
+<div id="C-16">
+<h3>C-16: Administración de estados de refacción</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial</td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>100 Horas</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+</tr>
+<tr>
+<th>Áreas funcionales(s):</th>
+<td>Gestión&nbsp;de Refacciones</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso:</th>
+<td> <a href="use-cases.html#CU-94">CU-94</a>
+<span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-95">CU-95</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-96">CU-96</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-97">CU-97</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-98">CU-98</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-99">CU-99</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-100">CU-100</a><span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td> La administración de estados de refacción permitirá:
+<ul>
+<li>Crear estados de refacción</li>
+<li>Actualizar estados de refacción</li>
+<li>visualizar estados de refacción</li>
+<li>Listar estados de refacción</li>
+<li>Buscar estados de refacción</li>
+<li>Activar estados de refacción</li>
+<li>Desactivar estados de refacción</li>
+</ul>
+<p>Los estados de refacción tendrán los siguientes campos:</p>
+<ul>
+<li>Descripción (entre 1 y 100 caracteres)</li>
+<li>Activo (indica que el estado de refacción se
+encuentra activo o inactivo)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>El campo (Descripción) es obligatorio y el campo
+(Activo) no es obligatorio</li>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-
-<div id="F-30"> 
-<h3>F-30: FEATURE NAME</h3>
+</div>
+<div class="sample1">
+<div id="C-17">
+<h3>C-17: Administración de refacciones</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial</td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>170 Horas</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+</tr>
+<tr>
+<th>Áreas funcionales(s):</th>
+<td>Gestión de refacciones</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso:</th>
+<td> <a href="use-cases.html#CU-101">CU-101</a>
+<span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-102">CU-102</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-103">CU-103</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-104">CU-104</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-105">CU-105</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-106">CU-106</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-107">CU-107</a><span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td>
+<p>La administración de refacciones permitirá:</p>
+<ul>
+<li>Crear refacciones</li>
+<li>Actualizar refacciones</li>
+<li>Visualizar refacciones</li>
+<li>Listar refacciones</li>
+<li>Buscar refacciones</li>
+<li>Activar refacciones</li>
+<li>Desactivar refacciones</li>
+</ul>
+<p>Las refacciones contendrán los siguientes campos:</p>
+<ul>
+<li>Marca (al menos se debe seleccionar una marca)</li>
+<li>Estado de refacción (al menos se debe seleccionar un
+estado de refacción)</li>
+<li>Proveedor (al menos se debe seleccionar un proveedor)</li>
+<li>Nombre de refacción (entre 1 y 100 caracteres)</li>
+<li>Número de serie (entre 1 y 50 caracteres)</li>
+<li>Precio (entre 1 y 7 números enteros; 2 decimales)</li>
+<li>Fecha de Compra (al menos debe seleccionar una fecha)</li>
+<li>Fecha de vencimiento de garantía (al menos debe
+seleccionar una fecha, la fecha de vencimiento de garantía debe ser
+mayor o igual a la fecha de compra)</li>
+<li>Número de factura (entre 1 y 20 caracteres)</li>
+<li>Descripción (entre 1 y 500 caracteres)</li>
+<li>Activo (indica que la refacción se encuentra activa o
+inactiva)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>Los campos (Marca, Estado de refacción, Proveedor,
+Nombre de refacción, Precio, Fecha de compra, Fecha de vencimineto de
+garantía) son obligatorios y los campos (Número de serie, Número de
+factura, Descripción, Activo) no son obligatorios</li>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<div id="F-31"> 
-<h3>F-31: FEATURE NAME</h3>
+</div>
+<div class="sample1">
+<div id="C-18">
+<h3>C-18: Administración de proveedores<br>
+</h3>
 <table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
+<tbody>
+<tr>
+<th>Prioridad:</th>
+<td>Esencial</td>
+</tr>
+<tr>
+<th>Esfuerzo:</th>
+<td>100 Horas</td>
+</tr>
+<tr>
+<th>Riesgo:</th>
+<td>Seguro</td>
+</tr>
+<tr>
+<th>Área(s) Funcional(es):</th>
+<td>Gestión de refacciones<br>
+</td>
+</tr>
+<tr>
+<th>Caso(s) de Uso:</th>
+<td> <a href="use-cases.html#CU-108">CU-108</a>
+<span style="text-decoration: underline;"> </span><a href="use-cases.html#CU-109">CU-109</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-110">CU-110</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-111">CU-111</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-112">CU-112</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-113">CU-113</a> <span style="text-decoration: underline;"> </span> <a href="use-cases.html#CU-114">CU-114</a><span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> <span style="text-decoration: underline;"> </span> </span></span></span></span></span></span></span></span>
+</td>
+</tr>
+<tr>
+<th>Descripción:</th>
+<td>La administración de proveedores de refacciones
+permitirá:<br>
+<br>
+<ul>
+<li>Crear proveedores<br>
+</li>
+<li>Actualizar proveedores </li>
+<li>Visualizar proveedores </li>
+<li>Listar proveedores </li>
+<li>Buscar proveedores </li>
+<li>Activar proveedores </li>
+<li>Desactivar proveedores </li>
+</ul>
+Los proveedores contendrán los siguientes campos:<br>
+<br>
+<ul>
+<li>Nombre de proveedor (entre 1 y 45 caracteres)</li>
+<li>Nombre de contacto (entre 1 y 45 caracteres)<br>
+</li>
+<li>Correo electrónico (debe ser un formato de correo
+válido)<br>
+</li>
+<li>Teléfono de contacto (entre 0 y 15 caracteres)</li>
+<li>Dirección (entre 0 y 45 caracteres)<br>
+</li>
+<li>Activo (únicamente puede estar activo o inactivo)<br>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notas y Preguntas:</th>
+<td>
+<ul>
+<li>La información capturada es sensible a mayúsculas y
+minúsculas.</li>
+<li>Los
+campos (Nombre de proveedor, Nombre de contacto)
+son obligatorios y los campos (Correo electrónico, Teléfono de
+contacto, Dirección, Activo) no son obligatorios.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<div id="F-32"> 
-<h3>F-32: FEATURE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
 </div>
-
-<div id="F-33"> 
-<h3>F-33: FEATURE NAME</h3>
-<table class="axial" border="1" cellpadding="3" cellspacing="2">
- <tbody><tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional </td>
- </tr>
- <tr>
-  <th>Effort:</th>
-  <td>Months | Weeks | Days | Hours</td>
- </tr>
- <tr>
-  <th>Risk:</th>
-  <td>Dangerous | 3-Risks | 2-Risks | 1-Risk | Safe</td>
- </tr>
- <tr>
-  <th>Functional area(s):</th>
-  <td>WORD, WORD, WORD</td>
- </tr>
- <tr>
-  <th>Use case(s):</th>
-  <td><a href="use-cases.html#UC-01">UC-01</a></td>
- </tr>
- <tr>
-  <th>Description:</th>
-  <td>
-   <p>1-4 PARAGRAPHS.  USE BULLETS OR TABLES TO ORGANIZE INFORMATION.
-   LINK TO WORKSHEETS OR ADDITIONAL INFORMATION.</p>
-   
-   <p>Precise Details:</p>
-   <ul>
-    <li>LOGICAL CONSTRAINT</li>
-    <li>LOGICAL CONSTRAINT</li>
-   </ul>
-
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions:</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</tbody></table>
-</div>
-
-
-
-
-
-
-</div>
-
-  <div class="todo">
-  TODO:  Check for <a href="http://readyset.tigris.org/words-of-wisdom/features.html">words
-  of wisdom</a> and discuss ways to improve this template.
-  Or, evaluate the ReadySET Pro <a title="pro use case template and sample test plan" href="http://www.readysetpro.com/">professional feature specification template</a>.
-  </div>
-
+<div class="todo"> TODO: Check for <a href="http://readyset.tigris.org/words-of-wisdom/features.html">words
+of wisdom</a> and discuss ways to improve this template. Or,
+evaluate
+the ReadySET Pro <a title="pro use case template and sample test plan" href="http://www.readysetpro.com/">professional feature
+specification
+template</a>. </div>
 <div class="legal1">Company Proprietary</div>
-
-<div class="footnote">
- Copyright © 2003-2004 Jason Robbins.  All rights reserved. <a href="readyset-license.html">License terms</a>.
- Retain this copyright statement whenever this file is used as a
- template.
+<div class="footnote"> Copyright © 2003-2004 Jason
+Robbins. All rights
+reserved. <a href="readyset-license.html">License terms</a>.
+Retain
+this copyright statement whenever this file is used as a template.
 </div>
-
 </div>
 </body></html>

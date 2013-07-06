@@ -8,7 +8,8 @@ $this->menu=array(
 	array('label'=>'Listar contactos', 'url'=>array('index')),
 	array('label'=>'Crear contacto', 'url'=>array('create')),
 	array('label'=>'Actualizar contacto', 'url'=>array('update', 'id'=>$model->id)),
-	($model->active == 1)?array('label'=>'Desactivar contacto', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar este Contacto?')):NULL,
+        array('label'=>'Desactivar contacto', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar este Contacto?'),'visible'=>$model->active==1),
+	array('label'=>'Activar contacto',  'url'=>'#', 'linkOptions'=>array('submit'=>array('activate','id'=>$model->id),'confirm'=>'¿Esta seguro que desea activar este Contacto?'),'visible'=>$model->active==0),	
 	array('label'=>'Administrar contactos', 'url'=>array('admin')),
 );
 ?>

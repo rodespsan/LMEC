@@ -3,13 +3,13 @@
 /* @var $model ServiceType */
 
 $this->breadcrumbs=array(
-	'Tipos de Servicios'=>array('index'),
+	'Tipos de servicio'=>array('index'),
 	'Crear tipo de servicio',
 );
 
 $this->menu=array(
-	array('label'=>'Listar tipos de servicios', 'url'=>array('index')),
-	array('label'=>'Administrar tipos de servicios', 'url'=>array('admin')),
+	array('label'=>'Listar tipos de servicio', 'url'=>array('index')),
+	array('label'=>'Administrar tipos de servicio', 'url'=>array('admin')),
 );
 ?>
 

@@ -61,44 +61,36 @@ class ContactController extends Controller {
             throw new CHttpException('', 'Primero debe ' . CHtml::link('crear un Cliente', array('customer/create')) . '.');
         }
 
-        $model = new Contact;
-        $model->scenario = 'scenarioCreate';
+        $model = new Contact('scenarioCreate');
+
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
+        $transaction = Yii::app()->db->beginTransaction();
+        try {
+            if (isset($_POST['Contact'])) {
 
-        if (isset($_POST['Contact']) && isset($_POST['Contact']['customer_id'])) {
-            $transaction = Yii::app()->db->beginTransaction();
-            $model->attributes = $_POST['Contact'];
+                $model->attributes = $_POST['Contact'];
 
-            if ($model->save()) {
+                if ($model->save()) {
 
-                $model_customer_contact = new CustomerContact();
-
-                $criteria = new CDbCriteria;                
-                $criteria->compare('name', $model->name, true);
-                $criteria->compare('email', $model->email, true);
-                $criteria->compare('cell_phone_number', $model->cell_phone_number, true);
-                $criteria->compare('telephone_number_house', $model->telephone_number_house, true);
-                $criteria->compare('telephone_number_office', $model->telephone_number_office, true);
-                $criteria->compare('extension_office', $model->extension_office, true);
-                $criteria->compare('active', $model->active);
-
-                $model = Contact::model()->find($criteria);
+                    $model_customer_contact = new CustomerContact();
 
 
-                $model_customer_contact->customer_id = $_POST['Contact']['customer_id'];
-                $model_customer_contact->contact_id = $model->id;
-                
-                if ($model_customer_contact->save()) {
-                    $transaction->commit();
-                    $this->redirect(array('view', 'id' => $model->id));
-                } else {
+                    $model_customer_contact->customer_id = $_POST['Contact']['customer_id'];
+                    $model_customer_contact->contact_id = $model->id;
+                    var_dump($model_customer_contact);
+                    if ($model_customer_contact->save()) {
+                        $transaction->commit();
+                        $this->redirect(array('view', 'id' => $model->id));
+                    }
+
                     $transaction->rollBack();
                 }
             }
+        } catch (Exception $e) {
+            $transaction->rollBack();
         }
-        //var_dump($model);
-        //var_dump($model_customer_contact->errors);
+
 
         $this->render('create', array(
             'model' => $model,
@@ -112,17 +104,47 @@ class ContactController extends Controller {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
+        $model->old_customer_id = $model->customer_id = $model->customers[0]->id;
+
         $model->scenario = 'scenarioUpdate';
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['Contact'])) {
-            $model->attributes = $_POST['Contact'];
-            //$model->active = 1;
+        $transaction = Yii::app()->db->beginTransaction();
+        try {
+            if (isset($_POST['Contact'])) {
 
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+                $model->attributes = $_POST['Contact'];
+                //$model->active = 1;
+                if ($model->save()) {
+
+                    if ($model->customer_id != $model->old_customer_id) {
+                        $sql = "UPDATE tbl_customer_contact SET customer_id = :customerId WHERE customer_id=:oldCustomerId AND contact_id=:contactId";
+                        $db = Yii::app()->db;
+                        $command = $db->createCommand($sql);
+                        $command->bindValues(array(':customerId' => $model->customer_id, ':oldCustomerId' => $model->old_customer_id, ':contactId' => $model->id));
+
+                        if ($command->execute() > 0) {
+                            $transaction->commit();
+
+                            $this->redirect(array('view', 'id' => $model->id));
+                        }
+                    }  else {
+                        $transaction->commit();
+                        $this->redirect(array('view', 'id' => $model->id));
+                    }
+                    
+                    $transaction->rollBack();
+                    
+                }
+            }
+        } catch (Exception $e) {
+            
+            $transaction->rollBack();
         }
+
+
+
 
         $this->render('update', array(
             'model' => $model,
