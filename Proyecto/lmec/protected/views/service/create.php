@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Servicios', 'url'=>array('index')),
-	array('label'=>'Administrar Servicios', 'url'=>array('admin')),
+	array('label'=>'Listar servicios', 'url'=>array('index')),
+	array('label'=>'Administrar servicios', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Crear Servicios</h1>
+<h1>Crear servicios</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

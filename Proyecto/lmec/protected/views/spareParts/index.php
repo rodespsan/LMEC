@@ -7,11 +7,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Refacción', 'url'=>array('create')),
-	array('label'=>'Administrar Refacciones', 'url'=>array('admin')),
-	array('label'=>'Listar Estados de Refacción', 'url'=>array('sparePartsStatus/index')),
-	array('label'=>'Crear Estado de Refacción', 'url'=>array('sparePartsStatus/create')),
-	array('label'=>'Administrar Estados de Refacción', 'url'=>array('sparePartsStatus/admin')),
+	array('label'=>'Crear refacción', 'url'=>array('create')),
+	array('label'=>'Administrar refacciones', 'url'=>array('admin')),
+	array('label'=>'Listar estados de refacción', 'url'=>array('sparePartsStatus/index')),
+	array('label'=>'Crear estado de refacción', 'url'=>array('sparePartsStatus/create')),
+	array('label'=>'Administrar estados de refacción', 'url'=>array('sparePartsStatus/admin')),
 );
 ?>
 

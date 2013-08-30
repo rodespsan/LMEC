@@ -8,14 +8,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Refacciones', 'url'=>array('index')),
-	array('label'=>'Administrar Refacciones', 'url'=>array('admin')),
-	array('label'=>'Listar Estados de Refacción', 'url'=>array('sparePartsStatus/index')),
-	array('label'=>'Crear Estado de Refacción', 'url'=>array('sparePartsStatus/create')),
-	array('label'=>'Administrar Estados de Refacción', 'url'=>array('sparePartsStatus/admin')),
+	array('label'=>'Listar refacciones', 'url'=>array('index')),
+	array('label'=>'Administrar refacciones', 'url'=>array('admin')),
+	array('label'=>'Listar estados de refacción', 'url'=>array('sparePartsStatus/index')),
+	array('label'=>'Crear estado de refacción', 'url'=>array('sparePartsStatus/create')),
+	array('label'=>'Administrar estados de refacción', 'url'=>array('sparePartsStatus/admin')),
 );
 ?>
 
-<h1>Crear Refacción</h1>
+<h1>Crear refacción</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

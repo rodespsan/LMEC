@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Iniciar Sesión</h1>
+<h1>Iniciar sesión</h1>
 
 <p>Por favor complete el siguiente formulario con sus datos de inicio de sesión:</p>
 
@@ -25,7 +25,7 @@ $this->breadcrumbs=array(
 	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Nombre Usuario:'); ?>
+		<?php echo $form->labelEx($model,'Usuario:'); ?>
 		<?php echo $form->textField($model,'username'); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
@@ -38,12 +38,6 @@ $this->breadcrumbs=array(
 			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
 		</p>-->
 	</div>
-
-	<!--<div class="row rememberMe">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
-	</div>-->
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Ingresar al Sistema'); ?>

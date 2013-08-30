@@ -3,17 +3,17 @@
 /* @var $model ServiceType */
 
 $this->breadcrumbs=array(
-	'Tipo de servicios'=>array('index'),
+	'Tipos de servicio'=>array('index'),
 	'Administrar',
 );
 
 $this->menu=array(
-	array('label'=>'Listar tipos de servicios', 'url'=>array('index')),
+	array('label'=>'Listar tipos de servicio', 'url'=>array('index')),
 	array('label'=>'Crear tipo de servicio', 'url'=>array('create')),
 );
 ?>
 
-<h1>Administrar tipo de servicios</h1>
+<h1>Administrar tipos de servicio</h1>
 
 <p>
 Si lo desea, puede escribir un operador de comparaci&oacute;n (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

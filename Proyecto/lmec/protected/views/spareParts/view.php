@@ -8,16 +8,16 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Refacciones', 'url'=>array('index')),
-	array('label'=>'Crear Refacción', 'url'=>array('create')),
-	array('label'=>'Actualizar Refacción', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Desactivar Refacción', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea desactivar la refacción?')),
-	array('label'=>'Administrar Refacciones', 'url'=>array('admin')),
+	array('label'=>'Listar refacciones', 'url'=>array('index')),
+	array('label'=>'Crear refacción', 'url'=>array('create')),
+	array('label'=>'Actualizar refacción', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Desactivar refacción', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea desactivar la refacción?')),
+	array('label'=>'Administrar refacciones', 'url'=>array('admin')),
 	
 );
 ?>
 
-<h1>Ver Refacción: <?php echo $model->name; ?></h1>
+<h1>Refacción: <?php echo $model->name; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

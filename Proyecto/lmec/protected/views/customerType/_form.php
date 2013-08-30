@@ -17,7 +17,7 @@
 
 	<div class="row">
 		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
-                <?php echo $form->checkbox($model,'active',array('value'=>1,'uncheckValue'=>0,'checked'=>'checked'));?>
+                <?php echo $form->checkbox($model,'active');?>
                 <?php echo $form->error($model,'active'); ?>
         </div>
         

@@ -8,37 +8,18 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Trabajos', 'url'=>array('index')),
-	array('label'=>'Crear Trabajo', 'url'=>array('create')),
+	array('label'=>'Listar trabajos', 'url'=>array('index')),
+	array('label'=>'Crear trabajo', 'url'=>array('create')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#work-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
-<h1>Administrar Trabajos</h1>
+<h1>Administrar trabajos</h1>
 
 <p>
 Si lo desea, puede escribir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
 o <b>=</b>) al principio de cada uno de los valores de busqueda, para especificar como se debe realizar la comparación
 </p>
-
-
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 
 <?php 
 $pageSize=Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageSize']);
@@ -88,8 +69,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
 						'options' =>array('title'=> 'Actualizar'),
 					),
 					'delete' =>array(
-						'options' =>array('title'=> 'Desactivar'), 
-						'url'=>'Yii::app()->createUrl("brand/deactive", array("id"=>$data->id))',
+						'label' => 'Desactivar',
+						//'options' =>array('title'=> 'Desactivar'), 
+						//'url'=>'Yii::app()->createUrl("brand/deactive", array("id"=>$data->id))',
 						'imageUrl'=> Yii::app()->request->baseUrl.'/images/deactive.png',
 						'visible'=>'$data->active == 1',
 						

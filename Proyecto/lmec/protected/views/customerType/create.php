@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
 	'Tipos de cliente'=>array('index'),
-	'Crear Tipo Cliente',
+	'Crear tipo de cliente',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Tipo Cliente', 'url'=>array('index')),
-	array('label'=>'Administrar Tipo Cliente', 'url'=>array('admin')),
+	array('label'=>'Listar tipos de cliente', 'url'=>array('index')),
+	array('label'=>'Administrar tipos de cliente', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Crear Tipo Cliente</h1>
+<h1>Crear tipo de cliente</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Tipos de Equipo',
+	'Tipos de equipo',
 );
 
 $this->menu=array(
-	array('label'=>'Crear Tipo de Equipo', 'url'=>array('create')),
-	array('label'=>'Administrar Tipo de Equipo', 'url'=>array('admin')),
+	array('label'=>'Crear tipo de equipo', 'url'=>array('create')),
+	array('label'=>'Administrar tipos de equipo', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Tipos de Equipo</h1>
+<h1>Tipos de equipo</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

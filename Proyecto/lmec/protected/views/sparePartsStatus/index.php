@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Estados de Refacciones',
+	'Estados de refacciones',
 );
 
 $this->menu=array(
-	array('label'=>'Crear Estado de Refacción', 'url'=>array('create')),
-	array('label'=>'Administrar Estados de Refacción', 'url'=>array('admin')),
+	array('label'=>'Crear estado de refacción', 'url'=>array('create')),
+	array('label'=>'Administrar estados de refacción', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Estados de Refacción</h1>
+<h1>Estados de refacción</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

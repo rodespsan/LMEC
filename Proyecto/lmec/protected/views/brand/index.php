@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Marca', 'url'=>array('create')),
-	array('label'=>'Administrar Marcas', 'url'=>array('admin')),
+	array('label'=>'Crear marca', 'url'=>array('create')),
+	array('label'=>'Administrar marcas', 'url'=>array('admin')),
 );
 ?>
 

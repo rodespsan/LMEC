@@ -7,7 +7,6 @@
 
 	<p class="note">Los campos con<span class="required">*</span> son requeridos.</p>
 
-	<?php /* echo $form->errorSummary($model); */?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>

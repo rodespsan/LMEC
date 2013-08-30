@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
 	'Contactos'=>array('index'),
-	'Crear Contacto',
+	'Crear contacto',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Contacto', 'url'=>array('index')),
-	array('label'=>'Administrar Contacto', 'url'=>array('admin')),
+	array('label'=>'Listar contactos', 'url'=>array('index')),
+	array('label'=>'Administrar contactos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Crear Contacto</h1>
+<h1>Crear contacto</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

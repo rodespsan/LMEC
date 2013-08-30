@@ -13,8 +13,6 @@
 
 	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
 
-	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'customer_id'); ?>
 		<?php echo $form->textField($model,'customer_id',array('size'=>50,'maxlength'=>10)); ?>

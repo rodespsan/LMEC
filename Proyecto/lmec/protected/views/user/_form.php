@@ -1,9 +1,9 @@
 <div class="form">
-
+   
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'user-form',
 	'enableAjaxValidation'=>false,
-    'focus'=>array($model,'user'),
+	'focus'=>array($model,'user'),
 )); 
 ?>
 
@@ -59,25 +59,28 @@ if ( ! $model->isNewRecord ) {
 	</div>
 
         <div class="row">
-		<?php echo $form->labelEx($model,'_selected_roles'); ?>
-		<?php echo $form->checkBoxList(
+
+		<?php echo $form->labelEx($model,'_selected_roles'); ?>		
+		<?php  echo CHtml::activeCheckBoxList(
 			$model,
 			'_selected_roles',
 			CHtml::listData( $model->getActiveRoles(),
 								'id',
                                 'name'
-                           )
-		); ?>
+                           ),
+			array(
+				'style'=>'float: left; 
+						  margin-right: 5px; 
+						  margin-top: 0px;'
+				)
+			); ?>
 		<?php echo $form->error($model,'_selected_roles')?>
 	</div>
 
-	<div class="row" > 
-	<?php //echo $form->checkbox($model,'active',array('value'=>1,'uncheckValue'=>0,'checked'=>'checked'));?>
-		<?php $htmlParams = array('value'=> 1, 'uncheckValue'=>0); ?>
-		<?php if($model->isNewRecord) $htmlParams += array('checked'=>'checked'); ?>
-		<?php echo $form->checkbox($model,'active', $htmlParams). '   Activo'; ?>
+	<div class="row" >
+		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
+    	<?php echo $form->checkbox($model,'active'); ?>
 		<?php echo $form->error($model,'active'); ?>
-	
 	</div>
 	
 	<div class="row buttons">

@@ -1,29 +1,18 @@
 <?php
 $this->breadcrumbs=array(
-	'Tipos de Equipo'=>array('index'),
+	'Tipos de equipo'=>array('index'),
 	'Administrar',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Tipo de Equipo', 'url'=>array('index')),
-	array('label'=>'Crear Tipo de Equipo', 'url'=>array('create')),
+	array('label'=>'Listar tipos de equipo', 'url'=>array('index')),
+	array('label'=>'Crear tipo de equipo', 'url'=>array('create')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('equipment-type-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
+
 ?>
 
-<h1>Administrar Tipo de Equipo</h1>
+<h1>Administrar tipos de equipo</h1>
 
 <p>
 Si lo desea, puede escribir un operador de comparaci&oacute;n (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

@@ -13,8 +13,6 @@
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
-	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>
 		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>200)); ?>
@@ -36,11 +34,8 @@
 	</div>
 
 	<div class="row">
-		<?php $htmlParams = array('value'=> 1, 'uncheckValue'=>0); ?>
-		<!--Si es un nuevo registro mantener el activo seleccionado-->
-		<?php if($model->isNewRecord) $htmlParams += array('checked'=>'checked'); ?>
-		<?php echo $form->labelEx($model,'active'); ?>
-		<?php echo $form->checkbox($model,'active', $htmlParams); ?>
+		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
+    	<?php echo $form->checkbox($model,'active'); ?>
 		<?php echo $form->error($model,'active'); ?>
 	</div>
 

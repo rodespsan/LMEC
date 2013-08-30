@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Trabajos', 'url'=>array('index')),
-	array('label'=>'Crear Trabajo', 'url'=>array('create')),
-	array('label'=>'Actualizar Trabajo', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Desactivar Trabajo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro de que desea desactivar este trabajo?')),
-	array('label'=>'Administrar Trabajos', 'url'=>array('admin')),
+	array('label'=>'Listar trabajos', 'url'=>array('index')),
+	array('label'=>'Crear trabajo', 'url'=>array('create')),
+	array('label'=>'Actualizar trabajo', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Desactivar trabajo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro de que desea desactivar este trabajo?')),
+	array('label'=>'Administrar trabajos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Ver Trabajo: <?php echo $model->name; ?></h1>
+<h1>Trabajo: <?php echo $model->name; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

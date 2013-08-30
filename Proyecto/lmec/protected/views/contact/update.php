@@ -2,17 +2,17 @@
 $this->breadcrumbs=array(
 	'Contactos'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),
-	'Actualizar Contacto',
+	'Actualizar contacto',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Contacto', 'url'=>array('index')),
-	array('label'=>'Crear Contacto', 'url'=>array('create')),
-	array('label'=>'Ver Contacto', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Administrar Contacto', 'url'=>array('admin')),
+	array('label'=>'Listar contactos', 'url'=>array('index')),
+	array('label'=>'Crear contacto', 'url'=>array('create')),
+	array('label'=>'Ver contacto', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar contactos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Actualizar <?php echo $model->id; ?></h1>
+<h1>Actualizar contacto: <?php echo $model->name; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

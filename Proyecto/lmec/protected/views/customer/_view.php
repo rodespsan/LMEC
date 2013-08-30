@@ -10,15 +10,12 @@
 	<br />
         
         <b><?php echo CHtml::encode($data->getAttributeLabel('dependence_id')); ?>:</b>
-        <?php //echo CHtml::encode($data->dependence_id); 
+        <?php 
                 if($data->dependence != NULL){
                     echo CHtml::encode($data->dependence->name); 
                 }else{
-                    echo 'Sin dependencia.';
-                }
-            //$model = Dependence::model()->findByPk($data->dependence_id);
-            //var_dump($model);
-            //echo CHtml::encode($model->name);
+                    echo 'Sin dependencia';
+                }            
         ?>
         
 	<br />

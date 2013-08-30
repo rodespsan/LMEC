@@ -5,8 +5,8 @@ $this->breadcrumbs=array(
 
 
 $this->menu=array(
-	array('label'=>'Crear Tipo Cliente', 'url'=>array('create')),
-	array('label'=>'Administrar Tipo Cliente', 'url'=>array('admin')),
+	array('label'=>'Crear tipo de cliente', 'url'=>array('create')),
+	array('label'=>'Administrar tipos de cliente', 'url'=>array('admin')),
 );
 ?>
 
@@ -15,8 +15,7 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
-        'sortableAttributes'=>array(
-            'id',
+        'sortableAttributes'=>array(           
             'type',
         ),
 )); ?>

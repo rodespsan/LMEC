@@ -1,15 +1,16 @@
 <?php
 $this->breadcrumbs=array(
-	'Proveedor'=>array('index'),
+	'Proveedores'=>array('index'),
 	$model->name,
 );
 
 $this->menu=array(
-	array('label'=>'Listar Proveedor', 'url'=>array('index')),
-	array('label'=>'Crear Proveedor', 'url'=>array('create')),
-	array('label'=>'Actualizar Proveedor', 'url'=>array('update', 'id'=>$model->id)),
-	($model->active == 1)?array('label'=>'Desactivar Proveedor', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar este Proveedor?')):NULL,
-	array('label'=>'Administrar Proveedor', 'url'=>array('admin')),
+	array('label'=>'Listar proveedores', 'url'=>array('index')),
+	array('label'=>'Crear proveedor', 'url'=>array('create')),
+	array('label'=>'Actualizar proveedor', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Desactivar proveedor', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Esta seguro que desea desactivar este Proveedor?'),'visible'=>$model->active==1),
+	array('label'=>'Activar proveedor',  'url'=>'#', 'linkOptions'=>array('submit'=>array('activate','id'=>$model->id),'confirm'=>'¿Esta seguro que desea activar este Proveedor?'),'visible'=>$model->active==0),	
+	array('label'=>'Administrar proveedores', 'url'=>array('admin')),
 );
 ?>
 
@@ -24,11 +25,10 @@ $this->menu=array(
 		'contact_email',
 		'contact_telephone_number',
 		'address',
-		//'active',
                 array(
                     'label' => 'Activo',
                     'type' => 'raw',
-                    'value' => ($model->active == 1)?'Si':'No'
+                    'value' => Provider::getActive($model->active),
                 ),
 	),        
         

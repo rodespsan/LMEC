@@ -6,13 +6,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Modelos', 'url'=>array('index')),
-	array('label'=>'Crear Modelo', 'url'=>array('create')),
-	array('label'=>'Ver Modelo', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Administrar Modelo', 'url'=>array('admin')),
+	array('label'=>'Listar modelos', 'url'=>array('index')),
+	array('label'=>'Crear modelo', 'url'=>array('create')),
+	array('label'=>'Ver modelo', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar modelo', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Actualizar Modelo: <?php echo $model->name; ?></h1>
+<h1>Actualizar modelo: <?php echo $model->name; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

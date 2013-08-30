@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Refacciones', 'url'=>array('index')),
-	array('label'=>'Crear Refacción', 'url'=>array('create')),
-	array('label'=>'Ver Refacción', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Administrar Refacciones', 'url'=>array('admin')),
+	array('label'=>'Listar refacciones', 'url'=>array('index')),
+	array('label'=>'Crear refacción', 'url'=>array('create')),
+	array('label'=>'Ver refacción', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar refacciones', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Actualizar Refacción <?php echo $model->id; ?></h1>
+<h1>Actualizar refacción <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

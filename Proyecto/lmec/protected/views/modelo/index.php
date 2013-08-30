@@ -4,8 +4,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Modelo', 'url'=>array('create')),
-	array('label'=>'Administrar Modelo', 'url'=>array('admin')),
+	array('label'=>'Crear modelo', 'url'=>array('create')),
+	array('label'=>'Administrar modelo', 'url'=>array('admin')),
 );
 ?>
 
