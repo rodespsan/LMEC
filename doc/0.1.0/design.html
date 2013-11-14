@@ -8,6 +8,9 @@
 
 
 
+
+
+
  <style type="text/css">
 /* <![CDATA[ */ 
 @import "css/readyset.css";
@@ -25,11 +28,11 @@
  <table class="axial" border="1" cellpadding="3" cellspacing="2">
   <tbody><tr>
    <th>Proyecto:</th> 
-   <td><a href="index.html">NOMBRE DEL PROYECTO</a></td> 
+   <td><a href="index.html" style="font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">Sistema de Control de Mantenimiento de Equipo de Cómputo</a></td> 
   </tr>
   <tr>
    <th>Número Interno de la Versión:</th> 
-   <td><br />
+   <td>0.1.0<br />
 </td> 
   </tr>
   
@@ -43,17 +46,25 @@
  </tbody></table>
  </div> <div id="introduction">
  <h3>Introducción</h3>
-
- <dl><br />
+<dl>
+<p> En este documento tenemos condensados diagramas de los diseños
+hechos para el sistema, se inicia con el diagrama estructural de la
+base de datos, el diseño de comportamiento el cual esta descrito en los
+casos de uso, la organización del código fuente, el diseño de las
+pantallas del usuario, y los mecanismos de seguridad aplicados en el
+sistema.<br />
   <br />
+</p>
 </dl>
- </div> 
+</div> 
 
 
 
  <div id="structuraldesign">
  <h3>Diseño Estructural<br />
-</h3><p><br />
+</h3><p>&nbsp; El diseño estructural de la base de datos se muestra en
+el diagrama Entidad-Relación, en el cual se describen las tablas de la
+base de datos y las relaciones entre ellas en la siguiente imagen.<br />
 
  </p><p><br />
 </p>
@@ -63,9 +74,56 @@
 
  <div id="behavioraldesign">
  <h3>Diseño de Comportamiento<br />
-</h3><p><br />
+</h3><br />
+<p>Diagramas UML</p><br />
+<p><br />
+</p>
+<ul>
+<li>Gestión de usuarios
+<ul><li><a href="images/uml/C-01AdmonUsuarios.png">C-01</a>
+Administración de usuarios<br />
+</li><li><a href="images/uml/C-02AdmonRoles.png">C-02</a>
+Administración de roles<br />
+</li><li>C-03
+Autenticación en base de datos<br />
+</li><li>C-04
+Autenticación con el Directorio Activo<br />
+</li></ul>
+</li><li>Gestión de equipos
+<ul><li><a href="images/uml/C-05AdmonTipoEquipo.png">C-05</a>
+Administración de tipos de equipo<br />
+</li><li><a href="images/uml/C-06AdmonMarcas.png">C-06</a>
+Administración de marcas<br />
+</li><li><a href="images/uml/C-07AdmonModelos.png">C-07</a>
+Administración de modelos<br />
+</li><li><a href="images/uml/C-08AdmonAccesorios.png">C-08</a>
+Administración de accesorios<br />
+</li></ul>
+</li><li>Gestión de clientes
+<ul><li><a href="images/uml/C-09AdmonTipoCliente.png">C-09</a>
+Administración de tipos de cliente<br />
+</li><li><a href="images/uml/C-10AdmonClientes.png">C-10</a>
+Administración de clientes<br />
+</li><li><a href="images/uml/C-12AdmonDependencias.png">C-11</a>
+Administración de dependencias<br />
+</li><li><a href="images/uml/C-11AdmonContactos.png">C-12</a>
+Administración de contactos</li></ul>
+</li><li>Gestión de servicios </li><ul><li>C-13
+Administración de tipo de servicio<br />
+</li><li>C-14
+Administración de servicios<br />
+</li><li><a href="images/uml/C-15AdmonTrabajos.png">C-15</a>
+Administración de trabajos</li></ul><li>Gestión de refacciones </li><ul><li><a href="images/uml/C-16AdmonEstados-Refaccion.png">C-16</a>
+Administración de estados de refacción</li>
+    <li><a href="images/uml/C-17AdmonProveedores.png">C-17</a>
+Administración de proveedores</li>
+<li><a href="images/uml/C-18Admon-Refaccion.png">C-18
+</a>Administración de refacciones</li></ul><li>Gestión de ordenes </li><ul><li>C-19 Entrada de equipo</li><li>C-20 Salida de equipo</li></ul>
+</ul>
+<p>
 
- </p><p><br />
+ </p>
+<p><br />
 </p>
 
  </div> 
@@ -154,8 +212,8 @@
   <tr>
    <td><a href="LINK-TO-MOCKUP"><br />
 </a></td>
-   <td style="vertical-align: top;"><br /></td><td><a href="test-cases.html#CU-01" /><br />
-</td>
+   <td style="vertical-align: top;"><br /></td><td><a href="test-cases.html#CU-01"><br />
+</a></td>
 
    
   </tr>

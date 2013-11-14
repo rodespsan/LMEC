@@ -1,0 +1,7 @@
+Control de cambios
+
+test-runs-> eliminar plN de calidad en formatos.
+test-tuns -> se le puso información
+use-cases -> se le puso información
+use-cases-suites -> se le modificó la versión
+plan

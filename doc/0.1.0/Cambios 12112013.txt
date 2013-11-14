@@ -1,0 +1,4 @@
+
+Se cambio feature-set.html el orden de proveedores y refacciones
+Se cabia en features.html el número de los casos de uso de proveedores y refacciones que está invertido.
+Y los de entrada estában repetidos.
