@@ -23,7 +23,7 @@ table {
 }
 
 .sticky, .footnote {
- display: none;
+ /*display: none;*/
 }
 
 a.def { 
