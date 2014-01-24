@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN" "http://style.tigris.org/tigris_transitional.dtd">
+<html><head>
+
+
+
+  
+  <style type="text/css">
+/* <![CDATA[ */ 
+@import "css/readyset.css"; 
+@import "css/inst.css";
+/*  ]]> */
+ </style>
+  
+  <link rel="stylesheet" type="text/css" href="css/print.css" media="print" /><title>Notas de Reunión de Revisión</title></head><body>
+<div class="app">
+<div class="readyset">
+<h2><a href="qa-plan.html" />Notas de Reunión de Revisión</h2>
+<div id="meetinginfo">
+<h3>Información de la Reunión de Revisión</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Producto:</th>
+      <td><a href="index.html">Sistema de Control del Laboratorio de Mantenimiento de Equipo de Cómputo</a></td>
+    </tr>
+    <tr>
+      <th>Número de Versión:</th>
+      <td> 0.1.0<br />
+      </td>
+    </tr>
+    <tr>
+      <th>Ubicación de la Reunión:</th>
+      <td> Aula de cómputo CC3<br />
+      </td>
+    </tr>
+    <tr>
+      <th>Fecha y Hora de Reunión:</th>
+      <td> 2013-11-20<br />
+      </td>
+    </tr>
+    <tr>
+      <th>Asistentes:</th>
+      <td>
+      <div>Víctor Alejandro Millán Mena<br />
+Izeth Yakzil López Jiménez<br />
+Christian Jacob Can Puc<br />
+Rodrigo Esparza Sánchez<br />
+</div>
+      </td>
+    </tr>
+    <tr>
+      <th>Documentos Relacionados:</th>
+      <td>
+      <br />
+</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br />
+<div id="documents">
+<h3>Documentos y Código Revisado en esta Reunión</h3>
+<ul class="sample1">
+</ul>
+</div>Funcionalida de las Características:<br />
+<ul>
+  <li>Entrada de Equipo</li>
+  <ul>
+    <li>Agregar fecha de registro del servicio que se le asigna a la
+orden en la tabla tbl_service_order, tanto en la entrada, como en los
+cambios que se realicen en cualquier momento al tipo de servicio y
+servicio asignado.<br />
+      <span style="font-weight: bold;">Nota: El tipo de servicio se
+obtiene de la relación que hay entre el campo service_id de la tabla
+tbl_service_order con la tabla tbl_service.</span><br />
+Nota: La orden solo puede estar asociada a un servicio en la entrada, el cual puede cambiar durante el proceso.<br />
+    </li>
+  </ul>
+  <li>Salida de Equipo</li>
+  <ul>
+    <li>La etiqueta Numero de Serie debe tener acento.</li>
+    <li>La etiqueta Descripción debe tener acento.</li>
+    <li>Además del Número de Serie, se debe visualizar el número de inventario capturado en la entrada.</li>
+    <li>Agregar el servicio y tipo de servicio realizado con precio a la visualización de la orden.</li>
+    <li>En el listado de trabajos realizados, solo aparecerá el Tipo de
+Servicio y el Nombre del Trabajo realizado, no aparecerá la Descripción
+del trabajo.</li>
+    <li>El campo Precio total debe ser calculado a partir de la suma
+del precio de los servicios asignados a la orden, así como la suma del
+precio de las refacciones asignadas a la orden. El campo visualizará el
+precio calculado, pero permitirá editarlo por el usuario que está
+generando la salida.</li>
+    <li>En la creación de la salida, debe visualizarse el tipo de pago, antes que el precio total.</li>
+    <li>Debe visualizarse el anticipo que se realizó en la entrada de la orden.</li>
+    <li>Debe visualizarse el adeudo del pago, este adeudo se calcula a
+partir del precio total, menos el anticipo realizado en la entrada.</li>
+  </ul>
+  <li>Administración de servicios</li>
+  <ul>
+    <li>Se debe agregar un campo más en la tabla servicios para indicar
+que servicios son del tipo diagnóstico y cuales no. El campo puede ser
+verdadero/falso y en caso de que sea diagnóstico, el servicio no se
+cobra en tipo de pago interno y semi-interno.<br />
+    </li>
+  </ul>
+</ul>
+Documentación de Características:<br />
+<ul>
+  <li>C-20: Salida de Equipo</li>
+  <ul>
+    <li>Se actualizó la descripción del folio</li>
+    <li>Los códigos de los casos de uso se deben corregidos, teniendo
+en cuenta los números de casos de uso que se asignarán a la
+característica C-19: Salida de Equipo.</li>
+  </ul>
+</ul>
+Base de Datos:<br />
+<ul>
+  <li>¿Para que sirve la tabla tbl_service_performed_order?, si no se usa, eliminarla.<br />
+  </li>
+</ul>
+<br />
+<div id="meetingminutes">
+<h3>Acta de Reunión</h3>
+<div class="sample1"><br />
+<br />
+<br />
+</div>
+</div>
+<br />
+<div id="actionitems">
+<h3>Líneas de Acción</h3>
+<p><br />
+</p>
+<br />
+</div>
+<br />
+</div>
+<div class="legal1">Company Proprietary</div>
+<div class="footnote"> Copyright © 2003-2004 Jason Robbins. All rights
+reserved. <a href="readyset-license.html">License terms</a>. Retain
+this copyright statement whenever this file is used as a template.
+</div>
+<div style="font-weight: bold;" class="footnote">F-FMAT-CTIC-74 / REV:00</div>
+</div>
+
+</body></html>
