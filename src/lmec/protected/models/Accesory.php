@@ -102,5 +102,11 @@ class Accesory extends CActiveRecord {
             }
         }
     }
+	
+	public function getNames(){
+		if($this->active){
+			return $this->name;
+		}
+	}
 
 }

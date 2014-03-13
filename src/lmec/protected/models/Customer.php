@@ -79,7 +79,7 @@ class Customer extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'ID',
-            'name' => 'Nombre',
+            'name' => 'Nombre de cliente',
             'customer_type_id' => 'Tipo de cliente',
             'contact_id' => 'Contacto',
             'address' => 'Dirección',
@@ -149,5 +149,10 @@ class Customer extends CActiveRecord {
         $customers += CHtml::ListData(Customer::model()->findAll('t.active = 1'), 'id', 'name');
         return $customers;
     }
-
+	/*public function getUltimoContact(){
+		 return Contact::model()->findAll(array(
+			 'condition'=>'',
+		));
+	 }*/
+	
 }

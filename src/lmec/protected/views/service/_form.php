@@ -14,6 +14,12 @@
 	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'code'); ?>
+		<?php echo $form->textField($model,'code'); ?>
+		<?php echo $form->error($model,'code'); ?>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'service_type_id'); ?>
 		<?php echo $form->dropDownList($model,'service_type_id',CHtml::listData(ServiceType::model()->findAll('active = 1'),'id','name'), array('empty'=>'Seleccionar Tipo de Servicio')); ?>
 		<?php echo $form->error($model,'service_type_id'); ?>

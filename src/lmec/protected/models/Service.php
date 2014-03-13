@@ -41,16 +41,18 @@ class Service extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('service_type_id, name, price, active', 'required'),
+            array('code, service_type_id, name, price, active', 'required'),
             array('active', 'numerical', 'integerOnly' => true),
             array('service_type_id', 'length', 'max' => 10),
             array('name', 'length', 'max' => 50),
+			array('code', 'length', 'max' => 50),
+			array('code', 'unique'),
             array('name', 'unique', 'message' => 'Este servicio ya existe.'),
             array('price', 'length', 'max' => 7),
             array('price', 'numerical', 'integerOnly' => false),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, service_type_id, name, price, active', 'safe', 'on' => 'search'),
+            array('id, code, service_type_id, name, price, active', 'safe', 'on' => 'search'),
         );
     }
 
@@ -74,6 +76,7 @@ class Service extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'Id',
+			'code' => 'Código',
             'service_type_id' => 'Tipo de servicio',
             'name' => 'Nombre',
             'price' => 'Precio',
@@ -97,6 +100,7 @@ class Service extends CActiveRecord {
         $criteria->compare('serviceType.name', $this->serviceType->name, true);
         $criteria->compare('t.name', $this->name, true);
         $criteria->compare('price', $this->price, true);
+		$criteria->compare('code', $this->code, true);
         $criteria->compare('t.active', $this->active);
 
         return new CActiveDataProvider(get_class($this), array(

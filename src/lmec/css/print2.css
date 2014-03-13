@@ -1,0 +1,155 @@
+/* -----------------------------------------------------------------------
+
+
+ Blueprint CSS Framework 1.0.1
+ http://blueprintcss.org
+
+   * Copyright (c) 2007-Present. See LICENSE for more info.
+   * See README for instructions on how to use Blueprint.
+   * For credits and origins, see AUTHORS.
+   * This is a compressed file. See the sources in the 'src' directory.
+
+----------------------------------------------------------------------- */
+
+/* print.css */
+body {line-height:1.5;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;color:#000;background:none;font-size:50pt;}
+.container {background:none;}
+hr {background:#ccc;color:#ccc;width:200%;height:2px;margin:2em 0;padding:0;border:none;}
+hr.space {background:#fff;color:#fff;visibility:hidden;}
+h1, h2, h3, h4, h5, h6 {font-family:"Helvetica Neue", Arial, "Lucida Grande", sans-serif;}
+code {font:.9em "Courier New", Monaco, Courier, monospace;}
+a img {border:none;}
+p img.top {margin-top:0;}
+blockquote {margin:1.5em;padding:1em;font-style:italic;font-size:.9em;}
+.small {font-size:.9em;}
+.large {font-size:1.1em;}
+.quiet {color:#999;}
+.hide {display:none;}
+a:link, a:visited {background:transparent;font-weight:700;text-decoration:underline;}
+a:link:after, a:visited:after {content:" (" attr(href) ")";font-size:90%;}
+
+#header
+{
+
+	margin: 1000 auto;
+	padding: 0 auto;
+
+font: normal 5pt Arial,Helvetica,sans-serif;
+}
+
+
+table.tabla-sin-bordes2 {
+
+width: 95%;
+margin: 0px 0px auto;
+
+}
+table.tabla-sin-bordes3 {
+
+width: 95%;
+margin: 0px 0px auto;
+
+}
+
+table.tabla-con-bordes {
+width: 100%;
+height:560px;
+border-collapse: collapse;
+}
+
+table.tabla-con-bordes tbody td.cant{
+width: 50px;
+text-align:center;
+}
+
+table.tabla-con-bordes tbody td.codigo {
+width: 70px;
+text-align:center;
+}
+
+table.tabla-con-bordes tbody  tr td.prueba{
+border-top: 1px solid black;
+border-left: transparent;
+}
+
+table.tabla-con-bordes #borde{
+border-top: 1px solid black;
+border-bottom: 1px solid black;
+}
+
+table.tabla-con-bordes tbody tr.principal th {
+font: bold .9em/1.5em "Helvetica Neue", Arial, Helvetica, sans-serif;
+color: #fff;
+background: #5FACF3;
+text-align: left;
+padding: 10px;
+border: 10px solid #000;
+border-right: 10px solid #000;
+}
+
+table.tabla-con-bordes tbody tr.etapas th {
+
+font: bold .9em/1.5em "Helvetica Neue", Arial, Helvetica, sans-serif;
+color: #fff;
+background: #000;
+text-align: center;
+border-top: 1px solid #000;
+border-right: 1px solid #000;
+}
+
+table.tabla-con-bordes tbody th {
+font: 1.5em/1em "Helvetica Neue", Arial, Helvetica, sans-serif;
+color: #000;
+text-align: center;
+padding: 5px;
+border-bottom: 1px solid #000;
+}
+
+table.tabla-con-bordes tbody td {
+width: 0px;
+font: 1.3em/1.5em "Helvetica Neue", Arial, Helvetica, sans-serif;
+color: #000;
+text-align: left;
+padding: 10px;
+border-right: 1px solid black;
+border-left: 1px solid black;
+}
+
+
+
+
+
+
+table.tabla-sin-bordes2 tbody tr.etapas th {
+
+font: bold .9em/1.5em "Helvetica Neue", Arial, Helvetica, sans-serif;
+color: #fff;
+background: #000;
+text-align: left;
+}
+
+table.tabla-sin-bordes2 tbody th {
+font: bold .9em/1.5em "Helvetica Neue", Arial, Helvetica, sans-serif;
+color: #000;
+background: #0000;
+text-align: left;
+}
+
+
+
+table.tabla-sin-bordes2 tbody td {
+
+font: 1.5em/2em "Helvetica Neue", Arial, Helvetica, sans-serif;
+color: #000;
+background: #fff;
+text-align: left;
+
+
+
+}
+
+
+
+
+
+

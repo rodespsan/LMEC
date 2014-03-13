@@ -131,6 +131,9 @@ class Contact extends CActiveRecord {
             return 'No';
             
         }
-    }   
+    }
+	public function getContacto(){
+		return $this->name;
+	}
 
 }

@@ -108,6 +108,13 @@ class OrderController extends Controller {
         if (!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
     }
+	
+	
+	//public function actionOutOrder(){
+	//	$model = Order::model()->findByPk($id);
+		//$model-outOrder::model();
+		//$outOrder->$model->findAll();
+//	}
 
     /**
      * Lists all models.

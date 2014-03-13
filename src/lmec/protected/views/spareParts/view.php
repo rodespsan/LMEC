@@ -24,6 +24,10 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'name',
+		array(
+			'name' => 'category_id',
+			'value' => $model->category->code,
+		),
 		//'spare_parts_status_id',
 		array(
 			'name' => 'spare_parts_status_id',

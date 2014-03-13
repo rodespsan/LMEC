@@ -72,7 +72,7 @@ class Modelo extends CActiveRecord {
             'id' => 'Id',
             'brand_id' => 'Marca',
             'equipment_type_id' => 'Tipo de equipo',
-            'name' => 'Nombre',
+            'name' => 'Modelo',
             'active' => 'Activo',
         );
     }
@@ -111,5 +111,7 @@ class Modelo extends CActiveRecord {
             }
         }
     }
+	
+	
 
 }

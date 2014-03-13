@@ -12,6 +12,12 @@
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'category_id'); ?>
+		<?php echo $form->dropDownList($model,'category_id',CHtml::listData(SparePartsCategory::model()->findAll(),'id','code'), array('empty'=>'Seleccionar Categoria')); ?>
+		<?php echo $form->error($model,'category_id'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'brand_id'); ?>

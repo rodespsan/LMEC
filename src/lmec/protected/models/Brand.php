@@ -65,7 +65,7 @@ class Brand extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'Id',
-            'name' => 'Nombre',
+            'name' => 'Marca',
             'active' => 'Activo',
         );
     }

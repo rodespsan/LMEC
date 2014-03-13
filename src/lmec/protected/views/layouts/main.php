@@ -29,7 +29,7 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				//array('label'=>'Entrada Equipo', 'url'=>array('/order/create'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+				array('label'=>'Entrada Equipo', 'url'=>array('/order/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
 				array('label'=>'Roles', 'url'=>array('/role/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
 				array('label'=>'Usuarios', 'url'=>array('/user/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
 				array('label'=>'Servicios', 'url'=>array('/service/index'), 'visible'=>Yii::app()->user->checkAccess('*')),
@@ -45,6 +45,7 @@
 				array('label' => 'Tipo de cliente', 'url' => array('/customerType/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
 				array('label' => 'Contactos', 'url' => array('/contact/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
 				array('label' => 'Proveedor', 'url' => array('/provider/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+				array('label'=>'Salida de Orden', 'url'=>array('/outOrder/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 				
 			),

@@ -34,6 +34,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'enableSorting' => true,
 	'columns'=>array(
 		'id',
+		array(
+			'name' => 'category_id',
+			'value' => '$data->category->code',				
+			'filter' => CHtml::activeTextField($model->category,'code'),
+			
+		),
 		//'brand_id',
 		array(
 			'name' => 'brand_id',

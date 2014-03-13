@@ -104,5 +104,13 @@ class Work extends CActiveRecord {
     public function getActiveText() {
         return ($this->active) ? 'Si' : 'No';
     }
+	public function getDataActive(){
+		if($this->active){
+		//return $this->serviceType->name.'</td> <td>'.$this->name.'</td>';
+		return $this;
+		}else{
+			return '';
+		}
+	}
 
 }

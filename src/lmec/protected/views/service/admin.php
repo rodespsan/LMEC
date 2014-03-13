@@ -29,6 +29,7 @@ o <b>=</b>) al principio de cada uno de los valores de busqueda, para especifica
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
+		'code',
 		array(
 			'name'=>'service_type_id',
 			'value'=>'$data->serviceType->name',

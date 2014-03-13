@@ -11,6 +11,7 @@ $this->menu=array(
 	array('label'=>'Administrar refacciones', 'url'=>array('admin')),
 	array('label'=>'Listar estados de refacción', 'url'=>array('sparePartsStatus/index')),
 	array('label'=>'Crear estado de refacción', 'url'=>array('sparePartsStatus/create')),
+	array('label'=>'Crear categoría de refacción', 'url'=>array('sparePartsCategory/create')),
 	array('label'=>'Administrar estados de refacción', 'url'=>array('sparePartsStatus/admin')),
 );
 ?>

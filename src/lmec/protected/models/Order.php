@@ -90,7 +90,8 @@ class Order extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'tblAccesoryOrders' => array(self::HAS_MANY, 'TblAccesoryOrder', 'order_id'),
+            //'accesoryOrder' => array(self::HAS_MANY, 'AccesoryOrder', 'order_id'),
+			'accesories' => array(self::MANY_MANY,'Accesory','tbl_accesory_order(order_id,accesory_id)'),
             'tblActivityVerificationOrders' => array(self::HAS_MANY, 'TblActivityVerificationOrder', 'order_id'),
             'tblBlogGuarantees' => array(self::HAS_MANY, 'TblBlogGuarantee', 'order_id'),
             'tblBlogOrders' => array(self::HAS_MANY, 'TblBlogOrder', 'order_id'),
@@ -101,19 +102,25 @@ class Order extends CActiveRecord {
             'tblFailureDescriptions' => array(self::HAS_MANY, 'TblFailureDescription', 'order_id'),
             'tblFinalStatusOrders' => array(self::HAS_MANY, 'TblFinalStatusOrder', 'order_id'),
             'tblObservationOrders' => array(self::HAS_MANY, 'TblObservationOrder', 'order_id'),
-            'customer' => array(self::BELONGS_TO, 'TblCustomer', 'customer_id'),
-            'model' => array(self::BELONGS_TO, 'TblModel', 'model_id'),
-            'paymentType' => array(self::BELONGS_TO, 'TblPaymentType', 'payment_type_id'),
-            'serviceType' => array(self::BELONGS_TO, 'TblServiceType', 'service_type_id'),
+			//'observationOrder' => array(self::BELONGS_TO, 'ObservationOrder', 'order_id'),
+            'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
+            'model' => array(self::BELONGS_TO, 'Modelo', 'model_id'),
+            //'paymentType' => array(self::BELONGS_TO, 'TblPaymentType', 'payment_type_id'),
+			'paymentType' => array(self::BELONGS_TO, 'PaymentType', 'payment_type_id'),
+            'serviceType' => array(self::BELONGS_TO, 'ServiceType', 'service_type_id'),
             'receptionistUser' => array(self::BELONGS_TO, 'TblUser', 'receptionist_user_id'),
             'tblOutOrders' => array(self::HAS_MANY, 'TblOutOrder', 'order_id'),
             'tblQuotationOrders' => array(self::HAS_MANY, 'TblQuotationOrder', 'order_id'),
             'tblRepairs' => array(self::HAS_MANY, 'TblRepair', 'order_id'),
-            'tblServiceOrders' => array(self::HAS_MANY, 'TblServiceOrder', 'order_id'),
+            //'tblServiceOrders' => array(self::HAS_MANY, 'TblServiceOrder', 'order_id'),
+			'serviceOrder' => array(self::HAS_MANY, 'ServiceOrder', 'order_id'),
+			'services' => array(self::MANY_MANY, 'Service', 'tbl_service_order(order_id,service_id)'),
             'tblServicePerformedOrders' => array(self::HAS_MANY, 'TblServicePerformedOrder', 'order_id'),
-            'tblSpareOrders' => array(self::HAS_MANY, 'TblSpareOrder', 'order_id'),
+            //'tblSpareOrders' => array(self::HAS_MANY, 'TblSpareOrder', 'order_id'),
+			'spareParts' => array(self::MANY_MANY, 'SpareParts', 'tbl_spare_parts_order(order_id,spare_parts_id)'),
             'tblTechnicalOrders' => array(self::HAS_MANY, 'TblTechnicalOrder', 'order_id'),
-            'tblWorkOrders' => array(self::HAS_MANY, 'TblWorkOrder', 'order_id'),
+            //'tblWorkOrders' => array(self::HAS_MANY, 'TblWorkOrder', 'order_id'),
+			'works' => array(self::MANY_MANY,'Work','tbl_work_order(order_id,work_id)'),
         );
     }
 
@@ -123,17 +130,18 @@ class Order extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'Folio de entrada',
-            'customer_id' => 'Numero de Cliente',
+            'customer_id' => 'Cliente',
+			'contact_id' => 'Contacto',
             'receptionist_user_id' => 'Receptionista',
             'payment_type_id' => 'Tipo de pago',
             'model_id' => 'Modelo',
             'service_type_id' => 'Tipo de Servicio',
             'date_hour' => 'Fecha',
             'advance_payment' => 'Pago adelantado',
-            'serial_number' => 'Numero de serie',
-            'stock_number' => 'Numero de Inventario',
+            'serial_number' => 'Número de serie',
+            'stock_number' => 'Número de Inventario',
             'name_deliverer_equipment' => 'Nombre de quien entrega el equipo',
-            '_failureDescription' => 'Descripcion de la falla',
+            '_failureDescription' => 'Descripción de la falla',
             '_equipmentStatus' => 'Estado del Equipo',
             '_dependences' => 'Dependencia',
         );
@@ -202,9 +210,56 @@ class Order extends CActiveRecord {
     public function getServicios() {
         return $ModelDependencias = Accesory::model()->findAll('active = 1');
     }
+	
+	public function getEquipmentType() {
+        return $this->model->EquipmentType->type;
+    }
+	
+	//Lista de contactos que estan activos del cliente del cliente, el valor por defecto es el seleccionado de la orden de entrada
+	public function getContacts()
+	{
+		$foundContact = Contact::model()->find('id='.$this->contact_id);
+		$contactActive = CHtml::listData($this->customer->contacts,'id','name','active');
+		$listData = array($foundContact->id => $foundContact->name) + $contactActive[1];
+		return $listData;
+	}
+	/*
+	public function getcontact()
+	{
+		$contact = Contact::model()->find('id='.$this->contact_id);
+		return $contact->name;
+	}
+	*/
+	
+	// Muestra en el menu la opcion de ver salida si esta ya fue creada.
+	public function enableOutput()
+	{
+		$out = OutOrder::model()->find('order_id='.$this->id.'');
+		if($out== null)
+			return true;
+		else
+			return false;
+	}
 
-    public function getAccesorios() {
+	/*
+    public function getAccesories() {
         return $ModelDependencias = Accesory::model()->findAll('active = 1');
     }
-
+	
+	public function getWorks(){
+		$modelWorks= CHtml::listData(Order::model()->works,'id','name');
+		return $modelWorks;
+	}
+	*/
+	
+	public function getFolio()
+	{
+		return str_pad($this->id, 5, "0", STR_PAD_LEFT);
+	}
+	
+	public function getClientNumber()
+	{
+		return str_pad($this->customer_id, 5, "0", STR_PAD_LEFT);
+	}
+	
 }

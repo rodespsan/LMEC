@@ -65,7 +65,7 @@ class EquipmentType extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'Id',
-            'type' => 'Tipo',
+            'type' => 'Tipo de equipo',
             'active' => 'Activo',
         );
     }

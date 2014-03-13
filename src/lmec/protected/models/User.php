@@ -107,7 +107,7 @@ class User extends CActiveRecord {
             'user' => 'Usuario',
             '_password2' => 'Contraseña',
             '_confirm_password' => 'Confirmar contraseña',
-            'name' => 'Nombres',
+            'name' => 'Nombre de usuario',
             'last_name' => 'Apellidos',
             'email' => 'Correo electrónico',
             '_selected_roles' => 'Roles',
@@ -128,7 +128,7 @@ class User extends CActiveRecord {
         $criteria->group = 't.id, t.user, t.name, t.last_name, t.email, t.active';
         $criteria->together = true;
 
-        $criteria->select = 't.id, t.user, t.name, t.last_name, t.email, t.active, roles.name';
+        $criteria->select = 't.id, t.user, t.last_name, t.email, t.active, roles.name';
 
         $criteria->compare('roles.name', $this->_roles, true);
         $criteria->compare('t.id', $this->id, true);

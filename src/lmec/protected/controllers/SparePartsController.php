@@ -159,6 +159,9 @@ class SparePartsController extends Controller {
 
         $model->brand = new Brand('search');
         $model->brand->unsetAttributes();
+		
+		$model->category = new SparePartsCategory('search');
+        $model->category->unsetAttributes();
 
         $model->sparePartsStatus = new SparePartsStatus('search');
         $model->sparePartsStatus->unsetAttributes();
@@ -168,6 +171,9 @@ class SparePartsController extends Controller {
 
         if (isset($_GET['Brand']))
             $model->brand->attributes = $_GET['Brand'];
+			
+		if (isset($_GET['SparePartsCategory']))
+            $model->category->attributes = $_GET['SparePartsCategory'];
 
         if (isset($_GET['SparePartsStatus']))
             $model->sparePartsStatus->attributes = $_GET['SparePartsStatus'];
