@@ -1,327 +1,280 @@
 <!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN" "http://style.tigris.org/tigris_transitional.dtd">
 <html><head>
-
-
-
-
-
-
-
-
-
-
-
- <style type="text/css">
+  
+  <style type="text/css">
 /* <![CDATA[ */ 
 @import "css/readyset.css";
 @import "css/inst.css";
 /*  ]]> */
  </style>
+  
+  <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+  <title>Diseño</title>
 
-<link rel="stylesheet" type="text/css" href="css/print.css" media="print" /><title>Diseño</title></head><body>
+  
+</head><body>
 <div class="app">
 <div class="readyset">
- <h2>Diseño</h2>
-
- <div id="releaseinfo">
- <h3>Información de la Versión</h3>
- <table class="axial" border="1" cellpadding="3" cellspacing="2">
-  <tbody><tr>
-   <th>Proyecto:</th> 
-   <td><a href="index.html" style="font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">Sistema de Control de Mantenimiento de Equipo de Cómputo</a></td> 
-  </tr>
-  <tr>
-   <th>Número Interno de la Versión:</th> 
-   <td>0.1.0<br />
-</td> 
-  </tr>
-  
-  <tr>
-   <th>Documentos Relacionados:</th> 
-   <td><div><a href="srs.html">Especificación de Requerimientos de Software</a> &gt;
-         <a href="use-case-suite.html">Conjunto de casos de uso</a></div>
-    <div><a href="srs.html">Especificación de Requerimientos de Software</a> &gt;
-         <a href="feature-set.html">Conjunto de Características</a></div></td>
-  </tr>
- </tbody></table>
- </div> <div id="introduction">
- <h3>Introducción</h3>
+<h2>Diseño</h2>
+<div id="releaseinfo">
+<h3>Información de la Versión</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Proyecto:</th>
+      <td><a href="index.html" style="font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">Sistema
+de Control de Mantenimiento de Equipo de Cómputo</a></td>
+    </tr>
+    <tr>
+      <th>Número Interno de la Versión:</th>
+      <td>0.1.0<br />
+      </td>
+    </tr>
+    <tr>
+      <th>Documentos Relacionados:</th>
+      <td>
+      <div><a href="srs.html">Especificación de Requerimientos de
+Software</a> &gt; <a href="use-case-suite.html">Conjunto de casos de
+uso</a></div>
+      <div><a href="srs.html">Especificación de Requerimientos de
+Software</a> &gt; <a href="feature-set.html">Conjunto de
+Características</a></div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="introduction">
+<h3>Introducción</h3>
 <dl>
-<p> En este documento tenemos condensados diagramas de los diseños
+  <p> En este documento tenemos condensados diagramas de los diseños
 hechos para el sistema, se inicia con el diagrama estructural de la
 base de datos, el diseño de comportamiento el cual esta descrito en los
 casos de uso, la organización del código fuente, el diseño de las
 pantallas del usuario, y los mecanismos de seguridad aplicados en el
 sistema.<br />
   <br />
-</p>
+  </p>
 </dl>
-</div> 
-
-
-
- <div id="structuraldesign">
- <h3>Diseño Estructural<br />
-</h3><p>&nbsp; El diseño estructural de la base de datos se muestra en
+</div>
+<div id="structuraldesign">
+<h3>Diseño Estructural<br />
+</h3>
+<p>&nbsp; El diseño estructural de la base de datos se muestra en
 el diagrama Entidad-Relación, en el cual se describen las tablas de la
 base de datos y las relaciones entre ellas en la siguiente imagen.<br />
-
- </p><p><br />
 </p>
-
- </div> 
-
-
- <div id="behavioraldesign">
- <h3>Diseño de Comportamiento<br />
-</h3><br />
-<p>Diagramas UML</p><br />
+<p><br />
+</p>
+</div>
+<div id="behavioraldesign">
+<h3>Diseño de Comportamiento<br />
+</h3>
+<br />
+<p>Diagramas UML</p>
+<br />
 <p><br />
 </p>
 <ul>
-<li>Gestión de usuarios
-<ul><li><a href="images/uml/C-01AdmonUsuarios.png">C-01</a>
+  <li>Gestión de usuarios
+    <ul>
+      <li><a href="images/uml/C-01AdmonUsuarios.png">C-01</a>
 Administración de usuarios<br />
-</li><li><a href="images/uml/C-02AdmonRoles.png">C-02</a>
+      </li>
+      <li><a href="images/uml/C-02AdmonRoles.png">C-02</a>
 Administración de roles<br />
-</li><li>C-03
+      </li>
+      <li>C-03
 Autenticación en base de datos<br />
-</li><li>C-04
+      </li>
+      <li>C-04
 Autenticación con el Directorio Activo<br />
-</li></ul>
-</li><li>Gestión de equipos
-<ul><li><a href="images/uml/C-05AdmonTipoEquipo.png">C-05</a>
+      </li>
+    </ul>
+  </li>
+  <li>Gestión de equipos
+    <ul>
+      <li><a href="images/uml/C-05AdmonTipoEquipo.png">C-05</a>
 Administración de tipos de equipo<br />
-</li><li><a href="images/uml/C-06AdmonMarcas.png">C-06</a>
+      </li>
+      <li><a href="images/uml/C-06AdmonMarcas.png">C-06</a>
 Administración de marcas<br />
-</li><li><a href="images/uml/C-07AdmonModelos.png">C-07</a>
+      </li>
+      <li><a href="images/uml/C-07AdmonModelos.png">C-07</a>
 Administración de modelos<br />
-</li><li><a href="images/uml/C-08AdmonAccesorios.png">C-08</a>
+      </li>
+      <li><a href="images/uml/C-08AdmonAccesorios.png">C-08</a>
 Administración de accesorios<br />
-</li></ul>
-</li><li>Gestión de clientes
-<ul><li><a href="images/uml/C-09AdmonTipoCliente.png">C-09</a>
+      </li>
+    </ul>
+  </li>
+  <li>Gestión de clientes
+    <ul>
+      <li><a href="images/uml/C-09AdmonTipoCliente.png">C-09</a>
 Administración de tipos de cliente<br />
-</li><li><a href="images/uml/C-10AdmonClientes.png">C-10</a>
+      </li>
+      <li><a href="images/uml/C-10AdmonClientes.png">C-10</a>
 Administración de clientes<br />
-</li><li><a href="images/uml/C-12AdmonDependencias.png">C-11</a>
+      </li>
+      <li><a href="images/uml/C-12AdmonDependencias.png">C-11</a>
 Administración de dependencias<br />
-</li><li><a href="images/uml/C-11AdmonContactos.png">C-12</a>
-Administración de contactos</li></ul>
-</li><li>Gestión de servicios </li><ul><li>C-13
+      </li>
+      <li><a href="images/uml/C-11AdmonContactos.png">C-12</a>
+Administración de contactos</li>
+    </ul>
+  </li>
+  <li>Gestión de servicios </li>
+  <ul>
+    <li>C-13
 Administración de tipo de servicio<br />
-</li><li>C-14
+    </li>
+    <li>C-14
 Administración de servicios<br />
-</li><li><a href="images/uml/C-15AdmonTrabajos.png">C-15</a>
-Administración de trabajos</li></ul><li>Gestión de refacciones </li><ul><li><a href="images/uml/C-16AdmonEstados-Refaccion.png">C-16</a>
+    </li>
+    <li><a href="images/uml/C-15AdmonTrabajos.png">C-15</a>
+Administración de trabajos</li>
+  </ul>
+  <li>Gestión de refacciones </li>
+  <ul>
+    <li><a href="images/uml/C-16AdmonEstados-Refaccion.png">C-16</a>
 Administración de estados de refacción</li>
     <li><a href="images/uml/C-17AdmonProveedores.png">C-17</a>
 Administración de proveedores</li>
-<li><a href="images/uml/C-18Admon-Refaccion.png">C-18
-</a>Administración de refacciones</li></ul><li>Gestión de ordenes </li><ul><li>C-19 Entrada de equipo</li><li>C-20 Salida de equipo</li></ul>
+    <li><a href="images/uml/C-18Admon-Refaccion.png">C-18 </a>Administración
+de refacciones</li>
+  </ul>
+  <li>Gestión de ordenes </li>
+  <ul>
+    <li>C-19 Entrada de equipo</li>
+    <li><a href="images/uml/C-20SalidaEquipo.png">C-20</a> Salida de
+equipo</li>
+  </ul>
 </ul>
-<p>
-
- </p>
+<p> </p>
 <p><br />
 </p>
-
- </div> 
+</div>
 <div id="architecture">
- <h3>Arquitectura</h3>
+<h3>Arquitectura</h3>
 <p><br />
 </p>
 <p><br />
 </p>
-
- </div>
+</div>
 <div id="source-code">
- <h3>Organización de Código Fuente<br />
-</h3><table border="1" cellpadding="3" cellspacing="2" width="100%">
-  <tbody><tr>
-
-    <th>Ruta</th>
-    <th>Descripción</th></tr>
-  <tr>
-   <td><br />
-</td>
-   
-   <td><br />
-</td>
-  </tr>
-  <tr>
-
-   <td><br />
-</td>
-   
-   <td><br />
-</td>
-  </tr>
-  <tr>
-   <td><br />
-</td>
-   
-   <td><br />
-</td>
-  </tr>
-
-  <tr>
-   <td><br />
-</td>
-   
-   <td><br />
-</td>
-  </tr>
-  <tr>
-   <td><br />
-</td>
-   
-   <td><br />
-</td>
-
-  </tr>
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
- </tbody></table>
- </div>
+<h3>Organización de Código Fuente<br />
+</h3>
+<table border="1" cellpadding="3" cellspacing="2" width="100%">
+  <tbody>
+    <tr>
+      <th>Ruta</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td><br />
+      </td>
+      <td><br />
+      </td>
+    </tr>
+    <tr>
+      <td><br />
+      </td>
+      <td><br />
+      </td>
+    </tr>
+    <tr>
+      <td><br />
+      </td>
+      <td><br />
+      </td>
+    </tr>
+    <tr>
+      <td><br />
+      </td>
+      <td><br />
+      </td>
+    </tr>
+    <tr>
+      <td><br />
+      </td>
+      <td><br />
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
 <div id="user-interface">
- <h3>Interfaz de Usuario<br /></h3><table border="1" cellpadding="3" cellspacing="2" width="100%">
-  <tbody><tr>
-   <th>Título de la Interfaz de Usuario<br />
-</th>
-   <th style="vertical-align: top;">Imagen de la Interfaz de Usuario<br /></th><th>Casos de Uso Relacionados<br />
-
-</th>
-   
-  </tr>
-
-  <tr>
-   <td><a href="LINK-TO-MOCKUP"><br />
-</a></td>
-   <td style="vertical-align: top;"><br /></td><td><a href="test-cases.html#CU-01"><br />
-</a></td>
-
-   
-  </tr>
-
-  <tr>
-   <td><br />
-</td>
-   
-   <td style="vertical-align: top;"><br /></td><td><a href="test-cases.html#CU-04"><br />
-</a></td>
-
-   
-  </tr>
-
-  <tr>
-
-   <td><br />
-</td>
-   
-   <td style="vertical-align: top;"><br /></td><td><a href="test-cases.html#CU-05"><br />
-</a></td>
-   
-  </tr>
-
-  <tr>
-   <td><br />
-</td>
-   
-   <td style="vertical-align: top;"><br /></td><td><a href="test-cases.html#CU-06"><br />
-</a></td>
-
-
-   
-  </tr>
-
-  <tr>
-   <td><br />
-</td> 
-
-   <td style="vertical-align: top;"><br /></td><td><a href="test-cases.html#CU-07"><br />
-</a></td>
-
-   
-  </tr>
-
-  
-
-  
-
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
- </tbody></table>
- </div>
+<h3>Interfaz de Usuario<br />
+</h3>
+<table border="1" cellpadding="3" cellspacing="2" width="100%">
+  <tbody>
+    <tr>
+      <th>Título de la Interfaz de Usuario<br />
+      </th>
+      <th style="vertical-align: top;">Imagen de la Interfaz de Usuario<br />
+      </th>
+      <th>Casos de Uso Relacionados<br />
+      </th>
+    </tr>
+    <tr>
+      <td>Crear salida<br />
+      </td>
+      <td style="vertical-align: top;"><a href="images/ui/UI-CrearSalida.png"><img src="images/ui/UI-CrearSalida-Thumb.png" /></a><br />
+      </td>
+      <td><a href="use-cases.html#CU-115">CU-115: Crear salida<br />
+      </a></td>
+    </tr>
+    <tr>
+      <td>Actualizar salida<br />
+      </td>
+      <td style="vertical-align: top;"><a href="images/ui/UI-ActualizarSalida.png"><img src="images/ui/UI-ActualizarSalida-Thumb.png" /></a> </td>
+      <td><a href="use-cases.html#CU-116">CU-116: Actualizar salida<br />
+      </a><a href="test-cases.html#CU-04"> </a></td>
+    </tr>
+    <tr>
+      <td>Visualizar salidas<br />
+      </td>
+      <td style="vertical-align: top;"><a href="images/ui/UI-VisualizarSalida.png"><img src="images/ui/UI-VisualizarSalida-Thumb.png" /></a><br />
+      </td>
+      <td><a href="use-cases.html#CU-119">CU-119: Visualizar salida<br />
+      </a><a href="test-cases.html#CU-07"> </a></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Listar salidas<br />
+      </td>
+      <td style="vertical-align: top;"><a href="images/ui/UI-ListarSalidas.png"><img src="images/ui/UI-ListarSalidas-Thumb.png" /></a><br />
+      </td>
+      <td style="vertical-align: top;"><a href="use-cases.html#CU-120">CU-120:
+Listar salida</a><a href="use-cases.html#CU-115"><br />
+      </a> </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Imprimir salidas<br />
+      </td>
+      <td style="vertical-align: top;"><a href="images/ui/UI-ImprimirSalida.png"><img src="images/ui/UI-ImprimirSalida-Thumb.png" /></a><br />
+      </td>
+      <td style="vertical-align: top;"><a href="use-cases.html#CU-122">CU-122:
+Imprimir salida</a><a href="use-cases.html#CU-115"><br />
+      </a> </td>
+    </tr>
+  </tbody>
+</table>
+</div>
 <div id="security-mechanisms">
- <h3>Mecanismos de Seguridad</h3>
+<h3>Mecanismos de Seguridad</h3>
 <br />
 <p><br />
 </p>
 <p><br />
 </p>
-
-
-
- </div>
-</div><div class="legal1">Company Proprietary</div>
-<div class="footnote">
- Copyright © 2003-2004 Jason Robbins.  All rights reserved. <a href="readyset-license.html">License terms</a>.
- Retain this copyright statement whenever this file is used as a
- template.
 </div>
-
+</div>
+<div class="legal1">Company Proprietary</div>
+<div class="footnote"> Copyright © 2003-2004 Jason Robbins. All rights
+reserved. <a href="readyset-license.html">License terms</a>. Retain
+this copyright statement whenever this file is used as a template.
+</div>
 <div style="font-weight: bold;" class="footnote">F-FMAT-CTIC-75 / REV:00</div>
 </div>
+
 </body></html>
