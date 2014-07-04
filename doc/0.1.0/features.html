@@ -178,7 +178,7 @@ minúsculas.<br />
     </tr>
     <tr>
       <th>Área(s) Funcional(es):</th>
-      <td>Gestión de roles<br />
+      <td>Gestión de usuarios<br />
       </td>
     </tr>
     <tr>
@@ -229,6 +229,101 @@ minúsculas.</li>
 alto.</li>
       </ul>
       </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="C-03">
+<h3>C-03: Autenticaci&oacute;n en base de datos<br />
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Prioridad:</th>
+      <td>Esencial</td>
+    </tr>
+    <tr>
+      <th>Esfuerzo:</th>
+      <td>64 Horas<br />
+      </td>
+    </tr>
+    <tr>
+      <th>Área(s) Funcional(es):</th>
+      <td>Gestión de usuarios<br />
+      </td>
+    </tr>
+    <tr>
+      <th>Caso(s) de Uso:</th>
+      <td>No aplica</td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Descripción:</th>
+      <td><br />
+La autenticaci&oacute;n en base de datos permitirá:<br />
+      <ul>
+        <li>Autenticar usuarios y contrase&ntilde;as almacenados en base de datos.</li>
+      </ul>
+      <p>La autenticaci&oacute;n en base de datos debe cumplir lo siguiente:</p>
+      <ul>
+        <li>El usuario debe estar registrado en la base de datos</li>
+        <li>La contrase&ntilde;a debe almacenarse encriptada en la base de datos.</li>
+        <li>El mensaje de autenticaci&oacute;n incorrecta solo indicar&aacute; que alguno de los datos enviados es erroneo, pero no indicar&aacute; cual dato es el incorrecto.</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>Notas y Preguntas:</th>
+      <td>No aplica</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="C-04">
+<h3>C-04: Autenticaci&oacute;n con el Directorio Activo<br />
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Prioridad:</th>
+      <td>Esencial</td>
+    </tr>
+    <tr>
+      <th>Esfuerzo:</th>
+      <td>16 Horas<br />
+      </td>
+    </tr>
+    <tr>
+      <th>Área(s) Funcional(es):</th>
+      <td>Gestión de usuarios<br />
+      </td>
+    </tr>
+    <tr>
+      <th>Caso(s) de Uso:</th>
+      <td>No aplica</td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+    <tr>
+      <th>Descripción:</th>
+      <td><br />
+La autenticaci&oacute;n con el Directorio Activo permitirá:<br />
+      <ul>
+        <li>Autenticar usuarios y contrase&ntilde;as almacenados en el Directorio Activo de la organizaci&oacute;n utilizando el protocolo LDAP.</li>
+      </ul>
+      <p>La autenticaci&oacute;n en base de datos debe cumplir lo siguiente:</p>
+      <ul>
+        <li>El usuario debe estar registrado en la base de datos</li>
+        <li>La contrase&ntilde;a debe ser almacenada en la base de datos para que se pueda autenticar el usuario a la base de datos en caso de que no exista conexi&oacute;n con el servidor de Directorio Activo.</li>
+        <li>La contrase&ntilde;a debe almacenarse encriptada en la base de datos.</li>
+        <li>El mensaje de autenticaci&oacute;n incorrecta solo indicar&aacute; que alguno de los datos enviados es erroneo, pero no indicar&aacute; cual dato es el incorrecto.</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>Notas y Preguntas:</th>
+      <td>No aplica</td>
     </tr>
   </tbody>
 </table>
@@ -770,6 +865,128 @@ minúsculas.</li>
         <li>Los
 campos (Nombre de dependencia, Dirección, Número telefónico)
 son obligatorios y los campos (Extensión, Activo) no son obligatorios.</li>
+      </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="C-13">
+<h3>C-13: Administración de tipo de servicio<br />
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Prioridad:</th>
+      <td>Esencial</td>
+    </tr>
+    <tr>
+      <th>Esfuerzo:</th>
+      <td>60 Horas</td>
+    </tr>
+    <tr>
+      <th>Área(s) Funcional(es):</th>
+      <td>Gestión de servicios</td>
+    </tr>
+    <tr>
+      <th>Caso(s) de Uso(s):</th>
+      <td>Por documentar</td>
+    </tr>
+    <tr>
+      <th>Descripción:</th>
+      <td><br />
+La administración de tipo de servicio permitirá:<br />
+      <ul>
+        <li>Crear tipo de servicio<br />
+        </li>
+        <li>Actualizar tipo de servicio<br />
+        </li>
+        <li>Visualizar tipos de servicios</li>
+        <li>Listar tipos de servicios</li>
+        <li>Buscar tipos de servicios</li>
+        <li>Activar tipo de servicio</li>
+        <li>Desactivar tipo de servicio</li>
+      </ul>
+Los tipos de servicios contendrán los siguientes campos:<br />
+      <br />
+      <ul>
+        <li>Nombre (entre 1 y 100 caracteres, debe ser &uacute;nico en
+el sistema)</li>
+        <li>Activo</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>Notas y Preguntas:</th>
+      <td>
+      <ul>
+        <li> Ningún campo debe estar vacío o únicamente contener
+caracteres vacíos. </li>
+        <li>La información capturada es sensible a mayúsculas y
+minúsculas. </li>
+      </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div id="C-13">
+<h3>C-14: Administración de  servicios<br />
+</h3>
+<table class="axial" border="1" cellpadding="3" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Prioridad:</th>
+      <td>Esencial</td>
+    </tr>
+    <tr>
+      <th>Esfuerzo:</th>
+      <td>40 Horas</td>
+    </tr>
+    <tr>
+      <th>Área(s) Funcional(es):</th>
+      <td>Gestión de servicios</td>
+    </tr>
+    <tr>
+      <th>Caso(s) de Uso(s):</th>
+      <td>Por documentar</td>
+    </tr>
+    <tr>
+      <th>Descripción:</th>
+      <td><br />
+La administración de servicios permitirá:<br />
+      <ul>
+        <li>Crear  servicios<br />
+        </li>
+        <li>Actualizar  servicios<br />
+        </li>
+        <li>Visualizar servicios</li>
+        <li>Listar servicios</li>
+        <li>Buscar servicios</li>
+        <li>Activar servicios</li>
+        <li>Desactivar servicios</li>
+      </ul>
+Los servicios contendrán los siguientes campos:<br />
+      <br />
+      <ul>
+        <li>C&oacute;digo (entre 1 y 50 caracteres, debe ser &uacute;nico en
+el sistema)</li>
+        <li>Tipo de servicio (se selecciona de los tipos de servicios registrados en el sistema)</li>
+        <li>Nombre  (entre 1 y 500 caracteres, debe ser &uacute;nico en
+el sistema)</li>
+        <li>Precio (Num&eacute;rico con  decimales)</li>
+        <li>Activo</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>Notas y Preguntas:</th>
+      <td>
+      <ul>
+        <li> Ningún campo debe estar vacío o únicamente contener
+caracteres vacíos. </li>
+        <li>La información capturada es sensible a mayúsculas y
+minúsculas. </li>
       </ul>
       </td>
     </tr>
