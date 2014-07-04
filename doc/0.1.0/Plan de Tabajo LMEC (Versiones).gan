@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Sistema de Control del Laboratorio de Mantenimiento de Equipo de Cómputo" company="Facultad de Matemáticas" webLink="http://www.matematicas.uady.mx" view-date="2013-01-01" view-index="0" gantt-divider-location="640" resource-divider-location="300" version="2.0" locale="es">
+<?xml version="1.0" encoding="UTF-8"?><project name="Sistema de Control del Laboratorio de Mantenimiento de Equipo de Cómputo" company="Facultad de Matemáticas" webLink="http://www.matematicas.uady.mx" view-date="2012-07-01" view-index="0" gantt-divider-location="450" resource-divider-location="300" version="2.0" locale="es">
     <description/>
     <view zooming-state="default:11" id="gantt-chart">
-        <field id="tpd3" name="Nombre" width="56" order="0"/>
-        <field id="tpd4" name="Fecha de inicio" width="14" order="1"/>
-        <field id="tpd5" name="Fecha de fin" width="11" order="2"/>
-        <field id="tpd7" name="Progreso" width="9" order="3"/>
-        <field id="tpd6" name="Duración" width="8" order="4"/>
+        <field id="tpd3" name="Nombre" width="34" order="0"/>
+        <field id="tpd4" name="Fecha de inicio" width="20" order="1"/>
+        <field id="tpd5" name="Fecha de fin" width="17" order="2"/>
+        <field id="tpd7" name="Progreso" width="13" order="3"/>
+        <field id="tpd6" name="Duración" width="13" order="4"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Nombre" width="50" order="0"/>
@@ -181,14 +181,14 @@
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
         <task id="64" name="Proyecto SCLMEC" color="#8cb6ce" meeting="false" start="2012-06-27" duration="453" complete="82" expand="true">
-            <task id="0" name="Versión 0.1.0" color="#8cb6ce" meeting="false" start="2012-06-27" duration="185" complete="99" expand="true">
+            <task id="0" name="Versión 0.1.0" color="#8cb6ce" meeting="false" start="2012-06-27" duration="185" complete="99" expand="false">
                 <task id="63" name="Analizar Requerimientos" color="#8cb6ce" meeting="false" start="2012-06-27" duration="18" complete="100" expand="true"/>
                 <task id="65" name="Introducción al equipo de desarrollo" color="#8cb6ce" meeting="false" start="2012-08-13" duration="10" complete="100" expand="true"/>
                 <task id="66" name="Diseñar" color="#8cb6ce" meeting="false" start="2012-08-27" duration="25" complete="100" expand="false">
                     <task id="73" name="Diseño de base de datos" color="#8cb6ce" meeting="false" start="2012-08-27" duration="25" complete="100" expand="true"/>
                     <task id="74" name="Diseño de interfaz" color="#8cb6ce" meeting="false" start="2012-08-27" duration="25" complete="100" expand="true"/>
                 </task>
-                <task id="67" name="Desarrollar" color="#8cb6ce" meeting="false" start="2012-10-01" duration="132" complete="99" expand="true">
+                <task id="67" name="Desarrollar" color="#8cb6ce" meeting="false" start="2012-10-01" duration="132" complete="99" expand="false">
                     <task id="3" name="Gestión de Usuarios" color="#8cb6ce" meeting="false" start="2012-10-01" duration="21" complete="98" expand="true">
                         <task id="10" name="Administración de usuarios" color="#8cb6ce" meeting="false" start="2012-10-11" duration="4" complete="100" expand="true"/>
                         <task id="11" name="Administración de roles" color="#8cb6ce" meeting="false" start="2012-10-18" duration="9" complete="100" expand="true"/>
@@ -219,20 +219,20 @@
                     </task>
                 </task>
             </task>
-            <task id="1" name="Versión 0.2.0" color="#8cb6ce" meeting="false" start="2013-05-22" duration="133" complete="99" expand="true">
-                <task id="8" name="Gestión de Ordenes" color="#8cb6ce" meeting="false" start="2013-05-22" duration="133" complete="99" expand="true">
+            <task id="1" name="Versión 0.2.0" color="#8cb6ce" meeting="false" start="2013-05-22" duration="133" complete="99" expand="false">
+                <task id="8" name="Gestión de Ordenes" color="#8cb6ce" meeting="false" start="2013-05-22" duration="133" complete="99" expand="false">
                     <task id="28" name="Entrada de orden" color="#8cb6ce" meeting="false" start="2013-05-22" duration="133" complete="100" expand="true"/>
                     <task id="29" name="Salida de orden" color="#8cb6ce" meeting="false" start="2013-09-04" duration="73" complete="98" expand="true"/>
                 </task>
             </task>
-            <task id="2" name="Versión 0.3.0" color="#8cb6ce" meeting="false" start="2014-01-06" duration="30" complete="94" expand="true">
-                <task id="103" name="Gestión de Ordenes" color="#8cb6ce" meeting="false" start="2014-01-06" duration="30" complete="94" expand="true">
+            <task id="2" name="Versión 0.3.0" color="#8cb6ce" meeting="false" start="2014-01-06" duration="30" complete="94" expand="false">
+                <task id="103" name="Gestión de Ordenes" color="#8cb6ce" meeting="false" start="2014-01-06" duration="30" complete="94" expand="false">
                     <task id="107" name="Seguimiento de orden" color="#8cb6ce" meeting="false" start="2014-01-06" duration="15" complete="90" expand="true"/>
                     <task id="104" name="Diagnóstico de orden" color="#8cb6ce" meeting="false" start="2014-01-27" duration="15" complete="98" expand="true"/>
                 </task>
             </task>
             <task id="105" name="Versión 0.4.0" color="#8cb6ce" meeting="false" start="2014-02-18" duration="25" complete="62" expand="false">
-                <task id="106" name="Gestión de Ordenes" color="#8cb6ce" meeting="false" start="2014-02-18" duration="25" complete="62" expand="true">
+                <task id="106" name="Gestión de Ordenes" color="#8cb6ce" meeting="false" start="2014-02-18" duration="25" complete="62" expand="false">
                     <task id="109" name="Verificar orden" color="#8cb6ce" meeting="false" start="2014-02-18" duration="10" complete="10" expand="true"/>
                     <task id="110" name="Reparación" color="#8cb6ce" meeting="false" start="2014-03-07" duration="15" complete="98" expand="true"/>
                 </task>
@@ -261,11 +261,11 @@
         <displaycolumn property-id="tpd11" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd1" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
-        <displaycolumn property-id="tpd3" order="0" width="351" visible="true"/>
-        <displaycolumn property-id="tpd4" order="1" width="87" visible="true"/>
-        <displaycolumn property-id="tpd5" order="2" width="72" visible="true"/>
-        <displaycolumn property-id="tpd7" order="3" width="57" visible="true"/>
-        <displaycolumn property-id="tpd6" order="4" width="54" visible="true"/>
+        <displaycolumn property-id="tpd3" order="0" width="153" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="93" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="80" visible="true"/>
+        <displaycolumn property-id="tpd7" order="3" width="61" visible="true"/>
+        <displaycolumn property-id="tpd6" order="4" width="59" visible="true"/>
     </taskdisplaycolumns>
     <previous/>
     <roles roleset-name="Default"/>
