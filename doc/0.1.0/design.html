@@ -62,7 +62,9 @@ sistema.<br />
 </h3>
 <p>&nbsp; El diseño estructural de la base de datos se muestra en
 el diagrama Entidad-Relación, en el cual se describen las tablas de la
-base de datos y las relaciones entre ellas en la siguiente imagen.<br />
+base de datos y las relaciones entre ellas en la siguiente imagen.</p>
+<p>&nbsp;</p>
+<p><a href="images/er/diagrama-entidad-relacion-sclmec-2014-09-28.png"><img src="images/er/diagrama-entidad-relacion-sclmec-2014-09-28-thumb.png" width="800" height="1256" alt="Dise&ntilde;o de Entidad-Relaci&oacute;n del Sistema de Control de Mantenimiento de Equipo de C&oacute;mputo" /></a><br />
 </p>
 <p><br />
 </p>
@@ -71,9 +73,7 @@ base de datos y las relaciones entre ellas en la siguiente imagen.<br />
 <h3>Diseño de Comportamiento<br />
 </h3>
 <br />
-<p>Diagramas UML</p>
-<br />
-<p><br />
+<p>Diagramas UML<br />
 </p>
 <ul>
   <li>Gestión de usuarios
@@ -156,6 +156,13 @@ equipo</li>
 </div>
 <div id="architecture">
 <h3>Arquitectura</h3>
+<p>La arquitectura utilizada para esta aplicaci&oacute;n es una arquitectura cliente-servidor basada en la Web llamada MVC (Modelo-Vista-Controlador). </p>
+<p>La arquitectura MVC es un patr&oacute;n de arquitectura de software que separa los datos y la l&oacute;gica de negocio de una aplicaci&oacute;n de la interfaz de usuario y el m&oacute;dulo encargado de gestionar los eventos y las comunicaciones. Para ello MVC propone la construcci&oacute;n de tres componentes distintos que son el modelo, la vista y el controlador, es decir, por un lado define componentes para la representaci&oacute;n de la informaci&oacute;n, y por otro lado para la interacci&oacute;n del usuario. Este patr&oacute;n de arquitectura de software se basa en las ideas de reutilizaci&oacute;n de c&oacute;digo y la separaci&oacute;n de conceptos, caracter&iacute;sticas que buscan facilitar la tarea de desarrollo de aplicaciones y su posterior mantenimiento.</p>
+<p><img src="images/uml/architecture/MVC-Process.png" width="500" height="550" alt="Arquitectura Modelo-Vista-Controlador" /></p>
+<p>Para agilizar el desarrollo, se utiliza el framework Yii de c&oacute;digo libre, el cual implementa la arquitectura MVC de la siguiente forma:</p>
+<p><img src="images/uml/architecture/yii-architecture.png" width="400" height="300" alt="Arquitectura del Framework Yii" /></p>
+<p>Teniendo el siguiente flujo de trabajo:</p>
+<p><img src="images/uml/architecture/yii-architecture-workflow.png" width="420" height="520" alt="Flujo de Trabajo de la Arquitectura del Framework Yii" /></p>
 <p><br />
 </p>
 <p><br />
@@ -171,34 +178,36 @@ equipo</li>
       <th>Descripción</th>
     </tr>
     <tr>
-      <td><br />
+      <td>/assets<br />
       </td>
-      <td><br />
-      </td>
-    </tr>
-    <tr>
-      <td><br />
-      </td>
-      <td><br />
+      <td>Scripts y hojas de estilo utilizados por los componentes base del framework Yii y generados autorm&aacute;ticamente por el mismo framework.<br />
       </td>
     </tr>
     <tr>
-      <td><br />
-      </td>
-      <td><br />
-      </td>
-    </tr>
-    <tr>
-      <td><br />
-      </td>
-      <td><br />
+      <td>/css</td>
+      <td>Hojas de estilo de la aplicaci&oacute;n Web<br />
       </td>
     </tr>
     <tr>
-      <td><br />
+      <td>/images
       </td>
-      <td><br />
+      <td>Im&aacute;genes utilizadas en la aplicaci&oacute;n Web<br />
       </td>
+    </tr>
+    <tr>
+      <td>/protected</td>
+      <td>Directorio base de la aplicaci&oacute;n Web. Este contiene los modelos, vistas, controladores, m&oacute;dulos, componentes y configuraciones.<br />
+      </td>
+    </tr>
+    <tr>
+      <td>/themes<br />
+      </td>
+      <td>Contiene temas para personalizar la aplicaci&oacute;n<br />
+      </td>
+    </tr>
+    <tr>
+      <td>/index.php</td>
+      <td>Es el script de entrada de cualquier petici&oacute;n hacia la aplicaci&oacute;n. Este se encarga de inicializar los componentes requeridos para responder a la solicitud del usuario.</td>
     </tr>
   </tbody>
 </table>
@@ -263,6 +272,19 @@ Imprimir salida</a><a href="use-cases.html#CU-115"><br />
 <div id="security-mechanisms">
 <h3>Mecanismos de Seguridad</h3>
 <br />
+<ul>
+  <li>Utilizaci&oacute;n de consultas preparadas para evitar inyecci&oacute;n SQL.</li>
+  <li>Sanitizaci&oacute;n de la salida de la informaci&oacute;n de la base de datos para evitar Cross-Site Scripting.</li>
+  <li>Autenticaci&oacute;n de usuarios y contrase&ntilde;as.</li>
+  <li>Encriptaci&oacute;n de contrase&ntilde;a en base de datos.</li>
+  <li>Autorizaci&oacute;n con control de acceso basado en roles (RBAC).</li>
+  <li>Validaci&oacute;n de datos de entrada en URL.</li>
+  <li>Validaci&oacute;n  de datos de entrada en Formularios en el cliente.</li>
+  <li>Validaci&oacute;n  de datos de entrada en Formularios en el servidor.</li>
+  <li>Uso de llaves foraneas.</li>
+  <li>Eliminaci&oacute;n de registros l&oacute;gica y no f&iacute;sica.</li>
+  <li>Manejo de errores y bit&aacute;cora de registro.</li>
+</ul>
 <p><br />
 </p>
 <p><br />
