@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><project name="Sistema de Control de Mantenimiento de Equipo de Cómputo" company="Facultad de Matemáticas" webLink="http://www.matematicas.uady.mx/" view-date="2012-06-01" view-index="0" gantt-divider-location="456" resource-divider-location="300" version="2.0" locale="es">
     <description/>
     <view zooming-state="default:11" id="gantt-chart">
-        <field id="tpd7" name="Progreso" width="11" order="3"/>
         <field id="tpd3" name="Nombre" width="52" order="0"/>
         <field id="tpd4" name="Fecha de inicio" width="19" order="1"/>
-        <field id="tpd5" name="Fecha de fin" width="15" order="2"/>
+        <field id="tpd5" name="Fecha de fin" width="16" order="2"/>
+        <field id="tpd7" name="Progreso" width="11" order="3"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Nombre" width="50" order="0"/>
@@ -149,7 +149,7 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Analizar Requerimientos" color="#8cb6ce" meeting="false" start="2012-06-27" duration="18" complete="95" expand="true">
+        <task id="0" name="Analizar Requerimientos" color="#8cb6ce" meeting="false" start="2012-06-27" duration="18" complete="96" expand="true">
             <depend id="1" type="2" difference="0" hardness="Strong"/>
             <depend id="38" type="2" difference="0" hardness="Strong"/>
             <depend id="39" type="2" difference="0" hardness="Strong"/>
@@ -162,15 +162,15 @@
         <task id="1980" name="Inducción al equipo de desarrollo" color="#8cb6ce" meeting="false" start="2012-08-13" duration="10" complete="100" expand="true">
             <depend id="1" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="1" name="Diseñar" color="#8cb6ce" meeting="false" start="2012-08-27" duration="25" complete="91" expand="true">
+        <task id="1" name="Diseñar" color="#8cb6ce" meeting="false" start="2012-08-27" duration="25" complete="93" expand="true">
             <depend id="2" type="2" difference="0" hardness="Strong"/>
             <depend id="1783" type="2" difference="0" hardness="Strong"/>
-            <task id="1899" name="Diseño de Base de Datos" color="#8cb6ce" meeting="false" start="2012-08-27" duration="25" complete="98" expand="true"/>
-            <task id="1915" name="Diseño de Interfaz" color="#8cb6ce" meeting="false" start="2012-08-27" duration="25" complete="85" expand="true"/>
+            <task id="1899" name="Diseño de Base de Datos" color="#8cb6ce" meeting="false" start="2012-08-27" duration="25" complete="99" expand="true"/>
+            <task id="1915" name="Diseño de Interfaz" color="#8cb6ce" meeting="false" start="2012-08-27" duration="25" complete="88" expand="true"/>
         </task>
-        <task id="2" name="Desarrollar" color="#8cb6ce" meeting="false" start="2012-10-01" duration="297" complete="47" expand="true">
+        <task id="2" name="Desarrollar" color="#8cb6ce" meeting="false" start="2012-10-01" duration="297" complete="51" expand="true">
             <depend id="3" type="2" difference="0" hardness="Strong"/>
-            <task id="9" name="Módulo Acceso" color="#8cb6ce" meeting="false" start="2012-10-01" duration="10" complete="78" expand="false">
+            <task id="9" name="Módulo Acceso" color="#8cb6ce" meeting="false" start="2012-10-01" duration="10" complete="84" expand="true">
                 <task id="25" name="Autenticación con BD" color="#8cb6ce" meeting="false" start="2012-10-01" duration="8" complete="98" expand="true">
                     <depend id="12" type="2" difference="0" hardness="Strong"/>
                     <depend id="13" type="2" difference="0" hardness="Strong"/>
@@ -178,9 +178,9 @@
                     <depend id="88" type="2" difference="0" hardness="Strong"/>
                     <depend id="1783" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="26" name="Autenticación con LDAP" color="#8cb6ce" meeting="false" start="2012-10-11" duration="2" complete="0" thirdDate="2012-08-31" thirdDate-constraint="1" expand="true"/>
+                <task id="26" name="Autenticación con LDAP" color="#8cb6ce" meeting="false" start="2012-10-11" duration="2" complete="30" thirdDate="2012-08-31" thirdDate-constraint="1" expand="true"/>
             </task>
-            <task id="12" name="Módulo de Seguridad" color="#8cb6ce" meeting="false" start="2012-10-11" duration="13" complete="76" thirdDate="2012-08-10" thirdDate-constraint="1" expand="false">
+            <task id="12" name="Módulo de Seguridad" color="#8cb6ce" meeting="false" start="2012-10-11" duration="13" complete="100" thirdDate="2012-08-10" thirdDate-constraint="1" expand="true">
                 <depend id="14" type="2" difference="0" hardness="Strong"/>
                 <depend id="15" type="2" difference="0" hardness="Strong"/>
                 <depend id="28" type="2" difference="0" hardness="Strong"/>
@@ -191,12 +191,12 @@
                 <depend id="1779" type="2" difference="0" hardness="Strong"/>
                 <depend id="1783" type="2" difference="0" hardness="Strong"/>
                 <depend id="2050" type="2" difference="0" hardness="Strong"/>
-                <task id="88" name="Alta/Baja/Cambios de Usuarios" color="#8cb6ce" meeting="false" start="2012-10-11" duration="4" complete="70" thirdDate="2012-08-10" thirdDate-constraint="1" expand="true">
+                <task id="88" name="Alta/Baja/Cambios de Usuarios" color="#8cb6ce" meeting="false" start="2012-10-11" duration="4" complete="100" thirdDate="2012-08-10" thirdDate-constraint="1" expand="true">
                     <depend id="86" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="86" name="Asignación de Roles a Usuarios" color="#8cb6ce" meeting="false" start="2012-10-18" duration="9" complete="80" expand="true"/>
+                <task id="86" name="Asignación de Roles a Usuarios" color="#8cb6ce" meeting="false" start="2012-10-18" duration="9" complete="100" expand="true"/>
             </task>
-            <task id="13" name="Módulo de Catálogos" color="#8cb6ce" meeting="false" start="2012-10-31" duration="120" complete="99" expand="false">
+            <task id="13" name="Módulo de Catálogos" color="#8cb6ce" meeting="false" start="2012-10-31" duration="120" complete="99" expand="true">
                 <depend id="14" type="2" difference="0" hardness="Strong"/>
                 <depend id="15" type="2" difference="0" hardness="Strong"/>
                 <depend id="28" type="2" difference="0" hardness="Strong"/>
@@ -239,7 +239,7 @@
                 </task>
                 <task id="2080" name="Cotizaciones" color="#8cb6ce" meeting="false" start="2013-05-22" duration="10" complete="90" expand="true"/>
             </task>
-            <task id="14" name="Módulo de Entrada de Equipo" color="#8cb6ce" meeting="false" start="2013-06-05" duration="50" complete="12" thirdDate="2012-07-29" thirdDate-constraint="1" expand="true">
+            <task id="14" name="Módulo de Entrada de Equipo" color="#8cb6ce" meeting="false" start="2013-06-05" duration="50" complete="16" thirdDate="2012-07-29" thirdDate-constraint="1" expand="true">
                 <depend id="15" type="2" difference="0" hardness="Strong"/>
                 <depend id="99" type="2" difference="0" hardness="Strong"/>
                 <depend id="1779" type="2" difference="0" hardness="Strong"/>
@@ -248,32 +248,32 @@
                 <task id="28" name="Alta/Baja/Cambios de entradas" color="#8cb6ce" meeting="false" start="2013-06-05" duration="30" complete="20" thirdDate="2012-07-29" thirdDate-constraint="1" expand="true">
                     <depend id="2041" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="2041" name="Impresión de entradas" color="#8cb6ce" meeting="false" start="2013-08-07" duration="20" complete="0" expand="true"/>
+                <task id="2041" name="Impresión de entradas" color="#8cb6ce" meeting="false" start="2013-08-07" duration="20" complete="10" expand="true"/>
             </task>
-            <task id="15" name="Módulo de Salida de Equipo" color="#8cb6ce" meeting="false" start="2013-09-04" duration="35" complete="0" expand="false">
+            <task id="15" name="Módulo de Salida de Equipo" color="#8cb6ce" meeting="false" start="2013-09-04" duration="35" complete="15" expand="true">
                 <depend id="1776" type="2" difference="0" hardness="Strong"/>
                 <depend id="1779" type="2" difference="0" hardness="Strong"/>
                 <depend id="1783" type="2" difference="0" hardness="Strong"/>
-                <task id="99" name="Alta/Baja/Cambios de salidas" color="#8cb6ce" meeting="false" start="2013-09-04" duration="20" complete="0" expand="true">
+                <task id="99" name="Alta/Baja/Cambios de salidas" color="#8cb6ce" meeting="false" start="2013-09-04" duration="20" complete="20" expand="true">
                     <depend id="2050" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="2050" name="Impresión de Salidas" color="#8cb6ce" meeting="false" start="2013-10-03" duration="15" complete="0" expand="true"/>
+                <task id="2050" name="Impresión de Salidas" color="#8cb6ce" meeting="false" start="2013-10-03" duration="15" complete="10" expand="true"/>
             </task>
-            <task id="1776" name="Módulo de Seguimiento" color="#8cb6ce" meeting="false" start="2013-10-24" duration="31" complete="0" expand="false">
+            <task id="1776" name="Módulo de Seguimiento" color="#8cb6ce" meeting="false" start="2013-10-24" duration="31" complete="5" expand="true">
                 <depend id="1777" type="2" difference="0" hardness="Strong"/>
                 <depend id="1783" type="2" difference="0" hardness="Strong"/>
-                <task id="1779" name="Asignación de estado del equipo" color="#8cb6ce" meeting="false" start="2013-10-24" duration="8" complete="0" expand="true">
+                <task id="1779" name="Asignación de estado del equipo" color="#8cb6ce" meeting="false" start="2013-10-24" duration="8" complete="5" expand="true">
                     <depend id="1782" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="1782" name="Asignación de personal" color="#8cb6ce" meeting="false" start="2013-11-06" duration="8" complete="0" expand="true">
+                <task id="1782" name="Asignación de personal" color="#8cb6ce" meeting="false" start="2013-11-06" duration="8" complete="5" expand="true">
                     <depend id="1781" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="1781" name="Trabajos realizados al equipo" color="#8cb6ce" meeting="false" start="2013-11-19" duration="15" complete="0" expand="true">
+                <task id="1781" name="Trabajos realizados al equipo" color="#8cb6ce" meeting="false" start="2013-11-19" duration="15" complete="5" expand="true">
                     <depend id="1784" type="2" difference="0" hardness="Strong"/>
                     <depend id="1785" type="2" difference="0" hardness="Strong"/>
                 </task>
             </task>
-            <task id="1777" name="Módulo de Estadísticas" color="#8cb6ce" meeting="false" start="2013-12-10" duration="40" complete="0" expand="false">
+            <task id="1777" name="Módulo de Estadísticas" color="#8cb6ce" meeting="false" start="2013-12-10" duration="40" complete="0" expand="true">
                 <task id="1783" name="Número de PC, Laptop, impresora, etc, en un período de tiempo" color="#8cb6ce" meeting="false" start="2013-12-10" duration="16" complete="0" expand="true"/>
                 <task id="1784" name="Número de PC, Laptop, impresora, etc son baja" color="#8cb6ce" meeting="false" start="2013-12-10" duration="16" complete="0" expand="true"/>
                 <task id="1785" name="Número de PC, Laptop, impresora, etc en garantía" color="#8cb6ce" meeting="false" start="2013-12-10" duration="16" complete="0" expand="true">
@@ -288,10 +288,10 @@
                 <task id="1788" name="Tiempo promedio de reparación (con pieza, sin pieza)" color="#8cb6ce" meeting="false" start="2014-02-11" duration="8" complete="0" expand="true"/>
             </task>
         </task>
-        <task id="3" name="Validar y probar" color="#8cb6ce" meeting="false" start="2014-02-21" duration="30" complete="40" expand="true">
+        <task id="3" name="Validar y probar" color="#8cb6ce" meeting="false" start="2014-02-21" duration="30" complete="47" expand="true">
             <depend id="4" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="4" name="Documentar" color="#8cb6ce" meeting="false" start="2014-04-04" duration="30" complete="0" expand="true">
+        <task id="4" name="Documentar" color="#8cb6ce" meeting="false" start="2014-04-04" duration="30" complete="5" expand="true">
             <depend id="6" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="6" name="Implementar" color="#8cb6ce" meeting="false" start="2014-05-16" duration="8" complete="30" expand="true">
@@ -300,7 +300,7 @@
         <task id="7" name="Capacitar" color="#8cb6ce" meeting="false" start="2014-05-28" duration="15" complete="0" expand="true">
             <depend id="8" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="8" name="Liberar" color="#8cb6ce" meeting="false" start="2014-06-18" duration="8" complete="0" expand="true"/>
+        <task id="8" name="Liberar" color="#8cb6ce" meeting="false" start="2014-06-18" duration="8" complete="10" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
@@ -313,11 +313,11 @@
         <displaycolumn property-id="tpd10" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd11" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd1" order="-1" width="75" visible="false"/>
-        <displaycolumn property-id="tpd7" order="3" width="53" visible="true"/>
         <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
-        <displaycolumn property-id="tpd3" order="0" width="237" visible="true"/>
-        <displaycolumn property-id="tpd4" order="1" width="90" visible="true"/>
-        <displaycolumn property-id="tpd5" order="2" width="72" visible="true"/>
+        <displaycolumn property-id="tpd3" order="0" width="229" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="87" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="70" visible="true"/>
+        <displaycolumn property-id="tpd7" order="3" width="51" visible="true"/>
     </taskdisplaycolumns>
     <previous/>
     <roles roleset-name="Default"/>
