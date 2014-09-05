@@ -9,15 +9,15 @@
 	<?php echo CHtml::link(CHtml::encode($data->name), array('view', 'id'=>$data->id)); ?>
 	<br />
 	
-	<b><?php echo CHtml::encode($data->getAttributeLabel('category_id')); ?>:</b>
-	<?php echo CHtml::encode($data->category->code); ?>
-	<br />
-	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('spare_parts_status_id')); ?>:</b>
 	<?php echo CHtml::encode($data->sparePartsStatus->description); ?>
 	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('spare_parts_type_id')); ?>:</b>
+	<?php echo CHtml::encode($data->sparePartsType->type); ?>
+	<br />
 	
-	<b><?php echo CHtml::encode($data->brand->getAttributeLabel('name')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('brand_id')); ?>:</b>
 	<?php echo CHtml::encode($data->brand->name); ?>
 	<br />
 
@@ -34,7 +34,7 @@
 	<br />
 	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('active')); ?>:</b>
-	<?php echo CHtml::encode($data->getActiveText()); ?>
+	<?php echo CHtml::encode($data->activeText); ?>
 	<br />
 
 	<?php /*

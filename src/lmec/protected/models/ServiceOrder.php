@@ -61,6 +61,7 @@ class ServiceOrder extends CActiveRecord
 		return array(
 			'order' => array(self::BELONGS_TO, 'Order', 'order_id'),
 			'service' => array(self::BELONGS_TO, 'Service', 'service_id'),
+//                        'Services'=>array(self::HAS_MANY, 'Service','id'),
 		);
 	}
 

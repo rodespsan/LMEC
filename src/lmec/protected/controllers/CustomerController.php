@@ -87,23 +87,19 @@ class CustomerController extends Controller {
             $transaction = Yii::app()->db->beginTransaction();
 
             try {
-                $successful = $successful && $model->contact->save();
-
-                if ($successful) {
-
-                    $successful = $model->save();
-                    if ($successful) {
-
-                        $model_customer_contact = new CustomerContact();
-                        $model_customer_contact->customer_id = $model->id;
-                        $model_customer_contact->contact_id = $model->contact->id;
-                        if ($model_customer_contact->save()) {
-                            $transaction->commit();
-                            $this->redirect(array('view', 'id' => $model->id));
-                        }
-                    }
-                }
-                $transaction->rollBack();
+				if($successful)
+				{
+					if( $model->save(false) )
+					{
+						$model->contact->customer_id = $model->id;
+						if($model->contact->save(false))
+						{
+							$transaction->commit();
+							$this->redirect(array('view', 'id' => $model->id));
+						}
+					}
+				}
+				$transaction->rollBack();
             } catch (Exception $e) {
                 $transaction->rollBack();
             }

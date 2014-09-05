@@ -6,6 +6,7 @@
  * The followings are the available columns in table '{{payment_type}}':
  * @property string $id
  * @property string $name
+ * @property string $advance_payment
  * @property integer $active
  *
  * The followings are the available model relations:
@@ -13,16 +14,6 @@
  */
 class PaymentType extends CActiveRecord
 {
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
-	 * @return PaymentType the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
-
 	/**
 	 * @return string the associated database table name
 	 */
@@ -39,12 +30,13 @@ class PaymentType extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name', 'required'),
+			array('name, advance_payment', 'required'),
 			array('active', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>45),
+			array('advance_payment', 'length', 'max'=>8),
 			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('id, name, active', 'safe', 'on'=>'search'),
+			// @todo Please remove those attributes that should not be searched.
+			array('id, name, advance_payment, active', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,28 +59,61 @@ class PaymentType extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'active' => 'Active',
+			'name' => 'Nombre',
+			'advance_payment' => 'Pago Adelantado',
+			'active' => 'Activo',
 		);
 	}
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
 	 */
 	public function search()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
+		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('advance_payment',$this->advance_payment,true);
 		$criteria->compare('active',$this->active);
 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
+		  return new CActiveDataProvider($this, array(
+                        'criteria' => $criteria,
+                        'pagination' => array(
+                        'pageSize' => Yii::app()->user->getState('pageSize', Yii::app()->params['defaultPageSize']),
+                       ),
+                    ));
 	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return PaymentType the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+        
+        public static function getActive($active) {
+        if ($active == 1) {
+            return "Si";
+        } else {
+            if ($active == 0) {
+                return "No";
+            }
+        }
+    }
 }

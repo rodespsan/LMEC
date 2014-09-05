@@ -19,6 +19,9 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.extensions.CJuiDateTimePicker.*',
+                'application.extensions.eckeditor.*',
+                
 	),
 
 	'modules'=>array(
@@ -60,10 +63,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=lmec',
+			'connectionString' => 'mysql:host=localhost;dbname=lmecjuan',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'lmecjuan',
+			'password' => 'nfZ8vQ5Qhx98WvAx',
 			 'tablePrefix'=>'tbl_',
 			'charset' => 'utf8',
 		),

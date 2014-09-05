@@ -64,13 +64,22 @@ class Customer extends CActiveRecord {
     public function relations() {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
-        return array(
-            'contacts' => array(self::MANY_MANY, 'Contact', 'tbl_customer_contact(customer_id,contact_id)'),
-            //'contact' => array(self::BELONGS_TO, 'Contact', 'contact_id'),
-            'customerType' => array(self::BELONGS_TO, 'CustomerType', 'customer_type_id'),
-            'dependence' => array(self::BELONGS_TO, 'Dependence', 'dependence_id'),
-            'orders' => array(self::HAS_MANY, 'Order', 'customer_id')
-        );
+       /*
+                return array(
+			'customerType' => array(self::BELONGS_TO, 'CustomerType', 'customer_type_id'),
+			'dependence' => array(self::BELONGS_TO, 'Dependence', 'dependence_id'),
+			'customerContacts' => array(self::HAS_MANY, 'CustomerContact', 'customer_id'),
+			'orders' => array(self::HAS_MANY, 'Order', 'customer_id'),
+		);
+                 */
+            return array(
+            	'contacts'=>array(self::MANY_MANY,'Contact','tbl_customer_contact(customer_id,contact_id)'), 
+               
+                //'contact' => array(self::BELONGS_TO, 'Contact', 'contact_id'),
+                'customerType' => array(self::BELONGS_TO, 'CustomerType', 'customer_type_id'),
+                'dependence' => array(self::BELONGS_TO, 'Dependence', 'dependence_id'),
+                'orders' => array(self::HAS_MANY, 'Order', 'customer_id')
+			);    
     }
 
     /**

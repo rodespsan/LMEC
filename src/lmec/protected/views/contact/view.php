@@ -38,19 +38,19 @@ $this->menu=array(
 <br/>
 <h2>Pertenece al cliente:</h2>
 <?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model->customers[0],
+	'data'=>$model->customer,
 	'attributes'=>array(
 		'id',
-                array(
-                    'label' => 'Cliente',
-                    'type' => 'raw',
-                    'value' => CHtml::link($model->customers[0]->name,array('customer/view','id'=>$model->customers[0]->id))
-                ),           
-                'customerType.type',                
-                array(
-                    'label' => 'Dependencia',
-                    'type' => 'raw',
-                    'value' => CHtml::link(($model->customers[0]->dependence != NULL)?$model->customers[0]->dependence->name:"",array('dependence/view','id'=>($model->customers[0]->dependence != NULL)?$model->customers[0]->dependence->id:""))
-                ),		
+		array(
+			'label' => 'Cliente',
+			'type' => 'raw',
+			'value' => CHtml::link($model->customer->name,array('customer/view','id'=>$model->customer->id))
+		),           
+		'customerType.type',                
+		array(
+			'label' => 'Dependencia',
+			'type' => 'raw',
+			'value' => CHtml::link(($model->customer->dependence != NULL)?$model->customer->dependence->name:"",array('dependence/view','id'=>($model->customer->dependence != NULL)?$model->customer->dependence->id:""))
+		),		
 	),
 )); ?>

@@ -107,7 +107,7 @@ class User extends CActiveRecord {
             'user' => 'Usuario',
             '_password2' => 'Contraseña',
             '_confirm_password' => 'Confirmar contraseña',
-            'name' => 'Nombre de usuario',
+            'name' => 'Nombres',
             'last_name' => 'Apellidos',
             'email' => 'Correo electrónico',
             '_selected_roles' => 'Roles',
@@ -275,5 +275,20 @@ class User extends CActiveRecord {
             return 'No';
         }
     }
+	
+	public function getFullName() //fullName
+	{
+		return $this->name . '  ' . $this->last_name;
+	}
 
 }
+
+
+
+
+
+
+
+
+
+

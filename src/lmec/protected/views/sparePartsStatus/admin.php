@@ -8,19 +8,37 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar estados de refacción', 'url'=>array('index')),
-	array('label'=>'Crear estado de refacción', 'url'=>array('create')),
+	array('label'=>'Listar Estados de Refacción', 'url'=>array('index')),
+	array('label'=>'Crear Estado de Refacción', 'url'=>array('create')),
 );
 
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#spare-status-grid').yiiGridView('update', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
 ?>
 
-<h1>Administrar estados</h1>
+<h1>Administrar Estados</h1>
 
 <p>
 Si lo desea, puede escribir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
 o <b>=</b>) al principio de cada uno de los valores de busqueda, para especificar como se debe realizar la comparación
 </p>
 
+
+<div class="search-form" style="display:none">
+<?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
+</div><!-- search-form -->
 
 <?php
 $pageSize=Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageSize']);

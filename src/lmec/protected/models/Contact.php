@@ -24,7 +24,6 @@ class Contact extends CActiveRecord {
      * @return Contact the static model class
      */
     public $old_customer_id;
-    public $customer_id;
 
     public static function model($className = __CLASS__) {
         
@@ -70,8 +69,7 @@ class Contact extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'customerContacts' => array(self::HAS_MANY, 'CustomerContact', 'contact_id'),
-            'customers' => array(self::MANY_MANY, 'Customer', 'tbl_customer_contact(customer_id,contact_id)'),
+            'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
         );
     }
 

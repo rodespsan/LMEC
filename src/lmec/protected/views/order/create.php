@@ -3,16 +3,16 @@
 /* @var $model Order */
 
 $this->breadcrumbs=array(
-	'Orders'=>array('index'),
+	'Ordenes'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List Order', 'url'=>array('index')),
-	array('label'=>'Manage Order', 'url'=>array('admin')),
+	array('label'=>'Listar Ordenes', 'url'=>array('index')),
+	array('label'=>'Administrar Ordenes', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Order</h1>
+<h1>Orden</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

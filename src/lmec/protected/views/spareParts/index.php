@@ -11,8 +11,8 @@ $this->menu=array(
 	array('label'=>'Administrar refacciones', 'url'=>array('admin')),
 	array('label'=>'Listar estados de refacción', 'url'=>array('sparePartsStatus/index')),
 	array('label'=>'Crear estado de refacción', 'url'=>array('sparePartsStatus/create')),
-	array('label'=>'Crear categoría de refacción', 'url'=>array('sparePartsCategory/create')),
 	array('label'=>'Administrar estados de refacción', 'url'=>array('sparePartsStatus/admin')),
+	array('label'=>'Crear tipo de refacción', 'url'=>array('sparePartsType/create')),
 );
 ?>
 
@@ -23,11 +23,12 @@ $this->menu=array(
 	'itemView'=>'_view',
 	'enableSorting' => true,
 	'sortableAttributes'=>array(
-            'brand',
+			'brand_id',
 			'spare_parts_status_id',
 			'provider_id',
 			'name',
-			'serial_number'
+			'serial_number',
+			'spare_parts_type_id'
             
         ),
 )); ?>

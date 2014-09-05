@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar estados de refacción', 'url'=>array('index')),
-	array('label'=>'Administrar estados de refacción', 'url'=>array('admin')),
+	array('label'=>'Listar Estados de Refacción', 'url'=>array('index')),
+	array('label'=>'Administrar Estados de Refacción', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Crear estado</h1>
+<h1>Crear Estado</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

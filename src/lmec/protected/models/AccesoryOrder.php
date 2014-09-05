@@ -67,7 +67,7 @@ class AccesoryOrder extends CActiveRecord
 	{
 		return array(
 			'order_id' => 'Order',
-			'accesory_id' => 'Accesory',
+			'accesory_id' => 'Accesorio',
 		);
 	}
 

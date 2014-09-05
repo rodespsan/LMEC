@@ -12,11 +12,14 @@
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
-	
+
 	<div class="row">
-		<?php echo $form->labelEx($model,'category_id'); ?>
-		<?php echo $form->dropDownList($model,'category_id',CHtml::listData(SparePartsCategory::model()->findAll(),'id','code'), array('empty'=>'Seleccionar Categoria')); ?>
-		<?php echo $form->error($model,'category_id'); ?>
+		<?php echo $form->labelEx($model,'spare_parts_type_id'); ?>
+		<?php echo $form->dropDownList($model,'spare_parts_type_id',
+					CHtml::listData(SparePartsType::model()->findAll('active = 1'),'id','type'),
+					array('empty'=>'Seleccionar Tipo')
+					); ?>
+		<?php echo $form->error($model,'spare_parts_type_id'); ?>
 	</div>
 
 	<div class="row">
@@ -119,8 +122,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
-    	<?php echo $form->checkbox($model,'active'); ?>
+		<?php echo $form->labelEx($model,'active'); ?>
+		<?php echo $form->checkBox($model,'active'); ?>
 		<?php echo $form->error($model,'active'); ?>
 	</div>
 

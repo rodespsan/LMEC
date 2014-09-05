@@ -16,7 +16,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'address'); ?>
-		<?php echo $form->textField($model,'address',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'address',array('size'=>45,'maxlength'=>300)); ?>
 		<?php echo $form->error($model,'address'); ?>
 	</div>
 

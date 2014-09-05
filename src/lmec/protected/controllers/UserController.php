@@ -133,7 +133,7 @@ class UserController extends Controller {
 
 					$model->deleteRolesOfUser($model->id) ;
 
-                    if($model->assignRolesToUser($model->id) == $successful)
+                    if($model->assignRolesToUser($model->id))
 					{
 						$transaction->commit();
 						$this->redirect(array('view', 'id' => $model->id));

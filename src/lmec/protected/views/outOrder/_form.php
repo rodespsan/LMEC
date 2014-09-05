@@ -39,18 +39,18 @@
 	
 	<div class="row">
 		<b><?php echo CHtml::encode('DESCRIPCIÓN'); ?></b>
-		<?php echo $form->labelEx($model->order->model->EquipmentType,'type') ?>
-		<?php echo CHtml::encode($model->order->model->EquipmentType->type);?>
+		<?php echo $form->labelEx($model->order->modelo->EquipmentType,'type') ?>
+		<?php echo CHtml::encode($model->order->modelo->EquipmentType->type);?>
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($model->order->model->Brand,'name') ?>
-		<?php echo CHtml::encode($model->order->model->Brand->name); ?>
+		<?php echo $form->labelEx($model->order->modelo->Brand,'name') ?>
+		<?php echo CHtml::encode($model->order->modelo->Brand->name); ?>
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($model->order->model,'name') ?>
-		<?php echo CHtml::encode($model->order->model->name); ?>
+		<?php echo $form->labelEx($model->order->modelo,'name') ?>
+		<?php echo CHtml::encode($model->order->modelo->name); ?>
 	</div>
 	
 	<div class="row">
@@ -65,7 +65,7 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($model->order,'Accesorios') ?>
-		<?php $items = CHtml::listData($model->order->accesories,'id','names');
+		<?php $items = CHtml::listData($model->order->accessories,'id','names');
 			echo "<ul>";
 			foreach($items as $item){
 				echo "<li>".CHtml::encode($item)."</li>";

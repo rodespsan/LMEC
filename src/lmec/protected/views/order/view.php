@@ -7,51 +7,95 @@ $this->breadcrumbs=array(
 	$model->id,
 );
 
-$modelOut = new OutOrder;
-
 $this->menu=array(
-	array('label'=>'List Order', 'url'=>array('index')),
-	array('label'=>'Create Order', 'url'=>array('create')),
-	array('label'=>'Update Order', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Order', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Order', 'url'=>array('admin')),
-	array('label'=>'Crear Salida', 'url'=>array('/outOrder/create', 'id'=>$model->id), 'visible'=>$model->enableOutput() ),
-	array('label'=>'Ver Salida', 'url'=>array('/outOrder/view', 'id'=>$modelOut->viewOutOrder($model->id) ), 'visible'=>!$model->enableOutput()),
-	//array('label'=>'Eliminar Salida', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$modelOut->updateOutput($model->id)),'confirm'=>'Are you sure you want to delete this item?')),
-);
+	array('label'=>'Listar órdenes', 'url'=>array('index')),
+	array('label'=>'Crear órdenes', 'url'=>array('create')),
+	array('label'=>'Actualizar órdenes', 'url'=>array('update', 'id'=>$model->id)),
+	//array('label'=>'Eliminar órdenes','url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar órdenes', 'url'=>array('admin')),
+	array('label'=>'Imprimir', 'url'=>array('print','id'=>$model->id), 'linkOptions'=>array('target'=>'_blank')),
+    //array('label'=>'Imprimir', 'url'=>array('print','id'=>$model->id), 'linkOptions'=>array('target'=>'_blank')),
+    //array('label'=>'Crear Diagnostico', 'url'=>array('createDiagnostic','id'=>$model->id)),
+    array('label'=>'Diagnosticar', 'url'=>array('diagnostic/create','id'=>$model->id,),'visible'=>Order::model()->getStatus_diagnostic_order($model->id)),
+    //array('label'=>'Crear Diagnostico', 'url'=>array('createDiagnostic','id'=>$model->id)),
+    //Pendiente parte de grisel array('label'=>'Asignar Refacción', 'url'=>array('sparePartsOrder/create','id'=>$model->id)),
+    array('label'=>'Asignar refacción', 'url'=>array('sparePartsOrder/create','id'=>$model->id),'visible'=>Order::model()->getStatus_refection_order($model->id)),
+    array('label'=>'Asignar reparaciones', 'url'=>array('repair/create','id'=>$model->id),'visible'=>Order::model()->getStatus_repair_order($model->id)),
+    
+    //array('label'=>'Administrar Refacciones', 'url'=>array('sparePartsOrder/admin')),
 
-function unorderedList($items)
-{
-	$content = '<ul>';
-	foreach($items as $key => $item)
-	{
-		$content .= "<li>".$item."</li>";
-	}
-	$content .= '</ul>';
-	return $content;
-}
+);
 ?>
 
-<h1>Orden de entrada #<?php echo $model->id; ?></h1>
+<h1>Orden: <?php echo (str_pad($model->id, 5, "0", STR_PAD_LEFT)); ?></h1>
+
+
+<?php
+
+    $failureDescriptions =$model->failureDescriptions;
+    $failureDescription_ = '';
+
+    foreach ($failureDescriptions as $failureDescription){
+        $failureDescription_.= $failureDescription->description;
+    }
+ 
+ 
+    $equipmentStatuses =$model->equipmentStatuses;
+    $equipmentStatuses_ = '';
+
+    foreach ($equipmentStatuses as $equipmentStatus){     
+     $equipmentStatuses_.= $equipmentStatus->description;
+    }
+
+    $accessories =$model->accessories;
+    $accessories_ = '<ul>';
+
+    foreach ($accessories as $accesory){     
+     $accessories_.= '<li>'.$accesory->name.'</li>';
+    }
+    
+    $accessories_ .= '<ul>';
+
+    
+?>
+
+
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'customer_id',
-		'receptionist_user_id',
-		'payment_type_id',
-		'model_id',
-		'service_type_id',
+		array(
+            'label' => 'Folio de Entrada',
+            'value' => (str_pad($model->id, 5, "0", STR_PAD_LEFT)),
+        ),
+		'customer.name:text:Nombre de Cliente',
+		'contact.name:text:Contacto',
+		'receptionistUser.name:text:Recepcionista',
+		'paymentType.name:text:Tipo de Pago',
+		'modelo.Brand.name:text:Marca',
+		'modelo.name:text:Modelo',
+		'serviceType.name:text:Tipo de Servicio',
 		'date_hour',
-		'advance_payment',
+                array(
+                     'name' => 'accesory',
+                     'value' => $accessories_,
+                     'type'=> 'raw'
+                ),
 		'serial_number',
 		'stock_number',
-		'name_deliverer_equipment',
+                array(
+                     'name' => '_failureDescription',
+                     'value' => $failureDescription_,
+                     'type'=> 'raw'
+                ),
 		array(
-			'name'=>'accesories',
-			'value'=>unorderedList(CHtml::listData($model->accesories,'id','name')),
-			'type'=>'raw',
-		),
+                     'name' => '_equipmentStatus',
+                     'value' => $equipmentStatuses_,
+                     'type'=> 'raw'
+                ),
+            	'observation',
+//		'equipmentStatuses.description:text:Estado del Equipo',
+		'name_deliverer_equipment',
+                'advance_payment',
 	),
 )); ?>

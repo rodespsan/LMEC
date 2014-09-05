@@ -41,7 +41,8 @@ class Dependence extends CActiveRecord {
             array('name, address, telephone_number, active', 'required'),
             array('name', 'unique'),
             array('active', 'numerical', 'integerOnly' => true),
-            array('name, address', 'length', 'max' => 45),
+            array('name', 'length', 'max' => 45),
+			array('address', 'length', 'max' => 300),
             array('telephone_number', 'length', 'max' => 15),
             array('extension', 'length', 'max' => 5),
             // The following rule is used by search().
@@ -114,7 +115,7 @@ class Dependence extends CActiveRecord {
         return $dependencies;
     }
 
-    public function onBeforeValidate() {
+    public function onBeforeValidate($event) {
         foreach ($this->getIterator() as $atributo => $valor)
             $this[$atributo] = trim($valor);
     }
