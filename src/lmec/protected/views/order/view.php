@@ -72,6 +72,7 @@ $this->menu=array(
 		'contact.name:text:Contacto',
 		'receptionistUser.name:text:Recepcionista',
 		'paymentType.name:text:Tipo de Pago',
+        'modelo.EquipmentType.type:text:Tipo de Equipo',
 		'modelo.Brand.name:text:Marca',
 		'modelo.name:text:Modelo',
 		'serviceType.name:text:Tipo de Servicio',

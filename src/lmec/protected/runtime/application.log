@@ -8171,3 +8171,333 @@ Stack trace:
 REQUEST_URI=/lmec-juan/order/print/43
 HTTP_REFERER=http://localhost/lmec-juan/order/43
 ---
+2014/09/08 19:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/7f3ca011/images/arrows-ffffff.png"' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/7f3ca011...')
+#1 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/assets/7f3ca011/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/Git/LMEC/src/lmec/assets/7f3ca011/superfish.css
+---
+2014/09/08 19:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/7f3ca011/images/shadow.png"' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/7f3ca011...')
+#1 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/assets/7f3ca011/images/shadow.png
+HTTP_REFERER=http://localhost/Git/LMEC/src/lmec/assets/7f3ca011/superfish.css
+---
+2014/09/08 19:24:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/7f3ca011/images/shadow.png"' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/7f3ca011...')
+#1 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/assets/7f3ca011/images/shadow.png
+HTTP_REFERER=http://localhost/Git/LMEC/src/lmec/assets/7f3ca011/superfish.css
+---
+2014/09/08 19:24:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/7f3ca011/images/arrows-ffffff.png"' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/7f3ca011...')
+#1 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/assets/7f3ca011/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/Git/LMEC/src/lmec/assets/7f3ca011/superfish.css
+---
+2014/09/08 19:46:01 [error] [exception.CException] exception 'CException' with message 'La propiedad "Order"."model" no se encuentra definida.' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('model')
+#1 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\models\Order.php(285): CActiveRecord->__get('model')
+#2 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CComponent.php(188): Order->getEquipmentType()
+#3 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\db\ar\CActiveRecord.php(183): CComponent->__isset('equipmentType')
+#4 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\helpers\CHtml.php(2135): CActiveRecord->__isset('equipmentType')
+#5 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CDetailView.php(214): CHtml::value(Object(Order), 'equipmentType.n...')
+#6 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(173): CDetailView->run()
+#7 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\views\order\view.php(102): CBaseController->widget('zii.widgets.CDe...', Array)
+#8 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(126): require('D:\\Xampp\\htdocs...')
+#9 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Xampp\\htdocs...', Array, true)
+#10 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\Xampp\\htdocs...', Array, true)
+#11 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#12 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\controllers\OrderController.php(73): CController->render('view', Array)
+#13 [internal function]: OrderController->actionView('30')
+#14 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#15 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#16 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#25 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#26 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#27 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/order/30
+---
+2014/09/08 19:53:17 [error] [exception.CException] exception 'CException' with message 'La propiedad "Order"."model" no se encuentra definida.' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('model')
+#1 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\models\Order.php(285): CActiveRecord->__get('model')
+#2 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CComponent.php(188): Order->getEquipmentType()
+#3 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\db\ar\CActiveRecord.php(183): CComponent->__isset('equipmentType')
+#4 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\helpers\CHtml.php(2135): CActiveRecord->__isset('equipmentType')
+#5 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CDetailView.php(214): CHtml::value(Object(Order), 'equipmentType.n...')
+#6 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(173): CDetailView->run()
+#7 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\views\order\view.php(102): CBaseController->widget('zii.widgets.CDe...', Array)
+#8 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(126): require('D:\\Xampp\\htdocs...')
+#9 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Xampp\\htdocs...', Array, true)
+#10 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\Xampp\\htdocs...', Array, true)
+#11 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#12 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\controllers\OrderController.php(73): CController->render('view', Array)
+#13 [internal function]: OrderController->actionView('30')
+#14 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#15 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#16 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#25 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#26 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#27 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/order/30
+---
+2014/09/08 20:19:36 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#9 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#10 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/order/view
+HTTP_REFERER=http://localhost/Git/LMEC/src/lmec/order/30
+---
+2014/09/08 20:19:45 [error] [exception.CException] exception 'CException' with message 'La propiedad "EquipmentType"."name" no se encuentra definida.' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('name')
+#1 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\views\order\_view.php(18): CActiveRecord->__get('name')
+#2 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(130): require('D:\\Xampp\\htdocs...')
+#3 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Xampp\\htdocs...', Array, false)
+#4 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('D:\\Xampp\\htdocs...', Array)
+#5 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#9 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#10 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\views\order\index.php(27): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(126): require('D:\\Xampp\\htdocs...')
+#12 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Xampp\\htdocs...', Array, true)
+#13 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\Xampp\\htdocs...', Array, true)
+#14 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\controllers\OrderController.php(326): CController->render('index', Array)
+#16 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionIndex()
+#17 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#26 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/index')
+#27 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/order/index
+HTTP_REFERER=http://localhost/Git/LMEC/src/lmec/outOrder/index
+---
+2014/09/08 20:24:49 [error] [exception.CException] exception 'CException' with message 'La propiedad "EquipmentType"."name" no se encuentra definida.' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('name')
+#1 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\views\order\_view.php(18): CActiveRecord->__get('name')
+#2 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(130): require('D:\\Xampp\\htdocs...')
+#3 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Xampp\\htdocs...', Array, false)
+#4 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('D:\\Xampp\\htdocs...', Array)
+#5 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#9 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#10 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\views\order\index.php(27): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(126): require('D:\\Xampp\\htdocs...')
+#12 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Xampp\\htdocs...', Array, true)
+#13 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\Xampp\\htdocs...', Array, true)
+#14 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\controllers\OrderController.php(326): CController->render('index', Array)
+#16 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionIndex()
+#17 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#26 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/index')
+#27 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/order/index
+---
+2014/09/08 20:36:53 [error] [exception.CException] exception 'CException' with message 'La propiedad "EquipmentType"."name" no se encuentra definida.' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('name')
+#1 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\views\order\_view.php(18): CActiveRecord->__get('name')
+#2 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(130): require('D:\\Xampp\\htdocs...')
+#3 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Xampp\\htdocs...', Array, false)
+#4 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('D:\\Xampp\\htdocs...', Array)
+#5 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#9 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#10 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\views\order\index.php(27): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(126): require('D:\\Xampp\\htdocs...')
+#12 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Xampp\\htdocs...', Array, true)
+#13 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\Xampp\\htdocs...', Array, true)
+#14 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\controllers\OrderController.php(326): CController->render('index', Array)
+#16 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionIndex()
+#17 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#26 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/index')
+#27 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/order/index
+---
+2014/09/08 20:37:01 [error] [exception.CException] exception 'CException' with message 'La propiedad "EquipmentType"."name" no se encuentra definida.' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('name')
+#1 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\views\order\_view.php(18): CActiveRecord->__get('name')
+#2 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(130): require('D:\\Xampp\\htdocs...')
+#3 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Xampp\\htdocs...', Array, false)
+#4 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('D:\\Xampp\\htdocs...', Array)
+#5 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#8 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#9 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#10 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\views\order\index.php(27): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(126): require('D:\\Xampp\\htdocs...')
+#12 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Xampp\\htdocs...', Array, true)
+#13 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\Xampp\\htdocs...', Array, true)
+#14 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\controllers\OrderController.php(326): CController->render('index', Array)
+#16 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionIndex()
+#17 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#26 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/index')
+#27 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/order/index
+---
+2014/09/08 20:58:17 [error] [exception.CException] exception 'CException' with message 'La propiedad "ServiceOrder"."cant" no se encuentra definida.' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('cant')
+#1 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\views\order\print.php(119): CActiveRecord->__get('cant')
+#2 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(126): require('D:\\Xampp\\htdocs...')
+#3 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Xampp\\htdocs...', Array, true)
+#4 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\Xampp\\htdocs...', Array, true)
+#5 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(782): CController->renderPartial('print', Array, true)
+#6 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\controllers\OrderController.php(512): CController->render('print', Array)
+#7 [internal function]: OrderController->actionPrint('30')
+#8 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#9 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#10 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(282): CController->run('print')
+#19 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/print')
+#20 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/order/print/30
+HTTP_REFERER=http://localhost/Git/LMEC/src/lmec/order/30
+---
+2014/09/08 21:16:20 [error] [exception.CException] exception 'CException' with message 'La propiedad "ServiceOrder"."cant" no se encuentra definida.' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('cant')
+#1 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\views\order\print.php(113): CActiveRecord->__get('cant')
+#2 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(126): require('D:\\Xampp\\htdocs...')
+#3 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\Xampp\\htdocs...', Array, true)
+#4 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\Xampp\\htdocs...', Array, true)
+#5 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(782): CController->renderPartial('print', Array, true)
+#6 D:\Xampp\htdocs\Git\LMEC\src\lmec\protected\controllers\OrderController.php(512): CController->render('print', Array)
+#7 [internal function]: OrderController->actionPrint('30')
+#8 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#9 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#10 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(282): CController->run('print')
+#19 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/print')
+#20 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/order/print/30
+---
+2014/09/08 22:10:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/7f3ca011/images/arrows-ffffff.png"' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/7f3ca011...')
+#1 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/assets/7f3ca011/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/Git/LMEC/src/lmec/assets/7f3ca011/superfish.css
+---
+2014/09/08 22:10:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/7f3ca011/images/shadow.png"' in D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/7f3ca011...')
+#1 D:\Xampp\htdocs\Git\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Xampp\htdocs\Git\LMEC\src\lmec\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Git/LMEC/src/lmec/assets/7f3ca011/images/shadow.png
+HTTP_REFERER=http://localhost/Git/LMEC/src/lmec/assets/7f3ca011/superfish.css
+---

@@ -13,6 +13,11 @@
 	<?php echo CHtml::link(CHtml::encode($data->customer->name), array('/','customer'=>$data->customer_id))?>
 	<br />
 
+	<!--//Agregado por mi-->
+	<b><?php echo CHtml::encode($data->getAttributeLabel('equipment_type_id')); ?>:</b>
+	<?php echo CHtml::encode($data->modelo->EquipmentType->type); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('_brand')); ?>:</b>
 	<?php echo CHtml::encode($data->modelo->Brand->name) ?>
 	<br />
