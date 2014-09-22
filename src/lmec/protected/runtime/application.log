@@ -8501,3 +8501,183 @@ Stack trace:
 REQUEST_URI=/Git/LMEC/src/lmec/assets/7f3ca011/images/shadow.png
 HTTP_REFERER=http://localhost/Git/LMEC/src/lmec/assets/7f3ca011/superfish.css
 ---
+2014/09/22 08:23:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/shadow.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/shadow.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 08:23:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/arrows-ffffff.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 08:23:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/arrows-ffffff.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 08:23:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/shadow.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/shadow.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 08:23:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/arrows-ffffff.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 08:23:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/shadow.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/shadow.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 08:24:18 [warning] [application] Error al establecer unsafe al atributo "equipment_type_id" de "Order".
+in C:\xampp\htdocs\LMEC\src\lmecActual\protected\controllers\OrderController.php (94)
+in C:\xampp\htdocs\LMEC\src\lmecActual\index.php (13)
+2014/09/22 08:24:18 [warning] [application] Error al establecer unsafe al atributo "brand_id" de "Order".
+in C:\xampp\htdocs\LMEC\src\lmecActual\protected\controllers\OrderController.php (94)
+in C:\xampp\htdocs\LMEC\src\lmecActual\index.php (13)
+2014/09/22 08:24:18 [warning] [application] Error al establecer unsafe al atributo "accesory_id" de "Order".
+in C:\xampp\htdocs\LMEC\src\lmecActual\protected\controllers\OrderController.php (94)
+in C:\xampp\htdocs\LMEC\src\lmecActual\index.php (13)
+2014/09/22 08:24:18 [warning] [application] Error al establecer unsafe al atributo "_failureDescription" de "Order".
+in C:\xampp\htdocs\LMEC\src\lmecActual\protected\controllers\OrderController.php (94)
+in C:\xampp\htdocs\LMEC\src\lmecActual\index.php (13)
+2014/09/22 08:24:18 [warning] [application] Error al establecer unsafe al atributo "_equipmentStatus" de "Order".
+in C:\xampp\htdocs\LMEC\src\lmecActual\protected\controllers\OrderController.php (94)
+in C:\xampp\htdocs\LMEC\src\lmecActual\index.php (13)
+2014/09/22 08:24:18 [warning] [application] Error al establecer unsafe al atributo "observation" de "Order".
+in C:\xampp\htdocs\LMEC\src\lmecActual\protected\controllers\OrderController.php (94)
+in C:\xampp\htdocs\LMEC\src\lmecActual\index.php (13)
+2014/09/22 08:24:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/arrows-ffffff.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 08:24:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/shadow.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/shadow.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 14:12:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/arrows-ffffff.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 14:12:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/shadow.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/shadow.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 14:13:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/arrows-ffffff.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 14:13:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/shadow.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/shadow.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 14:13:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/arrows-ffffff.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 14:13:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/shadow.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/shadow.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 14:16:01 [warning] [application] Error al establecer unsafe al atributo "equipment_type_id" de "Order".
+in C:\xampp\htdocs\LMEC\src\lmecActual\protected\controllers\OrderController.php (94)
+in C:\xampp\htdocs\LMEC\src\lmecActual\index.php (13)
+2014/09/22 14:16:01 [warning] [application] Error al establecer unsafe al atributo "brand_id" de "Order".
+in C:\xampp\htdocs\LMEC\src\lmecActual\protected\controllers\OrderController.php (94)
+in C:\xampp\htdocs\LMEC\src\lmecActual\index.php (13)
+2014/09/22 14:16:01 [warning] [application] Error al establecer unsafe al atributo "accesory_id" de "Order".
+in C:\xampp\htdocs\LMEC\src\lmecActual\protected\controllers\OrderController.php (94)
+in C:\xampp\htdocs\LMEC\src\lmecActual\index.php (13)
+2014/09/22 14:16:01 [warning] [application] Error al establecer unsafe al atributo "_failureDescription" de "Order".
+in C:\xampp\htdocs\LMEC\src\lmecActual\protected\controllers\OrderController.php (94)
+in C:\xampp\htdocs\LMEC\src\lmecActual\index.php (13)
+2014/09/22 14:16:01 [warning] [application] Error al establecer unsafe al atributo "_equipmentStatus" de "Order".
+in C:\xampp\htdocs\LMEC\src\lmecActual\protected\controllers\OrderController.php (94)
+in C:\xampp\htdocs\LMEC\src\lmecActual\index.php (13)
+2014/09/22 14:16:01 [warning] [application] Error al establecer unsafe al atributo "observation" de "Order".
+in C:\xampp\htdocs\LMEC\src\lmecActual\protected\controllers\OrderController.php (94)
+in C:\xampp\htdocs\LMEC\src\lmecActual\index.php (13)
+2014/09/22 14:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/arrows-ffffff.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---
+2014/09/22 14:16:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/32e14f3f/images/shadow.png"' in C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\LMEC\src\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/32e14f3f...')
+#1 C:\xampp\htdocs\LMEC\src\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\LMEC\src\lmecActual\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/LMEC/src/lmecActual/assets/32e14f3f/images/shadow.png
+HTTP_REFERER=http://localhost/LMEC/src/lmecActual/assets/32e14f3f/superfish.css
+---

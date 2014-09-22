@@ -330,6 +330,30 @@
 			),
 			array(
 				'prompt' => 'Seleccionar',
+				'ajax' => array(
+					'type' => 'POST',
+					'url' => CController::createUrl('order/servicesFromServiceType'),
+					'data' => array(
+						'Order[service_type_id]' => 'js:this.value',
+					),
+					//'update' => '#Order_service',
+					'success'=> 'js:function(dataType){
+						jsonObject = JSON.parse(dataType);
+						
+						$("#Order_service").children().remove();
+						
+						for(i=0; i< jsonObject.services_options.length; i++){
+							$("#Order_service").append( new Option(
+								jsonObject.services_options[i].name,
+								jsonObject.services_options[i].id
+							));
+						}
+					}',
+					'error' => 'js:function(dataType){
+						$("#Order_service").children().remove();
+						$("#Order_service").append( new Option("Seleccionar"));
+					}',
+				),
                                
 			)
 		); ?>
@@ -344,7 +368,14 @@
 			'service',
 			CHtml::listData(
 				Service::model()->findAll(array(
-					'condition' => 'active=1'
+					'with' => array(
+						'serviceType'
+					),
+					'condition' => 't.active = 1 AND serviceType.id = :service_type_id',
+					'order' => 't.name',
+					'params' => array(
+						':service_type_id'=>$model->service_type_id
+					)
 				)),
 				'id',
 				'name'

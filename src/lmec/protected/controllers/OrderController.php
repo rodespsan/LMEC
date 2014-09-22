@@ -30,7 +30,7 @@ class OrderController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'contactsFromCustomer', 'brandsFromEquipment', 'modelsFromBrand', 'advancePaymentFromPaymentType'),
+                'actions' => array('create', 'update', 'contactsFromCustomer', 'servicesFromServiceType', 'brandsFromEquipment', 'modelsFromBrand', 'advancePaymentFromPaymentType'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -378,6 +378,27 @@ class OrderController extends Controller {
                 'customer' => $customer,
                 'contacts' => $contacts,
                 'advance_payment' => $advance_payment,
+            ));
+        }
+    }
+
+    public function actionServicesFromServiceType(){
+        if (isset($_POST['Order']['service_type_id'])) {
+            $serviceType = ServiceType::model()->findByPk($_POST['Order']['service_type_id']);
+
+
+            $services = Service::model()->findAll(array(
+                'condition' => 'service_type_id = :service_type_id',
+                'order' => 'name',
+                'params' => array(
+                    ':service_type_id' => $_POST['Order']['service_type_id'],
+                ),
+            ));
+
+
+            $this->renderPartial('servicesFromServiceType', array(
+                'serviceTyper' => $serviceType,
+                'services' => $services,
             ));
         }
     }
