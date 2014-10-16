@@ -57,8 +57,9 @@ class ContactController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        if (Customer::model()->count('active=1') == 0) {
-            throw new CHttpException('', 'Primero debe ' . CHtml::link('crear un Cliente', array('customer/create')) . '.');
+        
+		if (Customer::model()->count('active=1') == 0) {
+            throw new CHttpException(412, 'No hay clientes activos. Para crear un contacto, primero debe ' . CHtml::link('crear un cliente', array('customer/create')) . '.');
         }
 
         $model = new Contact('scenarioCreate');

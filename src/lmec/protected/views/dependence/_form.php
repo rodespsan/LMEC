@@ -3,6 +3,11 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'dependence-form',
 	'enableAjaxValidation'=>false,
+	'enableClientValidation'=>true,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+		'validateOnChange'=>true,
+	),
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
@@ -32,12 +37,13 @@
 		<?php echo $form->error($model,'extension'); ?>
 	</div>
         <div class="row">
-		<?php echo CHtml::encode($model->getAttributeLabel('active')); ?>
-                <?php echo $form->checkbox($model,'active');?>
-                <?php echo $form->error($model,'active'); ?>
+		<?php echo $form->labelEx($model,'active'); ?>
+		<?php echo $form->checkbox($model,'active');?>
+		<?php echo $form->error($model,'active'); ?>
         </div>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
+		<?php echo ($model->isNewRecord)? CHtml::submitButton('Crear +') : ''; ?>
 	</div>
 
 <?php $this->endWidget(); ?>

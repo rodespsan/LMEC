@@ -16,7 +16,12 @@ if (!$model->isNewRecord && $model->contact == NULL) {
     $form = $this->beginWidget('CActiveForm', array(
         'id' => 'customer-form',
         'enableAjaxValidation' => false,
-            ));
+		'enableClientValidation'=>true,
+		'clientOptions'=>array(
+			'validateOnSubmit'=>true,
+			'validateOnChange'=>true,
+		),
+    ));
     ?>
 
     <p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
@@ -69,17 +74,16 @@ if (!$model->isNewRecord && $model->contact == NULL) {
         </div>
 
         <div class="row">
-            <div style="width: 50%; float: right">
-                <?php echo $form->labelEx($model->contact, 'extension_office'); ?>
-                <?php echo $form->textField($model->contact, 'extension_office', array('size' => 5, 'maxlength' => 5)); ?>
-                <?php echo $form->error($model->contact, 'extension_office'); ?>
-            </div>
-            <div style="width: 50%;">
+            <div style="width: 50%; float: left;">
                 <?php echo $form->labelEx($model->contact, 'telephone_number_office'); ?>
                 <?php echo $form->textField($model->contact, 'telephone_number_office', array('size' => 35, 'maxlength' => 35)); ?>
                 <?php echo $form->error($model->contact, 'telephone_number_office'); ?>
             </div>
-
+			<div style="width: 50%; float: right">
+                <?php echo $form->labelEx($model->contact, 'extension_office'); ?>
+                <?php echo $form->textField($model->contact, 'extension_office', array('size' => 5, 'maxlength' => 5)); ?>
+                <?php echo $form->error($model->contact, 'extension_office'); ?>
+            </div>
         </div>
 
         <div class="row">
@@ -97,6 +101,7 @@ if (!$model->isNewRecord && $model->contact == NULL) {
     </div>
     <div class="row buttons">
         <?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
+		<?php echo ($model->isNewRecord)? CHtml::submitButton('Crear +') : ''; ?>
     </div>
 
     <?php $this->endWidget(); ?>

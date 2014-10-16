@@ -48,10 +48,11 @@
 				),
 				array('label'=>'Clientes', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
 					'items'=>array(
-						array('label' => 'Dependencias', 'url' => array('/dependence/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
-						array('label' => 'Clientes', 'url' => array('/customer/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
-						array('label' => 'Tipo de cliente', 'url' => array('/customerType/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
-						array('label' => 'Contactos', 'url' => array('/contact/index'), 'visible'=>Yii::app()->user->checkAccess('administrador'))
+						array('label' => 'Clientes', 'url' => array('/customer/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label' => 'Contactos', 'url' => array('/contact/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label' => 'Dependencias', 'url' => array('/dependence/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label' => 'Tipo de cliente', 'url' => array('/customerType/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador'))
+						
 				)
 				),
 				array('label'=>'Equipos', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
@@ -78,12 +79,7 @@
 			),
 		)); ?>
 	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-		'homeLink'=>CHtml::link('Inicio', array('/site/index')),
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
+	
 
 	<?php echo $content; ?>
 

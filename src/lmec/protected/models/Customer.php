@@ -73,7 +73,7 @@ class Customer extends CActiveRecord {
 		);
                  */
             return array(
-            	'contacts'=>array(self::MANY_MANY,'Contact','tbl_customer_contact(customer_id,contact_id)'), 
+            	'contacts'=>array(self::HAS_MANY,'Contact','customer_id'), 
                
                 //'contact' => array(self::BELONGS_TO, 'Contact', 'contact_id'),
                 'customerType' => array(self::BELONGS_TO, 'CustomerType', 'customer_type_id'),
@@ -107,7 +107,7 @@ class Customer extends CActiveRecord {
         // should not be searched.
 
         $criteria = new CDbCriteria;
-        $criteria->select = "t.id, t.name, t.dependence_id, t.address, t.customer_type_id, t.active";
+        /*$criteria->select = "t.id, t.name, t.dependence_id, t.address, t.customer_type_id, t.active";
         $criteria->compare('t.id', $this->id, true);
         $criteria->compare('t.name', $this->name, true);
         //$criteria->compare('dependence_id',$this->dependence_id,true);
@@ -121,28 +121,31 @@ class Customer extends CActiveRecord {
         //$criteria->compare('D.name',$this->dependence_id,true);
         //$criteria->compare('CO.name',$this->nombreContacto,true);
         $criteria->join = 'INNER JOIN tbl_customer_type AS C ON C.id = t.customer_type_id LEFT JOIN tbl_dependence AS D ON D.id = t.dependence_id INNER JOIN tbl_customer_contact AS CC ON CC.customer_id=t.id INNER JOIN tbl_contact AS CO ON CO.id = CC.contact_id';
-        $criteria->group = 't.id, t.customer_type_id, t.address, t.dependence_id';
+        $criteria->group = 't.id, t.customer_type_id, t.address, t.dependence_id';*/
+		
+		$criteria->with = array('customerType','dependence');
+		$criteria->compare('t.id', $this->id, true);
+        $criteria->compare('t.name', $this->name, true);
+        $criteria->compare('address', $this->address, true);
+		$criteria->compare('type', $this->customer_type_id, true);
+		$criteria->compare('Dependence.name', $this->dependence_id, true);
+		$criteria->compare('t.active', $this->active);
 
         return new CActiveDataProvider($this, array(
-                    'criteria' => $criteria,
-                    'pagination' => array(
-                        'pageSize' => Yii::app()->user->getState('pageSize', Yii::app()->params['defaultPageSize']),
-                    ),
-                ));
+			'criteria' => $criteria,
+			'pagination' => array(
+				'pageSize' => Yii::app()->user->getState('pageSize', Yii::app()->params['defaultPageSize']),
+			),
+		));
     }
-
-    public static function getContacts($iClient_id) {
-
-        $sql = "SELECT C.name from tbl_contact as C INNER JOIN tbl_customer_contact as CC on C.id = CC.contact_id INNER JOIN tbl_customer as CS on CC.customer_id = CS.id where CS.id = $iClient_id";
-
-        $sContacts = "";
-        $dataReader = Yii::app()->db->createCommand($sql)->query();
-
-        foreach ($dataReader as $row) {
-
-            $sContacts .= $row['name'] . ",</br>";
-        }
-        return $sContacts;
+	
+	public function listLinkContacts() {
+		$sContacts = "";
+		foreach($this->contacts as $contact)
+		{
+			$sContacts .= CHtml::link($contact->name,array("contact/view", "id"=>$contact->id)) . "<br />";
+		}
+		return $sContacts;
     }
 
     public static function getActive($active) {

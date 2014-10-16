@@ -2,13 +2,7 @@
 /* @var $this OrderController */
 /* @var $model Order */
 /* @var $form CActiveForm */
-
-
 ?>
-
-
-
- 
 
 <div class="form">
 

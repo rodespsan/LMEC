@@ -12,4 +12,10 @@ $this->menu=array(
 
 <h1>Crear cliente</h1>
 
+<?php if( Yii::app()->user->hasFlash('customer-created') ): ?>
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('customer-created'); ?>
+</div>
+<?php endif; ?>
+
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

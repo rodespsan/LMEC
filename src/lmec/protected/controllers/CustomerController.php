@@ -59,22 +59,18 @@ class CustomerController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-
         if (CustomerType::model()->count('active=1') == 0) {
-            throw new CHttpException('', 'Primero debe ' . CHtml::link('crear un tipo de cliente', array('customerType/create')) . '.');
+            throw new CHttpException(412, 'No hay tipos de clientes activos. Para crear un cliente, primero debe ' . CHtml::link('crear un tipo de cliente', array('customerType/create')) . '.');
         }
-
-
+		
         $model = new Customer;
         $model->contact = new Contact;
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['Customer'])) {
-
             $model->attributes = $_POST['Customer'];
             $model->dependence_id = ($model->dependence_id == '') ? NULL : $model->dependence_id;
-
             $model->contact->active = $model->active;
 
             if (isset($_POST['Contact'])) {
@@ -83,11 +79,10 @@ class CustomerController extends Controller {
             }
 
             $successful = $model->validate() && $successful;
-
-            $transaction = Yii::app()->db->beginTransaction();
-
-            try {
-				if($successful)
+			if($successful)
+			{
+				$transaction = Yii::app()->db->beginTransaction();
+				try
 				{
 					if( $model->save(false) )
 					{
@@ -95,14 +90,20 @@ class CustomerController extends Controller {
 						if($model->contact->save(false))
 						{
 							$transaction->commit();
-							$this->redirect(array('view', 'id' => $model->id));
+							if(!empty($_POST['yt1']))
+							{
+								Yii::app()->user->setFlash('customer-created', "¡El cliente <b><i>&quot;$model->name&quot;</i></b> fue creado exitosamente!");
+								$this->redirect(array('create'));
+							}
+							else
+								$this->redirect(array('view', 'id' => $model->id));
 						}
 					}
+					$transaction->rollBack();
+				} catch (Exception $e) {
+					$transaction->rollBack();
 				}
-				$transaction->rollBack();
-            } catch (Exception $e) {
-                $transaction->rollBack();
-            }
+			}
         }
 
         $this->render('create', array(

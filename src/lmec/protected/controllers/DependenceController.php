@@ -65,7 +65,15 @@ class DependenceController extends Controller {
         if (isset($_POST['Dependence'])) {
             $model->attributes = $_POST['Dependence'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+			{
+				if(!empty($_POST['yt1']))
+				{
+					Yii::app()->user->setFlash('dependence-created', "¡La dependencia <b><i>&quot;$model->name&quot;</i></b> fue creada exitosamente!");
+					$this->redirect(array('create'));
+				}
+				else
+					$this->redirect(array('view', 'id' => $model->id));
+			}
         }
 
         $this->render('create', array(

@@ -12,4 +12,10 @@ $this->menu=array(
 
 <h1>Crear dependencia</h1>
 
+<?php if( Yii::app()->user->hasFlash('dependence-created') ): ?>
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('dependence-created'); ?>
+</div>
+<?php endif; ?>
+
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

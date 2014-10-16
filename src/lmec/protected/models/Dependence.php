@@ -4,7 +4,7 @@
  * This is the model class for table "{{dependence}}".
  *
  * The followings are the available columns in table '{{dependence}}':
- * @property string $id
+ * @property integer $id
  * @property string $name
  * @property string $address
  * @property string $telephone_number
@@ -115,9 +115,9 @@ class Dependence extends CActiveRecord {
         return $dependencies;
     }
 
-    public function onBeforeValidate($event) {
+    /*public function onBeforeValidate($event) {
         foreach ($this->getIterator() as $atributo => $valor)
             $this[$atributo] = trim($valor);
-    }
+    }*/
 
 }
