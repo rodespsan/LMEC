@@ -63,9 +63,9 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=lmecjuan',
+			'connectionString' => 'mysql:host=localhost;dbname=lmec',
 			'emulatePrepare' => true,
-			'username' => 'lmecjuan',
+			'username' => 'lmec',
 			'password' => 'nfZ8vQ5Qhx98WvAx',
 			 'tablePrefix'=>'tbl_',
 			'charset' => 'utf8',
