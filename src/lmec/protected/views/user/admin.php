@@ -27,14 +27,19 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'user',
+		array(
+			'name'=>'user',
+			'value'=>'CHtml::link($data->user,array("view","id"=>$data->id))',
+			'type'=>'html',
+		),
 		'name',
 		'last_name',
 		'email',
 		array(
 			'name'=>'_roles',
-			'type'=>'raw',
+			//'value'=>'CHtml::link($data->name,array("view","id"=>User::getRolesOfUser($data->id)))',
 			'value'=>'User::getRolesOfUser($data->id)',
+			'type'=>'html',
 		),
 		array(
 			'name'=>'active',
