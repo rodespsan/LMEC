@@ -31,7 +31,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 		'url_initial',
 		array(
 			'name'=>'active',
-			'value'=>'Role::getActive($data->active)',
+			'value'=>'$data->getActive($data->active)',
 			'filter'=>array(0=>'No',1=>'Si'),
 		),
 		array(

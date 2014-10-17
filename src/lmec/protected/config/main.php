@@ -10,7 +10,7 @@ return array(
 	'name'=>'Sistema de Control de Mantenimiento de Equipos de Cómputo',
 
 	'language' => 'es',
-	//'defaultController'=>'site/index',
+	'defaultController'=>'site/index',
 
 	// preloading 'log' component
 	'preload'=>array('log'),

@@ -32,7 +32,11 @@ class SiteController extends Controller {
     public function actionIndex() {
         // renders the view file 'protected/views/site/index.php'
         // using the default layout 'protected/views/layouts/main.php'
-        $this->render('index');
+        // $this->render('index');
+		if(Yii::app()->user->isGuest)
+			$this->redirect(array('login'));
+		else
+			$this->redirect(array(User::model()->findByPk(Yii::app()->user->id)->initialURL));
     }
 
     /**
@@ -93,11 +97,7 @@ class SiteController extends Controller {
 
                 // validate user input and redirect to the previous page if valid
                 if ($model->validate() && $model->login()) {
-                    $user = User::model()->findByAttributes(array('user' => $model->username));
-                    $priority = $this->getUserHigherPriority($user);
-                    $role = Role::model()->findByAttributes(array('priority' => $priority));
-                    $urlByPriority = $role->url_initial;
-                    $this->redirect(array($urlByPriority));
+                    $this->redirect(array( User::model()->findByPk(Yii::app()->user->id)->initialURL ));
                 }
             }
             // display the login form
