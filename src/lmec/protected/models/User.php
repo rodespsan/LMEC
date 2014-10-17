@@ -280,6 +280,23 @@ class User extends CActiveRecord {
 	{
 		return $this->name . '  ' . $this->last_name;
 	}
+	
+	public function getPrimaryRole()
+	{
+		return Role::model()->find(array(
+			'with'=>array('users'),
+			'condition'=>'users.id=:user_id',
+			'params'=>array(
+				':user_id'=>$this->id
+			),
+			'order'=>'t.priority DESC'
+		));
+	}
+	
+	public function getInitialURL()
+	{
+		return $this->primaryRole->url_initial;
+	}
 
 }
 

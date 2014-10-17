@@ -30,21 +30,18 @@
 			'items'=>array(
 				array('label'=>'Entrar', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Inicio', 'url'=>array('/order/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador','recepcionista','Tecnico')),
-				
-				
 				array('label'=>'Ordenes', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
-				'items'=>array(
+					'items'=>array(
 						array('label'=>'Entrada Equipo', 'url'=>array('/order/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
 						array('label'=>'Salida de Orden', 'url'=>array('/outOrder/index'), 'visible'=>Yii::app()->user->checkAccess('administrador'))
 				
-				)
-					),
+					)
+				),
 				array('label'=>'Cuentas', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
 					'items'=>array(
-						array('label'=>'Roles', 'url'=>array('/role/index'), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista')),
-						array('label'=>'Usuarios', 'url'=>array('/user/index'), 'visible'=>Yii::app()->user->checkAccess('administrador'))
-				
-				)
+						array('label'=>'Usuarios', 'url'=>array('/user/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label'=>'Roles', 'url'=>array('/role/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'))
+					)
 				),
 				array('label'=>'Clientes', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
 					'items'=>array(
@@ -52,8 +49,7 @@
 						array('label' => 'Contactos', 'url' => array('/contact/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
 						array('label' => 'Dependencias', 'url' => array('/dependence/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
 						array('label' => 'Tipo de cliente', 'url' => array('/customerType/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador'))
-						
-				)
+					)
 				),
 				array('label'=>'Equipos', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
 					'items'=>array(
