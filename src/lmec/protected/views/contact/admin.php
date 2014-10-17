@@ -41,7 +41,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'filter' => $model,
     'columns' => array(
         'id',
-        'name',
+        array(
+            'name'=>'name',
+            'value'=>'CHtml::link($data->name,array("view","id"=>$data->id))',
+            'type'=>'html',
+        ),
         'email',
         'cell_phone_number',
         'telephone_number_house',

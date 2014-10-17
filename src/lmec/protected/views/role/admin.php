@@ -27,7 +27,11 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'name',
+		array(
+			'name'=>'name',
+			'value'=>'CHtml::link($data->name,array("view","id"=>$data->id))',
+			'type'=>'html',
+		),
 		'url_initial',
 		array(
 			'name'=>'active',
