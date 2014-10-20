@@ -241,6 +241,19 @@ class User extends CActiveRecord {
         return $roles_existing;
     }
 
+    public static function getLinksRoles($user_id) {//Te regresa un String 
+        $user = User::model()->findByPk($user_id);
+        $links = '';
+
+        foreach ($user->roles as $rol) {
+            $roleId = $rol->id;
+            $roleName = $rol->name;
+            $links .= CHtml::link($roleName,array("role/view","id"=>$roleId));
+            $links .= " ";
+        }
+        return $links;
+    }
+
     public function deleteRolesOfUser($user_id) {
         UserRole::model()->deleteAll('user_id =' . $user_id); //return number affected line 
     }

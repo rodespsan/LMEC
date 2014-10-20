@@ -37,8 +37,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 		'email',
 		array(
 			'name'=>'_roles',
-			//'value'=>'CHtml::link($data->name,array("view","id"=>User::getRolesOfUser($data->id)))',
-			'value'=>'User::getRolesOfUser($data->id)',
+			'value'=> 'User::getLinksRoles($data->id)',
 			'type'=>'html',
 		),
 		array(
