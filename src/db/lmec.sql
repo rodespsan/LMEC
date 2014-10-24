@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2014 a las 05:12:13
+-- Tiempo de generación: 24-10-2014 a las 21:33:19
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -56,6 +56,15 @@ CREATE TABLE IF NOT EXISTS `tbl_accesory_order` (
   KEY `fk_tbl_accesory_order_tbl_order_idx` (`order_id`),
   KEY `fk_tbl_accesory_order_tbl_accesory_idx` (`accesory_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `tbl_accesory_order`
+--
+
+INSERT INTO `tbl_accesory_order` (`order_id`, `accesory_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3);
 
 -- --------------------------------------------------------
 
@@ -401,7 +410,14 @@ CREATE TABLE IF NOT EXISTS `tbl_equipment_status` (
   `description` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`),
   KEY `fk_tbl_equipment_status_tbl_order_idx` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `tbl_equipment_status`
+--
+
+INSERT INTO `tbl_equipment_status` (`id`, `order_id`, `description`) VALUES
+(1, 1, '');
 
 -- --------------------------------------------------------
 
@@ -554,7 +570,14 @@ CREATE TABLE IF NOT EXISTS `tbl_order` (
   KEY `fk_tbl_orden_tbl_service_type_idx` (`service_type_id`),
   KEY `fk_tbl_orden_tbl_payment_type_idx` (`payment_type_id`),
   KEY `fk_tbl_order_tbl_model_idx` (`model_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `tbl_order`
+--
+
+INSERT INTO `tbl_order` (`id`, `customer_id`, `contact_id`, `receptionist_user_id`, `service_type_id`, `payment_type_id`, `model_id`, `date_hour`, `advance_payment`, `serial_number`, `stock_number`, `name_deliverer_equipment`, `active`, `technician_order_id`, `status_order_id`, `observation`) VALUES
+(1, 1, 1, 1, 1, 1, 7, '2014-10-24 17:17:46', '50.00', '12345', '54321', 'Contacto 1 de Cliente 1', 1, NULL, 1, 'Requiere limpieza interna');
 
 -- --------------------------------------------------------
 
@@ -807,11 +830,18 @@ CREATE TABLE IF NOT EXISTS `tbl_service_order` (
   `order_id` int(10) unsigned NOT NULL,
   `service_id` int(10) unsigned NOT NULL,
   `price` decimal(7,2) NOT NULL,
-  `fecha` datetime NOT NULL,
+  `date` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_tbl_service_order_tbl_order_idx` (`order_id`),
   KEY `fk_tbl_service_order_tbl_service_idx` (`service_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci PACK_KEYS=1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci PACK_KEYS=1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `tbl_service_order`
+--
+
+INSERT INTO `tbl_service_order` (`id`, `order_id`, `service_id`, `price`, `date`) VALUES
+(1, 1, 11, '250.00', '2014-10-24 18:01:47');
 
 -- --------------------------------------------------------
 

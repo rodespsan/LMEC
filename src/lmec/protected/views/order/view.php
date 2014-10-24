@@ -11,7 +11,6 @@ $this->menu=array(
 	array('label'=>'Listar órdenes', 'url'=>array('index')),
 	array('label'=>'Crear órdenes', 'url'=>array('create')),
 	array('label'=>'Actualizar órdenes', 'url'=>array('update', 'id'=>$model->id)),
-	//array('label'=>'Eliminar órdenes','url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Administrar órdenes', 'url'=>array('admin')),
 	array('label'=>'Imprimir', 'url'=>array('print','id'=>$model->id), 'linkOptions'=>array('target'=>'_blank')),
     //array('label'=>'Imprimir', 'url'=>array('print','id'=>$model->id), 'linkOptions'=>array('target'=>'_blank')),
@@ -64,24 +63,21 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		array(
-            'label' => 'Folio de Entrada',
-            'value' => (str_pad($model->id, 5, "0", STR_PAD_LEFT)),
-        ),
+		'folio',
 		'customer.name:text:Nombre de Cliente',
 		'contact.name:text:Contacto',
-		'receptionistUser.name:text:Recepcionista',
+		'receptionistUser.fullName:text:Recepcionista',
 		'paymentType.name:text:Tipo de Pago',
         'modelo.EquipmentType.type:text:Tipo de Equipo',
 		'modelo.Brand.name:text:Marca',
 		'modelo.name:text:Modelo',
 		'serviceType.name:text:Tipo de Servicio',
 		'date_hour',
-                array(
-                     'name' => 'accesory',
-                     'value' => $accessories_,
-                     'type'=> 'raw'
-                ),
+		array(
+			 'name' => 'accesory',
+			 'value' => $accessories_,
+			 'type'=> 'raw'
+		),
 		'serial_number',
 		'stock_number',
                 array(

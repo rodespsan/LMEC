@@ -525,9 +525,6 @@ class OrderController extends Controller {
         $this->layout = '//layouts/print';
         $model = $this->loadModel($id);
 
-        //Uncomment the following line if AJAX validation is needed
-        //$this->performAjaxValidation($model);
-
         $this->render('print', array(
             'model' => $model,
         ));

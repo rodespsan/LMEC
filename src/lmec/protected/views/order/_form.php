@@ -373,96 +373,67 @@
 		<?php echo $form->error($model,'serial_number'); ?>
 	</div>
 	
-        <div class="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'stock_number'); ?>
 		<?php echo $form->textField($model,'stock_number',array('size'=>50,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'stock_number'); ?>
 	</div>
 	
         
-        <?php 
-        
-        Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/styles.css');
-        Yii::app()->clientScript->registerScript('accessoriesScript',"
-
-
-			$('#addAccesory').click(function(){
-                            if($('#Order_accesory_id option:selected').val()){
-                                $('#Order_accesory').append($('#Order_accesory_id option:selected').clone());  
-                             }
-			});
-                        
-
-                        $('#removeAccesory').click(function(){  
-                                $('#Order_accesory option:selected').remove(); 
-                                
-                                
-			});
-                        
-
-                        $('#order-form').submit(function(){
-                            $('#Order_accesory option').attr('selected','selected');
-                        });
-
-		");
-   
-        
-       
-        
-        
-        ?>
-        
-        
-        <div class="row">
-
+	<?php 
+	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/styles.css');
+	Yii::app()->clientScript->registerScript('accessoriesScript',"
+		$('#addAccesory').click(function(){
+			if($('#Order_accesory_id option:selected').val()){
+				$('#Order_accesory').append($('#Order_accesory_id option:selected').clone());  
+			}
+		});
+		$('#removeAccesory').click(function(){
+			$('#Order_accesory option:selected').remove(); 
+		});
+		$('#order-form').submit(function(){
+			$('#Order_accesory option').attr('selected','selected');
+		});
+	");
+	?>
+	
+	<div class="row">
         <?php echo $form->labelEx($model, 'accesory_id'); ?>
-        <?php
-        echo $form->dropDownList(
-               $model, 'accesory_id', Chtml::listData(
-                       Accesory::model()->findAll('active=1'), 'id', 'name'
-                ), array(
-            'prompt' => 'Seleccionar'
-                )
-        );
-        ?>
-            
-       	<?php echo CHtml::button(
-			'+',
+        <?php echo $form->dropDownList(
+			$model,
+			'accesory_id',
+			Chtml::listData(
+				Accesory::model()->findAll('active=1'), 'id', 'name'
+			),
 			array(
-				'id'=>'addAccesory',
+				'prompt' => 'Seleccionar'
 			)
 		); ?>
-		<?php echo CHtml::button('-',
-                        array(
-                                'id'=>'removeAccesory'
-                            )
-                        ); ?>
-            
-            		<div>
-
-                               
+		
+       	<?php echo CHtml::button('+', array('id'=>'addAccesory')); ?>
+		
+		<?php echo CHtml::button('-', array('id'=>'removeAccesory')); ?>
+		
+		<div>
 			<?php echo $form->dropDownList(
 				$model,
 				'accesory',
-				CHtml::listData(Accesory::model()->findAllByPk($model->accesory),
-                                        'id',
-                                        'name'
-                                        ),
+				CHtml::listData(
+					Accesory::model()->findAllByPk($model->accesory),
+					'id',
+					'name'
+				),
 				array(
 					'multiple'=>'multiple',
 					'size'=>'5',
 					'style'=>'min-width:200px;'
 				)
 			); ?>
-
 		</div>
             
         <?php echo $form->error($model, 'accesory'); ?>
-        </div>
-       
-        
- 
-        
+	</div>
+	
 	<div class="row">	
 		<?php echo $form->labelEx($model,'_failureDescription'); ?>
 		<?php //echo $form->dropDownList($model,'dependences', CHtml::listData($model->getDependencias(), 'id','name')); ?>

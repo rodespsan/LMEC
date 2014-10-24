@@ -144,7 +144,7 @@ class Order extends CActiveRecord {
             'tblOutOrders' => array(self::HAS_MANY, 'TblOutOrder', 'order_id'),
             'tblQuotationOrders' => array(self::HAS_MANY, 'TblQuotationOrder', 'order_id'),
             'tblRepairs' => array(self::HAS_MANY, 'Repair', 'order_id'),
-            'ServiceOrders' => array(self::HAS_MANY, 'ServiceOrder', 'order_id'),
+            'serviceOrders' => array(self::HAS_MANY, 'ServiceOrder', 'order_id'),
             'tblServicePerformedOrders' => array(self::HAS_MANY, 'TblServicePerformedOrder', 'order_id'),
             'tblSpareOrders' => array(self::HAS_MANY, 'TblSpareOrder', 'order_id'),
             'tblTechnicalOrders' => array(self::HAS_MANY, 'TblTechnicalOrder', 'order_id'),
@@ -160,7 +160,7 @@ class Order extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'id' => 'Folio de entrada',
+            'id' => 'Folio',
             'customer_id' => 'Cliente',
             'customer_name' => 'Nombre de Cliente',
             'contact_id' => 'Contacto',
@@ -302,6 +302,16 @@ class Order extends CActiveRecord {
         $listData = array($foundContact->id => $foundContact->name) /*+ $contactActive[1];*/;
         return $listData;
     }
+	
+	public function getServiceOrder(){
+		return ServiceOrder::model()->find(array(
+			'condition' => 'order_id = :order_id',
+			'order' => 'date DESC',
+			'params' => array(
+				':order_id' => $this->id
+			)
+		));
+	}
 
     /*
       public function getcontact()
