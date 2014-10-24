@@ -63,6 +63,11 @@ class ContactController extends Controller {
         }
 
         $model = new Contact('scenarioCreate');
+		
+		if(isset($_GET['customer_id']))
+		{
+			$model->customer_id = $_GET['customer_id'];
+		}
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
@@ -72,7 +77,21 @@ class ContactController extends Controller {
 			$model->attributes = $_POST['Contact'];
 			if ($model->save())
 			{
-				$this->redirect(array('view', 'id' => $model->id));
+				if(!empty($_POST['yt1']))
+				{
+					Yii::app()->user->setFlash('contact-created', "¡El contacto <b><i>&quot;$model->name&quot;</i></b> fue creado exitosamente!");
+					if(isset($_GET['customer_id']))
+						$this->redirect(array('create', 'customer_id' => $model->customer_id));
+					else
+						$this->redirect(array('create'));
+				}
+				else
+				{
+					if(isset($_GET['customer_id']))
+						$this->redirect(array('customer/view', 'id' => $model->customer_id));
+					else
+						$this->redirect(array('view', 'id' => $model->id));
+				}
 			}
 		}
 

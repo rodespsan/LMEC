@@ -1,15 +1,14 @@
 <div class="form">
 
-    <?php
-    $form = $this->beginWidget('CActiveForm', array(
-        'id' => 'contact-form',
-        'enableAjaxValidation' => false,
-            ));
-    ?>
-
-
-
-
+<?php $form = $this->beginWidget('CActiveForm', array(
+	'id' => 'contact-form',
+	'enableAjaxValidation' => false,
+	'enableClientValidation'=>true,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+		'validateOnChange'=>true,
+	),
+));?>
 
     <p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
@@ -18,10 +17,7 @@
         <?php echo $form->DropDownList($model, 'customer_id', Customer::getActiveCustomers()); ?>
         <?php echo $form->error($model, 'customer_id'); ?> 
     </div>
-
-
-
-
+	
     <div class="row">
         <?php echo $form->labelEx($model, 'name'); ?>
         <?php echo $form->textField($model, 'name', array('size' => 60, 'maxlength' => 100)); ?>
@@ -66,6 +62,7 @@
 
     <div class="row buttons">
         <?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
+		<?php echo ($model->isNewRecord)? CHtml::submitButton('Crear +') : ''; ?>
     </div>
 
     <?php $this->endWidget(); ?>
