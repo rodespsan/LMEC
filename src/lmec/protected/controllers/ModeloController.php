@@ -70,7 +70,11 @@ class ModeloController extends Controller {
                 if (!empty($_POST['yt1'])) 
                 {
                     Yii::app()->user->setFlash('modelo-created', "¡El modelo <b><i>&quot;$model->name&quot;</i></b> fue creado exitosamente!");
-                    $this->redirect(array('create'));
+                    //$this->redirect(array('create'));
+                    $modelSaved = $model;
+                    $model = new Modelo;
+                    $model ->equipment_type_id = $modelSaved ->equipment_type_id;
+                    $model ->brand_id = $modelSaved ->brand_id;
                 }
                 else
                     $this->redirect(array('view', 'id' => $model->id));
