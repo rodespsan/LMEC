@@ -65,7 +65,15 @@ class EquipmentTypeController extends Controller {
         if (isset($_POST['EquipmentType'])) {
             $model->attributes = $_POST['EquipmentType'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            {
+                if (!empty($_POST['yt1'])) 
+                {
+                    Yii::app()->user->setFlash('equipmentType-created', "¡El tipo de equipo <b><i>&quot;$model->type&quot;</i></b> fue creado exitosamente!");
+                    $this->redirect(array('create'));
+                }
+                else
+                    $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('create', array(

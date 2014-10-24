@@ -9,6 +9,11 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'brand-form',
 	'enableAjaxValidation'=>false,
+	'enableClientValidation'=>true,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+		'validateOnChange'=>true,
+	),
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
@@ -28,6 +33,7 @@
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
+		<?php echo ($model->isNewRecord)? CHtml::submitButton('Crear +') : ''; ?>
 	</div>
 
 <?php $this->endWidget(); ?>

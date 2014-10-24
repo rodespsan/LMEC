@@ -12,4 +12,10 @@ $this->menu=array(
 
 <h1>Crear tipo de equipo</h1>
 
+<?php if( Yii::app()->user->hasFlash('equipmentType-created') ): ?>
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('equipmentType-created'); ?>
+</div>
+<?php endif; ?>
+
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

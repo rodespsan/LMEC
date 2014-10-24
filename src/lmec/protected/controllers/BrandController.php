@@ -66,7 +66,15 @@ class BrandController extends Controller {
             $model->attributes = $_POST['Brand'];
 
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            {
+                if(!empty($_POST['yt1']))
+                {
+                    Yii::app()->user->setFlash('brand-created', "¡La marca <b><i>&quot;$model->name&quot;</i></b> fue creada exitosamente!");
+                    $this->redirect(array('create'));
+                }
+                else
+                    $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('create', array(

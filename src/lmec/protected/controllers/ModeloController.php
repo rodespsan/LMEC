@@ -66,7 +66,16 @@ class ModeloController extends Controller {
             $model->attributes = $_POST['Modelo'];
 
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            {
+                if (!empty($_POST['yt1'])) 
+                {
+                    Yii::app()->user->setFlash('modelo-created', "¡El modelo <b><i>&quot;$model->name&quot;</i></b> fue creado exitosamente!");
+                    $this->redirect(array('create'));
+                }
+                else
+                    $this->redirect(array('view', 'id' => $model->id));
+            }
+                
         }
 
         if (EquipmentType::model()->count('active = 1') == 0 && Brand::model()->count('active = 1') == 0) {
