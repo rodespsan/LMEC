@@ -53,12 +53,12 @@
 				),
 				array('label'=>'Equipos', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
 					'items'=>array(
-						array('label'=>'Modelos', 'url'=>array('/modelo/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
-						array('label'=>'Tipo de equipo', 'url'=>array('/equipmentType/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
-						array('label'=>'Accesorios', 'url'=>array('/accesory/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
-						array('label' => 'Marcas', 'url' => array('/brand/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
-						array('label' => 'Refacciones', 'url' => array('/spareParts/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
-						array('label' => 'Proveedor', 'url' => array('/provider/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label'=>'Modelos', 'url'=>array('/modelo/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label' => 'Marcas', 'url' => array('/brand/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label'=>'Tipo de equipo', 'url'=>array('/equipmentType/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label'=>'Accesorios', 'url'=>array('/accesory/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label' => 'Refacciones', 'url' => array('/spareParts/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label' => 'Proveedor', 'url' => array('/provider/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
 						array('label'=>'Actividad de Garantía', 'url'=>array('/activityGuarantee/index'), 'visible'=>Yii::app()->user->checkAccess('administrador'))
 				)
 				),

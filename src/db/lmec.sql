@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2014 a las 18:05:14
+-- Tiempo de generación: 24-10-2014 a las 05:12:13
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -31,7 +31,18 @@ CREATE TABLE IF NOT EXISTS `tbl_accesory` (
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+
+--
+-- Volcado de datos para la tabla `tbl_accesory`
+--
+
+INSERT INTO `tbl_accesory` (`id`, `name`, `active`) VALUES
+(1, 'Ratón', 1),
+(2, 'Teclado', 1),
+(3, 'Cable de corriente', 1),
+(4, 'Maletín', 1),
+(5, 'Disquetera externa', 1);
 
 -- --------------------------------------------------------
 
@@ -201,15 +212,17 @@ CREATE TABLE IF NOT EXISTS `tbl_brand` (
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `tbl_brand`
 --
 
 INSERT INTO `tbl_brand` (`id`, `name`, `active`) VALUES
-(1, 'HP', 1),
-(2, 'Acer', 1);
+(1, 'Acer', 1),
+(2, 'Asus', 1),
+(3, 'Compaq', 1),
+(4, 'Dell', 1);
 
 -- --------------------------------------------------------
 
@@ -229,7 +242,7 @@ CREATE TABLE IF NOT EXISTS `tbl_contact` (
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `FK_customer_id` (`customer_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
 
 --
 -- Volcado de datos para la tabla `tbl_contact`
@@ -242,7 +255,11 @@ INSERT INTO `tbl_contact` (`id`, `customer_id`, `name`, `email`, `cell_phone_num
 (4, 4, 'Contacto 1 del Cliente Semi-Interno 1', 'contacto1clientesemi-interno1@example.org', '(cel) 111 1111', '(cas) 111 1111', '(ofi) 111 1111', '111', 1),
 (5, 5, 'Contacto 1 del Cliente Semi-Interno 2', 'contacto1clientesemi-interno2@example.org', '', '', '', '', 1),
 (6, 6, 'Contacto 1 del Cliente Semi-Interno 3', 'contacto1clientesemi-interno3@example.org', '', '', '', '', 1),
-(7, 7, 'Contacto 1 del Cliente Externo 1', 'contacto1clienteexterno1@example.org', '(999) 999 9999 ', '', '', '', 1);
+(7, 7, 'Contacto 1 del Cliente Externo 1', 'contacto1clienteexterno1@example.org', '(999) 999 9999 ', '', '', '', 1),
+(8, 1, 'Contacto 2 de Cliente Interno 1', 'contacto2clienteinterno1@example.org', '', '', '', '', 1),
+(9, 2, 'Contacto 2 de Cliente Interno 2', 'contacto2clienteinterno2@example.org', '', '', '', '', 1),
+(10, 3, 'Contacto 2 de Cliente Interno 3', 'contacto2clienteinterno3@example.org', '', '', '', '', 1),
+(11, 3, 'Contacto 3 de Cliente Interno 3', 'contacto3clienteinterno3@example.org', '', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -397,7 +414,17 @@ CREATE TABLE IF NOT EXISTS `tbl_equipment_type` (
   `type` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `tbl_equipment_type`
+--
+
+INSERT INTO `tbl_equipment_type` (`id`, `type`, `active`) VALUES
+(1, 'Laptop', 1),
+(2, 'PC de Escritorio', 1),
+(3, 'Impresora', 1),
+(4, 'Escaner', 1);
 
 -- --------------------------------------------------------
 
@@ -466,7 +493,22 @@ CREATE TABLE IF NOT EXISTS `tbl_model` (
   PRIMARY KEY (`id`),
   KEY `fk_tbl_model_tbl_equipment_type_idx` (`equipment_type_id`),
   KEY `fk_tbl_model_tbl_brand_idx` (`brand_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+
+--
+-- Volcado de datos para la tabla `tbl_model`
+--
+
+INSERT INTO `tbl_model` (`id`, `equipment_type_id`, `brand_id`, `name`, `active`) VALUES
+(1, 1, 1, 'Aspire R7', 1),
+(2, 1, 1, 'Aspire S7', 1),
+(3, 1, 1, 'Aspire S5', 1),
+(4, 1, 2, 'Asus VivoBook', 1),
+(5, 1, 2, 'Asus Transformer Book', 1),
+(6, 1, 4, 'Latitude 14 de la serie 3000', 1),
+(7, 1, 4, 'Latitude 15 de la serie 3000', 1),
+(8, 2, 4, 'OptiPlex 3020', 1),
+(9, 2, 4, 'OptiPlex 3020 Micro', 1);
 
 -- --------------------------------------------------------
 
@@ -938,14 +980,17 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `tbl_user`
 --
 
 INSERT INTO `tbl_user` (`id`, `user`, `password`, `name`, `last_name`, `email`, `active`) VALUES
-(1, 'admin', '$1$sU1.F.1.$UfAKa5WKamIL3pEZnSObS.', 'Usuario', 'Administrador', 'admin@example.org', 1);
+(1, 'admin', '$1$sU1.F.1.$UfAKa5WKamIL3pEZnSObS.', 'Usuario', 'Administrador', 'admin@example.org', 1),
+(2, 'technician1', '$1$a24.b30.$sdUu7ICyxkMW97Z.jhFqv.', 'User', 'Technician1', 'technician1@example.org', 1),
+(3, 'technician2', '$1$eD1.PP/.$psWFWUasazfgCI7ckLyJH1', 'User', 'Technician 2', 'technician2@example.org', 1),
+(4, 'receptionist1', '$1$sJ0.FF1.$t5H1M30PhwqiiLjiliuku0', 'User', 'Receptionist 1', 'receptionist1@example.org', 1);
 
 -- --------------------------------------------------------
 
@@ -967,7 +1012,10 @@ CREATE TABLE IF NOT EXISTS `tbl_user_role` (
 INSERT INTO `tbl_user_role` (`user_id`, `role_id`) VALUES
 (1, 1),
 (1, 2),
-(1, 3);
+(1, 3),
+(2, 2),
+(3, 2),
+(4, 3);
 
 -- --------------------------------------------------------
 

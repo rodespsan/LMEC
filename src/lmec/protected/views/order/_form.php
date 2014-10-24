@@ -49,7 +49,7 @@
 						
 						$("#Order_payment_type_id > option:selected").removeAttr("selected");
 						$("#Order_payment_type_id > option[value=" + jsonObject.customer_type + "]").attr("selected","selected");
-                                                $("#Order_advance_payment").val(jsonObject.advance_payment);
+						$("#Order_advance_payment").val(jsonObject.advance_payment);
 					}',
 					'error' => 'js:function(dataType){
 						$("#Order_contact_id").children().remove();
@@ -144,19 +144,17 @@
 			),
 			array(
 				'prompt' => 'Seleccionar',
-                                'ajax' => array(
+				'ajax' => array(
 					'type' => 'POST',
 					'url' => CController::createUrl('order/advancePaymentFromPaymentType'),
 					'data' => array(
 						'Order[payment_type_id]' => 'js:this.value',
 					),
-					//'update' => '#Order_contact_id',
 					'success'=> 'js:function(dataType){
 						jsonObject = JSON.parse(dataType);
 						
 						$("#Order_advance_payment").children().remove();
-						
-                                                $("#Order_advance_payment").val(jsonObject.advance_payment);
+						$("#Order_advance_payment").val(jsonObject.advance_payment);
 					}',
 					'error' => 'js:function(dataType){
 //						$("#Order_contact_id").children().remove();
@@ -185,23 +183,18 @@
 			),
 			array(
 				'prompt' => 'Seleccionar',
-                                'ajax' => array(
+				'ajax' => array(
 					'type' => 'POST',
 					'url' => CController::createUrl('order/brandsFromEquipment'),
 					'data' => array(
 						'Order[equipment_type_id]' => 'js:this.value',
                                             
 					),
-					//'update' => '#Order_contact_id',
 					'success'=> 'js:function(dataType){
 						jsonObject = JSON.parse(dataType);
-                                                						
+						
 						$("#Order_brand_id").children().remove();
-                                                
-                                                $("#Order_brand_id").append( new Option(
-								"Seleccionar",
-								0
-							));
+						$("#Order_brand_id").append( new Option("Seleccionar", 0));
                                                         
 						for(i=0; i< jsonObject.brands_options.length; i++){
 							$("#Order_brand_id").append( new Option(
@@ -210,20 +203,15 @@
 							));
 						}
 						
-
-                                                
-                                                $("#Order_model_id").children().remove();
-                                                
-                                           
+						$("#Order_model_id").children().remove();
+						$("#Order_model_id").append( new Option("Seleccionar", 0));
 						
 						for(i=0; i< jsonObject.models_type.length; i++){
 							$("#Order_model_id").append( new Option(
 								jsonObject.models_type[i].name,
 								jsonObject.models_type[i].id
 							));
-						}
-
-//						
+						}						
 					}',
 					'error' => 'js:function(dataType){
 						$("#Order_equipment_type_id").children().remove();
@@ -252,22 +240,19 @@
 			),
 			array(
 				'prompt' => 'Seleccionar',
-                                'ajax' => array(
+				'ajax' => array(
 					'type' => 'POST',
 					'url' => CController::createUrl('order/modelsFromBrand'),
 					'data' => array(
 						'Order[brand_id]' => 'js:this.value',
-                                                'Order[equipment_type_id]' =>'js:  $("#Order_equipment_type_id").val()',
-					),
-                                    
-                                     
+						'Order[equipment_type_id]' =>'js:  $("#Order_equipment_type_id").val()',
+					),             
 					//'update' => '#Order_contact_id',
 					'success'=> 'js:function(dataType){
 						jsonObject = JSON.parse(dataType);
-                                                						
-					                                                
-                                                
-                                                $("#Order_model_id").children().remove();
+						
+						$("#Order_model_id").children().remove();
+						$("#Order_model_id").append( new Option("Seleccionar", 0));
 						
 						for(i=0; i< jsonObject.models_options.length; i++){
 							$("#Order_model_id").append( new Option(
@@ -275,16 +260,13 @@
 								jsonObject.models_options[i].id
 							));
 						}
-
-//						$("#Order_model_id > option[value=" + jsonObject.customer_type + "]").attr("selected","selected");
 					}',
 					'error' => 'js:function(dataType){
 						$("#Order_equipment_type_id").children().remove();
 						$("#Order_equipment_type_id").append( new Option("Seleccionar"));
 						$("#Order_brand_id > option[value=]").attr("selected","selected");
 					}',
-				),
-//                               
+				),        
 			)
 		); ?>
 		<?php echo $form->error($model,'brand_id'); ?>
@@ -335,6 +317,7 @@
 						jsonObject = JSON.parse(dataType);
 						
 						$("#Order_service").children().remove();
+						$("#Order_service").append( new Option("Seleccionar", 0));
 						
 						for(i=0; i< jsonObject.services_options.length; i++){
 							$("#Order_service").append( new Option(

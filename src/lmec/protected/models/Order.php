@@ -84,6 +84,8 @@ class Order extends CActiveRecord {
             array('contact_id', 'exist', 'className' => 'Contact', 'attributeName' => 'id'),
             array('receptionist_user_id', 'exist', 'className' => 'User', 'attributeName' => 'id'),
             array('payment_type_id', 'exist', 'className' => 'PaymentType', 'attributeName' => 'id'),
+			array('equipment_type_id', 'exist', 'className' => 'EquipmentType', 'attributeName' => 'id'),
+			array('brand_id', 'exist', 'className' => 'Brand', 'attributeName' => 'id'),
             array('customer_id, receptionist_user_id, payment_type_id, model_id, service_type_id', 'length', 'max' => 10),
             array('date_hour', 'date', 'format' => 'yyyy-MM-dd HH:mm:ss'),
             array('advance_payment', 'length', 'max' => 7),
