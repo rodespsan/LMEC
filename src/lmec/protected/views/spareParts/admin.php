@@ -41,58 +41,49 @@ Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=
 	$pageSize=Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageSize']); 
 ?>
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php 
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'spare-parts-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-	'enableSorting' => true,
+	'enableSorting' => true, //QUE HACE??? NO ESTA EN LOS OTROS :S
 	'columns'=>array(
 		'id',
-		//'brand_id',
 		array(
-			'name' => 'brand_id',
-			'value' => '$data->brand->name',				
-			'filter' => CHtml::activeTextField($model->brand,'name'),
-			
+			'name' => 'spare_parts_status_id',
+	 		'value' =>  '$data->sparePartsStatus->description',
+	 		// 'filter' => CHtml::activeTextField($model->sparePartsStatus,'description'),
 		),
-		//spare_parts_type
 		array(
 			'name' => 'spare_parts_type_id',
 			'value' =>  '$data->sparePartsType->type',
-			'filter' => CHtml::activeTextField($model->sparePartsType,'type'),
+			// 'filter' => CHtml::activeTextField($model->sparePartsType,'type'),
 			
 		),
-		//'spare_parts_status_id',
 		array(
-			'name' => 'spare_parts_status_id',
-			'value' =>  '$data->sparePartsStatus->description',
-			'filter' => CHtml::activeTextField($model->sparePartsStatus,'description'),
+			'name' => 'brand_id',
+			'value' => '$data->brand->name',				
+			//'filter' => CHtml::activeTextField($model->brand,'name'),
 			
 		),
-		//'provider_id',
 		array(
 			'name' => 'provider_id',
 			'value' =>  '$data->provider->name',
-			'filter' => CHtml::activeTextField($model->provider,'name'),
+			//'filter' => CHtml::activeTextField($model->provider,'name'),
 			
 		),
 		'name',
-		'serial_number',
-		//'active',
-		array(
-			'name' => 'active',
-			'value' =>  '$data->getActiveText()',
-			'filter' => array('1'=>'Si','0'=>'No'),
-			
-		),
-		/*
-		'price',
+	 	'serial_number',
+	 	'price',
 		'date_hour',
 		'guarantee_period',
 		'invoice',
 		'description',
-		
-		*/
+		array(
+			'name' => 'active',
+			'value' =>  '$data->getActiveText()',
+			'filter' => array('1'=>'Si','0'=>'No'),
+		),
 		array(
             'class'=>'CButtonColumn',
             'header'=>CHtml::dropDownList(
@@ -100,29 +91,29 @@ Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=
             	$pageSize,
             	array(10=>10,20=>20,30=>30,40=>40,50=>50),
             	array('class'=>'change-pagesize')
-            ),
-            'template'=>"{update}{view}{delete}{activate}",
-            'deleteConfirmation' => '¿Esta seguro que desea desactivar la refacción?',
-            'buttons' => array(
-
-                    'activate'=>array(
-                            'label'=>'Activar',
-                            'url'=>'Yii::app()->createUrl("spareParts/activate", array("id"=>$data->id))',
-                            'imageUrl'=>Yii::app()->request->baseUrl.'/images/active.png',
-                            'visible'=>'$data->active == 0',
-                            'click'=>'function(){
-                                    return confirm(\'¿Esta seguro que desea activar la refacción?\');
-                            	}',
-                    ),                            
-                    'delete'=>array(
-                            'visible'=>'$data->active == 1',
-                            'label'=>'Desactivar',
-                            'imageUrl'=>Yii::app()->request->baseUrl.'/images/deactive.png',
-                    ),
-            ),
-        ),
-	),
-)); ?>
+         	),
+        	'template'=>"{update}{view}{delete}{activate}",
+        	'deleteConfirmation' => '¿Esta seguro que desea desactivar la refacción?',
+        	'buttons' => array(
+        		'activate'=>array(
+        			'label'=>'Activar',
+                	'url'=>'Yii::app()->createUrl("spareParts/activate", array("id"=>$data->id))',
+                	'imageUrl'=>Yii::app()->request->baseUrl.'/images/active.png',
+                	'visible'=>'$data->active == 0',
+                	'click'=>'function(){
+                		return confirm(\'¿Esta seguro que desea activar la refacción?\');
+                    	}',
+            	),                            
+            	'delete'=>array(
+            		'visible'=>'$data->active == 1',
+            		'label'=>'Desactivar',
+            		'imageUrl'=>Yii::app()->request->baseUrl.'/images/deactive.png',
+            	),
+        	),
+    	),
+    )
+)); 
+?>
 <?php Yii::app()->clientScript->registerScript('initPageSize',<<<EOD
     $('.change-pagesize').live('change', function() {
         $.fn.yiiGridView.update('spare-parts-grid',{ data:{ pageSize: $(this).val() }})
