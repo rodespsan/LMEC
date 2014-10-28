@@ -51,24 +51,31 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		'id',
 		array(
 			'name' => 'spare_parts_status_id',
-	 		'value' =>  '$data->sparePartsStatus->description',
+	 		//'value' =>  '$data->sparePartsStatus->description',
+	 		'value' => 'CHtml::link($data->sparePartsStatus->description,array("sparePartsStatus/view","id"=>$data->sparePartsStatus->id))',
+			'type'=>'html',
 	 		// 'filter' => CHtml::activeTextField($model->sparePartsStatus,'description'),
 		),
 		array(
 			'name' => 'spare_parts_type_id',
-			'value' =>  '$data->sparePartsType->type',
+			//'value' =>  '$data->sparePartsType->type',
+			'value' => 'CHtml::link($data->sparePartsType->type,array("sparePartsType/view","id"=>$data->sparePartsType->id))',
+			'type'=>'html',
 			// 'filter' => CHtml::activeTextField($model->sparePartsType,'type'),
-			
 		),
 		array(
 			'name' => 'brand_id',
-			'value' => '$data->brand->name',				
+			//'value' => '$data->brand->name',
+			'value' => 'CHtml::link($data->brand->name,array("brand/view","id"=>$data->brand->id))',
+			'type'=>'html',
 			//'filter' => CHtml::activeTextField($model->brand,'name'),
 			
 		),
 		array(
 			'name' => 'provider_id',
-			'value' =>  '$data->provider->name',
+			//'value' =>  '$data->provider->name',
+			'value' => 'CHtml::link($data->provider->name,array("provider/view","id"=>$data->provider->id))',
+			'type'=>'html',
 			//'filter' => CHtml::activeTextField($model->provider,'name'),
 			
 		),
