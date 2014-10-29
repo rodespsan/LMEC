@@ -29,11 +29,15 @@ o <b>=</b>) al principio de cada uno de los valores de busqueda, para especifica
 	'columns'=>array(
 		'id',
 		array(
-		'name'=>'equipment_type_id',
-		'value'=>'$data->EquipmentType->type',
+		'name'=>'equipment_type_id',//si
+		//'value'=>'$data->EquipmentType->type',
+		'value' => 'CHtml::link($data->EquipmentType->type,array("equipmentType/view","id"=>$data->EquipmentType->id))',
+		'type'=>'html',
 		),array(
-		'name'=>'brand_id',
-		'value'=>'$data->Brand->name',
+		'name'=>'brand_id',//si
+		//'value'=>'$data->Brand->name',
+		'value' => 'CHtml::link($data->Brand->name,array("brand/view","id"=>$data->Brand->id))',
+		'type'=>'html',
 		),
 		'name',
 		array(
