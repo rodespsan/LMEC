@@ -53,7 +53,7 @@ class SpareParts extends CActiveRecord
 			array('guarantee_period', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, spare_parts_type_id, spare_parts_status_id, brand_id, provider_id, name, serial_number, price, date_hour, guarantee_period, invoice, description, active', 'safe', 'on'=>'search'),
+			array('id, spare_parts_status_id, spare_parts_type_id, brand_id, provider_id, name, serial_number, price, date_hour, guarantee_period, invoice, description, active', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -112,24 +112,56 @@ class SpareParts extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
+		$criteria->with = array('sparePartsStatus','sparePartsType','brand','provider');
+		$criteria->together = true;
 
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('spare_parts_type_id',$this->spare_parts_type_id,true);
-		$criteria->compare('spare_parts_status_id',$this->spare_parts_status_id,true);
-		$criteria->compare('brand_id',$this->brand_id,true);
-		$criteria->compare('provider_id',$this->provider_id,true);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('serial_number',$this->serial_number,true);
-		$criteria->compare('price',$this->price,true);
-		$criteria->compare('date_hour',$this->date_hour,true);
-		$criteria->compare('guarantee_period',$this->guarantee_period,true);
-		$criteria->compare('invoice',$this->invoice,true);
-		$criteria->compare('description',$this->description,true);
-		$criteria->compare('active',$this->active);
+		$criteria->compare('t.id',$this->id,true);
+		$criteria->compare('sparePartsType.type',$this->spare_parts_type_id,true);
+		$criteria->compare('sparePartsStatus.description',$this->spare_parts_status_id,true);
+		$criteria->compare('brand.name',$this->brand_id,true);
+		$criteria->compare('provider.name',$this->provider_id,true);
+		$criteria->compare('t.name',$this->name,true);
+		$criteria->compare('t.serial_number',$this->serial_number,true);
+		$criteria->compare('t.price',$this->price,true);
+		$criteria->compare('t.date_hour',$this->date_hour,true);
+		$criteria->compare('t.guarantee_period',$this->guarantee_period,true);
+		$criteria->compare('t.invoice',$this->invoice,true);
+		$criteria->compare('t.description',$this->description,true);
+		$criteria->compare('t.active',$this->active);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+		// return new CActiveDataProvider($this, array(
+  //                   'criteria' => $criteria,
+  //                   'pagination' => array(
+  //                       'pageSize' => Yii::app()->user->getState('pageSize', Yii::app()->params['defaultPageSize']),
+  //                   ),
+  //                   'sort' => array(
+  //                       'attributes' => array(
+  //                           'spare_parts_type_id' => array(
+  //                               'asc' => 'sparePartsType.id',
+  //                               'desc' => 'sparePartsType.id DESC',
+  //                           ),
+  //                           'spare_parts_status_id' => array(
+  //                               'asc' => 'sparePartsStatus.id',
+  //                               'desc' => 'sparePartsStatus.id DESC',
+  //                           ),
+  //                           'brand_id' => array(
+  //                               'asc' => 'brand.id',
+  //                               'desc' => 'brand.id DESC',
+  //                           ),
+  //                           'provider_id' => array(
+  //                               'asc' => 'provider.id',
+  //                               'desc' => 'provider.id DESC',
+  //                           ),
+  //                           '*',
+  //                       ),
+  //                   ),
+  //               ));
+
+
+
 	}
 
 	/**
