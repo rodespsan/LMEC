@@ -8,7 +8,7 @@
  * @property string $order_id
  * @property string $service_id
  * @property string $price
- * @property string $fecha
+ * @property string $date
  *
  * The followings are the available model relations:
  * @property Order $order
@@ -42,12 +42,12 @@ class ServiceOrder extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('order_id, service_id, price, fecha', 'required'),
+			array('order_id, service_id, price, date', 'required'),
 			array('order_id, service_id', 'length', 'max'=>10),
 			array('price', 'length', 'max'=>7),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, order_id, service_id, price, fecha', 'safe', 'on'=>'search'),
+			array('id, order_id, service_id, price, date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,10 +72,10 @@ class ServiceOrder extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'order_id' => 'Order',
-			'service_id' => 'Service',
-			'price' => 'Price',
-			'fecha' => 'Fecha',
+			'order_id' => 'Orden',
+			'service_id' => 'Servicio',
+			'price' => 'Precio',
+			'date' => 'Fecha',
 		);
 	}
 
@@ -94,7 +94,7 @@ class ServiceOrder extends CActiveRecord
 		$criteria->compare('order_id',$this->order_id,true);
 		$criteria->compare('service_id',$this->service_id,true);
 		$criteria->compare('price',$this->price,true);
-		$criteria->compare('fecha',$this->fecha,true);
+		$criteria->compare('date',$this->date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -125,7 +125,7 @@ class OrderController extends Controller {
                 $service = Service::model()->findByPk($serviceOrder->service_id);
 
                 $serviceOrder->price = $service->price;
-                $serviceOrder->fecha = date('Y-m-d H:i:s');
+                $serviceOrder->date = date('Y-m-d H:i:s');
                 $serviceOrder->save();
 
 
