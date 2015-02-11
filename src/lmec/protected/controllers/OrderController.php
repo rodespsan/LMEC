@@ -268,7 +268,7 @@ class OrderController extends Controller {
                     $modelServiceOrder = new ServiceOrder();
                     $modelServiceOrder->order_id = $model->id;
                     $modelServiceOrder->service_id = $_POST['Order']['service'];
-                    $modelServiceOrder->fecha = date('Y-m-d H:i:s');
+                    $modelServiceOrder->date = date('Y-m-d H:i:s');
 
                     $service = Service::model()->findByPk($modelServiceOrder->service_id);
                     $modelServiceOrder->price = $service->price;
