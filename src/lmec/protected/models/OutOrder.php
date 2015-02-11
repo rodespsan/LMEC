@@ -110,7 +110,7 @@ class OutOrder extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-		$criteria->with = array('order.customer', 'contact', 'user', 'order.model.EquipmentType', 'order.model.Brand');
+		$criteria->with = array('order.customer', 'contact', 'user', 'order.modelo.EquipmentType', 'order.modelo.Brand');
 		$criteria->compare('customer.name',$this->_client,true);
 
 		$criteria->compare('id',$this->id,true);
@@ -123,7 +123,7 @@ class OutOrder extends CActiveRecord
 		$criteria->compare('user.name',$this->user_id,true);
 		$criteria->compare('EquipmentType.type',$this->_equipment,true);
 		$criteria->compare('Brand.name',$this->_brand,true);
-		$criteria->compare('model.name',$this->_model,true);
+		$criteria->compare('modelo.name',$this->_model,true);
 		$criteria->compare('order.serial_number',$this->_serial,true);
 		$criteria->compare('active', $this->active, true);
 		
