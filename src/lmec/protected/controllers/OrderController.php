@@ -514,7 +514,7 @@ class OrderController extends Controller {
                         $order->service_type_id = $orderData['service_type_id'];
                         $order->status_order_id = $orderData['status_order_id'];
                         $order->technician_order_id = $orderData['technician_order_id'];
-                        $order->save();
+                        $order->save(false);
                     }
                 }
             }
