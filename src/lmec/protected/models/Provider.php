@@ -112,7 +112,7 @@ class Provider extends CActiveRecord {
         }
     }
 
-    public function onBeforeValidate() {
+    public function onBeforeValidate($event) {
         foreach ($this->getIterator() as $atributo => $valor)
             $this[$atributo] = trim($valor);
     }
