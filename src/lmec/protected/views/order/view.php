@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Listar órdenes', 'url'=>array('index')),
 	array('label'=>'Crear órdenes', 'url'=>array('create')),
-	array('label'=>'Actualizar órdenes', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Actualizar orden', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Administrar órdenes', 'url'=>array('admin')),
 	array('label'=>'Imprimir', 'url'=>array('print','id'=>$model->id), 'linkOptions'=>array('target'=>'_blank')),
     //array('label'=>'Imprimir', 'url'=>array('print','id'=>$model->id), 'linkOptions'=>array('target'=>'_blank')),
