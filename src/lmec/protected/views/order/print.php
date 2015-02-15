@@ -63,9 +63,9 @@
 				<td class="ths4"></td>
 				<td class="ths4"></td>
 				<td class="ths3">
-					Falla: <?php foreach($model->failureDescriptions as $FailureDescription){
+					Falla: <pre><?php foreach($model->failureDescriptions as $FailureDescription){
 						echo CHtml::encode($FailureDescription->description);				  
-					} ?>						 
+					} ?></pre>
 				</td>
 				<td class="ths"></td>
 				<td class="ths"></td>

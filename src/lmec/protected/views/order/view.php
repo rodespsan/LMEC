@@ -32,19 +32,22 @@ $this->menu=array(
 <?php
 
     $failureDescriptions =$model->failureDescriptions;
-    $failureDescription_ = '';
+    $failureDescription_ = '<pre>';
 
     foreach ($failureDescriptions as $failureDescription){
         $failureDescription_.= $failureDescription->description;
     }
- 
+
+    $failureDescription_.= '</pre>';
  
     $equipmentStatuses =$model->equipmentStatuses;
-    $equipmentStatuses_ = '';
+    $equipmentStatuses_ = '<pre>';
 
     foreach ($equipmentStatuses as $equipmentStatus){     
      $equipmentStatuses_.= $equipmentStatus->description;
     }
+
+    $equipmentStatuses_.= '</pre>';
 
     $accessories =$model->accessories;
     $accessories_ = '<ul>';
@@ -55,7 +58,10 @@ $this->menu=array(
     
     $accessories_ .= '<ul>';
 
-    
+    $observations_ = '<pre>';
+    $observations_ .= $model->observation;
+    $observations_ .= '</pre>';
+
 ?>
 
 
@@ -90,7 +96,11 @@ $this->menu=array(
                      'value' => $equipmentStatuses_,
                      'type'=> 'raw'
                 ),
-            	'observation',
+        array(
+            'name' => 'observation',
+            'value' => $observations_,
+            'type' => 'raw'
+            ),
 //		'equipmentStatuses.description:text:Estado del Equipo',
 		'name_deliverer_equipment',
                 'advance_payment',
