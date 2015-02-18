@@ -48,7 +48,8 @@
 						array('label' => 'Clientes', 'url' => array('/customer/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
 						array('label' => 'Contactos', 'url' => array('/contact/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
 						array('label' => 'Dependencias', 'url' => array('/dependence/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
-						array('label' => 'Tipo de cliente', 'url' => array('/customerType/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador'))
+						array('label' => 'Tipo de cliente', 'url' => array('/customerType/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label' => 'Tipo de pago', 'url' => array('/paymentType/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador'))
 					)
 				),
 				array('label'=>'Equipos', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
