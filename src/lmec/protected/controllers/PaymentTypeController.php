@@ -127,7 +127,9 @@ class PaymentTypeController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PaymentType');
+		$dataProvider=new CActiveDataProvider('PaymentType', array(
+				'criteria' => array('condition' => 'active=1')
+			));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
