@@ -683,9 +683,9 @@ CREATE TABLE IF NOT EXISTS `tbl_payment_type` (
 --
 
 INSERT INTO `tbl_payment_type` (`id`, `name`, `advance_payment`, `active`) VALUES
-(1, 'Interno', '50.00', 1),
-(2, 'Semi-Interno', '100.00', 1),
-(3, 'Externo', '200.00', 1);
+(1, 'Interno', '0.00', 1),
+(2, 'Semi-Interno', '0.00', 1),
+(3, 'Externo', '100.00', 1);
 
 -- --------------------------------------------------------
 
