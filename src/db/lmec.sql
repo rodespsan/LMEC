@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2014 a las 21:33:19
+-- Tiempo de generación: 20-02-2015 a las 19:44:13
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -62,9 +62,15 @@ CREATE TABLE IF NOT EXISTS `tbl_accesory_order` (
 --
 
 INSERT INTO `tbl_accesory_order` (`order_id`, `accesory_id`) VALUES
+(2, 3),
+(2, 4),
+(3, 1),
+(4, 1),
+(5, 1),
 (1, 1),
 (1, 2),
-(1, 3);
+(1, 3),
+(6, 3);
 
 -- --------------------------------------------------------
 
@@ -221,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `tbl_brand` (
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `tbl_brand`
@@ -231,7 +237,9 @@ INSERT INTO `tbl_brand` (`id`, `name`, `active`) VALUES
 (1, 'Acer', 1),
 (2, 'Asus', 1),
 (3, 'Compaq', 1),
-(4, 'Dell', 1);
+(4, 'Dell', 1),
+(5, 'Lenovo', 1),
+(6, 'Toshiba', 1);
 
 -- --------------------------------------------------------
 
@@ -382,7 +390,15 @@ CREATE TABLE IF NOT EXISTS `tbl_diagnostic` (
   KEY `fk_tbl_diagnostic_tbl_order_idx` (`order_id`),
   KEY `fk_tbl_diagnostic_tbl_user_idx` (`user_id`),
   KEY `fk_tbl_diagnostic_tbl_service_type_idx` (`service_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `tbl_diagnostic`
+--
+
+INSERT INTO `tbl_diagnostic` (`id`, `order_id`, `user_id`, `service_type_id`, `date_hour`, `observation`, `finished`, `refection`) VALUES
+(1, 1, 1, 1, '2015-02-04 18:13:37', 'sdasdas', 0, 0),
+(2, 2, 1, 1, '2015-02-06 18:37:53', 'Diagnóstico de prueba', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -398,6 +414,14 @@ CREATE TABLE IF NOT EXISTS `tbl_diagnostic_work` (
   KEY `work_id` (`work_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `tbl_diagnostic_work`
+--
+
+INSERT INTO `tbl_diagnostic_work` (`diagnostic_id`, `work_id`) VALUES
+(1, 1),
+(2, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -410,14 +434,19 @@ CREATE TABLE IF NOT EXISTS `tbl_equipment_status` (
   `description` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`),
   KEY `fk_tbl_equipment_status_tbl_order_idx` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `tbl_equipment_status`
 --
 
 INSERT INTO `tbl_equipment_status` (`id`, `order_id`, `description`) VALUES
-(1, 1, '');
+(1, 1, 'Dañado\r\nDañado\r\nDañado\r\nDañado\r\nDañado\r\nDañado'),
+(2, 2, 'Visagra izquierda quebrada'),
+(3, 3, 'En buen estado'),
+(4, 4, 'En buen estado'),
+(5, 5, 'En buen estado'),
+(6, 6, 'En buen estado');
 
 -- --------------------------------------------------------
 
@@ -467,7 +496,19 @@ CREATE TABLE IF NOT EXISTS `tbl_failure_description` (
   `description` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_tbl_failure_description_tbl_order_idx` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+--
+-- Volcado de datos para la tabla `tbl_failure_description`
+--
+
+INSERT INTO `tbl_failure_description` (`id`, `order_id`, `description`) VALUES
+(1, 2, 'Se realentiza un poco la computadora.'),
+(2, 3, 'Ninguna'),
+(3, 4, 'Ninguna'),
+(4, 5, 'Ninguna'),
+(5, 1, 'Fallaaaaaaaaaaaa\r\nmucho\r\nmucho\r\nmucho\r\nmucho\r\nmucho\r\nmucho\r\nmucho\r\nmucho'),
+(6, 6, 'Ninguna');
 
 -- --------------------------------------------------------
 
@@ -538,7 +579,14 @@ CREATE TABLE IF NOT EXISTS `tbl_observation_order` (
   `observation` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`),
   KEY `fk_tbl_observation_order_tbl_order_idx` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `tbl_observation_order`
+--
+
+INSERT INTO `tbl_observation_order` (`id`, `order_id`, `observation`) VALUES
+(1, 6, 'Independiente de la observación de entrada.');
 
 -- --------------------------------------------------------
 
@@ -570,14 +618,19 @@ CREATE TABLE IF NOT EXISTS `tbl_order` (
   KEY `fk_tbl_orden_tbl_service_type_idx` (`service_type_id`),
   KEY `fk_tbl_orden_tbl_payment_type_idx` (`payment_type_id`),
   KEY `fk_tbl_order_tbl_model_idx` (`model_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `tbl_order`
 --
 
 INSERT INTO `tbl_order` (`id`, `customer_id`, `contact_id`, `receptionist_user_id`, `service_type_id`, `payment_type_id`, `model_id`, `date_hour`, `advance_payment`, `serial_number`, `stock_number`, `name_deliverer_equipment`, `active`, `technician_order_id`, `status_order_id`, `observation`) VALUES
-(1, 1, 1, 1, 1, 1, 7, '2014-10-24 17:17:46', '50.00', '12345', '54321', 'Contacto 1 de Cliente 1', 1, NULL, 1, 'Requiere limpieza interna');
+(1, 1, 1, 1, 1, 1, 7, '2014-10-24 17:17:46', '50.00', '12345', '54321', 'Contacto 1 de Cliente 1', 1, 1, 2, 'Requiere limpieza interna'),
+(2, 1, 1, 1, 1, 1, 1, '2015-02-04 17:04:11', '50.00', '12323131231sdadasda231213', '312312asasda', 'Pepe Sánchez', 1, 1, 8, 'Para iniciar sesión, se debe utilizar el usuario admin y la contraseña 12345678'),
+(3, 1, 8, 1, 1, 1, 5, '2015-02-06 17:07:05', '50.00', 'aa', 'bb', 'Juan Pérez', 1, 0, 1, 'Solo requiere limpieza'),
+(4, 1, 8, 1, 2, 1, 5, '2015-02-06 17:07:05', '50.00', 'aa', 'bb', 'Juan Pérez', 1, 3, 8, 'Solo requiere limpieza'),
+(5, 1, 8, 1, 1, 1, 5, '2015-02-06 17:07:05', '50.00', 'aa', 'bb', 'Juan Pérez', 1, 2, 13, 'Solo requiere limpieza'),
+(6, 7, 7, 1, 1, 3, 5, '2015-02-20 18:42:10', '200.00', '1234', '321', 'Rodrigo Esparza', 1, 2, 5, 'Requiere limpieza interior y exterior.');
 
 -- --------------------------------------------------------
 
@@ -602,7 +655,14 @@ CREATE TABLE IF NOT EXISTS `tbl_out_order` (
   KEY `fk_tbl_out_order_tbl_order_idx` (`order_id`),
   KEY `fk_tbl_out_order_tbl_user_idx` (`user_id`),
   KEY `contact_id` (`contact_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `tbl_out_order`
+--
+
+INSERT INTO `tbl_out_order` (`id`, `order_id`, `contact_id`, `user_id`, `date_hour`, `date_hour_print`, `total_price`, `name_receive_equipment`, `active`) VALUES
+(1, 6, 7, 1, '2015-02-20 12:41:00', NULL, '700.00', 'Rodrigo Esparza', 1);
 
 -- --------------------------------------------------------
 
@@ -642,7 +702,14 @@ CREATE TABLE IF NOT EXISTS `tbl_provider` (
   `address` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `tbl_provider`
+--
+
+INSERT INTO `tbl_provider` (`id`, `name`, `contact_name`, `contact_email`, `contact_telephone_number`, `address`, `active`) VALUES
+(1, 'Absolute PC', 'Juan Pérez', 'juan@perez.com', '999999999', 'no la se', 1);
 
 -- --------------------------------------------------------
 
@@ -716,7 +783,15 @@ CREATE TABLE IF NOT EXISTS `tbl_repair` (
   `finished` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk_tbl_repair_tbl_order_idx` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `tbl_repair`
+--
+
+INSERT INTO `tbl_repair` (`id`, `order_id`, `description`, `finished`) VALUES
+(1, 1, 'sadkasdñas\r\naskdaskdkjal\r\naslkjdlaksd', 0),
+(2, 2, 'asasaadfaf\r\nsdfsda\r\nfsd\r\nsfda\r\nsdaf\r\naf\r\na', 0);
 
 -- --------------------------------------------------------
 
@@ -734,7 +809,15 @@ CREATE TABLE IF NOT EXISTS `tbl_repair_work` (
   KEY `fk_tbl_repair_work_tbl_work_idx` (`work_id`),
   KEY `fk_tbl_repair_work_tbl_user_idx` (`user_id`),
   KEY `fk_tbl_repair_work_tbl_repair_idx` (`repair_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `tbl_repair_work`
+--
+
+INSERT INTO `tbl_repair_work` (`id`, `work_id`, `user_id`, `repair_id`, `date_hour`) VALUES
+(1, 2, 1, 1, '2015-02-04 18:14:31'),
+(2, 2, 1, 2, '2015-02-11 19:27:12');
 
 -- --------------------------------------------------------
 
@@ -834,14 +917,16 @@ CREATE TABLE IF NOT EXISTS `tbl_service_order` (
   PRIMARY KEY (`id`),
   KEY `fk_tbl_service_order_tbl_order_idx` (`order_id`),
   KEY `fk_tbl_service_order_tbl_service_idx` (`service_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci PACK_KEYS=1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci PACK_KEYS=1 AUTO_INCREMENT=4 ;
 
 --
 -- Volcado de datos para la tabla `tbl_service_order`
 --
 
 INSERT INTO `tbl_service_order` (`id`, `order_id`, `service_id`, `price`, `date`) VALUES
-(1, 1, 11, '250.00', '2014-10-24 18:01:47');
+(1, 1, 11, '250.00', '2014-10-24 18:01:47'),
+(2, 5, 11, '250.00', '2015-02-06 17:42:25'),
+(3, 6, 14, '300.00', '2015-02-20 18:43:28');
 
 -- --------------------------------------------------------
 
@@ -905,7 +990,14 @@ CREATE TABLE IF NOT EXISTS `tbl_spare_parts` (
   KEY `fk_tbl_spare_parts_tbl_brand_idx` (`brand_id`),
   KEY `fk_tbl_spare_parts_tbl_provider_idx` (`provider_id`),
   KEY `fk_tbl_spare_parts_tbl_spare_parts_type_idx` (`spare_parts_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `tbl_spare_parts`
+--
+
+INSERT INTO `tbl_spare_parts` (`id`, `spare_parts_status_id`, `spare_parts_type_id`, `brand_id`, `provider_id`, `name`, `serial_number`, `price`, `date_hour`, `guarantee_period`, `invoice`, `description`, `active`) VALUES
+(1, 1, 1, 6, 1, 'HD 500GB 2.5in 5400rpm SAS', '123', '400.00', '2015-02-20', '2016-02-20', '512', 'Disco duro', 1);
 
 -- --------------------------------------------------------
 
@@ -934,7 +1026,14 @@ CREATE TABLE IF NOT EXISTS `tbl_spare_parts_order` (
   PRIMARY KEY (`id`),
   KEY `fk_tbl_spare_parts_order_tbl_order_idx` (`order_id`),
   KEY `fk_tbl_spare_parts_order_tbl_spare_idx` (`spare_parts_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `tbl_spare_parts_order`
+--
+
+INSERT INTO `tbl_spare_parts_order` (`id`, `order_id`, `spare_parts_id`) VALUES
+(1, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -947,7 +1046,16 @@ CREATE TABLE IF NOT EXISTS `tbl_spare_parts_status` (
   `description` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Volcado de datos para la tabla `tbl_spare_parts_status`
+--
+
+INSERT INTO `tbl_spare_parts_status` (`id`, `description`, `active`) VALUES
+(1, 'En stock', 1),
+(2, 'Dañada', 1),
+(3, 'Caduca', 1);
 
 -- --------------------------------------------------------
 
@@ -960,7 +1068,15 @@ CREATE TABLE IF NOT EXISTS `tbl_spare_parts_type` (
   `type` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `tbl_spare_parts_type`
+--
+
+INSERT INTO `tbl_spare_parts_type` (`id`, `type`, `active`) VALUES
+(1, 'Disco Duro', 1),
+(2, 'Memoria RAM', 1);
 
 -- --------------------------------------------------------
 
@@ -1061,7 +1177,15 @@ CREATE TABLE IF NOT EXISTS `tbl_work` (
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `fk_tbl_work_tbl_service_type_idx` (`service_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `tbl_work`
+--
+
+INSERT INTO `tbl_work` (`id`, `service_type_id`, `name`, `description`, `active`) VALUES
+(1, 1, 'Prueba', 'Prueba', 1),
+(2, 2, 'Prueba 2', 'prueba 2', 1);
 
 -- --------------------------------------------------------
 
@@ -1075,6 +1199,16 @@ CREATE TABLE IF NOT EXISTS `tbl_work_order` (
   KEY `fk_tbl_work_order_tbl_order_idx` (`order_id`),
   KEY `fk_tbl_work_order_tbl_work_idx` (`work_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `tbl_work_order`
+--
+
+INSERT INTO `tbl_work_order` (`order_id`, `work_id`) VALUES
+(1, 1),
+(1, 2),
+(6, 1),
+(6, 2);
 
 --
 -- Restricciones para tablas volcadas

@@ -148,10 +148,12 @@ class Order extends CActiveRecord {
             'tblServicePerformedOrders' => array(self::HAS_MANY, 'TblServicePerformedOrder', 'order_id'),
             'tblSpareOrders' => array(self::HAS_MANY, 'TblSpareOrder', 'order_id'),
             'tblTechnicalOrders' => array(self::HAS_MANY, 'TblTechnicalOrder', 'order_id'),
-            'tblWorkOrders' => array(self::HAS_MANY, 'TblWorkOrder', 'order_id'),
+            //'tblWorkOrders' => array(self::HAS_MANY, 'TblWorkOrder', 'order_id'),
             'technicianUser' => array(self::BELONGS_TO, 'User', 'technician_order_id'),
             'equipmentStatuses' => array(self::HAS_MANY, 'EquipmentStatus', 'order_id'),
             'failureDescriptions' => array(self::HAS_MANY, 'FailureDescription', 'order_id'),
+			'spareParts' => array(self::MANY_MANY, 'SpareParts', 'tbl_spare_parts_order(order_id,spare_parts_id)'),
+			'works' => array(self::MANY_MANY, 'Work', 'tbl_work_order(order_id,work_id)'),
         );
     }
 

@@ -188,14 +188,8 @@ class OutOrder extends CActiveRecord
 	
 	public function getLastService()
 	{
-		$services = $this->order->ServiceOrders;
-               
-               
+		$services = $this->order->serviceOrders;
 		$result = end($services);
-              
-                
-                var_dump($services);
-                die();
 		
 		if($this->total_price == null){
 			$this->_price_service = $result->price;
