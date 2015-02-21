@@ -79,7 +79,8 @@ class Order extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('customer_id, contact_id, receptionist_user_id, payment_type_id, model_id, service_type_id, date_hour, name_deliverer_equipment, service', 'required'),
+            array('customer_id, contact_id, receptionist_user_id, payment_type_id, model_id, service_type_id, date_hour, name_deliverer_equipment, service', 'required', 'except'=>'ajaxupdate'),
+            // array('service', 'required', 'except'=>'ajaxupdate'),
             array('customer_id', 'exist', 'className' => 'Customer', 'attributeName' => 'id'),
             array('contact_id', 'exist', 'className' => 'Contact', 'attributeName' => 'id'),
             array('receptionist_user_id', 'exist', 'className' => 'User', 'attributeName' => 'id'),

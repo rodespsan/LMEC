@@ -511,10 +511,11 @@ class OrderController extends Controller {
                 foreach ($_POST['OrderGrid'] as $orderId => $orderData) {
                     $order = Order::model()->findByPk($orderId);
                     if (!empty($order)) {
-                        $order->service_type_id = $orderData['service_type_id'];
+                        $order->scenario = "ajaxupdate";
+                        // $order->service_type_id = $orderData['service_type_id'];
                         $order->status_order_id = $orderData['status_order_id'];
                         $order->technician_order_id = $orderData['technician_order_id'];
-                        $order->save(false);
+                        $order->save();
                     }
                 }
             }
