@@ -71,7 +71,15 @@ class SparePartsTypeController extends Controller
 		{
 			$model->attributes=$_POST['SparePartsType'];
 			if($model->save())
+			{
+				if(!empty($_POST['yt1']))
+                {
+                    Yii::app()->user->setFlash('sparepartstype-created', "¡El tipo de refacción <b><i>&quot;$model->type&quot;</i></b> fue creado exitosamente!");
+                    $this->redirect(array('create'));
+                }
+                else
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(

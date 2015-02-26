@@ -66,8 +66,15 @@ class ServiceController extends Controller {
         if (isset($_POST['Service'])) {
             $model->attributes = $_POST['Service'];
 
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            if ($model->save()){
+                if(!empty($_POST['yt1']))
+                {
+                    Yii::app()->user->setFlash('service-created', "¡El servicio <b><i>&quot;$model->name&quot;</i></b> fue creado exitosamente!");
+                    $this->redirect(array('create'));
+                }
+                else
+                    $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         if (ServiceType::model()->count('active = 1') > 0) {

@@ -12,4 +12,10 @@ $this->menu=array(
 
 <h1>Crear proveedor</h1>
 
+<?php if( Yii::app()->user->hasFlash('provider-created') ): ?>
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('provider-created'); ?>
+</div>
+<?php endif; ?>
+
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

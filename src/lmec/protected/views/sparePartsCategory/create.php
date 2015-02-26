@@ -15,4 +15,10 @@ $this->menu=array(
 
 <h1>Crear Categoría de Refacción</h1>
 
+<?php if( Yii::app()->user->hasFlash('sparepartscategory-created') ): ?>
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('sparepartscategory-created'); ?>
+</div>
+<?php endif; ?>
+
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -15,4 +15,10 @@ $this->menu=array(
 
 <h1>Crear Tipo de Refacción</h1>
 
+<?php if( Yii::app()->user->hasFlash('sparepartstype-created') ): ?>
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('sparepartstype-created'); ?>
+</div>
+<?php endif; ?>
+
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
