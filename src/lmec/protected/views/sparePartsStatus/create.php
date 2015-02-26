@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Crear Estado</h1>
+<h1>Crear Estado de Refacción</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

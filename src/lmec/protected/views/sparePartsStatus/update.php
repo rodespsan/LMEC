@@ -10,12 +10,12 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Listar Estados de Refacción', 'url'=>array('index')),
-	array('label'=>'Crear Estados de Refacción', 'url'=>array('create')),
+	array('label'=>'Crear Estado de Refacción', 'url'=>array('create')),
 	array('label'=>'Ver Estado de Refacción', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Administrar Estados de Refacción', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Actualizar Estado <?php echo $model->id; ?></h1>
+<h1>Actualizar Estado de Refacción <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

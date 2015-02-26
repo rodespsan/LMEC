@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Spare Parts Orders',
+	'Órdenes de Refacción',
 );
 
 $this->menu=array(
-	array('label'=>'Create SparePartsOrder', 'url'=>array('/order/index')),
-	array('label'=>'Manage SparePartsOrder', 'url'=>array('admin')),
+	array('label'=>'Crear Orden de Refacción', 'url'=>array('/order/index')),
+	array('label'=>'Administrar Órdenes de Refacción', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Spare Parts Orders</h1>
+<h1>Órdenes de Refacciones</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

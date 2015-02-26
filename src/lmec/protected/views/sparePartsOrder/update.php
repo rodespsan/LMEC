@@ -3,19 +3,19 @@
 /* @var $model SparePartsOrder */
 
 $this->breadcrumbs=array(
-	'Spare Parts Orders'=>array('index'),
+	'Órdenes de Refacción'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	'Actualizar',
 );
 
 $this->menu=array(
-	array('label'=>'List SparePartsOrder', 'url'=>array('index')),
-	array('label'=>'Create SparePartsOrder', 'url'=>array('create')),
-	array('label'=>'View SparePartsOrder', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage SparePartsOrder', 'url'=>array('admin')),
+	array('label'=>'Listar Órdenes de Refacción', 'url'=>array('index')),
+	array('label'=>'Crear Orden de Refacción', 'url'=>array('create')),
+	array('label'=>'Ver Orden de Refacción', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Órdenes de Refacción', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update SparePartsOrder <?php echo $model->id; ?></h1>
+<h1>Actualizar Orden de Refacción <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

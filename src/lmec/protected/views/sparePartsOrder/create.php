@@ -3,13 +3,13 @@
 /* @var $model SparePartsOrder */
 
 $this->breadcrumbs=array(
-	'Orders'=>array('/order/index'),
+	'Orden de Refacciones'=>array('/order/index'),
 	'Asignar Refacciones',
 );
 
 $this->menu=array(
-	array('label'=>'List SparePartsOrder', 'url'=>array('index')),
-	array('label'=>'Manage SparePartsOrder', 'url'=>array('admin')),
+	array('label'=>'Listar Órdenes de Refacción', 'url'=>array('index')),
+	array('label'=>'Administrar Órdenes de Refacción', 'url'=>array('admin')),
 );
 ?>
 

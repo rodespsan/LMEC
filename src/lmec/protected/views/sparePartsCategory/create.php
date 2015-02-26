@@ -3,16 +3,16 @@
 /* @var $model SparePartsCategory */
 
 $this->breadcrumbs=array(
-	'Spare Parts Categories'=>array('index'),
-	'Create',
+	'Categoría de Refacciones'=>array('index'),
+	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'List SparePartsCategory', 'url'=>array('index')),
-	array('label'=>'Manage SparePartsCategory', 'url'=>array('admin')),
+	array('label'=>'Listar Categorías de Refacción', 'url'=>array('index')),
+	array('label'=>'Administrar Categorías de Refacción', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create SparePartsCategory</h1>
+<h1>Crear Categoría de Refacción</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
