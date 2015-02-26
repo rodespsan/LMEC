@@ -126,7 +126,9 @@ class ActivityVerificationController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('ActivityVerification');
+		$dataProvider=new CActiveDataProvider('ActivityVerification', array(
+                    'criteria' => array('condition' => 'active=1')
+                ));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
