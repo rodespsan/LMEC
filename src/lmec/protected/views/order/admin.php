@@ -46,28 +46,35 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 			'header'=>'Folio',
 			'value'=>'Order::model()->getFolio_($data->id)',
 		),
+
+		// array(
+		// 	'name'=>'service_type_id',
+		// 	'header'=>'Tipo de servicio',
+		// 	'type'=>'raw',
+		// 	'value'=>'CHtml::dropDownList(
+		// 		"OrderGrid[$data->id][service_type_id]",
+		// 		$data->service_type_id,
+		// 		CHtml::listData(
+		// 			($data->serviceType->active)?
+		// 				ServiceType::model()->findAll("active=1") : 
+		// 				ServiceType::model()->findAll(array(
+		// 					"condition" => "active=1 OR id=:service_id",
+		// 					"params"=>array(
+		// 						":service_id"=>$data->service_type_id
+		// 					)
+		// 				)),
+		// 			"id",
+		// 			"name"
+		// 		)
+		// 	)',
+			
+		// 	'filter'=>array('1'=>'Preventivo','2'=>'Correctivo'),
+		// ),
+
 		array(
 			'name'=>'service_type_id',
-			'header'=>'Tipo de servicio',
-			'type'=>'raw',
-			'value'=>'CHtml::dropDownList(
-				"OrderGrid[$data->id][service_type_id]",
-				$data->service_type_id,
-				CHtml::listData(
-					($data->serviceType->active)?
-						ServiceType::model()->findAll("active=1") : 
-						ServiceType::model()->findAll(array(
-							"condition" => "active=1 OR id=:service_id",
-							"params"=>array(
-								":service_id"=>$data->service_type_id
-							)
-						)),
-					"id",
-					"name"
-				)
-			)',
-			
-			'filter'=>array('1'=>'Preventivo','2'=>'Correctivo'),
+			'value'=>'$data->serviceType->name',
+			'type'=>'text',
 		),
 		
 		array(
