@@ -53,14 +53,14 @@ function unorderedWorks($items)
 			'label' => 'Usuario que entrega el equipo',
 			'value' => $model->user->name,
 		),
-		'order.modelo.EquipmentType.type',
-		'order.modelo.Brand.name',
-		'order.modelo.name',
+		'order.model.EquipmentType.type',
+		'order.model.Brand.name',
+		'order.model.name',
 		'order.serial_number',
 		'order.stock_number',
 		array(
 			'label'=>'Accesorios',
-			'value'=> unorderedList(CHtml::listData($model->order->accessories,'id','name')),
+			'value'=> unorderedList(CHtml::listData($model->order->accesories,'id','name')),
 			'type'=>'raw',
 		),
 		array(

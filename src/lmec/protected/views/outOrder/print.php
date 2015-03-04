@@ -42,12 +42,12 @@
 							<td class='cant'></td>  
 							<td class='codigo'></td> 
 							<td><strong>Concepto del trabajo realizado <br>
-								Equipo:  </strong> <?php $equip = $model->order->modelo->EquipmentType->type." ".$model->order->modelo->Brand->name." ".$model->order->modelo->name;
+								Equipo:  </strong> <?php $equip = $model->order->model->EquipmentType->type." ".$model->order->model->Brand->name." ".$model->order->model->name;
 								echo CHtml::encode($equip); ?> <br>
-								<?php if($model->order->accessories != null){ ?>
+								<?php if($model->order->accesories != null){ ?>
 								<strong>Accesorios: </strong> 
-								<?php $accessories = CHtml::listData($model->order->accessories,'id','name'); ?>
-								<?php echo CHtml::encode(implode(', ',$accessories)); ?>
+								<?php $accesories = CHtml::listData($model->order->accesories,'id','name'); ?>
+								<?php echo CHtml::encode(implode(',',$accesories)); ?>
 								<?php } ?>
 							</td> 
 							<td ></td> 

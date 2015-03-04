@@ -55,7 +55,7 @@ class OutOrder extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array( 
-			array('order_id, contact_id, user_id, date_hour, total_price, name_receive_equipment', 'required'),
+			array('order_id, contact_id, user_id, date_hour, total_price', 'required'),
 			array('order_id, contact_id, user_id', 'length', 'max'=>10),
 			array('total_price', 'length', 'max'=>10),
 			array('total_price', 'validatePrice'),
@@ -143,7 +143,7 @@ class OutOrder extends CActiveRecord
 	// Devuelve la lista de usuarios activados que tiene el sistema, el valor por defecto es el usuario logueado.
 	public function getUserLogued() {
 		$userLogued = User::model()->findByPk(Yii::app()->user->id);
-        $listUser = array($userLogued->id => $userLogued->fullName) + CHtml::listData(User::model()->findAll('active = 1'), 'id','fullName');
+        $listUser = array($userLogued->id => $userLogued->name) + CHtml::listData(User::model()->findAll('active = 1'), 'id','name');
 		return $listUser;
     }
 	

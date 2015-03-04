@@ -26,16 +26,16 @@
 	<?php echo CHtml::encode($data->user->name); ?>
 	<br />
 	
-	<b><?php echo CHtml::encode($data->order->modelo->EquipmentType->getAttributeLabel('type')); ?>:</b>
-	<?php echo CHtml::encode($data->order->modelo->EquipmentType->type); ?>
+	<b><?php echo CHtml::encode($data->order->model->EquipmentType->getAttributeLabel('type')); ?>:</b>
+	<?php echo CHtml::encode($data->order->model->EquipmentType->type); ?>
 	<br />
 	
-	<b><?php echo CHtml::encode($data->order->modelo->Brand->getAttributeLabel('name')); ?>:</b>
-	<?php echo CHtml::encode($data->order->modelo->Brand->name); ?>
+	<b><?php echo CHtml::encode($data->order->model->Brand->getAttributeLabel('name')); ?>:</b>
+	<?php echo CHtml::encode($data->order->model->Brand->name); ?>
 	<br />
 	
-	<b><?php echo CHtml::encode($data->order->modelo->getAttributeLabel('name')); ?>:</b>
-	<?php echo CHtml::encode($data->order->modelo->name); ?>
+	<b><?php echo CHtml::encode($data->order->model->getAttributeLabel('name')); ?>:</b>
+	<?php echo CHtml::encode($data->order->model->name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date_hour')); ?>:</b>
