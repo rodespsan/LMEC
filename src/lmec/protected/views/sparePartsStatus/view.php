@@ -3,7 +3,7 @@
 /* @var $model SparePartsStatus */
 
 $this->breadcrumbs=array(
-	'Estado de Refacciones'=>array('index'),
+	'Estados de Refacciones'=>array('index'),
 	$model->description,
 );
 

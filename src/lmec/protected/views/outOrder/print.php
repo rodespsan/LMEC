@@ -1,17 +1,17 @@
 
 <div>
-	<table class = "tabla-sin-bordes2">
+	<table align="center" class = tabla-sin-bordes2">
 		<tr>
 		<br>
-			<td><strong>CLIENTE: </strong> <?php echo CHtml::encode($model->order->customer->name); ?></td> 
-			<td><strong>FOLIO: </strong>  <?php echo CHtml::encode($model->order->folio); ?> </td>
+			<td>CLIENTE: <?php echo CHtml::encode($model->order->customer->name); ?></td> 
+			<td>FOLIO: <?php echo CHtml::encode($model->order->folio); ?> </td>
 		</tr>
 		<tr>
-			<td><strong>CONTACTO: </strong> <?php echo CHtml::encode($model->contact->name); ?> </td> 
+			<td>CONTACTO: <?php echo CHtml::encode($model->contact->name); ?> </td> 
 
-			<td><strong>FECHA: </strong> <?php 
+			<td>FECHA: <?php 
 				if ($model->date_hour!='') {
-				$fecha2=date('d-m-y',strtotime($model->date_hour)); //formato hora.minuntos.segundos h:i:s
+				$fecha2=date('Y-m-d',strtotime($model->date_hour)); //formato hora.minuntos.segundos h:i:s
 				}
 				else {
 				$fecha2='';
@@ -21,7 +21,7 @@
 		</tr> </br>
 
 
-		<tr><td><strong>No. CLIENTE: </strong> <?php echo CHtml::encode($model->order->clientNumber); ?> </tr> </br>
+		<tr><td>No. CLIENTE: <?php echo CHtml::encode($model->order->clientNumber); ?> </tr> </br>
 		<tr><td></td></tr>
 	<?php //} ?>	
 
@@ -42,11 +42,11 @@
 							<td class='cant'></td>  
 							<td class='codigo'></td> 
 							<td><strong>Concepto del trabajo realizado <br>
-								Equipo:  </strong> <?php $equip = $model->order->model->EquipmentType->type." ".$model->order->model->Brand->name." ".$model->order->model->name;
+								Equipo:  </strong> <?php $equip = $model->order->modelo->EquipmentType->type." ".$model->order->modelo->Brand->name." ".$model->order->modelo->name;
 								echo CHtml::encode($equip); ?> <br>
-								<?php if($model->order->accesories != null){ ?>
+								<?php if($model->order->accessories != null){ ?>
 								<strong>Accesorios: </strong> 
-								<?php $accesories = CHtml::listData($model->order->accesories,'id','name'); ?>
+								<?php $accesories = CHtml::listData($model->order->accessories,'id','name'); ?>
 								<?php echo CHtml::encode(implode(',',$accesories)); ?>
 								<?php } ?>
 							</td> 

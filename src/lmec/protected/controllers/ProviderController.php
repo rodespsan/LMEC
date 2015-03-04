@@ -65,8 +65,15 @@ class ProviderController extends Controller {
         if (isset($_POST['Provider'])) {
             $model->attributes = $_POST['Provider'];
             //$model->active = 1;
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            if ($model->save()){
+                if(!empty($_POST['yt1']))
+                {
+                    Yii::app()->user->setFlash('provider-created', "¡El proveedor <b><i>&quot;$model->name&quot;</i></b> fue creado exitosamente!");
+                    $this->redirect(array('create'));
+                }
+                else
+                    $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('create', array(

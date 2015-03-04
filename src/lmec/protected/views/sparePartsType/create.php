@@ -3,16 +3,22 @@
 /* @var $model SparePartsType */
 
 $this->breadcrumbs=array(
-	'Spare Parts Types'=>array('index'),
-	'Create',
+	'Tipo de Refacciones'=>array('index'),
+	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'List SparePartsType', 'url'=>array('index')),
-	array('label'=>'Manage SparePartsType', 'url'=>array('admin')),
+	array('label'=>'Listar Tipos de Refacción', 'url'=>array('index')),
+	array('label'=>'Administrar Tipos de Refacción', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create SparePartsType</h1>
+<h1>Crear Tipo de Refacción</h1>
+
+<?php if( Yii::app()->user->hasFlash('sparepartstype-created') ): ?>
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('sparepartstype-created'); ?>
+</div>
+<?php endif; ?>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

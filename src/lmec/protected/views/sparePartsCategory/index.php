@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Spare Parts Categories',
+	'Categorías de Refacciones',
 );
 
 $this->menu=array(
-	array('label'=>'Create SparePartsCategory', 'url'=>array('create')),
-	array('label'=>'Manage SparePartsCategory', 'url'=>array('admin')),
+	array('label'=>'Crear Categoría de Refacción', 'url'=>array('create')),
+	array('label'=>'Administrar Categorías de Refacción', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Spare Parts Categories</h1>
+<h1>Categorías de Refacciones</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

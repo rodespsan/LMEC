@@ -3,19 +3,19 @@
 /* @var $model SparePartsCategory */
 
 $this->breadcrumbs=array(
-	'Spare Parts Categories'=>array('index'),
+	'Categorías de Refacciones'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),
-	'Update',
+	'Actualizar',
 );
 
 $this->menu=array(
-	array('label'=>'List SparePartsCategory', 'url'=>array('index')),
-	array('label'=>'Create SparePartsCategory', 'url'=>array('create')),
-	array('label'=>'View SparePartsCategory', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage SparePartsCategory', 'url'=>array('admin')),
+	array('label'=>'Listar Categorías de Refacción', 'url'=>array('index')),
+	array('label'=>'Crear Categoría de Refacción', 'url'=>array('create')),
+	array('label'=>'Ver Categoría de Refacción', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Categorías de Refacción', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update SparePartsCategory <?php echo $model->id; ?></h1>
+<h1>Actualizar Categoría de Refacción <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

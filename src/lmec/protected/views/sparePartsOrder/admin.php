@@ -3,13 +3,13 @@
 /* @var $model SparePartsOrder */
 
 $this->breadcrumbs=array(
-	'Orders'=>array('order/index'),
+	'Órdenes de Refacciones'=>array('order/index'),
 	'Administrar Refacciones Asignadas',
 );
 
 $this->menu=array(
-	array('label'=>'List SparePartsOrder', 'url'=>array('index')),
-	array('label'=>'Create SparePartsOrder', 'url'=>array('/order/index')),
+	array('label'=>'Listar Órdenes de Refacción', 'url'=>array('index')),
+	array('label'=>'Crear Orden de Refacción', 'url'=>array('/order/index')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,11 +26,11 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Spare Parts Orders</h1>
+<h1>Administrar Órdenes de Refacción</h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+Si lo desea, puede escribir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+o <b>=</b>) al principio de cada uno de los valores de busqueda, para especificar como se debe realizar la comparación.
 </p>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>

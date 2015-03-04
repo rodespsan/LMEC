@@ -12,7 +12,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Spare Parts Types</h1>
+<h1>Tipos de Refacciones</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

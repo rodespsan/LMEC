@@ -122,7 +122,9 @@ class StatusOrderController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('StatusOrder');
+		$dataProvider=new CActiveDataProvider('StatusOrder', array(
+                    'criteria' => array('condition' => 'active=1')
+                ));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

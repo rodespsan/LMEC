@@ -3,7 +3,7 @@
 /* @var $model SparePartsStatus */
 
 $this->breadcrumbs=array(
-	'Estado de Refacciones'=>array('index'),
+	'Estados de Refacciones'=>array('index'),
 	'Administrar',
 );
 
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar Estados</h1>
+<h1>Administrar Estados de Refacción</h1>
 
 <p>
 Si lo desea, puede escribir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

@@ -32,10 +32,6 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('price')); ?>:</b>
 	<?php echo CHtml::encode($data->price); ?>
 	<br />
-	
-	<b><?php echo CHtml::encode($data->getAttributeLabel('active')); ?>:</b>
-	<?php echo CHtml::encode($data->activeText); ?>
-	<br />
 
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date_hour')); ?>:</b>

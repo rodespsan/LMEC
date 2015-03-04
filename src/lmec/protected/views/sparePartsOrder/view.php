@@ -3,20 +3,20 @@
 /* @var $model SparePartsOrder */
 
 $this->breadcrumbs=array(
-	'Spare Parts Orders'=>array('index'),
+	'Órdenes de Refacción'=>array('index'),
 	$model->id,
 );
 
 $this->menu=array(
-	array('label'=>'List SparePartsOrder', 'url'=>array('index')),
-	array('label'=>'Create SparePartsOrder', 'url'=>array('/order/index')),
-	array('label'=>'Update SparePartsOrder', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete SparePartsOrder', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage SparePartsOrder', 'url'=>array('admin')),
+	array('label'=>'Listar Órdenes de Refacción', 'url'=>array('index')),
+	array('label'=>'Crear Orden de Refacción', 'url'=>array('/order/index')),
+	array('label'=>'Actualizar Orden de Refacción', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Desactivar Orden de Refacción', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Órdenes de Refacción', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View SparePartsOrder #<?php echo $model->id; ?></h1>
+<h1>Ver Orden de Refacción #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

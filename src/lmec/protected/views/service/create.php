@@ -15,4 +15,10 @@ $this->menu=array(
 
 <h1>Crear servicios</h1>
 
+<?php if( Yii::app()->user->hasFlash('service-created') ): ?>
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('service-created'); ?>
+</div>
+<?php endif; ?>
+
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

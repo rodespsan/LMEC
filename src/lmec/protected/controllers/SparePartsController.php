@@ -137,7 +137,9 @@ class SparePartsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('SpareParts');
+		$dataProvider=new CActiveDataProvider('SpareParts', array(
+                    'criteria' => array('condition' => 'active=1')
+                ));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

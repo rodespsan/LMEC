@@ -70,8 +70,15 @@ class SparePartsCategoryController extends Controller
 		if(isset($_POST['SparePartsCategory']))
 		{
 			$model->attributes=$_POST['SparePartsCategory'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+				if(!empty($_POST['yt1']))
+                {
+                    Yii::app()->user->setFlash('sparepartscategory-created', "¡La categoría de refacción <b><i>&quot;$model->name&quot;</i></b> fue creada exitosamente!");
+                    $this->redirect(array('create'));
+                }
+                else
+					$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
