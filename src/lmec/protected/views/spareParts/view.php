@@ -39,6 +39,11 @@ $this->menu=array(
 			'name' => 'provider_id',
 			'value' => $model->provider->name,
 		),
+		//'spare_parts_type_id',
+		array(
+			'name' => 'spare_parts_type_id',
+			'value' => $model->sparePartsType->type,
+		),
 		'serial_number',
 		'price',
 		'date_hour',

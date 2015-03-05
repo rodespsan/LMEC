@@ -6,10 +6,6 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Listar roles', 'url'=>array('index')),
-	array('label'=>'Crear rol', 'url'=>array('create')),
-	array('label'=>'Actualizar rol', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Desactivar rol', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Desactivar rol?')),
-	array('label'=>'Administrar roles', 'url'=>array('admin')),
 );
 ?>
 

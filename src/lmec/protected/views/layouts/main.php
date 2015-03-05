@@ -40,7 +40,7 @@
 				array('label'=>'Cuentas', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
 					'items'=>array(
 						array('label'=>'Usuarios', 'url'=>array('/user/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
-						array('label'=>'Roles', 'url'=>array('/role/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'))
+						array('label'=>'Roles', 'url'=>array('/role/index'), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'))
 					)
 				),
 				array('label'=>'Clientes', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),

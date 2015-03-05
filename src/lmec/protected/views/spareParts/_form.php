@@ -30,7 +30,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'spare_parts_status_id'); ?>
-		<?php echo $form->dropDownList($model,'spare_parts_status_id',CHtml::listData(SparePartsStatus::model()->findAll('active = 1'),'id','description'), array('empty'=>'Seleccionar Estado')); ?>
+		<?php echo $form->dropDownList($model,'spare_parts_status_id',CHtml::listData(SparePartsStatus::model()->findAll('active = 1'),'id','description'),
+		array('empty'=>'Seleccionar Estado', 'options'=>array(4=>array('selected'=>'selected')))
+		); ?>
 		<?php echo $form->error($model,'spare_parts_status_id'); ?>
 	</div>
 
@@ -77,6 +79,9 @@
                                         'changeYear' => true,
                                         'changeMonth' => true,
                                         'yearRange' => '1900',
+                                        'onClose' => 'js:function (selectedDate) {
+				                            $("#guarantee_period").datepicker("option", "minDate", selectedDate);
+				                        }',
                                 ),
                 ));
         ?>
@@ -102,8 +107,8 @@
 										'changeYear' => true,
                                         'changeMonth' => true,
                                         //'yearRange' => '2000',
-										
                                 ),
+                                'htmlOptions' => array('id' => 'guarantee_period','class' => 'input-medium')
                 ));
         ?>
 		<?php echo $form->error($model,'guarantee_period'); ?>

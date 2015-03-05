@@ -4,11 +4,6 @@ $this->breadcrumbs=array(
 	'Administrar',
 );
 
-$this->menu=array(
-	array('label'=>'Listar roles', 'url'=>array('index')),
-	array('label'=>'Crear rol', 'url'=>array('create')),
-);
-
 ?>
 
 <h1>Administrar roles</h1>
