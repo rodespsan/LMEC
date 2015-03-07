@@ -1,139 +1,159 @@
+<div id="header">
+		<div id="logo"><img src="../../images/header.png"> 
+		    <b align="left">Laboratorio de Mantenimiento de Equipos de Cómputo<b><br>
+			<b align="left">REPORTE DE SALIDA DE EQUIPO<b>
+		</div>
+</div><!-- header -->
 
 <div>
-	<table align="center" class = tabla-sin-bordes2">
+	<table align="center" class="table1">
 		<tr>
-		<br>
 			<td>CLIENTE: <?php echo CHtml::encode($model->order->customer->name); ?></td> 
-			<td>FOLIO: <?php echo CHtml::encode($model->order->folio); ?> </td>
+			<td>FOLIO: <?php echo CHtml::encode($model->order->folio); ?></td>
 		</tr>
 		<tr>
-			<td>CONTACTO: <?php echo CHtml::encode($model->contact->name); ?> </td> 
-
-			<td>FECHA: <?php 
-				if ($model->date_hour!='') {
-				$fecha2=date('Y-m-d',strtotime($model->date_hour)); //formato hora.minuntos.segundos h:i:s
-				}
-				else {
-				$fecha2='';
-				}
-				echo CHtml::encode($fecha2);   ?>
-			</td>
-		</tr> </br>
-
-
-		<tr><td>No. CLIENTE: <?php echo CHtml::encode($model->order->clientNumber); ?> </tr> </br>
-		<tr><td></td></tr>
-	<?php //} ?>	
-
+			<td>CONTACTO: <?php echo CHtml::encode($model->contact->name); ?></td>
+			<td>FECHA: <?php echo CHtml::encode(date('Y-m-d', strtotime($model->date_hour))); ?></td>
+		</tr>
+		<tr>
+			<td colspan="2">No. CLIENTE: <?php echo CHtml::encode( $model->order->clientNumber ); ?></td>
+		</tr>
 	</table>
-
-	<div class="informacion">
-		<br>
-		<div>
-			<table height="560px" cellspacing="0" cellpadding="0"  class = 'tabla-con-bordes'  > 
-						<tr>
-							  <th><b>CANT.</b></th> 
-							  <th><b>CÓDIGO</b></th>
-							  <th class="descripcion"><b>DESCRIPCIÓN</b></th>
-							  <th><b>P.UNITARIO</b></th>
-							  <th width="130px"><b>IMPORTE</b></th>
-						</tr>
-						<tr> 
-							<td class='cant'></td>  
-							<td class='codigo'></td> 
-							<td><strong>Concepto del trabajo realizado <br>
-								Equipo:  </strong> <?php $equip = $model->order->modelo->EquipmentType->type." ".$model->order->modelo->Brand->name." ".$model->order->modelo->name;
-								echo CHtml::encode($equip); ?> <br>
-								<?php if($model->order->accessories != null){ ?>
-								<strong>Accesorios: </strong> 
-								<?php $accesories = CHtml::listData($model->order->accessories,'id','name'); ?>
-								<?php echo CHtml::encode(implode(',',$accesories)); ?>
-								<?php } ?>
-							</td> 
-							<td ></td> 
-							<td></td>
-						</tr>
-						<tr>
-							<td class='cant'>1</td>    
-							<td class='codigo'><?php echo CHtml::encode($model->lastService->service->code); ?></td> 			  
-							<td><strong>Servicio: </strong><?php echo CHtml::encode($model->lastService->service->name); ?></td>		  
-							<td class='prices'><?php echo CHtml::encode($model->lastService->service->price); ?></td>            
-							<td class='prices'><?php echo CHtml::encode($model->lastService->service->price); ?></td>
-						</tr>
-						<tr>
-							<td class='cant'></td>   
-							<td class='codigo'></td>  
-							<td><strong>Trabajo realizado:  </strong>  
-								
-								<?php  $works = CHtml::listData($model->order->works,'id','description'); 
-								//foreach ($model->order->works as $work) { ?>
-									<?php echo CHtml::encode(implode(',',$works));
-									//$work->name.": ".$work->description; ?>
-								<?php //} ?>
-								
-							</td>   
-							<td></td>   
-							<td></td>
-						</tr>
-						<?php if($model->order->spareParts != null){ ?>
-						<tr>
-							<td class='cant'><br>
-							<?php for ($i = 1; $i <= count($model->order->spareParts); $i++) {
+	
+	<div class="information">
+		<table height="560px" cellspacing="0" cellpadding="0"   class= "table3" >
+			<tr class ="tr1">
+				<th class= "amount">CANT.</th>
+				<th class="code">CÓDIGO</th>
+				<th class="description">DESCRIPCIÓN</th>
+				<th class="prices" >P.UNITARIO</th>
+				<th class= "prices" >IMPORTE</th>
+			</tr>
+			<tr class="tr1">
+				<td class='amount' > </td>
+				<td class='code' class="tds"> </td>
+				<td class="description"> 
+					<p>
+						Concepto del trabajo realizado<br>
+						Equipo: <?php echo CHtml::encode($model->order->modelo->EquipmentType->type);?><br>
+						Modelo: <?php echo CHtml::encode($model->order->modelo->name);?><br>
+						<?php if($model->order->stock_number!=null){
+							echo 'No. de inventario: ';
+							echo CHtml::encode($model->order->stock_number);
+						} ?><br> 
+						<?php if($model->order->serial_number!=null){
+							echo 'No de serie: ';
+							echo CHtml::encode($model->order->serial_number);
+						} ?><br>
+						<?php if(!empty($model->order->accessories)): ?>
+						Accesorios:
+							<?php 
+								$accesories = CHtml::listData($model->order->accessories,'id','name');
+								echo CHtml::encode(implode(', ',$accesories));
+							?>
+						<?php endif; ?>
+					</p>
+				</td>
+				<td class="prices"></td>
+				<td class="prices"></td>
+			</tr>
+			<tr class="tr1">
+				<td class="ths2"> 1 </td>
+				<td class="ths2"><?php echo CHtml::encode($model->lastService->service->code);?></td>
+				<td class="ths">Servicio: <?php echo CHtml::encode($model->lastService->service->name);?></td>
+				<td class="ths_3"><?php echo CHtml::encode($model->lastService->service->price); ?></td>
+				<td class="ths_3"><?php echo CHtml::encode($model->lastService->service->price); ?></td>
+			</tr>
+			<tr class="tr1">
+				<td class="ths2"></td>
+				<td class="ths2"></td>
+				<td class="ths">
+					Trabajo Realizado: 
+						<?php  $works = CHtml::listData($model->order->works,'id','description');?>
+						<?php echo CHtml::encode(implode(', ',$works));?>
+				</td>
+				<td class="ths"></td>
+				<td class="ths"></td>
+			</tr>
+			<?php if($model->order->spareParts != null){ ?>
+			<tr class="tr1">
+				<td class="ths2">
+					<?php for ($i = 1; $i <= count($model->order->spareParts); $i++) {
 									echo "1 <br>";
 								} ?>
-							</td>    
-							<td class='codigo'><br>
-								<?php foreach ($model->order->spareParts as $spare) { ?>
+				</td>
+				<td class="ths2">
+					<?php foreach ($model->order->spareParts as $spare) { ?>
 									<?php echo CHtml::encode($spare->category->code); ?> </br>
 								<?php } ?>
-							</td> 			  
-							<td><strong>Refacciones: </strong> 
-								
-								<?php foreach ($model->order->spareParts as $spare) { ?>
+				</td>
+				<td class="ths">
+					Refacciones: 
+						<?php foreach ($model->order->spareParts as $spare) { ?>
 									<li><?php echo CHtml::encode($spare->name); ?> </li>
 								<?php } ?>
-								
-							</td>		  
-							<td class='prices'><?php foreach ($model->order->spareParts as $spare) { ?>
+				</td>
+				<td class="ths">
+					<?php foreach ($model->order->spareParts as $spare) { ?>
 									<?php echo CHtml::encode($spare->price); ?><br>
 								<?php } ?>
-							</td>            
-							<td class='prices'><?php foreach ($model->order->spareParts as $spare) { ?>
+				</td>
+				<td class="ths">
+					<?php foreach ($model->order->spareParts as $spare) { ?>
 									<?php echo CHtml::encode($spare->price); ?><br>
 								<?php } ?>
-							</td>
-						</tr>
-						<?php } 
-						if($model->observation != null){
-						?>
-						<tr>
-							<td class='cant'></td>   <td class='codigo'></td>  
-							<td><strong>Observación:</strong>  <?php echo CHtml::encode($model->observation); ?></td>   
-							<td></td>   
-							<td></td>
-						</tr>
-						<?php } ?>
-						<tr>
-							<td class='prueba' colspan="4"> </td>
-							<td id='borde' ><strong>TOTAL:</strong> <?php echo CHtml::encode($model->total_price); ?><br> 
-							</td>
-						</tr>
-			</table>
-		</div>
+				</td>
+			</tr>
+			<?php } ?>
+			<?php if($model->observation != null){ ?>
+			<tr class="tr1">
+				<td class="ths4"></td>
+				<td class="ths4"></td>
+				<td class="ths3">
+					Observación: <?php echo CHtml::encode($model->observation); ?>
+				</td>
+				<td class="ths"></td>
+				<td class="ths"></td>
+			</tr>
+			<?php } ?>
+			<tr class="tr2">
+				<td class="ths" colspan="3"></td>	  
+				<td class="ths2">
+				<td class="ths2">
+			</tr>
+			<tr class="tr1">
+				<th colspan="3"></th>
+				<td class= "td_u">Total:</td>
+				<td class= "tdu"><?php echo Chtml::encode($model->order->serviceOrder->price); ?></td>
+			</tr>
+		</table>
 	</div>
-	<table  class = "tabla-sin-bordes2">
+	
+	<br><br><br>
+	
+	<table class ="table_4">
 		<tr>
-			<td><strong> RECIBÍ EQUIPO: <u></strong></td> 
+			<td>Nombre: <u><?php  echo CHtml::encode($model->order->name_deliverer_equipment);?></u>
+				<div class="div4"></div> 
+			</td>
+			<td>Firma: <div class="div2"></div></td>
+		</tr>
+	</table>
+	
+	<br>
+	
+	<table class="table4">
+		<tr> 
+			<td><div class="div3"> </div></td> 
 		</tr>
 		<tr>
-			<td><strong>NOMBRE: <u></strong> <?php echo CHtml::encode($model->name_receive_equipment); ?> </u></td> 
-			<td><strong>FIRMA: ______________________ </strong> </td>
+			<td>
+				<form>
+					<input  class="input1" type='button' onclick='window.print();' value='Imprimir' />
+					<input  class="input1" type='button' onclick='window.close();' value='Cerrar' />
+				</form>
+			</td>
 		</tr>
+	</table>
 
-	</table>
-	<br>  
-	<table   class = 'tabla-con-bordes2'>
-	  <td><p align = "right" > <input name="boton" type="button" id="boton" onclick="window.print();return true;" value="Imprimir" class = "print" ></p> </td>
-          <td><p><a href='<?php echo Yii::app()->baseUrl; ?>/outOrder/<?php echo $_GET['id'] ?>'>Regresar</a></p></td>
-	</table>
-<div>
+</div>

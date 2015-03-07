@@ -58,7 +58,7 @@ class OutOrderController extends Controller
 	
 	public function actionPrint($id)
 	{
-		$this->layout='//layouts/main2'; 
+		$this->layout='//layouts/print'; 
 	
 		$this->render('print',array(
 			'model'=>$this->loadModel($id),
