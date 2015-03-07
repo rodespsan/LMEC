@@ -1,10 +1,3 @@
-<div id="header">
-		<div id="logo"><img src="../../images/header.png"> 
-		    <b align="left">Laboratorio de Mantenimiento de Equipos de Cómputo<b><br>
-			<b align="left">REPORTE DE ENTRADA DE EQUIPO<b>
-		</div>
-</div><!-- header -->
-
 <div>
 	<table align="center" class="table1">
 		<tr>
@@ -47,10 +40,11 @@
 						} ?><br>
 						<?php if(!empty($model->accessories)): ?>
 						Accesorios:
-							<?php 
-								$accesories = CHtml::listData($model->accessories,'id','name');
-								echo CHtml::encode(implode(', ',$accesories));
-							?>
+							<ul>
+								<?php foreach($model->accessories as $accesory): ?>
+								<li><?php echo CHtml::encode($accesory->name); ?></li>
+								<?php endforeach; ?>
+							</ul>
 						<?php endif; ?>
 						
 					</p>

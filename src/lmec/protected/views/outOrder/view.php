@@ -13,7 +13,7 @@ $this->menu=array(
 	array('label'=>'Actualizar salida', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Desactivar salida', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Esta seguro que desea desactivar esta salida de orden?')),
 	array('label'=>'Administrar salidas', 'url'=>array('admin')),
-	array('label'=>'Imprimir', 'url'=>array('print', 'id'=>$model->id), 'linkOptions'=>array('target'=>'_blank')),
+	array('label'=>'Vista de impresión', 'url'=>array('print', 'id'=>$model->id)),
 );
 function unorderedList($items)
 {

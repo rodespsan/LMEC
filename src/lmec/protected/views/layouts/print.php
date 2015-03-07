@@ -5,8 +5,8 @@
 	<meta name="language" content="en" />
 
 	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/previewPrintOrder.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/printOrder.css" media="print" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen2_.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen2_view_print.css" media="print" />
 	
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
 	<!--[if lt IE 8]>
@@ -32,6 +32,15 @@
 <body>
 
 <div class="container" id="page">
+
+	<div id="header">
+		<div id="logo"><img src="../../images/header.png"> 
+		    <b align="left">Laboratorio de Mantenimiento de Equipos de Cómputo<b><br>
+			<b align="left">REPORTE DE ENTRADA DE EQUIPO<b>
+		</div>
+	</div><!-- header -->
+
+
 
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
