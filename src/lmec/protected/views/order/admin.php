@@ -3,12 +3,12 @@
 /* @var $model Order */
 
 $this->breadcrumbs=array(
-	'Ordenes'=>array('index'),
+	'Órdenes'=>array('index'),
 	'Administrar',
 );
 
 $this->menu=array(
-	array('label'=>'Lista de Ordenes', 'url'=>array('index')),
+	array('label'=>'Lista de Órdenes', 'url'=>array('index')),
 	array('label'=>'Crear Orden', 'url'=>array('create')),
 );
 
@@ -130,7 +130,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 		
 		array(
 			'name'=>'technician_order_id',
-			'header'=>'Tecnico',
+			'header'=>'Técnico',
 			'type'=>'raw',
 			'value'=>'CHtml::dropDownList(
 				"OrderGrid[$data->id][technician_order_id]",
@@ -203,7 +203,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
                 $pageSize,
                 array(10=>10,20=>20,30=>30,40=>40,50=>50),
                 array(
-					'prompt'=>'Paginacion',
+					'prompt'=>'Paginación',
 					'onchange'=>"$.fn.yiiGridView.update('order-grid',{ data:{ pageSize: $(this).val() }})",
 				)
             ),
