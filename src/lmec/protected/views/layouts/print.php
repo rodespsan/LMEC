@@ -41,22 +41,6 @@
 
 	<?php echo $content; ?>
 
-	<div class="clear"></div>
-
-	<div id="footer">
-	
-	<p align="center">Periférico Norte, Tablaje 13615, Junto al local FUTV, Apartado Postal 172, CP 97119 <br>
-             Mérida Yucatán, México Tel. y Fax (999) 942-31-40 al 49 ext. 1062
-         </p>
-	<!--
-	
-	<p ><strong>Facultad de Matem&aacute;ticas, UADY 
-	  Anillo Perif&eacute;rico Norte
-	  Tablaje Cat. 13615
-	  Colonia Chuburn&aacute; Hidalgo Inn
-	  M&eacute;rida, Yucat&aacute;n
-	  (999) 942 31 40 al 49 </strong> </p>
-	</div>   --><!-- footer -->
 </div><!-- page -->
 
 </body>

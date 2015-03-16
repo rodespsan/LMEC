@@ -9,7 +9,7 @@
 	<table align="center" class="table1">
 		<tr>
 			<td>CLIENTE: <?php echo CHtml::encode($model->order->customer->name); ?></td> 
-			<td>FOLIO: <?php echo CHtml::encode($model->order->folio); ?></td>
+			<td>ORDEN: <?php echo CHtml::encode($model->order->folio); ?></td>
 		</tr>
 		<tr>
 			<td>CONTACTO: <?php echo CHtml::encode($model->contact->name); ?></td>
@@ -107,9 +107,9 @@
 			<?php } ?>
 			<?php if($model->observation != null){ ?>
 			<tr class="tr1">
-				<td class="ths4"></td>
-				<td class="ths4"></td>
-				<td class="ths3">
+				<td class="ths"></td>
+				<td class="ths"></td>
+				<td class="ths">
 					Observación: <?php echo CHtml::encode($model->observation); ?>
 				</td>
 				<td class="ths"></td>
@@ -117,9 +117,11 @@
 			</tr>
 			<?php } ?>
 			<tr class="tr2">
-				<td class="ths" colspan="3"></td>	  
-				<td class="ths2">
-				<td class="ths2">
+				<td class="ths"></td>
+				<td class="ths"></td>
+				<td class="ths"></td>	  
+				<td class="ths"></td>
+				<td class="ths"></td>
 			</tr>
 			<tr class="tr1">
 				<th colspan="3"></th>
@@ -133,7 +135,7 @@
 	
 	<table class ="table_4">
 		<tr>
-			<td>Nombre: <u><?php  echo CHtml::encode($model->order->name_deliverer_equipment);?></u>
+			<td>Nombre: <u><?php  echo CHtml::encode($model->name_receive_equipment);?></u>
 				<div class="div4"></div> 
 			</td>
 			<td>Firma: <div class="div2"></div></td>
@@ -156,4 +158,14 @@
 		</tr>
 	</table>
 
+</div>
+
+<div class="clear"></div>
+
+<div id="footer">
+	<p align="center">
+		Periférico Norte, Tablaje 13615, Junto al local FUTV, Apartado Postal 172, CP 97119 <br>
+        Mérida Yucatán, México Tel. y Fax (999) 942-31-40 al 49 ext. 1062
+    </p>
+	<p align="right">F-FMAT-CTIC-04/REV:01</p>
 </div>

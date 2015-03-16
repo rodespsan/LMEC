@@ -9,14 +9,14 @@
 	<table align="center" class="table1">
 		<tr>
 			<td>CLIENTE: <?php echo CHtml::encode($model->customer->name); ?></td> 
-			<td>ENTRADA: <?php echo CHtml::encode($model->folio); ?></td>
+			<td>ORDEN: <?php echo CHtml::encode($model->folio); ?></td>
 		</tr>
 		<tr>
 			<td>CONTACTO: <?php echo CHtml::encode($model->contact->name); ?></td>
 			<td>FECHA: <?php echo CHtml::encode(date('Y-m-d', strtotime($model->date_hour))); ?></td>
 		</tr>
 		<tr>
-			<td colspan="2">No. CLIENTE: <?php echo CHtml::encode( $model->customer->id ); ?></td>
+			<td colspan="2">No. CLIENTE: <?php echo CHtml::encode( $model->clientNumber); ?></td>
 		</tr>
 	</table>
 	
@@ -66,9 +66,9 @@
 				<td class="ths_3"><?php echo CHtml::encode( $model->serviceOrder->price); ?></td>
 			</tr>
 			<tr class="tr1">
-				<td class="ths4"></td>
-				<td class="ths4"></td>
-				<td class="ths3">
+				<td class="ths"></td>
+				<td class="ths"></td>
+				<td class="ths">
 					Falla: <pre><?php foreach($model->failureDescriptions as $FailureDescription){
 						echo CHtml::encode($FailureDescription->description);				  
 					} ?></pre>
@@ -77,9 +77,11 @@
 				<td class="ths"></td>
 			</tr>
 			<tr class="tr2">
-				<td class="ths" colspan="3"></td>	  
-				<td class="ths2">
-				<td class="ths2">
+				<td class="ths"></td>
+				<td class="ths"></td>
+				<td class="ths"></td>	  
+				<td class="ths"></td>
+				<td class="ths"></td>
 			</tr>
 			<tr class="tr1">
 				<th colspan="3"></th>
@@ -116,4 +118,14 @@
 		</tr>
 	</table>
 
+</div>
+
+<div class="clear"></div>
+
+<div id="footer">
+	<p align="center">
+		Periférico Norte, Tablaje 13615, Junto al local FUTV, Apartado Postal 172, CP 97119 <br>
+        Mérida Yucatán, México Tel. y Fax (999) 942-31-40 al 49 ext. 1062
+    </p>
+	<p align="right">F-FMAT-CTIC-03/REV:04</p>
 </div>
