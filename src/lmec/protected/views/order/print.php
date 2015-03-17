@@ -68,10 +68,13 @@
 			<tr class="tr1">
 				<td class="ths"></td>
 				<td class="ths"></td>
-				<td class="ths">
-					Falla: <pre><?php foreach($model->failureDescriptions as $FailureDescription){
-						echo CHtml::encode($FailureDescription->description);				  
-					} ?></pre>
+				<td class="ths"><?php 
+						echo 'Falla: ' ?>
+						<?php 
+							foreach($model->failureDescriptions as $FailureDescription){
+							echo CHtml::encode($FailureDescription->description);				  
+							} 
+						?>
 				</td>
 				<td class="ths"></td>
 				<td class="ths"></td>

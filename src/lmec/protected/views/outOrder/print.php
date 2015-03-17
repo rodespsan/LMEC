@@ -69,8 +69,9 @@
 				<td class="ths2"></td>
 				<td class="ths">
 					Trabajo Realizado: 
-						<?php  $works = CHtml::listData($model->order->works,'id','description');?>
-						<?php echo CHtml::encode(implode(', ',$works));?>
+						<?php foreach ($model->order->works as $works) { ?>
+									<li><?php echo CHtml::encode($works->description); ?> </li>
+								<?php } ?>
 				</td>
 				<td class="ths"></td>
 				<td class="ths"></td>
@@ -84,7 +85,7 @@
 				</td>
 				<td class="ths2">
 					<?php foreach ($model->order->spareParts as $spare) { ?>
-									<?php echo CHtml::encode($spare->category->code); ?> </br>
+									<?php echo CHtml::encode($spare->spare_parts_type_id); ?> </br>
 								<?php } ?>
 				</td>
 				<td class="ths">
@@ -93,12 +94,12 @@
 									<li><?php echo CHtml::encode($spare->name); ?> </li>
 								<?php } ?>
 				</td>
-				<td class="ths">
+				<td class="ths_3">
 					<?php foreach ($model->order->spareParts as $spare) { ?>
 									<?php echo CHtml::encode($spare->price); ?><br>
 								<?php } ?>
 				</td>
-				<td class="ths">
+				<td class="ths_3">
 					<?php foreach ($model->order->spareParts as $spare) { ?>
 									<?php echo CHtml::encode($spare->price); ?><br>
 								<?php } ?>
@@ -126,7 +127,9 @@
 			<tr class="tr1">
 				<th colspan="3"></th>
 				<td class= "td_u">Total:</td>
-				<td class= "tdu"><?php echo Chtml::encode($model->order->serviceOrder->price); ?></td>
+				<td class= "tdu">
+				<?php  ?>
+				<?php echo Chtml::encode($model->order->serviceOrder->price); ?></td>
 			</tr>
 		</table>
 	</div>
