@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `lmec`
 --
-
+USE lmec;
 -- --------------------------------------------------------
 
 --
@@ -168,12 +168,12 @@ CREATE TABLE IF NOT EXISTS `tbl_blog_guarantee` (
 CREATE TABLE IF NOT EXISTS `tbl_blog_order` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_id` int(10) unsigned NOT NULL,
-  `activity_guarantee_id` int(10) unsigned NOT NULL,
+  `activity` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `detailed_activity` text,
   `user_technical_id` int(10) unsigned NOT NULL,
   `date_hour` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_tbl_blog_order_tbl_order_idx` (`order_id`),
-  KEY `fk_tbl_blog_order_tbl_activity_guarantee_idx` (`activity_guarantee_id`),
   KEY `fk_tbl_blog_order_tbl_user_idx` (`user_technical_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
@@ -1247,7 +1247,6 @@ ALTER TABLE `tbl_blog_guarantee`
 -- Filtros para la tabla `tbl_blog_order`
 --
 ALTER TABLE `tbl_blog_order`
-  ADD CONSTRAINT `fk_tbl_blog_order_tbl_activity_guarantee` FOREIGN KEY (`activity_guarantee_id`) REFERENCES `tbl_activity_guarantee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tbl_blog_order_tbl_order` FOREIGN KEY (`order_id`) REFERENCES `tbl_order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tbl_blog_order_tbl_user` FOREIGN KEY (`user_technical_id`) REFERENCES `tbl_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
