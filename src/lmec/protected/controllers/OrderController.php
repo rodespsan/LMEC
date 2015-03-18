@@ -130,7 +130,7 @@ class OrderController extends Controller {
 
                 $log = new BlogOrder();
                 $log->order_id = $model->id;
-                $log->activity = "Se ha creado una nueva orden con ID: " . $model->id;
+                $log->activity = "Se creó una nueva orden con ID: " . $model->id;
                 $log->detailed_activity = $this->renderPartial('view',array( 'model' => $model ), true);
                 $log->user_technical_id = Yii::app()->user->id;
                 $log->date_hour = date('Y-m-d H:i:s');
@@ -286,7 +286,7 @@ class OrderController extends Controller {
 
                 $log = new BlogOrder();
                 $log->order_id = $model->id;
-                $log->activity = "Se ha modificado la orden con ID: " . $model->id;
+                $log->activity = "Se modificó la orden con ID: " . $model->id;
                 $log->detailed_activity = $this->renderPartial('view',array( 'model' => $model ), true);
                 $log->user_technical_id = Yii::app()->user->id;
                 $log->date_hour = date('Y-m-d H:i:s');
@@ -319,7 +319,7 @@ class OrderController extends Controller {
 
             $log = new BlogOrder();
             $log->order_id = $model->id;
-            $log->activity = "Se ha eliminado la orden con ID: " . $model->id;
+            $log->activity = "Se eliminó la orden con ID: " . $model->id;
             // $log->detailed_activity = $this->renderPartial('view',array( 'model' => $model ), true);
             $log->user_technical_id = Yii::app()->user->id;
             $log->date_hour = date('Y-m-d H:i:s');
