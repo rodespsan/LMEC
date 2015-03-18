@@ -128,7 +128,13 @@ class OrderController extends Controller {
                 $serviceOrder->date = date('Y-m-d H:i:s');
                 $serviceOrder->save();
 
-
+                $log = new BlogOrder();
+                $log->order_id = $model->id;
+                $log->activity = "Se ha creado una nueva orden con ID: " . $model->id;
+                $log->detailed_activity = $this->renderPartial('view',array( 'model' => $model ), true);
+                $log->user_technical_id = Yii::app()->user->id;
+                $log->date_hour = date('Y-m-d H:i:s');
+                $log->save();
 
                 $this->redirect(array('view', 'id' => $model->id));
             }
@@ -278,6 +284,14 @@ class OrderController extends Controller {
                     $modelServiceOrder->save();
                 }
 
+                $log = new BlogOrder();
+                $log->order_id = $model->id;
+                $log->activity = "Se ha modificado la orden con ID: " . $model->id;
+                $log->detailed_activity = $this->renderPartial('view',array( 'model' => $model ), true);
+                $log->user_technical_id = Yii::app()->user->id;
+                $log->date_hour = date('Y-m-d H:i:s');
+                $log->save();
+
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
@@ -302,6 +316,14 @@ class OrderController extends Controller {
             $model = $this->loadModel($id);
             $model->active = 0;
             $model->save();
+
+            $log = new BlogOrder();
+            $log->order_id = $model->id;
+            $log->activity = "Se ha eliminado la orden con ID: " . $model->id;
+            // $log->detailed_activity = $this->renderPartial('view',array( 'model' => $model ), true);
+            $log->user_technical_id = Yii::app()->user->id;
+            $log->date_hour = date('Y-m-d H:i:s');
+            $log->save();
 
             // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if (!isset($_GET['ajax']))
