@@ -17,56 +17,84 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
+<script type="text/javascript">
+function send()
+{
+	var data = $("#blog-guarantee-form").serialize();
+	$.ajax({
+		type: 'POST',
+		url: '<?php echo  Yii::app()->createAbsoluteUrl("blogGuarantee/createBlogGuarantee", array("id" => $_GET['id']));?>',
+		data: data,
+
+		success: function() {
+		},
+
+		complete: function() {
+			$.fn.yiiGridView.update("activity-guarantee-grid");
+		},
+
+        error: function() { // if error occured
+        },
+
+        dataType: 'html'
+    });
+
+}
+
+function sendUpdate()
+{
+	var data = $("#blog-guarantee-form").serialize();
+	$.ajax({
+		type: 'POST',
+		url: '<?php echo Yii::app()->createAbsoluteUrl("blogGuarantee/updateAjax", array("id" => $_GET['id']));?>',
+		data: data,
+
+		success: function() {
+			<?php //$this->redirect(array('view', 'id' => $model->id));?>
+		},
+
+        error: function() { // if error occured
+            alert("No se ha guardado correctamente. Vuelva a intentar");
+        },
+
+        dataType: 'html'
+    });
+}
+</script>
+
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'order_id'); ?>
-                <?php echo Order::model()->getFolio_($_GET['id']) ?> 
-		<?php echo $form->HiddenField($model, 'order_id', array('size' => 10, 'maxlength' => 10, 'value' => $_GET['id'], 'disabled' => true)); ?>
+        <?php echo Order::model()->getFolio_($_GET['id']) ?> 
+		<?php //echo $form->HiddenField($model, 'order_id', array('size' => 10, 'maxlength' => 10, 'value' => $_GET['id'], 'disabled' => true)); ?>
 		<?php echo $form->error($model,'order_id'); ?>
 	</div>
  <br>
 	<div class="row">
-            
-            
-           
-            
 		<?php echo $form->labelEx($model,'activity_guarantee_id'); ?>
-                 <?php  echo $form->dropDownList($model, 'activity_guarantee_id', Chtml::listData(
-                  ActivityGuarantee::model()->findAll('active=1'), 'id', 'description'), array('prompt' => 'Seleccionar una actividad'));?>
+        <?php  echo $form->dropDownList($model, 'activity_guarantee_id', Chtml::listData(
+        	ActivityGuarantee::model()->findAll('active=1'), 'id', 'description'), array('prompt' => 'Seleccionar una actividad'));?>
 		<?php // echo $form->textField($model,'activity_guarantee_id',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'activity_guarantee_id'); ?>
+		<?php echo CHtml::Button('Agregar +', array('id' => 'agregar', 'name' => 'agregar', 'onclick' => 'send();')); ?>
 	</div>
- <br>
-	<div class="row">
-		<?php echo $form->labelEx($model,'technician_user_id'); ?>
-                <?php echo $form->dropDownList($model, 'technician_user_id', CHtml::listData(User::model()->findAll(array('with'=>array('roles'), 'condition'=>'t.active=1')),'id','name')
-                        ); ?>
-		<?php // echo $form->textField($model,'technician_user_id',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'technician_user_id'); ?>
-	</div>
-<br>
 	<div class="row">
 		<?php echo $form->labelEx($model,'date_hour'); ?>
-            
-                <?
-                Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
-                $this->widget('CJuiDateTimePicker', array(
-                    'model'=>$model,
-                    'attribute'=>'date_hour',
-                    'mode'=>'datetime',
-                    'options'=>array(
-                        'dateFormat'=>'yy-mm-dd',
-                        'timeFormat'=>'hh:mm:ss',
-                        'pickerTimeFormat'=>'hh:mm:ss',
-                        'showSecond'=>true,                       
-                    ),
-                    
-                )); ?>
-		<?php // echo $form->textField($model,'date_hour'); ?>
+		<?php $this->widget('CJuiDateTimePicker',array(
+			'model'=>$model,
+			'attribute'=>'date_hour',
+			'options'=>array(
+				'dateFormat'=>'yy-mm-dd',
+				'timeFormat'=>'hh:mm:ss',
+				'pickerTimeFormat'=>'hh:mm:ss',
+				'showSecond'=>true,
+			)
+		)); ?>
 		<?php echo $form->error($model,'date_hour'); ?>
+		
 	</div>
 <br>
         <div id="row">
@@ -75,16 +103,62 @@
             <?php echo $form->error($model, 'observation'); ?>
         </div>
 <br>
-        <div>
-             <?php echo $form->labelEx($model,'active'); ?>
-             <?php echo $form->checkBox($model,'active',array('value' => 1, 'uncheckValue' => 0)); ?>
-             <?php echo $form->error($model, 'active'); ?> 
-        </div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
-	</div>
+	<div>
+        <?php echo $form->labelEx($model,'active'); ?>
+        <?php echo $form->checkBox($model,'active',array('value' => 1, 'uncheckValue' => 0)); ?>
+        <?php echo $form->error($model, 'active'); ?> 
+    </div>
+<br>
+    <div class="row">
+        <?php echo $form->labelEx($model, 'finished'); ?>
+        <?php echo $form->checkBox($model, 'finished', array('value' => 1, 'uncheckValue' => 0)); ?>
+        <?php echo $form->error($model, 'finished'); ?>
+    </div>
+<br>
+    <div class="row">
+        <?php echo CHtml::submitButton('Guardar', array('id' => 'guardar', 'name' => 'guardar', /*'onclick' => 'sendUpdate();'*/)); ?>
+    </div>
 
 <?php $this->endWidget(); ?>
+
+<div class="row">
+
+	<div style="text-align:center; margin: 15px 0 -30px 0"><h5>Actividades realizadas</h5></div>
+
+	<?php
+	$this->widget('zii.widgets.grid.CGridView', array(
+		'id' => 'activity-guarantee-grid',
+		'dataProvider' => new CActiveDataProvider('BlogGuarantee', array(
+			'criteria' => array(
+				'condition' => 'order_id=:order_id',
+				'params' => array(
+					':order_id' => $model->order_id,
+					),
+				),
+			)),
+		'columns' => array(
+			'id',
+			//'order_id',
+			array(
+				'name' => 'Folio',
+				'value' => Order::model()->getFolio_($_GET['id']),
+			),
+			'activityGuarantee.description',
+			'technicianUser.user',
+			'date_hour',
+			'observation',
+			array(
+				'class' => 'CButtonColumn',
+				'template' => '{delete}',
+				'buttons' => array(
+					'delete' => array(
+						'url' => 'CController::createUrl("/blogGuarantee/deleteBlogGuarantee",array("id"=>$data->id))',
+						)
+					),
+				),
+			),
+		));
+		?>
+	</div>
 
 </div><!-- form -->

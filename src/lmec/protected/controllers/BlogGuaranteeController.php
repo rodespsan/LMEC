@@ -34,7 +34,7 @@ class BlogGuaranteeController extends Controller {
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete', 'activate'),
+                'actions' => array('admin', 'delete', 'activate', 'updateAjax', 'createBlogGuarantee', 'deleteBlogGuarantee'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -66,17 +66,25 @@ class BlogGuaranteeController extends Controller {
         $model = new BlogGuarantee;
         $model->technician_user_id = Yii::app()->user->id;
         $model->date_hour = date('Y-m-d H:i:s');
+        $model->order_id = $modelOrder->id;
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['BlogGuarantee'])) {
             $model->order_id = $id;
-//                        $model->date_hour = date('Y-m-d H:i:s');
+            $model->observation = $_POST['BlogGuarantee']['observation'];
             $model->attributes = $_POST['BlogGuarantee'];
 
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            if ($model->save()) {
+
+                if ($model->finished == 1) {
+                    $modelOrder->status_order_id = 8;
+                    $modelOrder->save();
+                    //$this->redirect(array('viewDiagnostic','id'=>$modelDiagnostic->id));
+                    $this->redirect(array('view', 'id' => $model->id));
+                }
+            }
         }
 
         $this->render('create', array(
@@ -98,6 +106,7 @@ class BlogGuaranteeController extends Controller {
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['BlogGuarantee'])) {
+            $model->observation = $_POST['BlogGuarantee']['observation'];
             $model->attributes = $_POST['BlogGuarantee'];
 
             if ($model->save())
@@ -202,6 +211,22 @@ class BlogGuaranteeController extends Controller {
                 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
         } else
             throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
+    }
+
+    public function actionCreateBlogGuarantee($id){
+        $blog = new BlogGuarantee();
+        if($_POST['BlogGuarantee']){
+            $blog->observation = $_POST['BlogGuarantee']['observation'];
+            $blog->finished = $_POST['BlogGuarantee']['finished'];
+            $blog->attributes = $_POST['BlogGuarantee'];
+            $blog->technician_user_id = Yii::app()->user->id;
+            $blog->order_id = $id;
+            $blog->save();
+        }
+    }
+
+    public function actionDeleteBlogGuarantee($id){
+        BlogGuarantee::model()->findByPk($id)->delete();
     }
 
 }

@@ -17,6 +17,8 @@
  */
 class BlogGuarantee extends CActiveRecord {
 
+    public $finished;
+
     /**
      * @return string the associated database table name
      */
@@ -31,12 +33,15 @@ class BlogGuarantee extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('activity_guarantee_id, technician_user_id, date_hour, observation', 'required'),
-            array('order_id, activity_guarantee_id, technician_user_id', 'length', 'max' => 10),
-            array('active', 'numerical', 'integerOnly' => true),
+            array('activity_guarantee_id, technician_user_id, date_hour', 'required'),
+            array('activity_guarantee_id, technician_user_id', 'length', 'max' => 10),
+            array('active', 'numerical', 'integerOnly'=>true),
+            array('finished', 'numerical', 'integerOnly' => true),
+            array('finished', 'safe'),
+            array('order_id', 'exist', 'className'=>'Order', 'attributeName'=>'id'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, order_id, activity_guarantee_id, technician_user_id, date_hour', 'safe', 'on' => 'search'),
+            array('id, order_id, activity_guarantee_id, technician_user_id, date_hour, observation, active', 'safe', 'on' => 'search'),
         );
     }
 
@@ -65,6 +70,7 @@ class BlogGuarantee extends CActiveRecord {
             'date_hour' => 'Fecha y Hora',
             'observation' => 'Observación',
             'active' => 'Activo',
+            'finished' => 'Finalizado'
         );
     }
 
