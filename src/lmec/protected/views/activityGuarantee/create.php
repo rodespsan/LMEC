@@ -15,4 +15,17 @@ $this->menu=array(
 
 <h1>Actividad de Garantía</h1>
 
+<?php
+
+$flashMessages = Yii::app()->user->getFlashes();
+if ($flashMessages) {
+    echo '<ul class="flashes" style="text-align: left; ">';
+    foreach ($flashMessages as $key => $message) {
+        echo '<li style="list-style:none;"><b><div class="flash-' . $key . '">' . $message . "</div><b></li>\n";
+    }
+    echo '</ul>';
+}
+
+?>
+
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

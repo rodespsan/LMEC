@@ -14,6 +14,7 @@
  */
 class ActivityGuarantee extends CActiveRecord
 {
+	public $finished;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -32,6 +33,7 @@ class ActivityGuarantee extends CActiveRecord
 		return array(
 			array('description', 'required'),
 			array('active', 'numerical', 'integerOnly'=>true),
+			//array('finished', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, description, active', 'safe', 'on'=>'search'),
@@ -60,6 +62,7 @@ class ActivityGuarantee extends CActiveRecord
 			'id' => 'ID',
 			'description' => 'Nombre',
 			'active' => 'Activo',
+			'finished' => 'Finalizado'
 		);
 	}
 
