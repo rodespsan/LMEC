@@ -3,19 +3,19 @@
 /* @var $model StatusOrder */
 
 $this->breadcrumbs=array(
-	'Status Orders'=>array('index'),
+	'Estados de Orden'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	'Actualizar',
 );
 
 $this->menu=array(
-	array('label'=>'List StatusOrder', 'url'=>array('index')),
-	array('label'=>'Create StatusOrder', 'url'=>array('create')),
-	array('label'=>'View StatusOrder', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage StatusOrder', 'url'=>array('admin')),
+	array('label'=>'Listar Estados de la Orden', 'url'=>array('index')),
+	array('label'=>'Crear Estado de la Orden', 'url'=>array('create')),
+	array('label'=>'Ver Estado de la Orden', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Estados de la Orden', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update StatusOrder <?php echo $model->id; ?></h1>
+<h1>Actualizar Estado de la Orden <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

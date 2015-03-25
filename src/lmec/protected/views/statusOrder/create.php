@@ -3,16 +3,16 @@
 /* @var $model StatusOrder */
 
 $this->breadcrumbs=array(
-	'Status Orders'=>array('index'),
-	'Create',
+	'Estados de la Orden'=>array('index'),
+	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'List StatusOrder', 'url'=>array('index')),
-	array('label'=>'Manage StatusOrder', 'url'=>array('admin')),
+	array('label'=>'Listar Estados de la Orden', 'url'=>array('index')),
+	array('label'=>'Administrar Estados de la Orden', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create StatusOrder</h1>
+<h1>Crear Estado de la Orden</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

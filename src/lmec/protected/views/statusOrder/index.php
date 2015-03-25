@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Status Orders',
+	'Estados de la Orden',
 );
 
 $this->menu=array(
-	array('label'=>'Create StatusOrder', 'url'=>array('create')),
-	array('label'=>'Manage StatusOrder', 'url'=>array('admin')),
+	array('label'=>'Crear Estado de la Orden', 'url'=>array('create')),
+	array('label'=>'Administrar Estados de la Orden', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Status Orders</h1>
+<h1>Estados de la Orden</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

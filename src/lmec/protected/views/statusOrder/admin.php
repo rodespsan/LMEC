@@ -3,13 +3,13 @@
 /* @var $model StatusOrder */
 
 $this->breadcrumbs=array(
-	'Status Orders'=>array('index'),
-	'Manage',
+	'Estados de la Orden'=>array('index'),
+	'Administrar',
 );
 
 $this->menu=array(
-	array('label'=>'List StatusOrder', 'url'=>array('index')),
-	array('label'=>'Create StatusOrder', 'url'=>array('create')),
+	array('label'=>'Listar Estados de la Orden', 'url'=>array('index')),
+	array('label'=>'Crear Estado de la Orden', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,11 +26,11 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Status Orders</h1>
+<h1>Administrar Estados de la Orden</h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+o <b>=</b>) al comienzo de cada uno de los valores de su búsqueda para especificar cómo la comparación se debe hacer.
 </p>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
@@ -50,6 +50,24 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'active',
 		array(
 			'class'=>'CButtonColumn',
+			'template'=>"{update}{view}{delete}{activate}",
+        	'deleteConfirmation' => '¿Está seguro que desea desactivar la refacción?',
+        	'buttons' => array(
+        		'activate'=>array(
+        			'label'=>'Activar',
+                	'url'=>'Yii::app()->createUrl("statusOrder/activate", array("id"=>$data->id))',
+                	'imageUrl'=>Yii::app()->request->baseUrl.'/images/active.png',
+                	'visible'=>'$data->active == 0',
+                	'click'=>'function(){
+                		return confirm(\'¿Esta seguro que desea activar la refacción?\');
+                    	}',
+            	),                            
+            	'delete'=>array(
+            		'label'=>'Desactivar',
+            		'imageUrl'=>Yii::app()->request->baseUrl.'/images/deactive.png',
+            		'visible'=>'$data->active == 1',
+            	),
+        	),
 		),
 	),
 )); ?>
