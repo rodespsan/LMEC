@@ -12,9 +12,10 @@ $this->menu=array(
 	array('label'=>'Crear refacción', 'url'=>array('create')),
 	array('label'=>'Listar estados de refacción', 'url'=>array('sparePartsStatus/index')),
 	array('label'=>'Crear estado de refacción', 'url'=>array('sparePartsStatus/create')),
-	array('label'=>'Listar tipo de refacción', 'url'=>array('sparePartsType/index')),
+	array('label'=>'Listar tipos de refacción', 'url'=>array('sparePartsType/index')),
 	array('label'=>'Crear tipo de refacción', 'url'=>array('sparePartsType/create')),
 	array('label'=>'Administrar estados de refacción', 'url'=>array('sparePartsStatus/admin')),
+	array('label'=>'Administrar tipos de refacción', 'url'=>array('sparePartsType/admin')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -102,7 +103,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
             	array('class'=>'change-pagesize')
          	),
         	'template'=>"{update}{view}{delete}{activate}",
-        	'deleteConfirmation' => '¿Esta seguro que desea desactivar la refacción?',
+        	'deleteConfirmation' => '¿Está seguro que desea desactivar la refacción?',
         	'buttons' => array(
         		'activate'=>array(
         			'label'=>'Activar',
@@ -114,9 +115,9 @@ $this->widget('zii.widgets.grid.CGridView', array(
                     	}',
             	),                            
             	'delete'=>array(
-            		'visible'=>'$data->active == 1',
             		'label'=>'Desactivar',
             		'imageUrl'=>Yii::app()->request->baseUrl.'/images/deactive.png',
+            		'visible'=>'$data->active == 1',
             	),
         	),
     	),

@@ -51,6 +51,24 @@ o <b>=</b>) al principio de cada uno de los valores de busqueda, para especifica
 		'spare_parts_id',
 		array(
 			'class'=>'CButtonColumn',
+        	'template'=>"{update}{view}{delete}{activate}",
+        	'deleteConfirmation' => '¿Está seguro que desea desactivar la refacción?',
+        	'buttons' => array(
+        		'activate'=>array(
+        			'label'=>'Activar',
+                	'url'=>'Yii::app()->createUrl("sparePartsOrder/activate", array("id"=>$data->id))',
+                	'imageUrl'=>Yii::app()->request->baseUrl.'/images/active.png',
+                	'visible'=>'$data->active == 0',
+                	'click'=>'function(){
+                		return confirm(\'¿Esta seguro que desea activar la refacción?\');
+                    	}',
+            	),                            
+            	'delete'=>array(
+            		'label'=>'Desactivar',
+            		'imageUrl'=>Yii::app()->request->baseUrl.'/images/deactive.png',
+            		'visible'=>'$data->active == 1',
+            	),
+        	),
 		),
 	),
 )); ?>

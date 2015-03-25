@@ -71,7 +71,25 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 					'onchange'=>"$.fn.yiiGridView.update('quotation-order-grid',{ data:{ pageSize: $(this).val() }})",
 				)
                                 
-                          ),
+             ),
+			'template'=>"{update}{view}{delete}{activate}",
+        	'deleteConfirmation' => '¿Está seguro que desea desactivar la refacción?',
+        	'buttons' => array(
+        		'activate'=>array(
+        			'label'=>'Activar',
+                	'url'=>'Yii::app()->createUrl("spareParts/activate", array("id"=>$data->id))',
+                	'imageUrl'=>Yii::app()->request->baseUrl.'/images/active.png',
+                	'visible'=>'$data->active == 0',
+                	'click'=>'function(){
+                		return confirm(\'¿Esta seguro que desea activar la refacción?\');
+                    	}',
+            	),                            
+            	'delete'=>array(
+            		'label'=>'Desactivar',
+            		'imageUrl'=>Yii::app()->request->baseUrl.'/images/deactive.png',
+            		'visible'=>'$data->active == 1',
+            	),
+        	),
 //			
 		),
 	),
