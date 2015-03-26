@@ -650,8 +650,6 @@ CREATE TABLE IF NOT EXISTS `tbl_out_order` (
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `order_id` (`order_id`),
-  UNIQUE KEY `order_id_2` (`order_id`),
-  UNIQUE KEY `order_id_3` (`order_id`),
   KEY `fk_tbl_out_order_tbl_order_idx` (`order_id`),
   KEY `fk_tbl_out_order_tbl_user_idx` (`user_id`),
   KEY `contact_id` (`contact_id`)
