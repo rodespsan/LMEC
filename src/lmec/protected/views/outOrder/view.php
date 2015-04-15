@@ -89,26 +89,21 @@ function unorderedWorks($items)
 )); ?>
 
 <br>
+<br>
 <h1>Historial de la orden </h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		array(
-			'label' => 'Técnico',
-			//'value' => $model->order->folio,
-		),
-		array(
-			'label' => 'Actividad',
-			//'value' => $model->user->name,
-		),
-		array(
-			'label'=>'Fecha',
-			//'value'=> unorderedList(CHtml::listData($model->order->accessories,'id','name')),
-		),
-		array(
-			'label'=>'Hora',
-			//'value'=> $model->lastService->service->name,
-		),
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'blog-order-grid',
+	'dataProvider'=>new CActiveDataProvider('BlogOrder',array(
+		'criteria'=>array(
+			'condition' => 'order_id = :order_id',
+			'params' => array(
+				':order_id' => $model->order_id
+			),
+		)
+	)),
+	'columns'=>array(
+		'activity',
+		'userTechnical.fullName',
+		'date_hour',
 	),
 )); ?>
