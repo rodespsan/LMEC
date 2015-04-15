@@ -99,8 +99,14 @@ class BlogGuaranteeController extends Controller {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
-        $model = $this->loadModel($id);
+        $modelOrder = Order::model()->findByPk($id);
+        if($modelOrder === null)
+            throw new CHttpException(404,'La Orden solicitada no existe.');
 
+        $model = new BlogGuarantee;
+        $model->technician_user_id = Yii::app()->user->id;
+        $model->date_hour = date('Y-m-d H:i:s');
+        $model->order_id = $modelOrder->id;
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
@@ -227,6 +233,27 @@ class BlogGuaranteeController extends Controller {
 
     public function actionDeleteBlogGuarantee($id){
         BlogGuarantee::model()->findByPk($id)->delete();
+    }
+
+    public function actionUpdateAjax($id) {
+
+        $modelRepair = Repair::model()->find('order_id=:order_id', array(
+            ':order_id' => $id,
+        ));
+
+        if (empty($modelRepair)) {
+            $modelRepair = new Repair();
+            $modelRepair->order_id = $id;
+        }
+
+        if (isset($_POST['BlogGuarantee'])) {
+            $modelRepair->attributes = $_POST['BlogGuarantee'];
+            $modelRepair->save();
+
+            if ($modelRepair->finished == 1) {
+                $this->redirect(array('view', 'id' => $modelRepair->id));
+            }
+        }
     }
 
 }

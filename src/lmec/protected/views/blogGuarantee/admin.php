@@ -58,8 +58,8 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 		'activity_guarantee_id',
 		'technician_user_id',
 		'date_hour',
-                'observation',
-                array(
+        'observation',
+        array(
 			'name' => 'active',
 			'value'=>'BlogGuarantee::getActive($data->active)',
 			'filter' => array('1'=>'Si','0'=>'No'),
@@ -80,7 +80,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 			'deleteConfirmation'=> '¿Está seguro que desea desactivar esta bitácora?',
 
 			'buttons' => array(
-
+				
 				'activate'=>array(
 					'label'=>'Activar',
                     'url'=>'Yii::app()->createUrl("BlogGuarantee/activate", array("id"=>$data->id))',
@@ -95,8 +95,8 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 									success:function(data){
 										$.fn.yiiGridView.update('blog-guarantee-grid');
 									},
-									});
-									return false;
+								});
+								return false;
 							}",
 					'visible'=>'$data->active == 0',
 				),
@@ -104,6 +104,9 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 					'label'=>'Desactivar',
 					'imageUrl'=>Yii::app()->request->baseUrl.'/images/deactive.png',
 					'visible'=>'$data->active == 1',
+				),
+				'update'=>array(
+					'url'=>'Yii::app()->createUrl("BlogGuarantee/update", array("id"=>$data->order_id))',
 				),
 			),
 		),

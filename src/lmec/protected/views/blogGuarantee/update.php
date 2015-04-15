@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Blog Guarantees'=>array('index'),
-	$model->order->Folio=>array('view','id'=>$model->id),
+	//$model->order->Folio=>array('view','id'=>$model->id),
 	'Update',
 );
 
