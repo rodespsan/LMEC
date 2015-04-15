@@ -486,5 +486,12 @@ class Order extends CActiveRecord {
 		}	
 	}
 
-
+    public function getStatus_ready_order($id) {
+        $model = Order::model()->findByPk($id);
+        if ($model->status_order_id == 13) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

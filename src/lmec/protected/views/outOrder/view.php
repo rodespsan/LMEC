@@ -38,7 +38,7 @@ function unorderedWorks($items)
 }
 ?>
 
-<h1>Salida de Orden <?php echo $model->order_id; ?></h1>
+<h1>Orden: <?php echo $model->order->folio; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -85,5 +85,30 @@ function unorderedWorks($items)
 		'total_price',
 		'order.advance_payment',
 		'name_receive_equipment',
+	),
+)); ?>
+
+<br>
+<h1>Historial de la orden </h1>
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		array(
+			'label' => 'Técnico',
+			//'value' => $model->order->folio,
+		),
+		array(
+			'label' => 'Actividad',
+			//'value' => $model->user->name,
+		),
+		array(
+			'label'=>'Fecha',
+			//'value'=> unorderedList(CHtml::listData($model->order->accessories,'id','name')),
+		),
+		array(
+			'label'=>'Hora',
+			//'value'=> $model->lastService->service->name,
+		),
 	),
 )); ?>

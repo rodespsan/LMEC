@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	//array('label'=>'Crear salida', 'url'=>array('create')),
+	//array('label'=>'Crear salida', 'url'=>array('create',)),
 	array('label'=>'Administrar salidas', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Salida de ordenes</h1>
+<h1>Órdenes de Salida</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

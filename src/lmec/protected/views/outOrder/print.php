@@ -117,6 +117,22 @@
 				<td class="ths"></td>
 			</tr>
 			<?php } ?>
+			<tr class="tr1">
+				<td class="ths"></td>
+				<td class="ths"></td>
+				<td class="ths">Total </td>
+				<td class="ths"></td>
+				<td class="ths_3"><?php echo CHtml::encode($model->total_price); ?></td>
+			</tr>
+			<?php if($model->order->advance_payment != null){ ?>
+			<tr class="tr1">
+				<td class="ths"></td>
+				<td class="ths"></td>
+				<td class="ths">Pago Adelantado </td>
+				<td class="ths"></td>
+				<td class="ths_3"><?php echo CHtml::encode($model->order->advance_payment); ?></td>
+			</tr>
+			<?php } ?>
 			<tr class="tr2">
 				<td class="ths"></td>
 				<td class="ths"></td>
@@ -126,10 +142,9 @@
 			</tr>
 			<tr class="tr1">
 				<th colspan="3"></th>
-				<td class= "td_u">Total:</td>
+				<td class= "td_u">Saldo:</td>
 				<td class= "tdu">
-				<?php  ?>
-				<?php echo Chtml::encode($model->order->serviceOrder->price); ?></td>
+				<?php echo CHtml::encode($model->getDebit()); ?></td>
 			</tr>
 		</table>
 	</div>
