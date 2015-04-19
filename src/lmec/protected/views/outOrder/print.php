@@ -80,7 +80,8 @@
 			<tr class="tr1">
 				<td class="ths2">
 					<?php for ($i = 1; $i <= count($model->order->spareParts); $i++) {
-									echo "1 <br>";
+									echo CHtml::encode("1").'<br>';
+									//echo count($model->order->spareParts);
 								} ?>
 				</td>
 				<td class="ths2">
@@ -120,15 +121,15 @@
 			<tr class="tr1">
 				<td class="ths"></td>
 				<td class="ths"></td>
-				<td class="ths">Total </td>
+				<td class="ths"><b>Subtotal</b> </td>
 				<td class="ths"></td>
-				<td class="ths_3"><?php echo CHtml::encode($model->total_price); ?></td>
+				<td class="ths_3"><?php echo '<b>'.CHtml::encode($model->total_price).'</b>'; ?></td>
 			</tr>
 			<?php if($model->order->advance_payment != null){ ?>
 			<tr class="tr1">
 				<td class="ths"></td>
 				<td class="ths"></td>
-				<td class="ths">Pago Adelantado </td>
+				<td class="ths">Anticipo </td>
 				<td class="ths"></td>
 				<td class="ths_3"><?php echo CHtml::encode($model->order->advance_payment); ?></td>
 			</tr>
@@ -142,9 +143,9 @@
 			</tr>
 			<tr class="tr1">
 				<th colspan="3"></th>
-				<td class= "td_u">Saldo:</td>
+				<td class= "td_u"><b>Total:</b></td>
 				<td class= "tdu">
-				<?php echo CHtml::encode($model->getDebit()); ?></td>
+				<?php echo '<b>'.CHtml::encode($model->getDebit()).'<b>'; ?></td>
 			</tr>
 		</table>
 	</div>

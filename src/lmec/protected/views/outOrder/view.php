@@ -93,6 +93,7 @@ function unorderedWorks($items)
 <h1>Historial de la orden </h1>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'blog-order-grid',
+	'template'=>'{items}{pager}',
 	'dataProvider'=>new CActiveDataProvider('BlogOrder',array(
 		'criteria'=>array(
 			'condition' => 'order_id = :order_id',
