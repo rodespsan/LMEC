@@ -145,15 +145,16 @@ class BlogGuaranteeController extends Controller {
     /**
      * Lists all models.
      */
-    public function actionIndex() {
+    public function actionIndex($id) {
         
         $dataProvider = new CActiveDataProvider('BlogGuarantee', array(
-            'criteria' => array('condition' => 'active=1'),
+            'criteria' => array('condition' => 'active=1 AND order_id='.$id),
             'pagination' => array('pageSize' => 20),
         ));
 
         $this->render('index', array(
             'dataProvider' => $dataProvider,
+            'model' => $this->loadOrder($id),
         ));
     }
 
@@ -190,6 +191,13 @@ class BlogGuaranteeController extends Controller {
      */
     public function loadModel($id) {
         $model = BlogGuarantee::model()->findByPk($id);
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+        return $model;
+    }
+
+    public function loadOrder($id) {
+        $model = Order::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;

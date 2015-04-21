@@ -8,7 +8,7 @@ $this->breadcrumbs = array(
 );
 
 $this->menu = array(
-    array('label' => 'Listar Bitácora de Garantía', 'url' => array('index')),
+    array('label' => 'Listar Bitácora de Garantía', 'url' => array('index', 'id' => $model->order_id)),
 //	array('label'=>'Create BlogGuarantee', 'url'=>array('create')),
     array('label' => 'Actualizar Bitácora de Garantía', 'url' => array('update', 'id' => $model->order_id)),
     array('label' => 'Desactivar Bitácora de Garantía', 'url' => '#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->id), 'confirm' => '¿Esta seguro que desea desactivar esta bitácora?'), 'visible' => $model->active == 1),

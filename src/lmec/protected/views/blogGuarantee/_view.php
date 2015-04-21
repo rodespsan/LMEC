@@ -14,11 +14,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('activity_guarantee_id')); ?>:</b>
-	<?php echo CHtml::encode($data->activity_guarantee_id); ?>
+	<?php echo CHtml::encode($data->activityGuarantee->description); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('technician_user_id')); ?>:</b>
-	<?php echo CHtml::encode($data->technician_user_id); ?>
+	<?php echo CHtml::encode($data->technicianUser->name." ".$data->technicianUser->last_name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date_hour')); ?>:</b>

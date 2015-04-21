@@ -7,10 +7,10 @@ $this->breadcrumbs=array(
 	'Administrar',
 );
 
-$this->menu=array(
+/*$this->menu=array(
 	array('label'=>'Listar Bitácoras de Garantías', 'url'=>array('index')),
 	//array('label'=>'Create BlogGuarantee', 'url'=>array('create')),
-);
+);*/
 
 //Yii::app()->clientScript->registerScript('search', "
 //$('.search-button').click(function(){
@@ -55,8 +55,14 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
                     'name'=>'order_id',
                     'value' => '$data->order->Folio',
                 ),
-		'activity_guarantee_id',
-		'technician_user_id',
+		array(
+			'name' => 'activity_guarantee_id',
+			'value' => '$data->activityGuarantee->description',
+		),
+		array(
+			'name' => 'technician_user_id',
+			'value' => '$data->technicianUser->name." ".$data->technicianUser->last_name',
+		),
 		'date_hour',
         'observation',
         array(
