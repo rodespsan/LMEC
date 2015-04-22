@@ -29,7 +29,7 @@
 			$('#addSparePart').click(function(){
 				if ($('#spare_parts_id option:selected').val()) {
 					$('#SparePartsOrder_spareParts').append(
-					$('#spare_parts_id option:selected').clone()
+						$('#spare_parts_id option:selected').remove()
 					);
 				}
 			});
