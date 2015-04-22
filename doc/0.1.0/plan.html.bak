@@ -27,7 +27,8 @@
               <tr>
                 <th>Ventana del Proyecto:</th>
                 <td><span style="color: rgb(0, 0, 0); font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">27/06/2012
-                    al 14/07/2015</span> </td>
+                    al 22/08/2014</span>
+                </td>
               </tr>
               <tr>
                 <th>Documentos Adjuntos:</th>
@@ -38,8 +39,8 @@
                 <th>Documentos Relacionados:</th>
                 <td>
                   <div><a href="proposal.html">Propuesta del proyecto</a><a href="target-and-benefits.html"></a></div>
-                  <a href="target-and-benefits.html"> </a><a href="target-and-benefits.html">
-                  </a></td>
+                  <a href="target-and-benefits.html">
+                  </a><a href="target-and-benefits.html"> </a></td>
               </tr>
             </tbody>
           </table>
@@ -49,10 +50,12 @@
           <p><span style="color: rgb(0, 0, 0); font-family: Verdana,Helvetica,Arial,sans-serif; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Se
               realizará un sistema para el control de órdenes de servicio del
               laboratorio de mantenimiento y equipo de cómputo, que le de un
-              mejor seguimiento a las órdenes de servicio, este sistema será
-              web, en una arquitectura cliente servidor para que multiples
-              usuarios tengan acceso al mismo tiempo con los diferentes roles de
-              usuario.</span></p>
+              mejor
+              seguimiento a las órdenes de servicio, este sistema será web, en
+              una
+              arquitectura cliente servidor para que multiples usuarios tengan
+              acceso
+              al mismo tiempo con los diferentes roles de usuario.</span></p>
         </div>
         <div id="methodology">
           <h3>Resumen de la Metodología</h3>
@@ -90,7 +93,8 @@
                 <td>Código fuente<br>
                 </td>
                 <td>Código fuente de la aplicación web con las características
-                  establecidas para la versión 0.1.0 </td>
+                  establecidas para la versión 0.1.0
+                </td>
                 <td>14/05/2015<br>
                 </td>
               </tr>
@@ -120,7 +124,8 @@
                 <td>Código fuente<br>
                 </td>
                 <td>Código fuente de la aplicación web con las características
-                  establecidas para la versión 0.2.0 </td>
+                  establecidas para la versión 0.2.0
+                </td>
                 <td><span style="vertical-align: top;">14/05/2015</span><br>
                 </td>
               </tr>
@@ -159,7 +164,8 @@
                 <td>Código fuente<br>
                 </td>
                 <td>Código fuente de la aplicación web con las características
-                  establecidas para la versión 0.3.0 </td>
+                  establecidas para la versión 0.3.0
+                </td>
                 <td><span style="vertical-align: top;">14/05/2015</span><br>
                 </td>
               </tr>
@@ -198,7 +204,8 @@
                 <td>Código fuente<br>
                 </td>
                 <td>Código fuente de la aplicación web con las características
-                  establecidas para la versión 0.4.0 </td>
+                  establecidas para la versión 0.4.0
+                </td>
                 <td>15/06/2015<br>
                 </td>
               </tr>
@@ -235,7 +242,8 @@
                 <td>Código fuente<br>
                 </td>
                 <td>Código fuente de la aplicación web con las características
-                  establecidas para la versión 0.5.0 </td>
+                  establecidas para la versión 0.5.0
+                </td>
                 <td>01/06/2015<br>
                 </td>
               </tr>
@@ -272,7 +280,8 @@
                 <td>Código fuente<br>
                 </td>
                 <td>Código fuente de la aplicación web con las características
-                  establecidas para la versión 0.6.0 </td>
+                  establecidas para la versión 0.6.0
+                </td>
                 <td>14/07/2015<br>
                 </td>
               </tr>
@@ -302,7 +311,8 @@
       <div class="legal1">Company Proprietary</div>
       <div class="footnote"> Copyright © 2003-2004 Jason Robbins. All rights
         reserved. <a href="readyset-license.html">License terms</a>. Retain
-        this copyright statement whenever this file is used as a template. </div>
+        this copyright statement whenever this file is used as a template.
+      </div>
       <div style="font-weight: bold;" class="footnote">F-FMAT-CTIC-72 / REV:00</div>
     </div>
   </body>
