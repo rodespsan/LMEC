@@ -825,7 +825,8 @@ CREATE TABLE IF NOT EXISTS `tbl_spare_parts_status` (
 INSERT INTO `tbl_spare_parts_status` (`id`, `description`, `active`) VALUES
 (1, 'En stock', 1),
 (2, 'Dañada', 1),
-(3, 'Caduca', 1);
+(3, 'Caduca', 1),
+(4, 'Asignada', 1);
 
 -- --------------------------------------------------------
 
