@@ -114,6 +114,10 @@
 				'id'=> 'removeSparePart'
 			)
 		); ?>
+		
+		<div class="row">
+			<?php echo CHtml::encode('Número de Serie'); ?>
+		</div>
 	
 		<div>
 

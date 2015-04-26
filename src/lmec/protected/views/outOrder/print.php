@@ -24,14 +24,12 @@
 		<table height="560px" cellspacing="0" cellpadding="0"   class= "table3" >
 			<tr class ="tr1">
 				<th class= "amount">CANT.</th>
-				<th class="code">CÓDIGO</th>
 				<th class="description">DESCRIPCIÓN</th>
 				<th class="prices" >P.UNITARIO</th>
 				<th class= "prices" >IMPORTE</th>
 			</tr>
 			<tr class="tr1">
 				<td class='amount' > </td>
-				<td class='code' class="tds"> </td>
 				<td class="description"> 
 					<p>
 						Concepto del trabajo realizado<br>
@@ -59,13 +57,11 @@
 			</tr>
 			<tr class="tr1">
 				<td class="ths2"> 1 </td>
-				<td class="ths2"><?php echo CHtml::encode($model->lastService->service->code);?></td>
 				<td class="ths">Servicio: <?php echo CHtml::encode($model->lastService->service->name);?></td>
 				<td class="ths_3"><?php echo CHtml::encode($model->lastService->service->price); ?></td>
 				<td class="ths_3"><?php echo CHtml::encode($model->lastService->service->price); ?></td>
 			</tr>
 			<tr class="tr1">
-				<td class="ths2"></td>
 				<td class="ths2"></td>
 				<td class="ths">
 					Trabajo Realizado: 
@@ -84,15 +80,10 @@
 									//echo count($model->order->spareParts);
 								} ?>
 				</td>
-				<td class="ths2">
-					<?php foreach ($model->order->spareParts as $spare) { ?>
-									<?php echo CHtml::encode($spare->spare_parts_type_id); ?> </br>
-								<?php } ?>
-				</td>
 				<td class="ths">
 					Refacciones: 
 						<?php foreach ($model->order->spareParts as $spare) { ?>
-									<li><?php echo CHtml::encode($spare->name); ?> </li>
+									<li><?php echo CHtml::encode($spare->name).' N/S:'.CHtml::encode($spare->serial_number); ?> </li>
 								<?php } ?>
 				</td>
 				<td class="ths_3">
@@ -110,7 +101,6 @@
 			<?php if($model->observation != null){ ?>
 			<tr class="tr1">
 				<td class="ths"></td>
-				<td class="ths"></td>
 				<td class="ths">
 					Observación: <?php echo CHtml::encode($model->observation); ?>
 				</td>
@@ -120,14 +110,12 @@
 			<?php } ?>
 			<tr class="tr1">
 				<td class="ths"></td>
-				<td class="ths"></td>
 				<td class="ths"><b>Subtotal</b> </td>
 				<td class="ths"></td>
 				<td class="ths_3"><?php echo '<b>'.CHtml::encode($model->total_price).'</b>'; ?></td>
 			</tr>
 			<?php if($model->order->advance_payment != null){ ?>
 			<tr class="tr1">
-				<td class="ths"></td>
 				<td class="ths"></td>
 				<td class="ths">Anticipo </td>
 				<td class="ths"></td>
@@ -136,13 +124,12 @@
 			<?php } ?>
 			<tr class="tr2">
 				<td class="ths"></td>
-				<td class="ths"></td>
 				<td class="ths"></td>	  
 				<td class="ths"></td>
 				<td class="ths"></td>
 			</tr>
 			<tr class="tr1">
-				<th colspan="3"></th>
+				<th colspan="2"></th>
 				<td class= "td_u"><b>Total:</b></td>
 				<td class= "tdu">
 				<?php echo '<b>'.CHtml::encode($model->getDebit()).'<b>'; ?></td>

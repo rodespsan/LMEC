@@ -24,14 +24,12 @@
 		<table height="560px" cellspacing="0" cellpadding="0"   class= "table3" >
 			<tr class ="tr1">
 				<th class= "amount">CANT.</th>
-				<th class="code">CÓDIGO</th>
 				<th class="description">DESCRIPCIÓN</th>
 				<th class="prices" >P.UNITARIO</th>
 				<th class= "prices" >IMPORTE</th>
 			</tr>
 			<tr class="tr1">
 				<td class='amount' > </td>
-				<td class='code' class="tds"> </td>
 				<td class="description"> 
 					<p>
 						Concepto de entrada<br>
@@ -60,13 +58,11 @@
 			</tr>
 			<tr class="tr1">
 				<td class="ths2"> 1 </td>
-				<td class="ths2"><?php echo CHtml::encode($model->serviceOrder->service->code);?></td>
 				<td class="ths"><?php echo 'Servicio:',CHtml::encode($model->serviceOrder->service->name);?></td>
 				<td class="ths_3"><?php echo CHtml::encode($model->serviceOrder->price); ?></td>
 				<td class="ths_3"><?php echo CHtml::encode( $model->serviceOrder->price); ?></td>
 			</tr>
 			<tr class="tr1">
-				<td class="ths"></td>
 				<td class="ths"></td>
 				<td class="ths"><?php 
 						echo 'Falla: ' ?>
@@ -81,13 +77,12 @@
 			</tr>
 			<tr class="tr2">
 				<td class="ths"></td>
-				<td class="ths"></td>
 				<td class="ths"></td>	  
 				<td class="ths"></td>
 				<td class="ths"></td>
 			</tr>
 			<tr class="tr1">
-				<th colspan="3"></th>
+				<th colspan="2"></th>
 				<td class= "td_u">Total:</td>
 				<td class= "tdu"><?php echo Chtml::encode($model->serviceOrder->price); ?></td>
 			</tr>

@@ -107,3 +107,24 @@ $this->menu=array(
                 'advance_payment',
 	),
 )); ?>
+
+<br>
+<br>
+<h1>Historial de la orden </h1>
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'blog-order-grid',
+	'template'=>'{items}{pager}',
+	'dataProvider'=>new CActiveDataProvider('BlogOrder',array(
+		'criteria'=>array(
+			'condition' => 'order_id = :order_id',
+			'params' => array(
+				':order_id' => $model->id
+			),
+		)
+	)),
+	'columns'=>array(
+		'activity',
+		'userTechnical.fullName',
+		'date_hour',
+	),
+)); ?>

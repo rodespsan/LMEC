@@ -33,17 +33,14 @@ Si lo desea, puede escribir un operador de comparación (<b>&lt;</b>, <b>&lt;=</
 o <b>=</b>) al principio de cada uno de los valores de busqueda, para especificar como se debe realizar la comparación.
 </p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+<?php 
+$pageSize=Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageSize']);
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'spare-parts-order-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'enableSorting' => true,
 	'columns'=>array(
 		'id',
 		'order_id',
@@ -51,6 +48,15 @@ o <b>=</b>) al principio de cada uno de los valores de busqueda, para especifica
 		'spare_parts_id',
 		array(
 			'class'=>'CButtonColumn',
+			'header'=>CHtml::dropDownList(
+				'pageSize',
+				$pageSize,
+				array(10=>10,20=>20,30=>30,40=>40,50=>50),
+				array(
+					'prompt'=>'Paginacion',
+					'onchange'=>"$.fn.yiiGridView.update('out-order-grid',{ data:{ pageSize: $(this).val() }})",
+					)
+			),
         	'template'=>"{update}{view}{delete}{activate}",
         	'deleteConfirmation' => '¿Está seguro que desea desactivar la refacción?',
         	'buttons' => array(
@@ -72,3 +78,10 @@ o <b>=</b>) al principio de cada uno de los valores de busqueda, para especifica
 		),
 	),
 )); ?>
+
+<?php Yii::app()->clientScript->registerScript('initPageSize',<<<EOD
+	$('.change-pageSize').live('change',function(){
+		$.fn.yiiGridView.update('spare-parts-order-grid',{ data:{ pageSize: $(this).val() }} ) 
+		});
+EOD
+	,CClientScript::POS_READY);?>
