@@ -191,6 +191,9 @@ class OrderController extends Controller {
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
 
+        $model->equipment_type_id = $model->modelo->equipment_type_id;
+        $model->brand_id = $model->modelo->brand_id;
+
         $modelFailureDescription = FailureDescription::model()->find('order_id =' . $model->id);
 
         if (!empty($modelFailureDescription)) {
