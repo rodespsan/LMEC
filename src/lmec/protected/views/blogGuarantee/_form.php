@@ -76,7 +76,7 @@ function sendUpdate()
 	<div class="row">
 		<?php echo $form->labelEx($model,'activity_guarantee_id'); ?>
         <?php  echo $form->dropDownList($model, 'activity_guarantee_id', Chtml::listData(
-        	ActivityGuarantee::model()->findAll('active=1'), 'id', 'description'), array('prompt' => 'Seleccionar una actividad'));?>
+        	ActivityGuarantee::model()->findAll('active=1'), 'id', 'description'), array('prompt' => 'Seleccionar'));?>
 		<?php // echo $form->textField($model,'activity_guarantee_id',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'activity_guarantee_id'); ?>
 		<?php echo CHtml::Button('Agregar +', array('id' => 'agregar', 'name' => 'agregar', 'onclick' => 'send();')); ?>
@@ -140,11 +140,17 @@ function sendUpdate()
 			'id',
 			//'order_id',
 			array(
-				'name' => 'Folio',
-				'value' => Order::model()->getFolio_($_GET['id']),
+				'name'=>'order_id',
+				'value' => '$data->order->Folio',
+            ),
+			array(
+				'name' => 'activity_guarantee_id',
+				'value' => '$data->activityGuarantee->description',
 			),
-			'activityGuarantee.description',
-			'technicianUser.user',
+			array(
+				'name' => 'technician_user_id',
+				'value' => '$data->technicianUser->name." ".$data->technicianUser->last_name',
+			),
 			'date_hour',
 			'observation',
 			array(

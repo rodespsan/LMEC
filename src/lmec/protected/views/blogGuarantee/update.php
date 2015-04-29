@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Bitágoras de Garantías', 'url'=>array('index')),
+	array('label'=>'Listar Bitágoras de Garantías', 'url'=>array('index', 'id' => $model->order_id)),
 //	array('label'=>'Create BlogGuarantee', 'url'=>array('create')),
 	array('label'=>'Ver Bitágora de Garantía', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Administrar Bitágoras de Garantías', 'url'=>array('admin')),

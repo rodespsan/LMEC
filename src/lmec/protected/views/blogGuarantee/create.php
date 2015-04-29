@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Bitácoras de Garantías', 'url'=>array('index')),
+	array('label'=>'Listar Bitácoras de Garantías', 'url'=>array('index', 'id' => $model->order_id)),
 	array('label'=>'Administrar Bitácoras de Garantías', 'url'=>array('admin')),
 );
 ?>

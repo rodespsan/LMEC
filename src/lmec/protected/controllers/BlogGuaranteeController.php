@@ -60,8 +60,8 @@ class BlogGuaranteeController extends Controller {
     public function actionCreate($id) {
         
         $modelOrder = Order::model()->findByPk($id);
-            if($modelOrder === null)
-		throw new CHttpException(404,'La Orden solicitada no existe.');
+        if($modelOrder === null)
+		  throw new CHttpException(404,'La Orden solicitada no existe.');
         
         $model = new BlogGuarantee;
         $model->technician_user_id = Yii::app()->user->id;
@@ -75,21 +75,36 @@ class BlogGuaranteeController extends Controller {
             $model->order_id = $id;
             $model->observation = $_POST['BlogGuarantee']['observation'];
             $model->attributes = $_POST['BlogGuarantee'];
-
+            $logs = BlogGuarantee::model()->findByAttributes(array('order_id' => $modelOrder->id));
             if ($model->save()) {
-
-                if ($model->finished == 1) {
-                    $modelOrder->status_order_id = 8;
+                if ($_POST['BlogGuarantee']['finished'] == 1) {
+                    $modelOrder->status_order_id = 2;
                     $modelOrder->save();
+                    
+                    $log = new BlogOrder();
+                    $log->order_id = $model->id;
+                    $log->activity = "La orden salió de garantía";                    
+                    $log->user_technical_id = Yii::app()->user->id;
+                    $log->date_hour = date('Y-m-d H:i:s');
+                    $log->save();
                     //$this->redirect(array('viewDiagnostic','id'=>$modelDiagnostic->id));
                     $this->redirect(array('view', 'id' => $model->id));
+                }
+                else{
+                    if($logs==NULL){
+                        $log = new BlogOrder();
+                        $log->order_id = $model->id;
+                        $log->activity = "La orden entró a garantía";
+                        $log->user_technical_id = Yii::app()->user->id;
+                        $log->date_hour = date('Y-m-d H:i:s');
+                        $log->save();
+                    }
                 }
             }
         }
 
         $this->render('create', array(
             'model' => $model,
-//                        'modelActivityGuarantee'=>$modelActivityGuarantee
         ));
     }
 
@@ -148,7 +163,10 @@ class BlogGuaranteeController extends Controller {
     public function actionIndex($id) {
         
         $dataProvider = new CActiveDataProvider('BlogGuarantee', array(
-            'criteria' => array('condition' => 'active=1 AND order_id='.$id),
+            'criteria' => array(
+                'condition' => 'active=1 AND order_id='.$id,
+                'order' => 'date_hour DESC'
+            ),
             'pagination' => array('pageSize' => 20),
         ));
 
@@ -230,12 +248,23 @@ class BlogGuaranteeController extends Controller {
     public function actionCreateBlogGuarantee($id){
         $blog = new BlogGuarantee();
         if($_POST['BlogGuarantee']){
+            $logs = BlogGuarantee::model()->findByAttributes(array('order_id' => $id));
             $blog->observation = $_POST['BlogGuarantee']['observation'];
             $blog->finished = $_POST['BlogGuarantee']['finished'];
             $blog->attributes = $_POST['BlogGuarantee'];
             $blog->technician_user_id = Yii::app()->user->id;
             $blog->order_id = $id;
-            $blog->save();
+            if($blog->save()){
+                var_dump($logs);
+                if($logs==NULL){
+                    $log = new BlogOrder();
+                    $log->order_id = $id;
+                    $log->activity = "La orden entró a garantía";
+                    $log->user_technical_id = Yii::app()->user->id;
+                    $log->date_hour = date('Y-m-d H:i:s');
+                    $log->save();
+                }
+            }
         }
     }
 

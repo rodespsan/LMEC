@@ -41,7 +41,7 @@ class BlogGuarantee extends CActiveRecord {
             array('order_id', 'exist', 'className'=>'Order', 'attributeName'=>'id'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, order_id, activity_guarantee_id, technician_user_id, date_hour, observation, active', 'safe', 'on' => 'search'),
+            array('id, order_id, activity_guarantee_id, technician_user_id, date_hour, observation, active, finished', 'safe', 'on' => 'search'),
         );
     }
 
