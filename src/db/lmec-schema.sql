@@ -759,6 +759,7 @@ CREATE TABLE IF NOT EXISTS `tbl_spare_parts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `spare_parts_status_id` int(10) unsigned NOT NULL,
   `spare_parts_type_id` int(10) unsigned NOT NULL,
+  `order_id` int(10) unsigned NOT NULL,
   `brand_id` int(10) unsigned NOT NULL,
   `provider_id` int(10) unsigned NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -771,6 +772,7 @@ CREATE TABLE IF NOT EXISTS `tbl_spare_parts` (
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `fk_tbl_spare_parts_tbl_spare_parts_status_idx` (`spare_parts_status_id`),
+  KEY `fk_tbl_spare_parts_tbl_order_idx` (`order_id`),
   KEY `fk_tbl_spare_parts_tbl_brand_idx` (`brand_id`),
   KEY `fk_tbl_spare_parts_tbl_provider_idx` (`provider_id`),
   KEY `fk_tbl_spare_parts_tbl_spare_parts_type_idx` (`spare_parts_type_id`)
@@ -1154,6 +1156,7 @@ ALTER TABLE `tbl_service_performed_order`
 -- Constraints for table `tbl_spare_parts`
 --
 ALTER TABLE `tbl_spare_parts`
+  ADD CONSTRAINT `fk_tbl_spare_parts_tbl_order` FOREIGN KEY (`order_id`) REFERENCES `tbl_order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tbl_spare_parts_tbl_brand` FOREIGN KEY (`brand_id`) REFERENCES `tbl_brand` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tbl_spare_parts_tbl_provider` FOREIGN KEY (`provider_id`) REFERENCES `tbl_provider` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tbl_spare_parts_tbl_spare_parts_status` FOREIGN KEY (`spare_parts_status_id`) REFERENCES `tbl_spare_parts_status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
