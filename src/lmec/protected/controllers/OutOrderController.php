@@ -91,9 +91,21 @@ class OutOrderController extends Controller
 			//$model->date_hour_print = date('Y-m-d H:i:s');
 			//$model->total_price = $model->_service_price;
 
-			if($model->save() && $modelOb->save())
+			if($model->save() && $modelOb->save()){
+				
+				$log = new BlogOrder();
+                $log->order_id = $model->order->id;
+                $log->activity = "Se creó la órden de salida para la órden con ID: " . $model->order->id;
+                $log->detailed_activity = $this->renderPartial('view',array( 'model' => $model ), true);
+                $log->user_technical_id = Yii::app()->user->id;
+                $log->date_hour = date('Y-m-d H:i:s');
+                $log->save();
+				
 				$this->redirect(array('view','id'=>$model->id));
+				
+			}
 		}
+		
 		$this->render('create',array('model'=>$model, 'modelOb'=>$modelOb));
 		
 		/*
@@ -146,8 +158,17 @@ class OutOrderController extends Controller
 			//$model->date_hour = $model->_date." ".$model->_hour;
 			//$model->date_hour_print = date('Y-m-d H:i:s');
 			
-			if($model->save() && $modelOb->save())
+			if($model->save() && $modelOb->save()){
+				$log = new BlogOrder();
+                $log->order_id = $model->order->id;
+                $log->activity = "Se modificó la órden en la salida con ID: " . $model->order->id;
+                $log->detailed_activity = $this->renderPartial('view',array( 'model' => $model ), true);
+                $log->user_technical_id = Yii::app()->user->id;
+                $log->date_hour = date('Y-m-d H:i:s');
+                $log->save();
+				
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(
