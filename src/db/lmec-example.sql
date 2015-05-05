@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 USE `lmec`;
 
 --
--- Dumping data for table `tbl_accesory`
+-- Dumping data for table `tbl_accessory`
 --
 
-INSERT INTO `tbl_accesory` (`id`, `name`, `active`) VALUES
+INSERT INTO `tbl_accessory` (`id`, `name`, `active`) VALUES
 (1, 'Ratón', 1),
 (2, 'Teclado', 1),
 (3, 'Cable de corriente', 1),
@@ -34,10 +34,10 @@ INSERT INTO `tbl_accesory` (`id`, `name`, `active`) VALUES
 (5, 'Disquetera externa', 1);
 
 --
--- Dumping data for table `tbl_accesory_order`
+-- Dumping data for table `tbl_accessory_order`
 --
 
-INSERT INTO `tbl_accesory_order` (`order_id`, `accesory_id`) VALUES
+INSERT INTO `tbl_accessory_order` (`order_id`, `accessory_id`) VALUES
 (2, 3),
 (2, 4),
 (3, 1),
