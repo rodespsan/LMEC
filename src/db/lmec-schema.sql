@@ -24,10 +24,10 @@ USE `lmec`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_accessory`
+-- Table structure for table `tbl_accesory`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_accessory` (
+CREATE TABLE IF NOT EXISTS `tbl_accesory` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
@@ -37,14 +37,14 @@ CREATE TABLE IF NOT EXISTS `tbl_accessory` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_accessory_order`
+-- Table structure for table `tbl_accesory_order`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_accessory_order` (
+CREATE TABLE IF NOT EXISTS `tbl_accesory_order` (
   `order_id` int(10) unsigned NOT NULL,
-  `accessory_id` int(10) unsigned NOT NULL,
-  KEY `fk_tbl_accessory_order_tbl_order_idx` (`order_id`),
-  KEY `fk_tbl_accessory_order_tbl_accessory_idx` (`accessory_id`)
+  `accesory_id` int(10) unsigned NOT NULL,
+  KEY `fk_tbl_accesory_order_tbl_order_idx` (`order_id`),
+  KEY `fk_tbl_accesory_order_tbl_accesory_idx` (`accesory_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -345,14 +345,14 @@ CREATE TABLE IF NOT EXISTS `tbl_equipment_type` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_equipment_type_accessory`
+-- Table structure for table `tbl_equipment_type_accesory`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_equipment_type_accessory` (
+CREATE TABLE IF NOT EXISTS `tbl_equipment_type_accesory` (
   `equipment_type_id` int(10) unsigned NOT NULL,
-  `accessory_id` int(10) unsigned NOT NULL,
-  KEY `fk_tbl_equipment_type_accessory_tbl_equipment_type` (`equipment_type_id`),
-  KEY `fk_tbl_equipment_type_accessory_tbl_accessory_idx` (`accessory_id`)
+  `accesory_id` int(10) unsigned NOT NULL,
+  KEY `fk_tbl_equipment_type_accesory_tbl_equipment_type` (`equipment_type_id`),
+  KEY `fk_tbl_equipment_type_accesory_tbl_accesory_idx` (`accesory_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -960,11 +960,11 @@ CREATE TABLE IF NOT EXISTS `tbl_work_order` (
 --
 
 --
--- Constraints for table `tbl_accessory_order`
+-- Constraints for table `tbl_accesory_order`
 --
-ALTER TABLE `tbl_accessory_order`
-  ADD CONSTRAINT `fk_tbl_accessory_order_tbl_accessory` FOREIGN KEY (`accessory_id`) REFERENCES `tbl_accessory` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbl_accessory_order_tbl_order` FOREIGN KEY (`order_id`) REFERENCES `tbl_order` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+ALTER TABLE `tbl_accesory_order`
+  ADD CONSTRAINT `fk_tbl_accesory_order_tbl_accesory` FOREIGN KEY (`accesory_id`) REFERENCES `tbl_accesory` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tbl_accesory_order_tbl_order` FOREIGN KEY (`order_id`) REFERENCES `tbl_order` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `tbl_activity_verification`
@@ -1047,11 +1047,11 @@ ALTER TABLE `tbl_equipment_status`
   ADD CONSTRAINT `fk_tbl_equipment_status_tbl_order` FOREIGN KEY (`order_id`) REFERENCES `tbl_order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `tbl_equipment_type_accessory`
+-- Constraints for table `tbl_equipment_type_accesory`
 --
-ALTER TABLE `tbl_equipment_type_accessory`
-  ADD CONSTRAINT `fk_tbl_equipment_type_accessory_tbl_accessory` FOREIGN KEY (`accessory_id`) REFERENCES `tbl_accessory` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbl_equipment_type_accessory_tbl_equipment_type` FOREIGN KEY (`equipment_type_id`) REFERENCES `tbl_equipment_type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `tbl_equipment_type_accesory`
+  ADD CONSTRAINT `fk_tbl_equipment_type_accesory_tbl_accesory` FOREIGN KEY (`accesory_id`) REFERENCES `tbl_accesory` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tbl_equipment_type_accesory_tbl_equipment_type` FOREIGN KEY (`equipment_type_id`) REFERENCES `tbl_equipment_type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `tbl_failure_description`
