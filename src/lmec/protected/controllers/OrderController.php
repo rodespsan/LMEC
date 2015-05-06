@@ -25,8 +25,8 @@ class OrderController extends Controller {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+            array('allow', // allow all users to perform 'index', 'view' and 'viewsearch' actions
+                'actions' => array('index', 'view', 'viewsearch'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -376,6 +376,32 @@ class OrderController extends Controller {
 
 
         $this->render('admin', array(
+            'model' => $model,
+        ));
+    }
+
+    public function actionViewSearch() {
+        $model = new Order('search');
+
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Order'])) {
+            $model->attributes = $_GET['Order'];
+        }
+
+        if (isset($_POST['Order'])) {
+            $model->attributes = $_POST['Order'];
+            if ($model->save())
+                $this->redirect(array('view', 'id' => $model->id));
+        }
+
+        if (isset($_GET['pageSize'])) {
+            Yii::app()->user->setState('pageSize', (int) $_GET['pageSize']);
+            unset($_GET['pageSize']);
+        }
+
+
+
+        $this->render('viewsearch', array(
             'model' => $model,
         ));
     }
