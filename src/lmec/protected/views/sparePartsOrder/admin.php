@@ -44,8 +44,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'columns'=>array(
 		'id',
 		'order_id',
-		//'spare_parts_type_id',
-		'spare_parts_id',
+		'spareParts.name',
 		array(
 			'class'=>'CButtonColumn',
 			'header'=>CHtml::dropDownList(
