@@ -127,6 +127,12 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'assigned'); ?>
+		<?php echo $form->checkBox($model,'assigned'); ?>
+		<?php echo $form->error($model,'assigned'); ?>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'active'); ?>
 		<?php echo $form->checkBox($model,'active'); ?>
 		<?php echo $form->error($model,'active'); ?>

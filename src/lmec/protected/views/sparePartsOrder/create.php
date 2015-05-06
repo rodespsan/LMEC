@@ -42,12 +42,9 @@ Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'spare-parts-grid',
 	'dataProvider'=>new CActiveDataProvider('SpareParts',array(
-		//'criteria'=>array(
-		//	'condition' => 'order_id = :order_id',
-		//	'params' => array(
-		//		':order_id' => $model->order_id
-		//	),
-		//)
+		'criteria'=>array(
+			'condition'=>'active = 1 AND assigned = 0',
+		)
 	)),
 	'filter'=>new SpareParts('search'),
 	'enableSorting' => true,

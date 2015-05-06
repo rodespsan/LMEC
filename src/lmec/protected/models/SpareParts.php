@@ -17,6 +17,7 @@
  * @property string $invoice
  * @property string $description
  * @property integer $active
+ * @property integer $active
  *
  * The followings are the available model relations:
  * @property Brand $brand
@@ -44,6 +45,7 @@ class SpareParts extends CActiveRecord
 		return array(
 			array('spare_parts_type_id, spare_parts_status_id, brand_id, provider_id, name, price, date_hour', 'required'),
 			array('active', 'numerical', 'integerOnly'=>true),
+			array('assigned', 'numerical', 'integerOnly'=>true),
 			array('spare_parts_type_id, spare_parts_status_id, brand_id, provider_id', 'length', 'max'=>10),
 			array('name', 'length', 'max'=>100),
 			array('serial_number', 'length', 'max'=>50),
@@ -91,6 +93,7 @@ class SpareParts extends CActiveRecord
 			'guarantee_period' => 'Período de Garantía',
 			'invoice' => 'Factura',
 			'description' => 'Descripción',
+			'assigned' => 'Asignado a Orden',
 			'active' => 'Activo',
 		);
 	}
