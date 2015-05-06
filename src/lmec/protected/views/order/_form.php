@@ -383,43 +383,43 @@
 	<?php 
 	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/styles.css');
 	Yii::app()->clientScript->registerScript('accessoriesScript',"
-		$('#addAccesory').click(function(){
-			if($('#Order_accesory_id option:selected').val()){
-				$('#Order_accesory').append($('#Order_accesory_id option:selected').clone());  
+		$('#addAccessory').click(function(){
+			if($('#Order_accessory_id option:selected').val()){
+				$('#Order_accessory').append($('#Order_accessory_id option:selected').clone());  
 			}
 		});
-		$('#removeAccesory').click(function(){
-			$('#Order_accesory option:selected').remove(); 
+		$('#removeAccessory').click(function(){
+			$('#Order_accessory option:selected').remove(); 
 		});
 		$('#order-form').submit(function(){
-			$('#Order_accesory option').attr('selected','selected');
+			$('#Order_accessory option').attr('selected','selected');
 		});
 	");
 	?>
 	
 	<div class="row">
-        <?php echo $form->labelEx($model, 'accesory_id'); ?>
+        <?php echo $form->labelEx($model, 'accessory_id'); ?>
         <?php echo $form->dropDownList(
 			$model,
-			'accesory_id',
+			'accessory_id',
 			Chtml::listData(
-				Accesory::model()->findAll('active=1'), 'id', 'name'
+				Accessory::model()->findAll('active=1'), 'id', 'name'
 			),
 			array(
 				'prompt' => 'Seleccionar'
 			)
 		); ?>
 		
-       	<?php echo CHtml::button('+', array('id'=>'addAccesory')); ?>
+       	<?php echo CHtml::button('+', array('id'=>'addAccessory')); ?>
 		
-		<?php echo CHtml::button('-', array('id'=>'removeAccesory')); ?>
+		<?php echo CHtml::button('-', array('id'=>'removeAccessory')); ?>
 		
 		<div>
 			<?php echo $form->dropDownList(
 				$model,
-				'accesory',
+				'accessory',
 				CHtml::listData(
-					Accesory::model()->findAllByPk($model->accesory),
+					Accessory::model()->findAllByPk($model->accessory),
 					'id',
 					'name'
 				),
@@ -431,7 +431,7 @@
 			); ?>
 		</div>
             
-        <?php echo $form->error($model, 'accesory'); ?>
+        <?php echo $form->error($model, 'accessory'); ?>
 	</div>
 	
 	<div class="row">	

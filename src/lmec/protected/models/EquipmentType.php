@@ -9,7 +9,7 @@
  * @property integer $active
  *
  * The followings are the available model relations:
- * @property TblEquipmentTypeAccesory[] $tblEquipmentTypeAccesories
+ * @property TblEquipmentTypeAccessory[] $tblEquipmentTypeAccesories
  * @property TblModel[] $tblModels
  */
 class EquipmentType extends CActiveRecord {

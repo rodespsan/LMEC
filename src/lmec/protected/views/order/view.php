@@ -53,8 +53,8 @@ $this->menu=array(
     $accessories =$model->accessories;
     $accessories_ = '<ul>';
 
-    foreach ($accessories as $accesory){     
-     $accessories_.= '<li>'.$accesory->name.'</li>';
+    foreach ($accessories as $accessory){     
+     $accessories_.= '<li>'.$accessory->name.'</li>';
     }
     
     $accessories_ .= '<ul>';
@@ -81,7 +81,7 @@ $this->menu=array(
 		'serviceType.name:text:Tipo de Servicio',
 		'date_hour',
 		array(
-			 'name' => 'accesory',
+			 'name' => 'accessory',
 			 'value' => $accessories_,
 			 'type'=> 'raw'
 		),

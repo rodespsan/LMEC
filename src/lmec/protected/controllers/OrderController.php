@@ -65,7 +65,7 @@ class OrderController extends Controller {
         }
 
 
-        $modelAccesoryOrder = AccesoryOrder::model()->findAll('order_id =' . $model->id);
+        $modelAccessoryOrder = AccessoryOrder::model()->findAll('order_id =' . $model->id);
 
 
         $this->render('view', array(
@@ -95,16 +95,16 @@ class OrderController extends Controller {
 
             if ($model->save()) {
 
-                if (isset($_POST['Order']['accesory'])) {
+                if (isset($_POST['Order']['accessory'])) {
 
-                    $accessories = $_POST['Order']['accesory'];
+                    $accessories = $_POST['Order']['accessory'];
 
-                    foreach ($accessories as $accesory) {
+                    foreach ($accessories as $accessory) {
 
-                        $modelAccesoryOrder = new AccesoryOrder;
-                        $modelAccesoryOrder->order_id = $model->id;
-                        $modelAccesoryOrder->accesory_id = $accesory;
-                        $modelAccesoryOrder->save();
+                        $modelAccessoryOrder = new AccessoryOrder;
+                        $modelAccessoryOrder->order_id = $model->id;
+                        $modelAccessoryOrder->accessory_id = $accessory;
+                        $modelAccessoryOrder->save();
                     }
                 }
 
@@ -144,7 +144,7 @@ class OrderController extends Controller {
         ));
     }
 
-    public function actionCreateAccesoryOrder() {
+    public function actionCreateAccessoryOrder() {
 
         $modelRepair = Repair::model()->find('order_id=:order_id', array(':order_id' => $id));
 
@@ -213,12 +213,12 @@ class OrderController extends Controller {
         }
 
 
-        $modelAccesoryOrder = AccesoryOrder::model()->findAll('order_id =' . $model->id);
+        $modelAccessoryOrder = AccessoryOrder::model()->findAll('order_id =' . $model->id);
 
-        if (!empty($modelAccesoryOrder)) {
-            $model->accesory = array();
-            foreach ($modelAccesoryOrder as $accesoryOrder) {
-                $model->accesory[] = $accesoryOrder->accesory_id;
+        if (!empty($modelAccessoryOrder)) {
+            $model->accessory = array();
+            foreach ($modelAccessoryOrder as $accessoryOrder) {
+                $model->accessory[] = $accessoryOrder->accessory_id;
             }
         }
 
@@ -237,18 +237,18 @@ class OrderController extends Controller {
 
             if ($model->save()) {
 
-                if (!empty($modelAccesoryOrder)) {
-                    AccesoryOrder::model()->deleteAll('order_id='.$model->id);
+                if (!empty($modelAccessoryOrder)) {
+                    AccessoryOrder::model()->deleteAll('order_id='.$model->id);
                 }
 
-                if (isset($_POST['Order']['accesory'])) {
+                if (isset($_POST['Order']['accessory'])) {
 
-                    $accessories = $_POST['Order']['accesory'];
-                    foreach ($accessories as $accesory) {
-                        $modelAccesoryOrder = new AccesoryOrder;
-                        $modelAccesoryOrder->order_id = $model->id;
-                        $modelAccesoryOrder->accesory_id = $accesory;
-                        $modelAccesoryOrder->save();
+                    $accessories = $_POST['Order']['accessory'];
+                    foreach ($accessories as $accessory) {
+                        $modelAccessoryOrder = new AccessoryOrder;
+                        $modelAccessoryOrder->order_id = $model->id;
+                        $modelAccessoryOrder->accessory_id = $accessory;
+                        $modelAccessoryOrder->save();
                     }
                 }
 
@@ -301,7 +301,7 @@ class OrderController extends Controller {
 
         $this->render('update', array(
             'model' => $model,
-            'modelAccesoryOrder' => $modelAccesoryOrder,
+            'modelAccessoryOrder' => $modelAccessoryOrder,
             'modelEquipment_status' => $modelEquipment_status,
             'modelFailureDescription' => $modelFailureDescription,
             'modelServiceOrder' => $modelServiceOrder,

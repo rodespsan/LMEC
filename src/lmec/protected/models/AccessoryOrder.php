@@ -1,22 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "{{accesory_order}}".
+ * This is the model class for table "{{accessory_order}}".
  *
- * The followings are the available columns in table '{{accesory_order}}':
+ * The followings are the available columns in table '{{accessory_order}}':
  * @property string $order_id
- * @property string $accesory_id
+ * @property string $accessory_id
  *
  * The followings are the available model relations:
- * @property Accesory $accesory
+ * @property Accessory $accessory
  * @property Order $order
  */
-class AccesoryOrder extends CActiveRecord
+class AccessoryOrder extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return AccesoryOrder the static model class
+	 * @return AccessoryOrder the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -28,7 +28,7 @@ class AccesoryOrder extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{accesory_order}}';
+		return '{{accessory_order}}';
 	}
 
 	/**
@@ -39,11 +39,11 @@ class AccesoryOrder extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('order_id, accesory_id', 'required'),
-			array('order_id, accesory_id', 'length', 'max'=>10),
+			array('order_id, accessory_id', 'required'),
+			array('order_id, accessory_id', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('order_id, accesory_id', 'safe', 'on'=>'search'),
+			array('order_id, accessory_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,7 +55,7 @@ class AccesoryOrder extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'accesory' => array(self::BELONGS_TO, 'Accesory', 'accesory_id'),
+			'accessory' => array(self::BELONGS_TO, 'Accessory', 'accessory_id'),
 			'order' => array(self::BELONGS_TO, 'Order', 'order_id'),
 		);
 	}
@@ -67,7 +67,7 @@ class AccesoryOrder extends CActiveRecord
 	{
 		return array(
 			'order_id' => 'Order',
-			'accesory_id' => 'Accesorio',
+			'accessory_id' => 'Accesorio',
 		);
 	}
 
@@ -83,7 +83,7 @@ class AccesoryOrder extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('order_id',$this->order_id,true);
-		$criteria->compare('accesory_id',$this->accesory_id,true);
+		$criteria->compare('accessory_id',$this->accessory_id,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

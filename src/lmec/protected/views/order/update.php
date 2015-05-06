@@ -19,7 +19,7 @@ $this->menu=array(
 <h1>Orden <?php // echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model, 
-                                               'modelAccesoryOrder'=> $modelAccesoryOrder,
+                                               'modelAccessoryOrder'=> $modelAccessoryOrder,
                                                'modelEquipment_status'=> $modelEquipment_status,
                                                'modelServiceOrder'=> $modelServiceOrder 
                                             )); ?>

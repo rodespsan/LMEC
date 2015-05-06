@@ -17,7 +17,7 @@
  * @property string $name_deliverer_equipment
  *
  * The followings are the available model relations:
- * @property TblAccesoryOrder[] $tblAccesoryOrders
+ * @property TblAccessoryOrder[] $tblAccessoryOrders
  * @property TblActivityVerificationOrder[] $tblActivityVerificationOrders
  * @property TblBlogGuarantee[] $tblBlogGuarantees
  * @property TblBlogOrder[] $tblBlogOrders
@@ -47,8 +47,8 @@ class Order extends CActiveRecord {
     public $_dependences;
     public $_failureDescription;
     public $_equipmentStatus;
-    public $accesory_id;
-    public $accesory;
+    public $accessory_id;
+    public $accessory;
     public $type_search;
     public $status_search;
     public $id_search;
@@ -94,7 +94,7 @@ class Order extends CActiveRecord {
             array('_dependences', 'length', 'max' => 45),
             array('name_deliverer_equipment', 'length', 'max' => 100),
             array('active', 'numerical', 'integerOnly' => true),
-            array('accesory', 'CExistInArrayValidator', 'className' => 'Accesory', 'attributeName' => 'id'),
+            array('accessory', 'CExistInArrayValidator', 'className' => 'Accessory', 'attributeName' => 'id'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
            array('id, customer_id, active, receptionist_user_id, technician_order_id, payment_type_id, model_id,status_order_id, service_type_id, date_hour, advance_payment, serial_number, stock_number, name_deliverer_equipment, _dependences', 'safe', 'on' => 'search'),
@@ -110,8 +110,8 @@ class Order extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'accesoryOrder' => array(self::HAS_MANY, 'AccesoryOrder', 'order_id'),
-            'accessories' => array(self::MANY_MANY, 'Accesory', 'tbl_accesory_order(order_id,accesory_id)'),
+            'accessoryOrder' => array(self::HAS_MANY, 'AccessoryOrder', 'order_id'),
+            'accessories' => array(self::MANY_MANY, 'Accessory', 'tbl_accessory_order(order_id,accessory_id)'),
 //            'tblActivityVerificationOrders' => array(self::HAS_MANY, 'TblActivityVerificationOrder', 'order_id'),
 //            'tblBlogGuarantees' => array(self::HAS_MANY, 'TblBlogGuarantee', 'order_id'),
 //            'tblBlogOrders' => array(self::HAS_MANY, 'TblBlogOrder', 'order_id'),
@@ -126,7 +126,7 @@ class Order extends CActiveRecord {
             'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
             'observationOrders' => array(self::HAS_ONE, 'ObservationOrder', 'order_id'),
             'contact' => array(self::BELONGS_TO, 'Contact', 'contact_id'),
-            'tblAccesoryOrders' => array(self::HAS_MANY, 'TblAccesoryOrder', 'order_id'),
+            'tblAccessoryOrders' => array(self::HAS_MANY, 'TblAccessoryOrder', 'order_id'),
             'tblActivityVerificationOrders' => array(self::HAS_MANY, 'TblActivityVerificationOrder', 'order_id'),
             'tblBlogGuarantees' => array(self::HAS_MANY, 'TblBlogGuarantee', 'order_id'),
             'tblBlogOrders' => array(self::HAS_MANY, 'TblBlogOrder', 'order_id'),
@@ -182,8 +182,8 @@ class Order extends CActiveRecord {
             '_brand' => 'Marca',
             'equipment_type_id' => 'Tipo de Equipo',
             'brand_id' => 'Marca',
-            'accesory_id' => 'Accesorio',
-            'accesory' => 'Accesorio(s)',
+            'accessory_id' => 'Accesorio',
+            'accessory' => 'Accesorio(s)',
             'status_order_id' => 'Estado',
             'type_search' => 'Tipo',
             'status_search' => 'Estado',
@@ -261,7 +261,7 @@ class Order extends CActiveRecord {
 
     public function getDependencias() {
         //return $ModelDependencias = Dependences::model()->findAll('active = 1');
-        return $ModelDependencias = Accesory::model()->findAll('active = 1');
+        return $ModelDependencias = Accessory::model()->findAll('active = 1');
     }
 
     /**
@@ -283,7 +283,7 @@ class Order extends CActiveRecord {
      * Datos para llenar las tablas de productos
      */
     public function getServicios() {
-        return $ModelDependencias = Accesory::model()->findAll('active = 1');
+        return $ModelDependencias = Accessory::model()->findAll('active = 1');
     }
 
     public function getEquipmentType() {
@@ -335,7 +335,7 @@ class Order extends CActiveRecord {
 
     /*
       public function getAccesories() {
-      return $ModelDependencias = Accesory::model()->findAll('active = 1');
+      return $ModelDependencias = Accessory::model()->findAll('active = 1');
       }
 
       public function getWorks(){
