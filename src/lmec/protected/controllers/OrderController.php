@@ -388,11 +388,11 @@ class OrderController extends Controller {
             $model->attributes = $_GET['Order'];
         }
 
-        if (isset($_POST['Order'])) {
+        /*if (isset($_POST['Order'])) {
             $model->attributes = $_POST['Order'];
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
-        }
+        }*/
 
         if (isset($_GET['pageSize'])) {
             Yii::app()->user->setState('pageSize', (int) $_GET['pageSize']);
