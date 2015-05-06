@@ -244,8 +244,8 @@ INSERT INTO `tbl_service_order` (`id`, `order_id`, `service_id`, `price`, `date`
 -- Dumping data for table `tbl_spare_parts`
 --
 
-INSERT INTO `tbl_spare_parts` (`id`, `spare_parts_status_id`, `spare_parts_type_id`, `order_id`, `brand_id`, `provider_id`, `name`, `serial_number`, `price`, `date_hour`, `guarantee_period`, `invoice`, `description`, `active`) VALUES
-(1, 1, 1, 6, 6, 1, 'HD 500GB 2.5in 5400rpm SAS', '123', '400.00', '2015-02-20', '2016-02-20', '512', 'Disco duro', 1);
+INSERT INTO `tbl_spare_parts` (`id`, `spare_parts_status_id`, `spare_parts_type_id`, `brand_id`, `provider_id`, `name`, `serial_number`, `price`, `date_hour`, `guarantee_period`, `invoice`, `description`, `assigned`, `active`) VALUES
+(1, 1, 1, 6, 1, 'HD 500GB 2.5in 5400rpm SAS', '123', '400.00', '2015-02-20', '2016-02-20', '512', 'Disco duro', 1, 1);
 
 --
 -- Dumping data for table `tbl_spare_parts_order`
