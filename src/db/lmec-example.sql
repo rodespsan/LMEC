@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 USE `lmec`;
 
 --
--- Dumping data for table `tbl_accessory`
+-- Dumping data for table `tbl_accesory`
 --
 
-INSERT INTO `tbl_accessory` (`id`, `name`, `active`) VALUES
+INSERT INTO `tbl_accesory` (`id`, `name`, `active`) VALUES
 (1, 'Ratón', 1),
 (2, 'Teclado', 1),
 (3, 'Cable de corriente', 1),
@@ -34,10 +34,10 @@ INSERT INTO `tbl_accessory` (`id`, `name`, `active`) VALUES
 (5, 'Disquetera externa', 1);
 
 --
--- Dumping data for table `tbl_accessory_order`
+-- Dumping data for table `tbl_accesory_order`
 --
 
-INSERT INTO `tbl_accessory_order` (`order_id`, `accessory_id`) VALUES
+INSERT INTO `tbl_accesory_order` (`order_id`, `accesory_id`) VALUES
 (2, 3),
 (2, 4),
 (3, 1),
@@ -58,7 +58,9 @@ INSERT INTO `tbl_brand` (`id`, `name`, `active`) VALUES
 (3, 'Compaq', 1),
 (4, 'Dell', 1),
 (5, 'Lenovo', 1),
-(6, 'Toshiba', 1);
+(6, 'Toshiba', 1),
+(7, 'Kingston', 1),
+(8, 'Seagate', 1);
 
 --
 -- Dumping data for table `tbl_contact`
@@ -210,7 +212,8 @@ INSERT INTO `tbl_out_order` (`id`, `order_id`, `contact_id`, `user_id`, `date_ho
 --
 
 INSERT INTO `tbl_provider` (`id`, `name`, `contact_name`, `contact_email`, `contact_telephone_number`, `address`, `active`) VALUES
-(1, 'Absolute PC', 'Juan Pérez', 'juan@perez.com', '999999999', 'Dirección #', 1);
+(1, 'Absolute PC', 'Juan Pérez', 'juan@perez.com', '999999999', 'Dirección #', 1),
+(2, 'Comput8', 'Allam Medina', 'allam@medina.com', '666666666', 'Dirección 2', 1);
 
 --
 -- Dumping data for table `tbl_repair`
@@ -245,7 +248,9 @@ INSERT INTO `tbl_service_order` (`id`, `order_id`, `service_id`, `price`, `date`
 --
 
 INSERT INTO `tbl_spare_parts` (`id`, `spare_parts_status_id`, `spare_parts_type_id`, `brand_id`, `provider_id`, `name`, `serial_number`, `price`, `date_hour`, `guarantee_period`, `invoice`, `description`, `assigned`, `active`) VALUES
-(1, 1, 1, 6, 1, 'HD 500GB 2.5in 5400rpm SAS', '123', '400.00', '2015-02-20', '2016-02-20', '512', 'Disco duro', 1, 1);
+(1, 1, 1, 6, 1, 'HD 500GB 2.5in 5400rpm SAS', '123', '400.00', '2015-02-20', '2016-02-20', '512', 'Disco duro', 1, 1),
+(2, 1, 1, 8, 2, 'HD Seagate 500GB 2400rpm', '12431351', '450.00', '2015-03-20', '2016-05-20', 'Q512FG21', 'Disco duro', 0, 1),
+(3, 1, 2, 7, 2, 'RAM Kingston 2GB DDR3', '17384051', '350.00', '2015-04-20', '2016-06-20', 'Q12F4H67', 'Memoria RAM', 0, 1);
 
 --
 -- Dumping data for table `tbl_spare_parts_order`
