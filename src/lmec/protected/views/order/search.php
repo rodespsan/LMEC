@@ -47,35 +47,17 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 			'value'=>'Order::model()->getFolio_($data->id)',
 		),
 
-		// array(
-		// 	'name'=>'service_type_id',
-		// 	'header'=>'Tipo de servicio',
-		// 	'type'=>'raw',
-		// 	'value'=>'CHtml::dropDownList(
-		// 		"OrderGrid[$data->id][service_type_id]",
-		// 		$data->service_type_id,
-		// 		CHtml::listData(
-		// 			($data->serviceType->active)?
-		// 				ServiceType::model()->findAll("active=1") : 
-		// 				ServiceType::model()->findAll(array(
-		// 					"condition" => "active=1 OR id=:service_id",
-		// 					"params"=>array(
-		// 						":service_id"=>$data->service_type_id
-		// 					)
-		// 				)),
-		// 			"id",
-		// 			"name"
-		// 		)
-		// 	)',
-			
-		// 	'filter'=>array('1'=>'Preventivo','2'=>'Correctivo'),
-		// ),
-
 		array(
 			'name'=>'service_type_id',
 			'value'=>'$data->serviceType->name',
 			'type'=>'text',
 		),
+
+		// array(
+		// 	'name'=>'id',
+		// 	'value'=>'$data->service->name',
+		// 	'type'=>'text',
+		// ),
 		
 		array(
 		'name'=>'date_hour',
@@ -95,41 +77,136 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 			'name'=>'type_search',
 			'value'=>'$data->modelo->EquipmentType->type',
 			'type'=>'text',
-			'filter' => CHtml::listData(
-				equipmentType::model()->findAll(),
-				 'id',
-				 'type'
-			),
+			// 'filter' => CHtml::listData(
+			// 	equipmentType::model()->findAll(),
+			// 	 'id',
+			// 	 'type'
+			// ),
         ),
 		
+		// array(
+		// 	'name'=>'status_order_id',
+		// 	'value'=>'$data->status_order_id',
+		// 	'type'=>'raw',
+		// 	'filter'=>CHtml::listData(statusOrder::model()->findAll(array(
+		// 					"condition" => "active=1",
+		// 					"params"=>array()
+		// 				)), 'id', 'status'),
+			
+		// ),
+
+		// array(
+		// 	'name'=>'status_order_id',
+		// 	'value'=>'CHtml::dropDownList(
+		// 		"OrderGrid[$data->id][status_order_id]",
+		// 		$data->status_order_id,
+		// 	CHtml::listData(
+		// 			($data->statusOrder->active)?
+		// 				statusOrder::model()->findAll("active=1") : 
+		// 				statusOrder::model()->findAll(array(
+		// 					"condition" => "active=1 OR id=:status_id",
+		// 					"params"=>array(
+		// 						":status_id"=>$data->status_order_id
+		// 					)
+		// 				)),
+		// 			"id",
+		// 			"status"
+		// 		)
+		// 		)',
+		// 	'type'=>'raw',
+		// 	'filter'=>CHtml::listData(statusOrder::model()->findAll(array(
+		// 					"condition" => "active=1",
+		// 					"params"=>array()
+		// 				)), 'id', 'status'),
+			
+		// ),
+
 		array(
 			'name'=>'status_order_id',
-			'value'=>'$data->status_order_id',
-			'type'=>'raw',
-			'filter'=>CHtml::listData(statusOrder::model()->findAll(array(
-							"condition" => "active=1",
-							"params"=>array()
-						)), 'id', 'status'),
-			
+			'value'=>'$data->statusOrder->status',
+			'type'=>'text',
 		),
 		
+		// array(
+		// 	'name'=>'technician_order_id',
+		// 	'header'=>'Técnico',
+		// 	'type'=>'raw',
+		// 	'value'=>'$data->technician_order_id',
+		// 	'filter'=>CHtml::listData(
+		// 				User::model()->findAll(array(
+		// 					"with" => array(
+		// 							"roles"
+		// 							),
+		// 							"condition" => "role_id=2",
+		// 						"params"=>array()
+		// 					)),
+		// 				"id",
+		// 				"user"
+		// 			),
+		// ),
+
+		// array(
+		// 	'name'=>'technician_order_id',
+		// 	'header'=>'Técnico',
+		// 	'type'=>'raw',
+		// 	'value'=>'CHtml::dropDownList(
+		// 		"OrderGrid[$data->id][technician_order_id]",
+		// 		$data->technician_order_id,
+		// 		(empty($data->technicianUser))?
+		// 			array("empty"=>"Sin asignar") + 
+		// 			CHtml::listData(
+		// 				User::model()->findAll(array(
+		// 					"with" => array(
+		// 							"roles"
+		// 							),
+		// 							"condition" => "t.active=1 AND role_id=2",
+		// 						"params"=>array()
+		// 					)),
+		// 				"id",
+		// 				"user"
+		// 			)
+		// 			:
+		// 			CHtml::listData(
+		// 				($data->technicianUser->active)?
+		// 					User::model()->findAll(array(
+		// 					"with" => array(
+		// 							"roles"
+		// 							),
+		// 							"condition" => "t.active=1 AND role_id=2",
+		// 						"params"=>array()
+		// 					)) : 
+		// 					User::model()->findAll(array(
+		// 						"with" => array(
+		// 							"roles"
+		// 							),
+		// 						"condition" => "(t.active=1 OR t.id=:technician_id) AND role_id=2",
+		// 						"params"=>array(
+		// 							":technician_id"=>$data->technician_order_id
+		// 						)
+		// 					)),
+		// 				"id",
+		// 				"user"
+		// 			)
+		// 	)',
+		// 	'filter'=>CHtml::listData(
+		// 				User::model()->findAll(array(
+		// 					"with" => array(
+		// 							"roles"
+		// 							),
+		// 							"condition" => "role_id=2",
+		// 						"params"=>array()
+		// 					)),
+		// 				"id",
+		// 				"user"
+		// 			),
+		// ),
+
 		array(
 			'name'=>'technician_order_id',
-			'header'=>'Técnico',
-			'type'=>'raw',
 			'value'=>'$data->technician_order_id',
-			'filter'=>CHtml::listData(
-						User::model()->findAll(array(
-							"with" => array(
-									"roles"
-									),
-									"condition" => "role_id=2",
-								"params"=>array()
-							)),
-						"id",
-						"user"
-					),
+			'type'=>'text',
 		),
+
 		array(
 			'name'=>'active',
 			'value'=>'User::getActive($data->active)',
@@ -154,7 +231,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 					'onchange'=>"$.fn.yiiGridView.update('order-grid',{ data:{ pageSize: $(this).val() }})",
 				)
             ),
-			'template'=>'{update}{view}{delete}{activate}',
+			'template'=>'{view}{activate}',
 			'deleteConfirmation'=>'¿Desactivar Orden?',
 			'buttons' => array(
 

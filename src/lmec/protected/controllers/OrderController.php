@@ -25,7 +25,7 @@ class OrderController extends Controller {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index', 'view' and 'viewsearch' actions
+            array('allow', // allow all users to perform 'index', 'view' and 'search' actions
                 'actions' => array('index', 'view', 'search'),
                 'users' => array('*'),
             ),

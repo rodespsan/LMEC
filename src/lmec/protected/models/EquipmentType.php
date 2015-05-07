@@ -54,7 +54,7 @@ class EquipmentType extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'EquipmentType' => array(self::HAS_MANY, 'EquipmentType', 'equipment_type_id'),
+            // 'EquipmentType' => array(self::HAS_MANY, 'EquipmentType', 'equipment_type_id'),
             'Modelos' => array(self::HAS_MANY, 'Models', 'equipment_type_id'),
         );
     }
