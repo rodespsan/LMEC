@@ -454,7 +454,9 @@ CREATE TABLE IF NOT EXISTS `tbl_order` (
   KEY `fk_tbl_orden_tbl_user_idx` (`receptionist_user_id`),
   KEY `fk_tbl_orden_tbl_service_type_idx` (`service_type_id`),
   KEY `fk_tbl_orden_tbl_payment_type_idx` (`payment_type_id`),
-  KEY `fk_tbl_order_tbl_model_idx` (`model_id`)
+  KEY `fk_tbl_order_tbl_model_idx` (`model_id`),
+  KEY `fk_tbl_order_tbl_user_idx` (`technician_order_id`),
+  KEY `fk_tbl_order_tbl_status_order_idx` (`status_order_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -1088,7 +1090,9 @@ ALTER TABLE `tbl_order`
   ADD CONSTRAINT `fk_tbl_orden_tbl_service_type` FOREIGN KEY (`service_type_id`) REFERENCES `tbl_service_type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tbl_orden_tbl_user` FOREIGN KEY (`receptionist_user_id`) REFERENCES `tbl_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tbl_order_tbl_customer` FOREIGN KEY (`customer_id`) REFERENCES `tbl_customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbl_order_tbl_model` FOREIGN KEY (`model_id`) REFERENCES `tbl_model` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tbl_order_tbl_model` FOREIGN KEY (`model_id`) REFERENCES `tbl_model` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tbl_order_tbl_user` FOREIGN KEY (`technician_order_id`) REFERENCES `tbl_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tbl_order_tbl_status_order` FOREIGN KEY (`status_order_id`) REFERENCES `tbl_status_order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `tbl_out_order`
