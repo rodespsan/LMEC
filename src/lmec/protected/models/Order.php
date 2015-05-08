@@ -494,4 +494,11 @@ class Order extends CActiveRecord {
             return false;
         }
     }
+
+	public function getFirstService() {
+		$services = $this->serviceOrders;
+		$result = reset($services);
+
+		return $result; 
+	}
 }

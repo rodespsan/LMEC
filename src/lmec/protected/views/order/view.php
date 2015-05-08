@@ -79,6 +79,10 @@ $this->menu=array(
 		'modelo.Brand.name:text:Marca',
 		'modelo.name:text:Modelo',
 		'serviceType.name:text:Tipo de Servicio',
+		array(
+            'label'=>'Servicio',
+            'value'=> $model->firstService->service->name,
+        ),
 		'date_hour',
 		array(
 			 'name' => 'accesory',
