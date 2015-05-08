@@ -221,13 +221,13 @@ class Order extends CActiveRecord {
 //        $criteria->compare('stock_number', $this->stock_number, true);
 //        $criteria->compare('name_deliverer_equipment', $this->name_deliverer_equipment, true);
 
-        $criteria->with = array('modelo');
+        $criteria->with = array('modelo.EquipmentType','serviceType');
 
         $criteria->compare('t.id', $this->id, true);
         $criteria->compare('customer_id', $this->customer_id, true);
         $criteria->compare('receptionist_user_id', $this->receptionist_user_id, true);
         $criteria->compare('payment_type_id', $this->payment_type_id, true);
-        $criteria->compare('service_type_id', $this->service_type_id, true);
+        $criteria->compare('serviceType.name', $this->service_type_id, true);
         $criteria->compare('service', $this->service, true);
         $criteria->compare('date_hour', $this->date_hour, true);
         $criteria->compare('advance_payment', $this->advance_payment, true);
@@ -237,7 +237,7 @@ class Order extends CActiveRecord {
         $criteria->compare('stock_number', $this->stock_number, true);
         $criteria->compare('name_deliverer_equipment', $this->name_deliverer_equipment, true);
         $criteria->addSearchCondition('LOWER(modelo.name)', strtolower($this->model_id));
-        $criteria->compare('modelo.equipment_type_id', $this->type_search, true);
+        $criteria->compare('EquipmentType.type', $this->type_search, true);
         $criteria->compare('status_order_id', $this->status_order_id, true);
         $criteria->compare('technician_order_id', $this->technician_order_id, true);
         $criteria->compare('t.active', $this->active, true);
