@@ -166,6 +166,36 @@ class SpareParts extends CActiveRecord
 
 
 	}
+	
+	public function searchAssign()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+		$criteria->with = array('sparePartsStatus','sparePartsType','brand','provider');
+		$criteria->together = true;
+
+		$criteria->compare('t.id',$this->id,true);
+		$criteria->compare('sparePartsType.type',$this->spare_parts_type_id,true);
+		$criteria->compare('sparePartsStatus.description',$this->spare_parts_status_id,true);
+		$criteria->compare('brand.name',$this->brand_id,true);
+		$criteria->compare('provider.name',$this->provider_id,true);
+		$criteria->compare('t.name',$this->name,true);
+		$criteria->compare('t.serial_number',$this->serial_number,true);
+		$criteria->compare('t.price',$this->price,true);
+		$criteria->compare('t.date_hour',$this->date_hour,true);
+		$criteria->compare('t.guarantee_period',$this->guarantee_period,true);
+		$criteria->compare('t.invoice',$this->invoice,true);
+		$criteria->compare('t.description',$this->description,true);
+		$criteria->compare('t.active',$this->active);
+		//$criteria->compare('t.assigned',$this->assigned);
+		$criteria->addCondition('assigned=0','AND');
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+		
+	}
 
 	/**
 	 * Returns the static model of the specified AR class.

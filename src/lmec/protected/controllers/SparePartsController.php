@@ -28,7 +28,7 @@ class SparePartsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','assign'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -160,6 +160,25 @@ class SparePartsController extends Controller
 
 		$this->render('admin',array(
 			'model'=>$model,
+		));
+	}
+	
+	/**
+	 * Assign spareParts to an order.
+	 */
+	public function actionAssign($id)
+	{
+		$modelOrder = Order::model()->findByPk($id);
+        //$model = new SparePartsOrder;
+		
+		$model=new SpareParts('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['SpareParts']))
+			$model->attributes=$_GET['SpareParts'];
+
+		$this->render('assign',array(
+			'model'=>$model,
+			'modelOrder' => $modelOrder,
 		));
 	}
 
