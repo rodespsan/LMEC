@@ -79,7 +79,8 @@ class BlogGuaranteeController extends Controller {
             if ($model->save()) {
                 if ($_POST['BlogGuarantee']['finished'] == 1) {
                     $modelOrder->status_order_id = 2;
-                    $modelOrder->save();
+                    //if (!$modelOrder->save())
+                        //var_dump($modelOrder->errors);
                     
                     $log = new BlogOrder();
                     $log->order_id = $model->id;
@@ -87,8 +88,6 @@ class BlogGuaranteeController extends Controller {
                     $log->user_technical_id = Yii::app()->user->id;
                     $log->date_hour = date('Y-m-d H:i:s');
                     $log->save();
-                    //$this->redirect(array('viewDiagnostic','id'=>$modelDiagnostic->id));
-                    $this->redirect(array('view', 'id' => $model->id));
                 }
                 else{
                     if($logs==NULL){
@@ -100,6 +99,8 @@ class BlogGuaranteeController extends Controller {
                         $log->save();
                     }
                 }
+                $this->redirect(array('view', 'id' => $model->id));
+                //$this->redirect(array('viewDiagnostic','id'=>$modelDiagnostic->id));
             }
         }
 
@@ -130,8 +131,13 @@ class BlogGuaranteeController extends Controller {
             $model->observation = $_POST['BlogGuarantee']['observation'];
             $model->attributes = $_POST['BlogGuarantee'];
 
-            if ($model->save())
+            if ($model->save()){
+                if ($_POST['BlogGuarantee']['finished'] == 1) {
+                    $modelOrder->status_order_id = 2;
+                    $modelOrder->save();
+                }
                 $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('update', array(
@@ -254,15 +260,29 @@ class BlogGuaranteeController extends Controller {
             $blog->attributes = $_POST['BlogGuarantee'];
             $blog->technician_user_id = Yii::app()->user->id;
             $blog->order_id = $id;
-            if($blog->save()){
-                var_dump($logs);
-                if($logs==NULL){
+
+            if ($blog->save()) {
+                if ($_POST['BlogGuarantee']['finished'] == 1) {
+                    $modelOrder->status_order_id = 2;
+                    $modelOrder->save();
+                    
                     $log = new BlogOrder();
-                    $log->order_id = $id;
-                    $log->activity = "La orden entró a garantía";
+                    $log->order_id = $blog->id;
+                    $log->activity = "La orden salió de garantía";                    
                     $log->user_technical_id = Yii::app()->user->id;
                     $log->date_hour = date('Y-m-d H:i:s');
                     $log->save();
+                    $this->redirect(array('view', 'id' => $blog->id));
+                }
+                else{
+                    if($logs==NULL){
+                        $log = new BlogOrder();
+                        $log->order_id = $blog->id;
+                        $log->activity = "La orden entró a garantía";
+                        $log->user_technical_id = Yii::app()->user->id;
+                        $log->date_hour = date('Y-m-d H:i:s');
+                        $log->save();
+                    }
                 }
             }
         }
@@ -270,27 +290,6 @@ class BlogGuaranteeController extends Controller {
 
     public function actionDeleteBlogGuarantee($id){
         BlogGuarantee::model()->findByPk($id)->delete();
-    }
-
-    public function actionUpdateAjax($id) {
-
-        $modelRepair = Repair::model()->find('order_id=:order_id', array(
-            ':order_id' => $id,
-        ));
-
-        if (empty($modelRepair)) {
-            $modelRepair = new Repair();
-            $modelRepair->order_id = $id;
-        }
-
-        if (isset($_POST['BlogGuarantee'])) {
-            $modelRepair->attributes = $_POST['BlogGuarantee'];
-            $modelRepair->save();
-
-            if ($modelRepair->finished == 1) {
-                $this->redirect(array('view', 'id' => $modelRepair->id));
-            }
-        }
     }
 
 }

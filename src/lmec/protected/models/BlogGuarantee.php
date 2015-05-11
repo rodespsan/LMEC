@@ -89,14 +89,16 @@ class BlogGuarantee extends CActiveRecord {
     public function search() {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
-       
+
         
         $criteria = new CDbCriteria;
 
+        $criteria->with = array('activityGuarantee', 'technicianUser');
+        $criteria->together = true;
         $criteria->compare('id', $this->id, true);
         $criteria->compare('order_id', $this->order_id, true);
-        $criteria->compare('activity_guarantee_id', $this->activity_guarantee_id, true);
-        $criteria->compare('technician_user_id', $this->technician_user_id, true);
+        $criteria->compare('activityGuarantee.description', $this->activity_guarantee_id, true);
+        $criteria->compare('technicianUser.user', $this->technician_user_id, true);
         $criteria->compare('date_hour', $this->date_hour, true);
         $criteria->compare('observation', $this->observation, true);
         $criteria->compare('active', $this->active, true);

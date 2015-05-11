@@ -41,7 +41,7 @@ function send()
 
 }
 
-function sendUpdate()
+/*function sendUpdate()
 {
 	var data = $("#blog-guarantee-form").serialize();
 	$.ajax({
@@ -59,7 +59,7 @@ function sendUpdate()
 
         dataType: 'html'
     });
-}
+}*/
 </script>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
