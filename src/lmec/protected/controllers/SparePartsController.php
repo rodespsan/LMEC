@@ -36,7 +36,7 @@ class SparePartsController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete', 'activate'),
+				'actions'=>array('admin','delete', 'activate','add'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -181,6 +181,18 @@ class SparePartsController extends Controller
 			'modelOrder' => $modelOrder,
 		));
 	}
+	
+	public function actionAdd($id){
+            $model = $this->loadModel($id);
+            $model->assigned = 1;
+            $model->save();
+            
+            
+	 		
+           /* // if AJAX request (triggered by activation via admin grid view), we should not redirect the browser
+            if(!isset($_GET['ajax']))
+                    $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('assign','id'=>$order_id));*/
+    }
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

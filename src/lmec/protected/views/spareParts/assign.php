@@ -79,15 +79,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		'name',
 	 	'serial_number',
 	 	'price',
-		'date_hour',
-		'guarantee_period',
-		'invoice',
 		'description',
-		array(
-			'name' => 'active',
-			'value' =>  '$data->getActiveText()',
-			'filter' => array('1'=>'Si','0'=>'No'),
-		),
 		array(
             'class'=>'CButtonColumn',
             'header'=>CHtml::dropDownList(
@@ -100,18 +92,27 @@ $this->widget('zii.widgets.grid.CGridView', array(
         	'deleteConfirmation' => '¿Está seguro que desea desactivar la refacción?',
         	'buttons' => array(
         		'activate'=>array(
-        			'label'=>'Activar',
-                	'url'=>'Yii::app()->createUrl("spareParts/activate", array("id"=>$data->id))',
+        			'label'=>'Asignar',
+					'url'=>'Yii::app()->createUrl("spareParts/add", array("id"=>$data->id))',
                 	'imageUrl'=>Yii::app()->request->baseUrl.'/images/active.png',
-                	'visible'=>'$data->active == 0',
+                	'visible'=>'$data->assigned == 0',
                 	'click'=>'function(){
-                		return confirm(\'¿Esta seguro que desea activar la refacción?\');
+                		return confirm(\'¿Esta seguro que desea asignar la refacción a esta orden?\');
                     	}',
-            	),                            
+            	),
+				/*'create'=>array(
+        			'label'=>'Marcar',
+					'url'=>array('spareParts/activate','order_id'=>$modelOrder->id),
+                	'imageUrl'=>Yii::app()->request->baseUrl.'/images/play.gif',
+                	'visible'=>'$data->assigned == 0',
+                	'click'=>'function(){
+                		return confirm(\'¿Esta seguro que desea asignar la refacción a esta orden?\');
+                    	}',
+            	),*/
             	'delete'=>array(
-            		'label'=>'Desactivar',
+            		'label'=>'Quitar',
             		'imageUrl'=>Yii::app()->request->baseUrl.'/images/deactive.png',
-            		'visible'=>'$data->active == 1',
+            		'visible'=>'$data->assigned == 1',
             	),
         	),
     	),
