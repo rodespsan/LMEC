@@ -30,8 +30,8 @@ $('.search-form form').submit(function(){
 <h1>Asignar Refacciones a la Orden <?php echo(str_pad($modelOrder->id, 5, "0", STR_PAD_LEFT))?></h1>
 
 <p>
-Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-    o <b>=</b>) al comienzo de cada uno de los valores de su búsqueda para especificar cómo la comparación se debe hacer.
+Si lo desea, puede introducir un operador de comparaciÃ³n (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+    o <b>=</b>) al comienzo de cada uno de los valores de su b?squeda para especificar c?mo la comparaci?n se debe hacer.
 </p>
 
 <?php 
@@ -88,31 +88,17 @@ $this->widget('zii.widgets.grid.CGridView', array(
             	array(10=>10,20=>20,30=>30,40=>40,50=>50),
             	array('class'=>'change-pagesize')
          	),
-        	'template'=>"{update}{view}{delete}{activate}",
-        	'deleteConfirmation' => '¿Está seguro que desea desactivar la refacción?',
+        	'template'=>"{update}{view}{add}",
+        	'deleteConfirmation' => '?Est? seguro que desea desactivar la refacci?n?',
         	'buttons' => array(
-        		'activate'=>array(
+        		'add'=>array(
         			'label'=>'Asignar',
-					'url'=>'Yii::app()->createUrl("spareParts/add", array("id"=>$data->id))',
-                	'imageUrl'=>Yii::app()->request->baseUrl.'/images/active.png',
+					'url'=>'Yii::app()->createUrl("spareParts/add", array("spare_parts_id"=>$data->id,"order_id"=>'.$modelOrder->id.'))',
+                	'imageUrl'=>Yii::app()->request->baseUrl.'/images/add.png',
                 	'visible'=>'$data->assigned == 0',
                 	'click'=>'function(){
-                		return confirm(\'¿Esta seguro que desea asignar la refacción a esta orden?\');
+                		return confirm(\'Â¿Esta seguro que desea asignar la refacciÃ³n a esta orden?\');
                     	}',
-            	),
-				/*'create'=>array(
-        			'label'=>'Marcar',
-					'url'=>array('spareParts/activate','order_id'=>$modelOrder->id),
-                	'imageUrl'=>Yii::app()->request->baseUrl.'/images/play.gif',
-                	'visible'=>'$data->assigned == 0',
-                	'click'=>'function(){
-                		return confirm(\'¿Esta seguro que desea asignar la refacción a esta orden?\');
-                    	}',
-            	),*/
-            	'delete'=>array(
-            		'label'=>'Quitar',
-            		'imageUrl'=>Yii::app()->request->baseUrl.'/images/deactive.png',
-            		'visible'=>'$data->assigned == 1',
             	),
         	),
     	),

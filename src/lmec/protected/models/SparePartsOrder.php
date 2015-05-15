@@ -31,10 +31,10 @@ class SparePartsOrder extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('spare_parts_id', 'required'),
+			array('order_id, spare_parts_id', 'required'),
 //			array('spare_parts_id', 'numerical', 'integerOnly'=>true),
-			array('order_id', 'length', 'max'=>10),
-			array('spare_parts_id', 'CExistInArrayValidator', 'className'=>'SpareParts', 'attributeName'=>'id'),
+			array('order_id', 'exist', 'className'=>'Order', 'attributeName'=>'id'),
+			array('spare_parts_id', 'exist', 'className'=>'SpareParts', 'attributeName'=>'id'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, order_id, spare_parts_type_id, spare_parts_id', 'safe', 'on'=>'search'),

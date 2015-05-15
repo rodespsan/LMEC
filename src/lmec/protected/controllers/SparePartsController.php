@@ -182,16 +182,25 @@ class SparePartsController extends Controller
 		));
 	}
 	
-	public function actionAdd($id){
-            $model = $this->loadModel($id);
+	public function actionAdd($spare_parts_id, $order_id){
+        $modelSparePartOrder = new SparePartsOrder;
+ 		$modelSparePartOrder->order_id = $order_id;
+ 		$modelSparePartOrder->spare_parts_id = $spare_parts_id;
+ 		var_dump($modelSparePartOrder);
+ 		if($modelSparePartOrder->save())
+ 		{
+ 			$model = $this->loadModel($spare_parts_id);
             $model->assigned = 1;
-            $model->save();
-            
-            
-	 		
-           /* // if AJAX request (triggered by activation via admin grid view), we should not redirect the browser
+            if(!$model->save())
+            	var_dump($model->errors);
+ 		}
+ 		else
+ 			var_dump($modelSparePartOrder->errors);
+
+
+            // if AJAX request (triggered by activation via admin grid view), we should not redirect the browser
             if(!isset($_GET['ajax']))
-                    $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('assign','id'=>$order_id));*/
+                    $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('assign','id'=>$order_id));
     }
 
 	/**
