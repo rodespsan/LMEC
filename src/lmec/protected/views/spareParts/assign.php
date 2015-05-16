@@ -2,14 +2,10 @@
 /* @var $this SparePartsController */
 /* @var $model SpareParts */
 
-$this->breadcrumbs=array(
-	'Refacciones'=>array('index'),
-	'Asignar Refacciones',
-);
-
 $this->menu=array(
-	array('label'=>'Listar Ordenes de Refaccion', 'url'=>array('sparePartsOrder/index')),
-	array('label'=>'Administrar Ordenes de Refaccion', 'url'=>array('sparePartsOrder/admin')),
+	array('label'=>'Listar órdenes de refacción', 'url'=>array('sparePartsOrder/index'), 'linkOptions'=>array('target'=>'_blank')),
+	array('label'=>'Administrar órdenes de refacción', 'url'=>array('sparePartsOrder/admin'), 'linkOptions'=>array('target'=>'_blank')),
+	array('label'=>'Revisar refacciones asignadas', 'url'=>array('spareParts/check','id'=>$modelOrder->id)),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -31,7 +27,7 @@ $('.search-form form').submit(function(){
 
 <p>
 Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-    o <b>=</b>) al comienzo de cada uno de los valores de su b?squeda para especificar c?mo la comparaci?n se debe hacer.
+    o <b>=</b>) al comienzo de cada uno de los valores de su búsqueda para especificar cómo la comparación se debe hacer.
 </p>
 
 <?php 
@@ -89,7 +85,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
             	array('class'=>'change-pagesize')
          	),
         	'template'=>"{update}{view}{add}",
-        	'deleteConfirmation' => '?Est? seguro que desea desactivar la refacci?n?',
         	'buttons' => array(
         		'add'=>array(
         			'label'=>'Asignar',
@@ -97,7 +92,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 	'imageUrl'=>Yii::app()->request->baseUrl.'/images/add.png',
                 	'visible'=>'$data->assigned == 0',
                 	'click'=>'function(){
-                		return confirm(\'¿Esta seguro que desea asignar la refacción a esta orden?\');
+                		return confirm(\'¿Está seguro que desea asignar la refacción a esta orden?\');
                     	}',
             	),
         	),

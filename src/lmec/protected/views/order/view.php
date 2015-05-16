@@ -15,15 +15,12 @@ $this->menu=array(
 	array('label'=>'Imprimir', 'url'=>array('print','id'=>$model->id), 'linkOptions'=>array('target'=>'_blank')),
 	//Las siguientes opciones se muestran dependiendo del estado de la orden
     array('label'=>'Diagnosticar', 'url'=>array('diagnostic/create','id'=>$model->id,),'visible'=>Order::model()->getStatus_diagnostic_order($model->id)),
-    array('label'=>'Asignar refacción', 'url'=>array('sparePartsOrder/create','id'=>$model->id),'visible'=>Order::model()->getStatus_refection_order($model->id)),
-	array('label'=>'Asignar refacción 2', 'url'=>array('spareParts/assign','id'=>$model->id),'visible'=>Order::model()->getStatus_refection_order($model->id)),
+	array('label'=>'Asignar refacción ', 'url'=>array('spareParts/assign','id'=>$model->id),'visible'=>Order::model()->getStatus_refection_order($model->id)),
     array('label'=>'Asignar reparaciones', 'url'=>array('repair/create','id'=>$model->id),'visible'=>Order::model()->getStatus_repair_order($model->id)),
     array('label'=>'Crear orden salida', 'url'=>array('outOrder/create','id'=>$model->id), 'visible'=>Order::model()->getStatus_ready_order($model->id)),
 	//array('label'=>'Imprimir', 'url'=>array('print','id'=>$model->id), 'linkOptions'=>array('target'=>'_blank')),
     //array('label'=>'Crear Diagnostico', 'url'=>array('createDiagnostic','id'=>$model->id)),
 	//array('label'=>'Crear Diagnostico', 'url'=>array('createDiagnostic','id'=>$model->id)),
-    //Pendiente parte de grisel array('label'=>'Asignar Refacción', 'url'=>array('sparePartsOrder/create','id'=>$model->id)),
-    //array('label'=>'Administrar Refacciones', 'url'=>array('sparePartsOrder/admin')),
 
 );
 ?>

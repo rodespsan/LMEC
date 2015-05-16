@@ -28,7 +28,7 @@ class SparePartsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','assign'),
+				'actions'=>array('index','view','assign','check'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -36,7 +36,7 @@ class SparePartsController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete', 'activate','add'),
+				'actions'=>array('admin','delete', 'activate','add','remove'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -162,14 +162,10 @@ class SparePartsController extends Controller
 			'model'=>$model,
 		));
 	}
-	
-	/**
-	 * Assign spareParts to an order.
-	 */
+	 
 	public function actionAssign($id)
 	{
 		$modelOrder = Order::model()->findByPk($id);
-        //$model = new SparePartsOrder;
 		
 		$model=new SpareParts('search');
 		$model->unsetAttributes();  // clear any default values
@@ -181,6 +177,11 @@ class SparePartsController extends Controller
 			'modelOrder' => $modelOrder,
 		));
 	}
+	
+	/**
+	 * Assign spareParts to an order creating a new model SparePartsOrder.
+	 * If creation is successful, the browser will be redirected to the same page.
+	 */
 	
 	public function actionAdd($spare_parts_id, $order_id){
         $modelSparePartOrder = new SparePartsOrder;
@@ -201,6 +202,42 @@ class SparePartsController extends Controller
             // if AJAX request (triggered by activation via admin grid view), we should not redirect the browser
             if(!isset($_GET['ajax']))
                     $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('assign','id'=>$order_id));
+    }
+	
+	/**
+	 * Check the spareParts assigned to an order.
+	 */
+	public function actionCheck($id)
+	{
+		$modelOrder = Order::model()->findByPk($id);
+		
+		$model=new SpareParts('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['SpareParts']))
+			$model->attributes=$_GET['SpareParts'];
+
+		$this->render('check',array(
+			'model'=>$model,
+			'modelOrder' => $modelOrder,
+		));
+	}
+	
+	/**
+	 * Remove spareParts from an order and delete the model SparePartsOrder associated
+	 * with the spare_parts_id.
+	 * If removing is successful, the browser will be redirected to the same page.
+	 */
+	
+	public function actionRemove($spare_parts_id, $order_id){
+		$modelSparePartsOrder = SparePartsOrder::model()->findByPk($spare_parts_id);
+        $modelSparePartsOrder->delete();
+		$model = $this->loadModel($spare_parts_id);
+        $model->assigned = 0;
+        $model->save();
+
+        // if AJAX request (triggered by activation via admin grid view), we should not redirect the browser
+        if(!isset($_GET['ajax']))
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('check','id'=>$order_id));
     }
 
 	/**

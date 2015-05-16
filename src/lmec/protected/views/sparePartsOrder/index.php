@@ -7,8 +7,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Orden de Refacción', 'url'=>array('/order/index')),
-	array('label'=>'Administrar Órdenes de Refacción', 'url'=>array('admin')),
+	array('label'=>'Administrar órdenes de refacción', 'url'=>array('admin')),
 );
 ?>
 

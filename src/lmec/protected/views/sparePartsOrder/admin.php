@@ -8,8 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Órdenes de Refacción', 'url'=>array('index')),
-	array('label'=>'Crear Orden de Refacción', 'url'=>array('/order/index')),
+	array('label'=>'Listar órdenes de refacción', 'url'=>array('index')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -56,7 +55,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 					'onchange'=>"$.fn.yiiGridView.update('out-order-grid',{ data:{ pageSize: $(this).val() }})",
 					)
 			),
-        	'template'=>"{update}{view}{delete}{activate}",
+        	'template'=>"{view}",
         	'deleteConfirmation' => '¿Está seguro que desea desactivar la refacción?',
         	'buttons' => array(
         		'activate'=>array(

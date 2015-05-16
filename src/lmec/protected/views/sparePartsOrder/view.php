@@ -8,11 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Órdenes de Refacción', 'url'=>array('index')),
-	array('label'=>'Crear Orden de Refacción', 'url'=>array('/order/index')),
-	array('label'=>'Actualizar Orden de Refacción', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Desactivar Orden de Refacción', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Administrar Órdenes de Refacción', 'url'=>array('admin')),
+	array('label'=>'Listar órdenes de refacción', 'url'=>array('index')),
+	array('label'=>'Administrar órdenes de refacción', 'url'=>array('admin')),
 );
 ?>
 
