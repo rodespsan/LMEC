@@ -800,10 +800,9 @@ CREATE TABLE IF NOT EXISTS `tbl_spare_parts_category` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_spare_parts_order` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `order_id` int(10) unsigned NOT NULL,
   `spare_parts_id` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
+  `order_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`spare_parts_id`),
   KEY `fk_tbl_spare_parts_order_tbl_order_idx` (`order_id`),
   KEY `fk_tbl_spare_parts_order_tbl_spare_idx` (`spare_parts_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;

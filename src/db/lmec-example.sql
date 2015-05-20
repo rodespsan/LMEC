@@ -256,8 +256,8 @@ INSERT INTO `tbl_spare_parts` (`id`, `spare_parts_status_id`, `spare_parts_type_
 -- Dumping data for table `tbl_spare_parts_order`
 --
 
-INSERT INTO `tbl_spare_parts_order` (`id`, `order_id`, `spare_parts_id`) VALUES
-(1, 6, 1);
+INSERT INTO `tbl_spare_parts_order` (`spare_parts_id`, `order_id`) VALUES
+(1, 6);
 
 --
 -- Dumping data for table `tbl_spare_parts_type`
