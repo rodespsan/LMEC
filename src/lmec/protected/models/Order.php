@@ -221,7 +221,7 @@ class Order extends CActiveRecord {
 //        $criteria->compare('stock_number', $this->stock_number, true);
 //        $criteria->compare('name_deliverer_equipment', $this->name_deliverer_equipment, true);
 
-        $criteria->with = array('modelo.EquipmentType','serviceType');
+        $criteria->with = array('modelo.EquipmentType', 'serviceType', 'technicianUser');
 
         $criteria->compare('t.id', $this->id, true);
         $criteria->compare('customer_id', $this->customer_id, true);
@@ -239,7 +239,7 @@ class Order extends CActiveRecord {
         $criteria->addSearchCondition('LOWER(modelo.name)', strtolower($this->model_id));
         $criteria->compare('EquipmentType.type', $this->type_search, true);
         $criteria->compare('status_order_id', $this->status_order_id, true);
-        $criteria->compare('technician_order_id', $this->technician_order_id, true);
+        $criteria->compare('technicianUser.user', $this->technician_order_id, true);
         $criteria->compare('t.active', $this->active, true);
 
         return new CActiveDataProvider($this, array(

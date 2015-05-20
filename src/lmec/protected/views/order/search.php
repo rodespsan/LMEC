@@ -203,7 +203,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 
 		array(
 			'name'=>'technician_order_id',
-			'value'=>'$data->technician_order_id',
+			'value'=>'($data->technicianUser != null)?$data->technicianUser->user:"Sin asignar"',
 			'type'=>'text',
 		),
 
