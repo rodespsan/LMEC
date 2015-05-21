@@ -221,10 +221,10 @@ class Order extends CActiveRecord {
 //        $criteria->compare('stock_number', $this->stock_number, true);
 //        $criteria->compare('name_deliverer_equipment', $this->name_deliverer_equipment, true);
 
-        $criteria->with = array('modelo.EquipmentType', 'serviceType', 'technicianUser', 'statusOrder');
+        $criteria->with = array('modelo.EquipmentType', 'serviceType', 'technicianUser', 'statusOrder', 'customer');
 
         $criteria->compare('t.id', $this->id, true);
-        $criteria->compare('customer_id', $this->customer_id, true);
+        $criteria->compare('customer.name', $this->customer_id, true);
         $criteria->compare('receptionist_user_id', $this->receptionist_user_id, true);
         $criteria->compare('payment_type_id', $this->payment_type_id, true);
         $criteria->compare('serviceType.name', $this->service_type_id, true);

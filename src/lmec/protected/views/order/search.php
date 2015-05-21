@@ -48,6 +48,12 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 		),
 
 		array(
+			'name'=>'customer_id',
+			'value'=>'$data->customer->name',
+			'type'=>'text',
+		),
+
+		array(
 			'name'=>'service_type_id',
 			'value'=>'$data->serviceType->name',
 			'type'=>'text',
@@ -207,6 +213,10 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 			'type'=>'text',
 		),
 
+		'serial_number',
+		
+		'stock_number',
+
 		array(
 			'name'=>'active',
 			'value'=>'User::getActive($data->active)',
@@ -274,7 +284,4 @@ function reloadGrid(data) {
 }
 </script>
 <?php echo CHtml::ajaxSubmitButton('Filter',array('order/ajaxupdate'), array(),array("style"=>"display:none;")); ?>
-<?php echo CHtml::ajaxSubmitButton('Actualizar',array('order/ajaxupdate','act'=>'doUpdate'), array('success'=>'reloadGrid')); ?>
-<?php $this->endWidget(); ?>
-
- 
+<?php $this->endWidget(); ?> 
