@@ -3,8 +3,6 @@
 /* @var $model SpareParts */
 
 $this->menu=array(
-	array('label'=>'Listar órdenes de refacción', 'url'=>array('sparePartsOrder/index'), 'linkOptions'=>array('target'=>'_blank')),
-	array('label'=>'Administrar órdenes de refacción', 'url'=>array('sparePartsOrder/admin'), 'linkOptions'=>array('target'=>'_blank')),
 	array('label'=>'Asignar refacción', 'url'=>array('spareParts/assign','id'=>$modelOrder->id)),
 );
 
