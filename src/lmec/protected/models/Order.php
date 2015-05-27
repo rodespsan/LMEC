@@ -457,6 +457,19 @@ class Order extends CActiveRecord {
         }
      
     }
+
+    public function getStatus_guarantee_order($id)
+    {
+        $model=Order::model()->findByPk($id);
+        if($model->status_order_id==10){
+            return true;
+        }
+        else{
+            return false;
+        }
+     
+    }
+    
     public function getStatus_repair_order($id)
     {
         $model=Order::model()->findByPk($id);

@@ -66,7 +66,8 @@ class RepairController extends Controller {
         $modelOrder = Order::model()->findByPk($id);
         $modelRepair = Repair::model()->find('order_id=:order_id ', array(':order_id' => $id));
         if ($modelOrder->status_order_id == 8) {
-            $modelOrder->status_order_id == 9;
+            $modelOrder->scenario = 'ajaxupdate';
+            $modelOrder->status_order_id = 9;
             $modelOrder->save();
         }
         if (empty($modelRepair)) {
@@ -84,6 +85,7 @@ class RepairController extends Controller {
             if ($modelRepair->save()) {
 
                 if ($modelRepair->finished == 1) {
+                    $modelOrder->scenario = 'ajaxupdate';
                     $modelOrder->status_order_id = 11;
                     $modelOrder->save();
                     //$this->redirect(array('viewDiagnostic','id'=>$modelDiagnostic->id));
