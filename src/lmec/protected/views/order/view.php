@@ -12,6 +12,7 @@ $this->menu=array(
 	array('label'=>'Actualizar orden', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Listar órdenes', 'url'=>array('index')),
 	array('label'=>'Administrar órdenes', 'url'=>array('admin')),
+	array('label'=>'Buscar', 'url'=>array('search')),
 	array('label'=>'Imprimir', 'url'=>array('print','id'=>$model->id), 'linkOptions'=>array('target'=>'_blank')),
 	//Las siguientes opciones se muestran dependiendo del estado de la orden
     array('label'=>'Diagnosticar', 'url'=>array('diagnostic/create','id'=>$model->id,),'visible'=>Order::model()->getStatus_diagnostic_order($model->id)),
