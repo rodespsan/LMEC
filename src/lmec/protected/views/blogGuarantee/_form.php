@@ -23,7 +23,7 @@ function send()
 	var data = $("#blog-guarantee-form").serialize();
 	$.ajax({
 		type: 'POST',
-		url: '<?php echo  Yii::app()->createAbsoluteUrl("blogGuarantee/createBlogGuarantee", array("id" => $_GET['id']));?>',
+		url: '<?php echo  Yii::app()->createAbsoluteUrl("blogGuarantee/ajaxUpdate", array("id" => $_GET['id']));?>',
 		data: data,
 
 		success: function() {
@@ -40,26 +40,6 @@ function send()
     });
 
 }
-
-/*function sendUpdate()
-{
-	var data = $("#blog-guarantee-form").serialize();
-	$.ajax({
-		type: 'POST',
-		url: '<?php echo Yii::app()->createAbsoluteUrl("blogGuarantee/updateAjax", array("id" => $_GET['id']));?>',
-		data: data,
-
-		success: function() {
-			<?php //$this->redirect(array('view', 'id' => $model->id));?>
-		},
-
-        error: function() { // if error occured
-            alert("No se ha guardado correctamente. Vuelva a intentar");
-        },
-
-        dataType: 'html'
-    });
-}*/
 </script>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
@@ -116,7 +96,7 @@ function send()
     </div>
 <br>
     <div class="row">
-        <?php echo CHtml::submitButton('Guardar', array('id' => 'guardar', 'name' => 'guardar', /*'onclick' => 'sendUpdate();'*/)); ?>
+        <?php echo CHtml::submitButton('Guardar', array('id' => 'guardar', 'name' => 'guardar')); ?>
     </div>
 
 <?php $this->endWidget(); ?>
