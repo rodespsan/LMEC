@@ -37,8 +37,8 @@ class Brand extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, active', 'required'),
-            array('active', 'numerical', 'integerOnly' => true),
+            array('name', 'required'),
+            array('active', 'boolean'),
             array('name', 'unique', 'message' => 'El {attribute} ya existe'),
             array('name', 'length', 'max' => 100, 'message' => 'El {attribute} es muy largo'),
             // The following rule is used by search().
@@ -95,10 +95,10 @@ class Brand extends CActiveRecord {
     }
 
     public static function getActive($active) {
-        if ($active == 1) {
+        if ($active) {
             return "Si";
         } else {
-            if ($active == 0) {
+            if ($active) {
                 return "No";
             }
         }

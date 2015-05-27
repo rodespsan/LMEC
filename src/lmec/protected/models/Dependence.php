@@ -38,9 +38,9 @@ class Dependence extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, address, telephone_number, active', 'required'),
+            array('name, address, telephone_number', 'required'),
             array('name', 'unique'),
-            array('active', 'numerical', 'integerOnly' => true),
+            array('active', 'boolean'),
             array('name', 'length', 'max' => 45),
 			array('address', 'length', 'max' => 300),
             array('telephone_number', 'length', 'max' => 15),

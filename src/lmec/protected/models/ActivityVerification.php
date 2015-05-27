@@ -34,8 +34,8 @@ class ActivityVerification extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('service_type_id, equipment_type_id ,activity', 'required'),
-			array('active', 'numerical', 'integerOnly'=>true),
+			array('service_type_id, equipment_type_id', 'required'),
+            array('active', 'boolean'),
 			array('service_type_id', 'length', 'max'=>10),
 			array('activity', 'length', 'max'=>100),
 			array('description', 'length', 'max'=>500),

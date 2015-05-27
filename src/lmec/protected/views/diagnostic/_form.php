@@ -27,8 +27,7 @@
          
       $.ajax({
     	    type: 'POST',
-    	    url: '<?php  echo //CController::createUrl("/diagnostic/createDiagnosticWork");
-            Yii::app()->createAbsoluteUrl("diagnostic/createDiagnosticWork",array("id"=>$modelOrder->id)); ?>',
+    	    url: '<?php  echo Yii::app()->createAbsoluteUrl("diagnostic/createDiagnosticWork",array("id"=>$modelOrder->id)); ?>',
             data:data,
             success: function(){
 			
@@ -84,7 +83,7 @@
 			$modelDiagnosticWork,
 			'work_id',
 			Chtml::listData(
-				Work::model()->findAll('active=1 AND service_type_id=1'),
+				Work::model()->findAll('active=1 AND service_type_id='.$modelOrder->service_type_id),
 				'id',
 				'name'
 			),
@@ -138,7 +137,7 @@
             'template' => '{delete}',
             'buttons'=>array(
             	'delete' => array(
-            		'url' => 'CController::createUrl("/diagnostic/deleteDiagnosticWork",array("diagnostic_id" => $data->diagnostic_id, "work_id" => $data->work_id))',  //phpExpresion
+            		'url' => 'Yii::app()->createUrl("/diagnostic/deleteDiagnosticWork",array("diagnostic_id" => $data->diagnostic_id, "work_id" => $data->work_id))',  //phpExpresion
             	),
             ),
         ),

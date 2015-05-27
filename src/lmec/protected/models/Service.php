@@ -41,8 +41,8 @@ class Service extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('code, service_type_id, name, price, active', 'required'),
-            array('active', 'numerical', 'integerOnly' => true),
+            array('code, service_type_id, name, price', 'required'),
+            array('active', 'boolean'),
             array('service_type_id', 'length', 'max' => 10),
             array('name', 'length', 'max' => 50),
 			array('code', 'length', 'max' => 50),

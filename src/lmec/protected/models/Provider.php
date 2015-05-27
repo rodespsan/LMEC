@@ -40,9 +40,9 @@ class Provider extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, contact_name, active', 'required'),
+            array('name, contact_name', 'required'),
             array('name', 'unique'),
-            array('active', 'numerical', 'integerOnly' => true),
+            array('active', 'boolean'),
             array('name, contact_name, contact_email, address', 'length', 'min' => 1, 'max' => 45),
             array('contact_telephone_number', 'length', 'max' => 15),
             array('contact_email', 'email'),

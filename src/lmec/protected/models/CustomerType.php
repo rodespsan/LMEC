@@ -36,9 +36,9 @@ class CustomerType extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('type, active', 'required'),
+            array('type', 'required'),
             array('type', 'unique'),
-            array('active', 'numerical', 'integerOnly' => true),
+            array('active', 'boolean'),
             array('type', 'length', 'max' => 45),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.

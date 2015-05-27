@@ -85,18 +85,28 @@ class DiagnosticController extends Controller
 
 			if($modelDiagnostic->save())
 			{
-			    if($modelDiagnostic->finished==1 && $modelDiagnostic->refection==1)
+			    if($_POST['Diagnostic']['finished'] == 1 && $_POST['Diagnostic']['refection'] == 1)
 				{
+                    $modelOrder->scenario = 'ajaxupdate';
 					$modelOrder->status_order_id=5;
 					$modelOrder->save();
 					$this->redirect(array('diagnostic/view','id'=>$modelDiagnostic->id));
 				}else{
-					if($modelDiagnostic->finished == 1)
+					if($_POST['Diagnostic']['finished'] == 1)
 					{
+                    $modelOrder->scenario = 'ajaxupdate';
 				    $modelOrder->status_order_id=4;
 					$modelOrder->save();
+	                $log = new BlogOrder();
+	                $log->order_id = $modelOrder->id;
+	                $log->activity = "Se asignó un diagnóstico a la orden con ID: " . $modelOrder->id;
+	                //$log->detailed_activity = "$this->renderPartial('view',array( 'model' => $modelOrder ), true)";
+	                $log->user_technical_id = Yii::app()->user->id;
+	                $log->date_hour = date('Y-m-d H:i:s');
+	                $log->save();
 					$this->redirect(array('diagnostic/view','id'=>$modelDiagnostic->id));
 					}else{
+                    $modelOrder->scenario = 'ajaxupdate';
 					$modelOrder->status_order_id=3;
 					$modelOrder->save();
 			        Yii::app()->user->setFlash('success', "¡Se ha guardado correctamente !");
@@ -121,7 +131,7 @@ class DiagnosticController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$modelOrder=Order::model()->findByPk($model->order_id);     
+		$modelOrder=Order::model()->findByPk($model->order_id);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -131,13 +141,33 @@ class DiagnosticController extends Controller
 			$model->attributes=$_POST['Diagnostic'];
 			if($model->save())
 			{
-				if($model->finished==1)
-				{
-				$this->redirect(array('view','id'=>$model->id));
-		        }else
-		        {
-                  Yii::app()->user->setFlash('success', "¡Se ha actualizado correctamente !");
-		        }
+				if($_POST['Diagnostic']['finished'] == 1 && $_POST['Diagnostic']['refection'] == 1)
+				{   
+
+                    $modelOrder->scenario = 'ajaxupdate';
+					$modelOrder->status_order_id = 5;
+					$modelOrder->save();
+					//$this->redirect(array('diagnostic/view','id'=>$model->id));
+				}else{
+					if($_POST['Diagnostic']['finished'] == 1){
+                    	$modelOrder->scenario = 'ajaxupdate';
+					    $modelOrder->status_order_id=4;
+						$modelOrder->save();
+		                $log = new BlogOrder();
+		                $log->order_id = $modelOrder->id;
+		                $log->activity = "Se asignó un diagnóstico a la orden con ID: " . $modelOrder->id;
+		                //$log->detailed_activity = "$this->renderPartial('view',array( 'model' => $modelOrder ), true)";
+		                $log->user_technical_id = Yii::app()->user->id;
+		                $log->date_hour = date('Y-m-d H:i:s');
+		                $log->save();
+						$this->redirect(array('diagnostic/view','id'=>$model->id));
+					}else{
+                    	$modelOrder->scenario = 'ajaxupdate';
+						$modelOrder->status_order_id=3;
+						$modelOrder->save();
+				        Yii::app()->user->setFlash('success', "¡Se ha actualizado correctamente !");
+					}
+				}
 		    }   
 	    }
 

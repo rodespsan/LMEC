@@ -42,8 +42,8 @@ class Modelo extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('brand_id, equipment_type_id, name, active', 'required'),
-            array('active', 'numerical', 'integerOnly' => true),
+            array('brand_id, equipment_type_id, name', 'required'),
+            array('active', 'boolean'),
             array('brand_id, equipment_type_id', 'length', 'max' => 10),
             array('name', 'unique', 'message' => 'El {attribute} ya existe.'),
             array('name', 'length', 'max' => 200, 'message' => 'El {attribute} es muy largo'),

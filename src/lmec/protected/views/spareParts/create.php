@@ -21,4 +21,10 @@ $this->menu=array(
 
 <h1>Crear refacción</h1>
 
+<?php if( Yii::app()->user->hasFlash('spareparts-created') ): ?>
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('spareparts-created'); ?>
+</div>
+<?php endif; ?>
+
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

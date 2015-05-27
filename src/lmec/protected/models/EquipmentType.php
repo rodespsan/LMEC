@@ -37,8 +37,8 @@ class EquipmentType extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('type, active', 'required'),
-            array('active', 'numerical', 'integerOnly' => true),
+            array('type', 'required'),
+            array('active', 'boolean'),
             array('type', 'unique', 'message' => 'El {attribute} ya existe.'),
             array('type', 'length', 'max' => 45, 'message' => 'El {attribute} es muy largo'),
             // The following rule is used by search().
@@ -54,7 +54,7 @@ class EquipmentType extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            // 'EquipmentType' => array(self::HAS_MANY, 'EquipmentType', 'equipment_type_id'),
+            'EquipmentType' => array(self::HAS_MANY, 'EquipmentType', 'equipment_type_id'),
             'Modelos' => array(self::HAS_MANY, 'Models', 'equipment_type_id'),
         );
     }

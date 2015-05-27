@@ -37,9 +37,9 @@ class Accesory extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, active', 'required'),
+            array('name', 'required'),
             array('name', 'unique', 'message' => 'Accesorio registrado anteriormente.'),
-            array('active', 'numerical', 'integerOnly' => true),
+            array('active', 'boolean'),
             array('name', 'unique', 'message' => 'El {attribute} ya existe'),
             array('name', 'length', 'max' => 100, 'message' => 'El {attribute} es muy largo'),
             // The following rule is used by search().

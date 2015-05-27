@@ -31,7 +31,7 @@ class PaymentType extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name, advance_payment', 'required'),
-			array('active', 'numerical', 'integerOnly'=>true),
+            array('active', 'boolean'),
 			array('name', 'length', 'max'=>45),
 			array('advance_payment', 'length', 'max'=>8),
 			// The following rule is used by search().

@@ -3,6 +3,11 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'customer-type-form',
 	'enableAjaxValidation'=>false,
+	'enableClientValidation'=>true,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+		'validateOnChange'=>true,
+	),
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos</p>

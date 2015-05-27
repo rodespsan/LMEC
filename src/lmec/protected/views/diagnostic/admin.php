@@ -72,7 +72,7 @@ or <b>=</b>) al principio de cada uno de los valores de busqueda para especifica
 		   'template'=>'{view}{delete}{update}',
 		   'buttons'=>array(
 		       'update'=>array(
-			        'url'=>'CController::createUrl("/diagnostic/update",array("id"=>$data->id))',
+			        'url'=>'Yii::app()->createUrl("/diagnostic/update",array("id"=>$data->id))',
 			     )
 		   
 		   ),	

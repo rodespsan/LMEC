@@ -57,8 +57,8 @@ class StatusOrder extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'status' => 'Status',
-			'active' => 'Active',
+			'status' => 'Estado',
+			'active' => 'Activo',
 		);
 	}
 
