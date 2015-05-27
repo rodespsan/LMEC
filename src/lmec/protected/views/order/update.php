@@ -13,6 +13,7 @@ $this->menu=array(
 	array('label'=>'Crear Orden', 'url'=>array('create')),
 	array('label'=>'Ver Orden', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Administrar Ordenes', 'url'=>array('admin')),
+	array('label'=>'Buscar', 'url'=>array('search')),
 );
 ?>
 

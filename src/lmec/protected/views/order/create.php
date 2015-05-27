@@ -10,6 +10,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Listar Ordenes', 'url'=>array('index')),
 	array('label'=>'Administrar Ordenes', 'url'=>array('admin')),
+	array('label'=>'Buscar', 'url'=>array('search')),
 );
 ?>
 

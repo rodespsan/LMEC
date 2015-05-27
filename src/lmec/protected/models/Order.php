@@ -55,6 +55,7 @@ class Order extends CActiveRecord {
     public $equipment_type_id;
     public $brand_id;
     public $service;
+    public $out_date_hour;
 
     /**
      * Returns the static model of the specified AR class.
@@ -97,7 +98,7 @@ class Order extends CActiveRecord {
             array('accesory', 'CExistInArrayValidator', 'className' => 'Accesory', 'attributeName' => 'id'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-           array('id, customer_id, active, receptionist_user_id, technician_order_id, payment_type_id, model_id,status_order_id, service_type_id, date_hour, advance_payment, serial_number, stock_number, name_deliverer_equipment, _dependences', 'safe', 'on' => 'search'),
+           array('id, customer_id, active, receptionist_user_id, technician_order_id, payment_type_id, model_id,status_order_id, service_type_id, date_hour, advance_payment, serial_number, stock_number, name_deliverer_equipment, _dependences, out_date_hour', 'safe', 'on' => 'search'),
             array('type_search', 'safe', 'on'=>'search'),
             array('status_search, id_search', 'safe', 'on'=>'search'),
         );
@@ -142,7 +143,7 @@ class Order extends CActiveRecord {
             'paymentType' => array(self::BELONGS_TO, 'PaymentType', 'payment_type_id'),
             'serviceType' => array(self::BELONGS_TO, 'ServiceType', 'service_type_id'),
             'receptionistUser' => array(self::BELONGS_TO, 'User', 'receptionist_user_id'),
-            'tblOutOrders' => array(self::HAS_MANY, 'TblOutOrder', 'order_id'),
+            'outOrder' => array(self::HAS_ONE, 'OutOrder', 'order_id'),
             'tblQuotationOrders' => array(self::HAS_MANY, 'TblQuotationOrder', 'order_id'),
             'tblRepairs' => array(self::HAS_MANY, 'Repair', 'order_id'),
             'serviceOrders' => array(self::HAS_MANY, 'ServiceOrder', 'order_id'),
@@ -221,7 +222,7 @@ class Order extends CActiveRecord {
 //        $criteria->compare('stock_number', $this->stock_number, true);
 //        $criteria->compare('name_deliverer_equipment', $this->name_deliverer_equipment, true);
 
-        $criteria->with = array('modelo.EquipmentType', 'serviceType', 'technicianUser', 'statusOrder', 'customer');
+        $criteria->with = array('modelo.EquipmentType', 'serviceType', 'technicianUser', 'statusOrder', 'customer', 'outOrder');
 
         $criteria->compare('t.id', $this->id, true);
         $criteria->compare('customer.name', $this->customer_id, true);
@@ -229,7 +230,8 @@ class Order extends CActiveRecord {
         $criteria->compare('payment_type_id', $this->payment_type_id, true);
         $criteria->compare('serviceType.name', $this->service_type_id, true);
         $criteria->compare('service', $this->service, true);
-        $criteria->compare('date_hour', $this->date_hour, true);
+        $criteria->compare('t.date_hour', $this->date_hour, true);
+        $criteria->compare('outOrder.date_hour', $this->out_date_hour, true);
         $criteria->compare('advance_payment', $this->advance_payment, true);
        
         $criteria->compare('serial_number', $this->serial_number, true);

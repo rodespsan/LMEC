@@ -9,6 +9,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Crear Nueva Orden', 'url'=>array('create')),
 	array('label'=>'Administrar Ordenes', 'url'=>array('admin')),
+	array('label'=>'Buscar', 'url'=>array('search')),
 );
 ?>
 

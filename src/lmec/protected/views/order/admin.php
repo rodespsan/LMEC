@@ -10,6 +10,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Lista de Órdenes', 'url'=>array('index')),
 	array('label'=>'Crear Orden', 'url'=>array('create')),
+	array('label'=>'Buscar', 'url'=>array('search')),
 );
 
 

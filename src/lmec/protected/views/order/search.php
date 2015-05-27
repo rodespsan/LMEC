@@ -71,6 +71,13 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 		'header'=>'Fecha de Entrada',
 		
 		),
+
+		array(
+			'header'=>'Fecha de Salida',
+			'name' => 'out_date_hour',
+			'value'=>'( $data->outOrder != null ) ? $data->outOrder->date_hour : null',
+			'type'=>'date',
+		),
 		
 		array(
 		'name'=>'model_id',

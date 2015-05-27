@@ -33,8 +33,8 @@
 				array('label'=>'Ordenes', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
 					'items'=>array(
 						array('label'=>'Entrada Equipo', 'url'=>array('/order/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
-						array('label'=>'Salida de Orden', 'url'=>array('/outOrder/index'), 'visible'=>Yii::app()->user->checkAccess('administrador'))
-				
+						array('label'=>'Salida de Orden', 'url'=>array('/outOrder/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label'=>'Buscar', 'url'=>array('/order/search'), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'))
 					)
 				),
 				array('label'=>'Cuentas', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
