@@ -13,19 +13,12 @@ $this->menu=array(
 );
 ?>
 
-<h1>Actividad de Garantía</h1>
+<h1>Crear actividad de garantía</h1>
 
-<?php
+<?php if( Yii::app()->user->hasFlash('activityGuarantee-created') ): ?>
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('activityGuarantee-created'); ?>
+</div>
+<?php endif; ?>
 
-$flashMessages = Yii::app()->user->getFlashes();
-if ($flashMessages) {
-    echo '<ul class="flashes" style="text-align: left; ">';
-    foreach ($flashMessages as $key => $message) {
-        echo '<li style="list-style:none;"><b><div class="flash-' . $key . '">' . $message . "</div><b></li>\n";
-    }
-    echo '</ul>';
-}
-
-?>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

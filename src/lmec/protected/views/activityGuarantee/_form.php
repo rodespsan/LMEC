@@ -8,16 +8,12 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'activity-guarantee-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
-	// 'enableClientValidation'=>true,
-	// 'clientOptions'=>array(
-	// 	'validateOnSubmit'=>true,
-	// 	'validateOnChange'=>true,
-	// ),
+	'enableClientValidation'=>true,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+		'validateOnChange'=>true,
+	),
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
@@ -38,6 +34,7 @@
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
+		<?php echo ($model->isNewRecord)? CHtml::submitButton('Crear +') : ''; ?>
 	</div>
 
 <?php $this->endWidget(); ?>

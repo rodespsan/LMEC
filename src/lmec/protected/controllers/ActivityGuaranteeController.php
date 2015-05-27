@@ -70,8 +70,15 @@ class ActivityGuaranteeController extends Controller
 		if(isset($_POST['ActivityGuarantee']))
 		{
 			$model->attributes=$_POST['ActivityGuarantee'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+				if (!empty($_POST['yt1'])) 
+                {
+                    Yii::app()->user->setFlash('activityGuarantee-created', "¡La actividad <b><i>&quot;$model->description&quot;</i></b> fue creada exitosamente!");
+                    $model=new ActivityGuarantee;
+                }
+                else
+                	$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
