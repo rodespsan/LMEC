@@ -130,10 +130,10 @@
 		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>500)); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
-
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'assigned'); ?>
-		<?php echo $form->checkBox($model,'assigned'); ?>
+		<?php echo $form->checkBox($model,'assigned', array('checked'=>false)); ?>
 		<?php echo $form->error($model,'assigned'); ?>
 	</div>
 	

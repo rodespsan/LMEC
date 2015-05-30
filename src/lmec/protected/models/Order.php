@@ -469,8 +469,17 @@ class Order extends CActiveRecord {
         }
      
     }
+	
+	public function getStatus_repair_order($id) {
+        $model = Order::model()->findByPk($id);
+        if ($model->status_order_id == 9) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
-    public function getStatus_repair_order($id)
+    /*public function getStatus_repair_order($id)
     {
         $model=Order::model()->findByPk($id);
 		if($model->technician_order_id==Yii::app()->user->id)
@@ -499,7 +508,7 @@ class Order extends CActiveRecord {
 		}else{
 			return false;		
 		}	
-	}
+	}*/
 
     public function getStatus_ready_order($id) {
         $model = Order::model()->findByPk($id);

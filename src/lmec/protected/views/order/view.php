@@ -17,7 +17,7 @@ $this->menu=array(
 	//Las siguientes opciones se muestran dependiendo del estado de la orden
     array('label'=>'Diagnosticar', 'url'=>array('diagnostic/create','id'=>$model->id,),'visible'=>Order::model()->getStatus_diagnostic_order($model->id)),
 	array('label'=>'Asignar refacción ', 'url'=>array('spareParts/assign','id'=>$model->id),'visible'=>Order::model()->getStatus_refection_order($model->id)),
-    array('label'=>'Asignar reparaciones', 'url'=>array('repair/create','id'=>$model->id),'visible'=>Order::model()->getStatus_repair_order($model->id)),
+    array('label'=>'Reparar', 'url'=>array('repair/create','id'=>$model->id),'visible'=>Order::model()->getStatus_repair_order($model->id)),
     array('label'=>'Garantía', 'url'=>array('blogguarantee/create','id'=>$model->id,),'visible'=>Order::model()->getStatus_guarantee_order($model->id)),
     array('label'=>'Crear orden salida', 'url'=>array('outOrder/create','id'=>$model->id), 'visible'=>Order::model()->getStatus_ready_order($model->id)),
 	//array('label'=>'Imprimir', 'url'=>array('print','id'=>$model->id), 'linkOptions'=>array('target'=>'_blank')),

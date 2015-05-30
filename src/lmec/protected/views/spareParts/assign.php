@@ -4,6 +4,7 @@
 
 $this->menu=array(
 	array('label'=>'Revisar refacciones asignadas', 'url'=>array('spareParts/check','id'=>$modelOrder->id)),
+	array('label'=>'Finalizar asignaciones', 'url'=>array('spareParts/finish','id'=>$modelOrder->id)),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -37,7 +38,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'spare-parts-grid',
 	'dataProvider'=>$model->searchAssign(),
 	'filter'=>$model,
-	'enableSorting' => true, //QUE HACE??? NO ESTA EN LOS OTROS :S
+	'enableSorting' => true,
 	'columns'=>array(
 		'id',
 		array(

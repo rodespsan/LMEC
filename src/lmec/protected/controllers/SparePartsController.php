@@ -28,7 +28,7 @@ class SparePartsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','assign','check'),
+				'actions'=>array('index','view','assign','check','finish'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -255,6 +255,21 @@ class SparePartsController extends Controller
         // if AJAX request (triggered by activation via admin grid view), we should not redirect the browser
         if(!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('check','id'=>$order_id));
+    }
+	
+	/**
+	 * Changes the order status (need spareparts) to the next one (waiting for repairs).
+	 */
+	
+	public function actionFinish($id){
+		$modelOrder = Order::model()->findByPk($id);
+		$modelOrder->scenario = 'ajaxupdate';
+        $modelOrder->status_order_id = 8;
+		$modelOrder->save();
+
+        // if AJAX request (triggered by activation via admin grid view), we should not redirect the browser
+        if(!isset($_GET['ajax']))
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('order/view','id'=>$id));
     }
 
 	/**

@@ -7,8 +7,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Tipo de Refacción', 'url'=>array('create')),
-	array('label'=>'Administrar Tipos de Refacción', 'url'=>array('admin')),
+	array('label'=>'Crear tipo de refacción', 'url'=>array('create')),
+	array('label'=>'Administrar tipos de refacción', 'url'=>array('admin')),
+	array('label'=>'Administrar refacciones', 'url'=>array('spareParts/admin')),
 );
 ?>
 

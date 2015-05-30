@@ -40,7 +40,7 @@ class Work extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('service_type_id, name, description, active', 'required'),
+            array('service_type_id, name, active', 'required'),
             array('active', 'numerical', 'integerOnly' => true),
             array('service_type_id', 'length', 'max' => 10),
             array('name', 'length', 'max' => 200),
