@@ -472,7 +472,7 @@ class Order extends CActiveRecord {
 	
 	public function getStatus_repair_order($id) {
         $model = Order::model()->findByPk($id);
-        if ($model->status_order_id == 9) {
+        if ($model->status_order_id == 8 || $model->status_order_id == 9) {
             return true;
         } else {
             return false;
