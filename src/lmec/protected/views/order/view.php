@@ -31,15 +31,6 @@ $this->menu=array(
 
 
 <?php
-
-    $failureDescriptions =$model->failureDescriptions;
-    $failureDescription_ = '<pre>';
-
-    foreach ($failureDescriptions as $failureDescription){
-        $failureDescription_.= $failureDescription->description;
-    }
-
-    $failureDescription_.= '</pre>';
  
     $equipmentStatuses =$model->equipmentStatuses;
     $equipmentStatuses_ = '<pre>';
@@ -93,7 +84,7 @@ $this->menu=array(
 		'stock_number',
                 array(
                      'name' => '_failureDescription',
-                     'value' => $failureDescription_,
+                     'value' => $model->failureDescription->description,
                      'type'=> 'raw'
                 ),
 		array(

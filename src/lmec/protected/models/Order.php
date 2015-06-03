@@ -98,7 +98,7 @@ class Order extends CActiveRecord {
             array('accesory', 'CExistInArrayValidator', 'className' => 'Accesory', 'attributeName' => 'id'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-           array('id, customer_id, active, receptionist_user_id, technician_order_id, payment_type_id, model_id,status_order_id, service_type_id, date_hour, advance_payment, serial_number, stock_number, name_deliverer_equipment, _dependences, out_date_hour', 'safe', 'on' => 'search'),
+            array('id, customer_id, active, receptionist_user_id, technician_order_id, payment_type_id, model_id,status_order_id, service_type_id, date_hour, advance_payment, serial_number, stock_number, name_deliverer_equipment, _dependences, out_date_hour, service, _failureDescription', 'safe', 'on' => 'search'),
             array('type_search', 'safe', 'on'=>'search'),
             array('status_search, id_search', 'safe', 'on'=>'search'),
         );
@@ -147,13 +147,15 @@ class Order extends CActiveRecord {
             'tblQuotationOrders' => array(self::HAS_MANY, 'TblQuotationOrder', 'order_id'),
             'tblRepairs' => array(self::HAS_MANY, 'Repair', 'order_id'),
             'serviceOrders' => array(self::HAS_MANY, 'ServiceOrder', 'order_id'),
+            'lastServiceOrder' => array(self::HAS_ONE,'ServiceOrder','order_id','order'=>'date DESC'),
+            'lastService' => array(self::HAS_ONE,'Service',array('service_id'=>'id'),'through'=>'lastServiceOrder'),
             'tblServicePerformedOrders' => array(self::HAS_MANY, 'TblServicePerformedOrder', 'order_id'),
             'tblSpareOrders' => array(self::HAS_MANY, 'TblSpareOrder', 'order_id'),
             'tblTechnicalOrders' => array(self::HAS_MANY, 'TblTechnicalOrder', 'order_id'),
             //'tblWorkOrders' => array(self::HAS_MANY, 'TblWorkOrder', 'order_id'),
             'technicianUser' => array(self::BELONGS_TO, 'User', 'technician_order_id'),
             'equipmentStatuses' => array(self::HAS_MANY, 'EquipmentStatus', 'order_id'),
-            'failureDescriptions' => array(self::HAS_MANY, 'FailureDescription', 'order_id'),
+            'failureDescription' => array(self::HAS_ONE, 'FailureDescription', 'order_id'),
 			'spareParts' => array(self::MANY_MANY, 'SpareParts', 'tbl_spare_parts_order(order_id,spare_parts_id)'),
 			'works' => array(self::MANY_MANY, 'Work', 'tbl_work_order(order_id,work_id)'),
         );
@@ -222,18 +224,18 @@ class Order extends CActiveRecord {
 //        $criteria->compare('stock_number', $this->stock_number, true);
 //        $criteria->compare('name_deliverer_equipment', $this->name_deliverer_equipment, true);
 
-        $criteria->with = array('modelo.EquipmentType', 'serviceType', 'technicianUser', 'statusOrder', 'customer', 'outOrder');
+        $criteria->with = array('modelo.EquipmentType', 'serviceType', 'technicianUser', 'statusOrder', 'customer', 'outOrder', 'lastService', 'failureDescription');
 
         $criteria->compare('t.id', $this->id, true);
         $criteria->compare('customer.name', $this->customer_id, true);
         $criteria->compare('receptionist_user_id', $this->receptionist_user_id, true);
         $criteria->compare('payment_type_id', $this->payment_type_id, true);
         $criteria->compare('serviceType.name', $this->service_type_id, true);
-        $criteria->compare('service', $this->service, true);
+        // $criteria->compare('service', $this->service, true);
+        $criteria->compare('lastService.name', $this->service, true);
         $criteria->compare('t.date_hour', $this->date_hour, true);
         $criteria->compare('outOrder.date_hour', $this->out_date_hour, true);
         $criteria->compare('advance_payment', $this->advance_payment, true);
-       
         $criteria->compare('serial_number', $this->serial_number, true);
         $criteria->compare('_dependences', $this->_dependences, true);
         $criteria->compare('stock_number', $this->stock_number, true);
@@ -525,4 +527,18 @@ class Order extends CActiveRecord {
 
 		return $result; 
 	}
+
+    public function getLastService() {
+        $services = $this->serviceOrders;
+        $result = end($services);
+
+        return $result; 
+    }
+
+    public function getFailureDescription() {
+        $description = $this->failureDescriptions;
+        $result = reset($description);
+
+        return $result; 
+    }
 }

@@ -59,15 +59,15 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 			'type'=>'text',
 		),
 
-		// array(
-		// 	'name'=>'id',
-		// 	'value'=>'$data->service->name',
-		// 	'type'=>'text',
-		// ),
+		array(
+			'name'=>'service',
+			'value'=>'$data->lastService->name',
+			'type'=>'text',
+		),
 		
 		array(
 		'name'=>'date_hour',
-		'type'=>'date',
+		'type'=>'text',
 		'header'=>'Fecha de Entrada',
 		
 		),
@@ -76,7 +76,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 			'header'=>'Fecha de Salida',
 			'name' => 'out_date_hour',
 			'value'=>'( $data->outOrder != null ) ? $data->outOrder->date_hour : null',
-			'type'=>'date',
+			'type'=>'text',
 		),
 		
 		array(
@@ -213,6 +213,12 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 		// 				"user"
 		// 			),
 		// ),
+
+		array(
+			'name'=>'_failureDescription',
+			'value'=>'$data->failureDescription->description',
+			'type'=>'text',
+		),
 
 		array(
 			'name'=>'technician_order_id',

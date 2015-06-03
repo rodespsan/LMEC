@@ -80,7 +80,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 		
 		array(
 		'name'=>'date_hour',
-		'type'=>'date',
+		'type'=>'text',
 		'header'=>'Fecha de Entrada',
 		
 		),
@@ -96,11 +96,11 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 			'name'=>'type_search',
 			'value'=>'$data->modelo->EquipmentType->type',
 			'type'=>'text',
-			'filter' => CHtml::listData(
-				equipmentType::model()->findAll(),
-				 'id',
-				 'type'
-			),
+			// 'filter' => CHtml::listData(
+			// 	equipmentType::model()->findAll(),
+			// 	 'id',
+			// 	 'type'
+			// ),
         ),
 		
 		array(
@@ -122,10 +122,10 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 				)
 				)',
 			'type'=>'raw',
-			'filter'=>CHtml::listData(statusOrder::model()->findAll(array(
-							"condition" => "active=1",
-							"params"=>array()
-						)), 'id', 'status'),
+			// 'filter'=>CHtml::listData(statusOrder::model()->findAll(array(
+			// 				"condition" => "active=1",
+			// 				"params"=>array()
+			// 			)), 'id', 'status'),
 			
 		),
 		
@@ -172,17 +172,17 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 						"user"
 					)
 			)',
-			'filter'=>CHtml::listData(
-						User::model()->findAll(array(
-							"with" => array(
-									"roles"
-									),
-									"condition" => "role_id=2",
-								"params"=>array()
-							)),
-						"id",
-						"user"
-					),
+			// 'filter'=>CHtml::listData(
+			// 			User::model()->findAll(array(
+			// 				"with" => array(
+			// 						"roles"
+			// 						),
+			// 						"condition" => "role_id=2",
+			// 					"params"=>array()
+			// 				)),
+			// 			"id",
+			// 			"user"
+			// 		),
 		),
 		array(
 			'name'=>'active',
