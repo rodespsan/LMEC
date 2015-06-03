@@ -144,8 +144,8 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar'); ?>
-		<?php echo ($model->isNewRecord)? CHtml::submitButton('Agregar +') : ''; ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
+		<?php echo ($model->isNewRecord)? CHtml::submitButton('Crear +') : ''; ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -9,6 +9,11 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'service-type-form',
 	'enableAjaxValidation'=>false,
+	'enableClientValidation'=>true,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+		'validateOnChange'=>true,
+	),
 )); ?>
 
 	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
@@ -26,7 +31,8 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
+		<?php echo ($model->isNewRecord)? CHtml::submitButton('Crear +') : ''; ?>
 	</div>
 
 <?php $this->endWidget(); ?>

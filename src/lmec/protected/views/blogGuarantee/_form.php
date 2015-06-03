@@ -59,7 +59,7 @@ function send()
         	ActivityGuarantee::model()->findAll('active=1'), 'id', 'description'), array('prompt' => 'Seleccionar'));?>
 		<?php // echo $form->textField($model,'activity_guarantee_id',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'activity_guarantee_id'); ?>
-		<?php echo CHtml::Button('Agregar +', array('id' => 'agregar', 'name' => 'agregar', 'onclick' => 'send();')); ?>
+		<?php echo CHtml::Button('Crear +', array('id' => 'agregar', 'name' => 'agregar', 'onclick' => 'send();')); ?>
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'date_hour'); ?>
@@ -96,7 +96,7 @@ function send()
     </div>
 <br>
     <div class="row">
-        <?php echo CHtml::submitButton('Guardar', array('id' => 'guardar', 'name' => 'guardar')); ?>
+        <?php echo CHtml::submitButton('Crear', array('id' => 'guardar', 'name' => 'guardar')); ?>
     </div>
 
 <?php $this->endWidget(); ?>

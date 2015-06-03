@@ -65,8 +65,17 @@ class WorkController extends Controller {
 
         if (isset($_POST['Work'])) {
             $model->attributes = $_POST['Work'];
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            if ($model->save()){
+                if (!empty($_POST['yt1'])) 
+                {
+                    Yii::app()->user->setFlash('work-created', "¡El trabajo <b><i>&quot;$model->description&quot;</i></b> fue creado exitosamente!");
+                    $modelSaved = $model;
+                    $model=new Work;
+                    $model ->service_type_id = $modelSaved ->service_type_id;
+                }
+                else
+                    $this->redirect(array('view','id'=>$model->id));
+            }
         }
 
         if (ServiceType::model()->count('active = 1') > 0) {

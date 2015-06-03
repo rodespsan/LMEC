@@ -66,8 +66,15 @@ class ServiceTypeController extends Controller {
         if (isset($_POST['ServiceType'])) {
             $model->attributes = $_POST['ServiceType'];
 
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            if ($model->save()){
+                if (!empty($_POST['yt1'])) 
+                {
+                    Yii::app()->user->setFlash('serviceType-created', "¡El tipo de servicio <b><i>&quot;$model->description&quot;</i></b> fue creado exitosamente!");
+                    $model=new ServiceType;
+                }
+                else
+                    $this->redirect(array('view','id'=>$model->id));
+            }
         }
 
         $this->render('create', array(

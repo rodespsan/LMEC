@@ -66,8 +66,15 @@ class CustomerTypeController extends Controller {
         if (isset($_POST['CustomerType'])) {
             $model->attributes = $_POST['CustomerType'];
             
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            if ($model->save()){
+                if (!empty($_POST['yt1'])) 
+                {
+                    Yii::app()->user->setFlash('customerType-created', "¡El tipo de cliente <b><i>&quot;$model->type&quot;</i></b> fue creado exitosamente!");
+                    $model=new CustomerType;
+                }
+                else
+                    $this->redirect(array('view','id'=>$model->id));
+            }
         }
 
         $this->render('create', array(

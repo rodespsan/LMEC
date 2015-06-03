@@ -70,18 +70,25 @@ class UserController extends Controller {
             $transaction = Yii::app()->db->beginTransaction();
             try {
                 if ($model->save()) {
-				
-					$successful = true ;
-				
+
+                    $successful = true ;
+                
                     if($model->assignRolesToUser($model->id) == $successful)
-					{
-						$transaction->commit();
-						$this->redirect(array('view', 'id' => $model->id));
-					}
-					else
-					{
-						$transaction->rollBack();
-					}
+                    {
+                        $transaction->commit();
+
+                        /*if (!empty($_POST['yt1'])) 
+                        {
+                            Yii::app()->user->setFlash('activityGuarantee-created', "¡La actividad <b><i>&quot;$model->description&quot;</i></b> fue creada exitosamente!");
+                            $model=new ActivityGuarantee;
+                        }
+                        else*/
+                        $this->redirect(array('view','id'=>$model->id));
+                    }
+                    else
+                    {
+                        $transaction->rollBack();
+                    }
                 }
             } catch (Exception $e) {
                 $transaction->rollBack();

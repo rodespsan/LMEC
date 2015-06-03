@@ -15,4 +15,10 @@ $this->menu=array(
 
 <h1>Crear accesorio</h1>
 
+<?php if( Yii::app()->user->hasFlash('accesory-created') ): ?>
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('accesory-created'); ?>
+</div>
+<?php endif; ?>
+
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -49,7 +49,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear servicio' : 'Actualizar'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar'); ?>
 		<?php echo ($model->isNewRecord)? CHtml::submitButton('Crear +') : ''; ?>
 	</div>
 

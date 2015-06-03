@@ -70,8 +70,15 @@ class PaymentTypeController extends Controller
 		if(isset($_POST['PaymentType']))
 		{
 			$model->attributes=$_POST['PaymentType'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+				if (!empty($_POST['yt1'])) 
+                {
+                    Yii::app()->user->setFlash('paymentType-created', "¡El tipo de pago <b><i>&quot;$model->name&quot;</i></b> fue creado exitosamente!");
+                    $model=new PaymentType;
+                }
+                else
+                	$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
