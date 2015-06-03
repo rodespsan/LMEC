@@ -138,7 +138,7 @@ function send()
 				'template' => '{delete}',
 				'buttons' => array(
 					'delete' => array(
-						'url' => 'CController::createUrl("/blogGuarantee/deleteBlogGuarantee",array("id"=>$data->id))',
+						'url' => 'Yii::app()->createUrl("/blogGuarantee/deleteBlogGuarantee",array("id"=>$data->id))',
 						)
 					),
 				),

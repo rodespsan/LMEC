@@ -177,7 +177,7 @@
                     'template' => '{delete}',
                     'buttons' => array(
                         'delete' => array(
-                            'url' => 'CController::createUrl("/repair/deleteRepairWork",array("id"=>$data->id,"repair_id"=>$data->repair_id,"work_id"=>$data->work_id))',
+                            'url' => 'Yii::app()->createUrl("/repair/deleteRepairWork",array("id"=>$data->id,"repair_id"=>$data->repair_id,"work_id"=>$data->work_id))',
                         )
                     ),
                 ),

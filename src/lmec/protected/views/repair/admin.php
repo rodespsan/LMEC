@@ -72,7 +72,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'template' => '{view}{delete}{update}',
             'buttons' => array(
                 'update' => array(
-                    'url' => 'CController::createUrl("/repair/update",array("id"=>$data->order_id))',
+                    'url' => 'Yii::app()->createUrl("/repair/update",array("id"=>$data->order_id))',
                 )
             ),
         )
