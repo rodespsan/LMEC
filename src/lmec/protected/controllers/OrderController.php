@@ -317,6 +317,7 @@ class OrderController extends Controller {
         if (Yii::app()->request->isPostRequest) {
             // we only allow deletion via POST request
             $model = $this->loadModel($id);
+            $model->scenario = "ajaxupdate";
             $model->active = 0;
             $model->save();
 
@@ -545,6 +546,7 @@ class OrderController extends Controller {
     public function actionActivate($id) {
         if (Yii::app()->request->isPostRequest) {
             $model = $this->loadModel($id);
+            $model->scenario = "ajaxupdate";
             $model->active = 1;
             $model->save();
 
