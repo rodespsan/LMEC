@@ -14,7 +14,15 @@
 
     <div class="row">
         <?php echo $form->labelEx($model, 'customer_id'); ?>
-        <?php echo $form->DropDownList($model, 'customer_id', Customer::getActiveCustomers()); ?>
+        <?php echo $form->DropDownList($model, 'customer_id',
+                    CHtml::listData(Customer::model()->findAll(
+                        array(
+                            'condition' => 'active = 1',
+                            'order' => 'name'
+                        )
+                    ),'id','name'), 
+                    array('empty'=>'Seleccionar')
+        ); ?>
         <?php echo $form->error($model, 'customer_id'); ?> 
     </div>
 	

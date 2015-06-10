@@ -55,8 +55,15 @@ function send()
  <br>
 	<div class="row">
 		<?php echo $form->labelEx($model,'activity_guarantee_id'); ?>
-        <?php  echo $form->dropDownList($model, 'activity_guarantee_id', Chtml::listData(
-        	ActivityGuarantee::model()->findAll('active=1'), 'id', 'description'), array('prompt' => 'Seleccionar'));?>
+        <?php echo $form->dropDownList(
+        	$model, 'activity_guarantee_id', Chtml::listData(
+        		ActivityGuarantee::model()->findAll(
+        			array(
+						'condition' => 'active = 1',
+						'order' => 'description'
+					)), 'id', 'description'
+			), array('prompt' => 'Seleccionar')
+		);?>
 		<?php // echo $form->textField($model,'activity_guarantee_id',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'activity_guarantee_id'); ?>
 		<?php echo CHtml::Button('Crear +', array('id' => 'agregar', 'name' => 'agregar', 'onclick' => 'send();')); ?>

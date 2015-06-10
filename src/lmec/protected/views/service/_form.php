@@ -26,7 +26,15 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'service_type_id'); ?>
-		<?php echo $form->dropDownList($model,'service_type_id',CHtml::listData(ServiceType::model()->findAll('active = 1'),'id','name'), array('empty'=>'Seleccionar Tipo de Servicio')); ?>
+		<?php echo $form->dropDownList($model,'service_type_id',
+					CHtml::listData(ServiceType::model()->findAll(
+						array(
+                            'condition' => 'active = 1',
+                            'order' => 'name'
+                        )
+					),'id','name'), 
+					array('empty'=>'Seleccionar Tipo de Servicio')
+		); ?>
 		<?php echo $form->error($model,'service_type_id'); ?>
 	</div>
 

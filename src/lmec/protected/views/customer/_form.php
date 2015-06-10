@@ -37,12 +37,28 @@ if (!$model->isNewRecord && $model->contact == NULL) {
         <div class="row">
 
             <?php echo $form->labelEx($model, 'customer_type_id'); ?>
-            <?php echo $form->DropDownList($model, 'customer_type_id', CustomerType::getActiveCustomerTypes()); ?>
+            <?php echo $form->DropDownList($model, 'customer_type_id', 
+                        CHtml::listData(CustomerType::model()->findAll(
+                        array(
+                            'condition' => 'active = 1',
+                            'order' => 'type'
+                        )
+                    ),'id','type'), 
+                    array('empty'=>'Seleccionar')
+            ); ?>
             <?php echo $form->error($model, 'customer_type_id'); ?>            
         </div>
         <div class="row">
             <?php echo $form->labelEx($model, 'dependence_id'); ?>
-            <?php echo $form->DropDownList($model, 'dependence_id', Dependence::getActiveDependencies()); ?>
+            <?php echo $form->DropDownList($model, 'dependence_id', 
+                        CHtml::listData(Dependence::model()->findAll(
+                        array(
+                            'condition' => 'active = 1',
+                            'order' => 'name'
+                        )
+                    ),'id','name'), 
+                    array('empty'=>'Seleccionar')
+            ); ?>
             <?php echo $form->error($model, 'dependence_id'); ?>
         </div>
         <div class="row">

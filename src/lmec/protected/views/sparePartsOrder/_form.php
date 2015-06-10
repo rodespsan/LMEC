@@ -54,7 +54,8 @@
 				CHtml::listData(
 					SparePartsType::model()->findAll(
 						array(
-							'condition'=>'active =1 '
+							'condition'=>'active =1',
+							'order' => 'type'
 						)
 					),
 					'id',

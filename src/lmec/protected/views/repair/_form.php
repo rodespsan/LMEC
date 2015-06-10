@@ -118,7 +118,12 @@
         <?php
         echo $form->dropDownList(
                 $modelRepairWork, 'work_id', Chtml::listData(
-                        Work::model()->findAll('active=1 AND service_type_id=2'), 'id', 'name'
+                        Work::model()->findAll(
+                            array(
+                                'condition' => 'active = 1 AND service_type_id=2',
+                                'order' => 'name'
+                            )
+                        ), 'id', 'name'
                 ), array(
             'prompt' => 'Seleccionar un trabajo'
                 )

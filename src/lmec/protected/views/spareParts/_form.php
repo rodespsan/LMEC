@@ -21,22 +21,41 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'spare_parts_type_id'); ?>
 		<?php echo $form->dropDownList($model,'spare_parts_type_id',
-					CHtml::listData(SparePartsType::model()->findAll('active = 1'),'id','type'),
+					CHtml::listData(SparePartsType::model()->findAll(
+						array(
+							'condition' => 'active = 1',
+							'order' => 'type'
+						)
+					),'id','type'),
 					array('empty'=>'Seleccionar Tipo')
-					); ?>
+		); ?>
 		<?php echo $form->error($model,'spare_parts_type_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'brand_id'); ?>
-		<?php echo $form->dropDownList($model,'brand_id',CHtml::listData(Brand::model()->findAll('active = 1'),'id','name'), array('empty'=>'Seleccionar Marca')); ?>
+		<?php echo $form->dropDownList($model,'brand_id',
+					CHtml::listData(Brand::model()->findAll(
+						array(
+							'condition' => 'active = 1',
+							'order' => 'name'
+						)
+					),'id','name'), 
+					array('empty'=>'Seleccionar Marca')
+		); ?>
 		<?php echo $form->error($model,'brand_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'spare_parts_status_id'); ?>
-		<?php echo $form->dropDownList($model,'spare_parts_status_id',CHtml::listData(SparePartsStatus::model()->findAll('active = 1'),'id','description'),
-		array('empty'=>'Seleccionar Estado', 'options'=>array(4=>array('selected'=>'selected')))
+		<?php echo $form->dropDownList($model,'spare_parts_status_id',
+					CHtml::listData(SparePartsStatus::model()->findAll(
+						array(
+							'condition' => 'active = 1',
+							'order' => 'description'
+						)
+					),'id','description'),
+					array('empty'=>'Seleccionar Estado', 'options'=>array(4=>array('selected'=>'selected')))
 		); ?>
 		<?php echo $form->error($model,'spare_parts_status_id'); ?>
 	</div>

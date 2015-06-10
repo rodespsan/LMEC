@@ -88,7 +88,12 @@
 			$modelDiagnosticWork,
 			'work_id',
 			Chtml::listData(
-				Work::model()->findAll('active=1 AND service_type_id='.$modelOrder->service_type_id),
+				Work::model()->findAll(
+					array(
+						'condition' => 'active=1 AND service_type_id='.$modelOrder->service_type_id,
+						'order' => 'name'
+					)
+				),
 				'id',
 				'name'
 			),

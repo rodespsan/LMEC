@@ -15,39 +15,61 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'equipment_type_id'); ?>
-		<?php 
-		if($model->isNewRecord == true)
+		<!-- <?php 
+		//if($model->isNewRecord == true)
 		{
-		echo $form->dropDownList($model,'equipment_type_id',
-				CHtml::listData(EquipmentType::model()->findAllByAttributes(array('active'=>'1')),'id','type'),array('prompt'=>'Seleccionar',)
-			);
+		//echo $form->dropDownList($model,'equipment_type_id',
+				//CHtml::listData(EquipmentType::model()->findAllByAttributes(array('active'=>'1')),'id','type'),array('prompt'=>'Seleccionar',)
+			//);
 		}
-		else
+		//else
 		{
-		echo $form->dropDownList($model,'equipment_type_id',
-				CHtml::listData(EquipmentType::model()->findAll(),'id','type'),array('prompt'=>'Seleccionar',)
-			);
+		//echo $form->dropDownList($model,'equipment_type_id',
+				//CHtml::listData(EquipmentType::model()->findAll(),'id','type'),array('prompt'=>'Seleccionar',)
+			//);
 		}
-		?>
+
+
+		?> -->
+		<?php echo $form->dropDownList($model, 'equipment_type_id',
+			Chtml::listData(
+				EquipmentType::model()->findAll(
+					array(
+							'condition' => 'active=1',
+							'order' => 'type'
+						)
+				),'id','type'
+			),array('prompt'=>'Seleccionar')
+		);?>
 		<?php echo $form->error($model,'equipment_type_id'); ?>
 	</div>
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'brand_id'); ?>
-		<?php 
-		if($model->isNewRecord == true)
+		<!-- <?php 
+		//if($model->isNewRecord == true)
 		{
-		echo $form->dropDownList($model,'brand_id',
-				CHtml::listData(Brand::model()->findAllByAttributes(array('active'=>'1')),'id','name'),array('prompt'=>'Seleccionar',)
-			);
+		//echo $form->dropDownList($model,'brand_id',
+				//CHtml::listData(Brand::model()->findAllByAttributes(array('active'=>'1')),'id','name'),array('prompt'=>'Seleccionar',)
+			//);
 		} 
-		else
+		//else
 		{
-		echo $form->dropDownList($model,'brand_id',
-				CHtml::listData(Brand::model()->findAll(),'id','name'),array('prompt'=>'Seleccionar',)
-			);
+		//echo $form->dropDownList($model,'brand_id',
+				//CHtml::listData(Brand::model()->findAll(),'id','name'),array('prompt'=>'Seleccionar',)
+			//);
 		}
-		?>
+		?> -->
+		<?php echo $form->dropDownList($model, 'brand_id',
+					CHtml::listData(Brand::model()->findAll(
+						array(
+							'condition' => 'active = 1',
+							'order' => 'name'
+						)
+					),'id','name'), 
+					array('empty'=>'Seleccionar')
+		); ?>
+		<?php echo $form->error($model,'equipment_type_id'); ?>
 		<?php echo $form->error($model,'brand_id'); ?>
 	</div>
 
