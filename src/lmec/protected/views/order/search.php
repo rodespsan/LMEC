@@ -254,7 +254,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 					'onchange'=>"$.fn.yiiGridView.update('order-grid',{ data:{ pageSize: $(this).val() }})",
 				)
             ),
-			'template'=>'{view}{activate}',
+			'template'=>'{view}',
 			'deleteConfirmation'=>'¿Desactivar Orden?',
 			'buttons' => array(
 
