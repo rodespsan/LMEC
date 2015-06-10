@@ -67,9 +67,7 @@
 				<td class="ths"><?php 
 						echo 'Falla: ' ?>
 						<?php 
-							foreach($model->failureDescriptions as $FailureDescription){
-							echo CHtml::encode($FailureDescription->description);				  
-							} 
+							echo CHtml::encode($model->failureDescription->description);
 						?>
 				</td>
 				<td class="ths"></td>
