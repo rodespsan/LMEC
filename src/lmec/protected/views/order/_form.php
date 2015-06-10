@@ -98,7 +98,8 @@
 					'with' => array(
 						'roles'
 					),
-					'condition' => 'role_id = 3 AND t.active = 1'
+					'condition' => 'role_id = 3 AND t.active = 1',
+					'order' => 't.name'
 				)),
 				'id',
 				'fullName'
@@ -137,7 +138,9 @@
 			'payment_type_id',
 			CHtml::listData(
 				PaymentType::model()->findAll(array(
-					'condition' => 'active=1'
+					'condition' => 'active=1',
+					'order' => 'name'
+
 				)),
 				'id',
 				'name'
@@ -299,7 +302,8 @@
 			'service_type_id',
 			CHtml::listData(
 				ServiceType::model()->findAll(array(
-					'condition' => 'active=1'
+					'condition' => 'active=1',
+					'order' => 'name'
 				)),
 				'id',
 				'name'
@@ -403,7 +407,12 @@
 			$model,
 			'accesory_id',
 			Chtml::listData(
-				Accesory::model()->findAll('active=1'), 'id', 'name'
+				Accesory::model()->findAll(
+					array(
+						'condition' => 'active=1',
+						'order' => 'name',
+					)
+				), 'id', 'name'
 			),
 			array(
 				'prompt' => 'Seleccionar'
