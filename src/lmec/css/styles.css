@@ -14,6 +14,7 @@
 	border-collapse: collapse;
 	width: 100%;
 	border: 1px #D0E3EF solid;
+	table-layout: fixed;
 }
 
 .grid-view table.items th, .grid-view table.items td

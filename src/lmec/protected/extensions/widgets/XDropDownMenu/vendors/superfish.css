@@ -54,7 +54,9 @@ ul.sf-menu li li li.sfHover ul {
 
 /*** DEMO SKIN ***/
 .sf-menu {
-	float:            left;
+	margin-right: auto;
+	margin-left: auto;
+	width: 50%;
 	margin-bottom:    1em;
 }
 .sf-menu a {
