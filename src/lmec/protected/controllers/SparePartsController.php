@@ -64,14 +64,6 @@ class SparePartsController extends Controller
 	{
 		$model=new SpareParts;
 
-		if(!empty($_POST['yt1'])){
-			$sql = "SELECT * FROM tbl_spare_parts";
-			$sparePartsArray = SpareParts::model()->findAllBySql($sql);
-			$lastInsertedId = sizeof($sparePartsArray)-1;
-			$modelSparePart = $sparePartsArray[$lastInsertedId];
-			$model = $modelSparePart;
-        }
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -82,7 +74,22 @@ class SparePartsController extends Controller
 				if(!empty($_POST['yt1']))
                 {
                     Yii::app()->user->setFlash('spareparts-created', "¡La refacción <b><i>&quot;$model->name&quot;</i></b> fue creada exitosamente!");
-                    $this->redirect(array('create'));
+                    $attributes = $model->getAttributes(array(
+                    	'spare_parts_status_id',
+                    	'spare_parts_type_id',
+                    	'brand_id',
+                    	'provider_id',
+                    	'name',
+                    	'price',
+                    	'date_hour',
+                    	'guarantee_period',
+                    	'invoice',
+                    	'description',
+                    	'assigned',
+                    	'active',
+                    ));
+                    $model = new SpareParts();
+                    $model->attributes = $attributes;
 				}
 				else{
 					$this->redirect(array('view','id'=>$model->id));
