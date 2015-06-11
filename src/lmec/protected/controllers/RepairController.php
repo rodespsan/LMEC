@@ -88,9 +88,9 @@ class RepairController extends Controller {
                     $modelOrder->scenario = 'ajaxupdate';
                     $modelOrder->status_order_id = 11;
                     $modelOrder->save();
-                    //$this->redirect(array('viewDiagnostic','id'=>$modelDiagnostic->id));
                     $this->redirect(array('repair/view', 'id' => $modelRepair->id));
                 } else {
+                    $modelOrder->scenario = 'ajaxupdate';
                     $modelOrder->status_order_id = 9;
                     Yii::app()->user->setFlash('success', "¡Se ha guardado correctamente !");
                 }
@@ -111,17 +111,10 @@ class RepairController extends Controller {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
-        $model = Repair::model()->find('order_id=:order_id', array(
-            ':order_id' => $id));
-
-        $this->loadModel($model->id);
-
-
-
+        $model = $this->loadModel($id);
+        $modelOrder=Order::model()->findByPk($model->order_id);
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
-
-
         if (isset($_POST['Repair'])) {
 
             $model->description = $_POST['Repair']['description'];
@@ -129,8 +122,13 @@ class RepairController extends Controller {
 
             if ($model->save()) {
                 if ($model->finished == 1) {
+                    $modelOrder->scenario = 'ajaxupdate';
+                    $modelOrder->status_order_id = 11;
+                    $modelOrder->save();
                     $this->redirect(array('view', 'id' => $model->id));
                 } else {
+                    $modelOrder->scenario = 'ajaxupdate';
+                    $modelOrder->status_order_id = 9;
                     Yii::app()->user->setFlash('success', "¡Se ha actualizado correctamente !");
                 }
             }
@@ -212,12 +210,10 @@ class RepairController extends Controller {
     }
 
     public function actionDeleteRepairWork($id) {
-
         RepairWork::model()->findByPk($id)->delete();
     }
 
     public function actionCreateRepairWork($id) {
-
         $modelRepair = Repair::model()->find('order_id=:order_id', array(':order_id' => $id));
 
         if (empty($modelRepair)) {
@@ -228,24 +224,15 @@ class RepairController extends Controller {
             $modelRepair->save();
         }
 
-
-
         if (isset($_POST['RepairWork'])) {
-
-
             $modelRepairWork = RepairWork::model()->find('repair_id=:repair_id AND work_id=:work_id', array(
                 ':repair_id' => $modelRepair->id,
                 ':work_id' => $_POST['RepairWork']['work_id']
             ));
 
-
-
-
             if (empty($modelRepairWork)) {
-
-
                 $modelRepairWork = new RepairWork();
-                $modelRepairWork->repair_id = $modelRepair->id;
+                $modelRepairWork->repair_id = $modelRepair->order_id;
                 $modelRepairWork->user_id = Yii::app()->user->id;
                 $modelRepairWork->date_hour = date('Y-m-d H:i:s');
                 $modelRepairWork->work_id = $_POST['RepairWork']['work_id'];
@@ -256,31 +243,38 @@ class RepairController extends Controller {
     }
 
     public function actionUpdateAjax($id) {
-
-
         $modelRepair = Repair::model()->find('order_id=:order_id', array(
             ':order_id' => $id,
         ));
 
-
         if (empty($modelRepair)) {
-
             $modelRepair = new Repair();
             $modelRepair->order_id = $id;
         }
 
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+        if (isset($_POST['RepairWork'])) {
+
+            $modelRepairWork = RepairWork::model()->find('repair_id=:repair_id AND work_id=:work_id', array(
+                ':repair_id' => $modelRepair->id,
+                ':work_id' => $_POST['RepairWork']['work_id']
+            ));
+
+            if (empty($modelRepairWork)) {
+                $modelRepairWork = new RepairWork();
+                $modelRepairWork->repair_id = $modelRepair->id;
+                $modelRepairWork->user_id = Yii::app()->user->id;
+                $modelRepairWork->date_hour = date('Y-m-d H:i:s');
+                $modelRepairWork->work_id = $_POST['RepairWork']['work_id'];
+                $modelRepairWork->validate();
+                $modelRepairWork->save(false);
+            }
+        }
 
         if (isset($_POST['Repair'])) {
             $modelRepair->attributes = $_POST['Repair'];
             $modelRepair->save();
-
             if ($modelRepair->finished == 1) {
-
                 $this->redirect(array('view', 'id' => $modelRepair->id));
-
-//                $this->render('view', array('id' => $modelRepair->id, 'model'=>$modelRepair));
             }
         }
     }

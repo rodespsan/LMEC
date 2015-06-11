@@ -24,85 +24,27 @@
     ));
     ?>
 
-
-
     <script type="text/javascript">
-
-        function send()
-        {
-
+        function send(){
             var data = $("#repair-form").serialize();
-
-
             $.ajax({
                 type: 'POST',
-                url: '<?php echo  Yii::app()->createAbsoluteUrl("repair/createRepairWork", array("id" => $_GET['id']));
-        ?>',
+                url: '<?php echo  Yii::app()->createAbsoluteUrl("repair/createRepairWork", array("id" => $_GET['id']));?>',
                 data: data,
                 success: function() {
-
                 },
                 complete: function() {
-
                     $.fn.yiiGridView.update("repair-work-grid");
-
                 },
                 error: function() { // if error occured
-            
-                  
-
                 },
                 dataType: 'html'
             });
-
         }
-
-        function sendUpdate()
-        {
-
-            var data = $("#repair-form").serialize();
-
-
-            $.ajax({
-                type: 'POST',
-                url: '<?php echo Yii::app()->createAbsoluteUrl("repair/updateAjax", array("id" => $_GET['id']));
-                        ?>',
-                data: data,
-                success: function() {
-                    
-                   <?php //$this->redirect(array('view', 'id' => $model->id));?>
-                    
-                },
-                error: function() { // if error occured
-            
-                    alert("No se ha guardado correctamente. Vuelva a intentar");
-   
-                },
-                dataType: 'html'
-            });
-
-        }
-
-
     </script>
-
-
-
-    <p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
     <?php echo $form->errorSummary($model); ?>
 
-    <div class="row">
-
-
-        <?php echo $form->labelEx($model, 'order_id'); ?>
-        <?php echo Order::model()->getFolio_($_GET['id']) ?>        
-        <?php // echo $form->HiddenField($model, 'order_id', array('size' => 10, 'maxlength' => 10, 'value' => Order::model()->getFolio_($_GET['id']), 'disabled' => true));
-        ?>
-        <?php echo $form->error($model, 'order_id'); ?>
-    </div>
-
-    <br>
     <div class="row">
         <?php echo $form->labelEx($model, 'description'); ?>
         <?php echo $form->textArea($model, 'description', array('rows' => 6, 'cols' => 50)); ?>
@@ -145,12 +87,7 @@
     
     <br>
     <div class="row">
-        
-        
-        
-       
         <?php echo CHtml::submitButton('Guardar', array('id' => 'guardar', 'name' => 'guardar', /*'onclick' => 'sendUpdate();'*/)); ?>
-
     </div>
 
  <?php $this->endWidget(); ?>
