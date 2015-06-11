@@ -308,12 +308,11 @@ CREATE TABLE IF NOT EXISTS `tbl_diagnostic` (
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_diagnostic_work` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `diagnostic_id` int(10) unsigned NOT NULL,
   `work_id` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`diagnostic_id`,`work_id`),
-  UNIQUE KEY `diagnostic_id` (`diagnostic_id`),
-  KEY `work_id` (`work_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

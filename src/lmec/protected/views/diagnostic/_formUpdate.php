@@ -14,64 +14,26 @@
       'htmlOptions'=>array(
             //'onsubmit'=>"return false;", 
        ),
-
-
-
  )); 
-
- 
- 
- 
- 
  ?>
 
   <script type="text/javascript">
-    function send()
-    {
-         var data=$("#diagnostic-form").serialize();
-         
-      $.ajax({
+    function send(){
+        var data=$("#diagnostic-form").serialize();
+      	$.ajax({
     	    type: 'POST',
-    	    url: '<?php  echo Yii::app()->createAbsoluteUrl("diagnostic/createDiagnostic", array("id" => $_GET['id']));?>',
+    	    url: '<?php  echo Yii::app()->createAbsoluteUrl("diagnostic/createDiagnosticWork", array("id" => $_GET['id']));?>',
             data:data,
             success: function(){
-			
             },
-
             complete: function(){   
-               
 			   $.fn.yiiGridView.update("diagnostic-work-grid");
-			   
             },
             error: function() { // if error occured
-			
-      
 			},
             dataType:'html'
         });
     }
-
-
-    function sendUpdate()
-    {
- 
-      var data=$("#diagnostic-form").serialize();
-      $.ajax({
-           type: 'POST',
-           url: '<?php  echo Yii::app()->createAbsoluteUrl("diagnostic/updateAjax",array("id"=>$modelOrder->id));
-		           ?>',
-           data:data,
-           success: function(){
-
-           },
-           error: function() { // if error occured
-          
-           }, 
-           dataType:'html'
-       });
-    }
-
- 
 </script>
 
    

@@ -66,6 +66,7 @@ class DiagnosticController extends Controller
         if($modelOrder === null)
 		throw new CHttpException(404,'La Orden solicitada no existe.');
 		if($modelOrder->status_order_id==2){    //si el estado de la orden esta en espera de diagnostico
+		   $modelOrder->scenario = 'ajaxupdate';
 		   $modelOrder->status_order_id==3;     //se cambia a estado en diagnostico
 		   $modelOrder->save();
 		}	
@@ -228,8 +229,7 @@ class DiagnosticController extends Controller
     public function actionUpdateAjax($id,$id_diagnostic) 
     {
         $modelOrder=Order::model()->findByPk($id);
-	 	
-		
+
 		$modelDiagnostic = Diagnostic::model()->find(
 		'order_id=:order_id AND id=:id',
 		array(
@@ -303,7 +303,7 @@ class DiagnosticController extends Controller
 		    if( empty($modelDiagnosticWork) )
 		    {
 		      $modelDiagnosticWork = new DiagnosticWork();
-			  $modelDiagnosticWork->diagnostic_id = $modelDiagnostic->id;
+			  $modelDiagnosticWork->diagnostic_id = $modelDiagnostic->order_id;
 			  $modelDiagnosticWork->work_id = $_POST['DiagnosticWork']['work_id'];
 			  $modelDiagnosticWork->save(false);
 		    }
