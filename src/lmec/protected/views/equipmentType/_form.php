@@ -8,6 +8,7 @@
 		'validateOnSubmit'=>true,
 		'validateOnChange'=>true,
 	),
+	'focus'=>'input[type="text"]:first',
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>

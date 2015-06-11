@@ -14,6 +14,7 @@
 		'validateOnSubmit'=>true,
 		'validateOnChange'=>true,
 	),
+	'focus'=>'input[type="text"]:first',
 )); 
 ?>
 

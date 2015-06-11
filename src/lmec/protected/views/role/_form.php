@@ -3,6 +3,7 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'role-form',
 	'enableAjaxValidation'=>false,
+	'focus'=>'input[type="text"]:first',
 )); ?>
 
 	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
@@ -36,7 +37,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Aceptar' : 'Guardar'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

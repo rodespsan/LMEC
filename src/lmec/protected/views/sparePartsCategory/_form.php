@@ -9,6 +9,7 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'spare-parts-category-form',
 	'enableAjaxValidation'=>false,
+	'focus'=>'input[type="text"]:first',
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>

@@ -13,6 +13,7 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+	'focus'=>'input[type="text"]:first',
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
@@ -32,7 +33,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
