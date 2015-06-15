@@ -39,7 +39,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 	'id'=>'order-grid',
 	'dataProvider'=>  $model->search(),
 	'filter'=>$model,
-	
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'columns'=>array(
 
 		array(
@@ -248,6 +248,51 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 <script>
 function reloadGrid(data) {
     $.fn.yiiGridView.update('order-grid');
+}
+
+$(function() {
+    setupGridView();
+});
+
+function setupGridView(grid) {
+    if(grid==null)
+        grid = '.grid-view tr.filters';
+    $('input,select', grid).change(function() {
+        var grid = $(this).closest('.grid-view');
+        $(document).data(grid.attr('id')+'-lastFocused', this.name);
+    });
+}
+
+function afterAjaxUpdate(id, options) {
+    var grid = $('#'+id);
+    var lf = $(document).data(grid.attr('id')+'-lastFocused');
+    if(lf == null) return;
+    fe = $('[name="'+lf+'"]', grid);
+    if(fe!=null) {
+        if(fe.get(0).tagName == 'INPUT' && fe.attr('type') == 'text')
+            fe.cursorEnd();
+        else
+            fe.focus();
+    }
+    setupGridView(grid);
+}
+
+jQuery.fn.cursorEnd = function() {
+    return this.each(function() {
+        if(this.setSelectionRange)
+        {
+            this.focus();
+            this.setSelectionRange(this.value.length,this.value.length);
+        }
+        else if (this.createTextRange) {
+            var range = this.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', this.value.length);
+            range.moveStart('character', this.value.length);
+            range.select();
+        }
+        return false;
+    });
 }
 </script>
 <?php echo CHtml::ajaxSubmitButton('Filter',array('order/ajaxupdate'), array(),array("style"=>"display:none;")); ?>
