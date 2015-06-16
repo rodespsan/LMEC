@@ -29,10 +29,21 @@
 				<th class= "prices" >IMPORTE</th>
 			</tr>
 			<tr class="tr1">
-				<td class='amount' > </td>
-				<td class="description"> 
+				<td class='amount'></td>
+				<td class="description">Concepto de entrada:</td>
+				<td class="prices"></td>
+				<td class="prices"></td>
+			</tr>
+			<tr class="tr1">
+				<td class="ths2"> 1 </td>
+				<td class="ths"><?php echo 'Servicio:',CHtml::encode($model->serviceOrder->service->name);?></td>
+				<td class="ths_3"><?php echo CHtml::encode($model->serviceOrder->price); ?></td>
+				<td class="ths_3"><?php echo CHtml::encode( $model->serviceOrder->price); ?></td>
+			</tr>
+			<tr class="tr1">
+				<td class="ths2"></td>
+				<td class="ths"> 
 					<p>
-						Concepto de entrada<br>
 						Equipo: <?php echo CHtml::encode($model->modelo->EquipmentType->type);?><br>
 						Modelo: <?php echo CHtml::encode($model->modelo->name);?><br>
 						<?php if($model->stock_number!=null){
@@ -53,14 +64,8 @@
 						
 					</p>
 				</td>
-				<td class="prices"></td>
-				<td class="prices"></td>
-			</tr>
-			<tr class="tr1">
-				<td class="ths2"> 1 </td>
-				<td class="ths"><?php echo 'Servicio:',CHtml::encode($model->serviceOrder->service->name);?></td>
-				<td class="ths_3"><?php echo CHtml::encode($model->serviceOrder->price); ?></td>
-				<td class="ths_3"><?php echo CHtml::encode( $model->serviceOrder->price); ?></td>
+				<td class="ths_3"></td>
+				<td class="ths_3"></td>
 			</tr>
 			<tr class="tr1">
 				<td class="ths"></td>
