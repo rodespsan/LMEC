@@ -29,10 +29,21 @@
 				<th class= "prices" >IMPORTE</th>
 			</tr>
 			<tr class="tr1">
-				<td class='amount' > </td>
-				<td class="description"> 
+				<td class='amount'></td>
+				<td class="description">Concepto del trabajo realizado:</td>
+				<td class="prices"></td>
+				<td class="prices"></td>
+			</tr>
+			<tr class="tr1">
+				<td class="ths2"> 1 </td>
+				<td class="ths">Servicio: <?php echo CHtml::encode($model->order->serviceOrder->service->name);?></td>
+				<td class="ths_3"><?php echo CHtml::encode($model->order->serviceOrder->service->price); ?></td>
+				<td class="ths_3"><?php echo CHtml::encode($model->order->serviceOrder->service->price); ?></td>
+			</tr>
+			<tr class="tr1">
+				<td class="ths2"> </td>
+				<td class="ths"> 
 					<p>
-						Concepto del trabajo realizado<br>
 						Equipo: <?php echo CHtml::encode($model->order->modelo->EquipmentType->type);?><br>
 						Modelo: <?php echo CHtml::encode($model->order->modelo->name);?><br>
 						<?php if($model->order->stock_number!=null){
@@ -52,25 +63,8 @@
 						<?php endif; ?>
 					</p>
 				</td>
-				<td class="prices"></td>
-				<td class="prices"></td>
-			</tr>
-			<tr class="tr1">
-				<td class="ths2"> 1 </td>
-				<td class="ths">Servicio: <?php echo CHtml::encode($model->lastService->service->name);?></td>
-				<td class="ths_3"><?php echo CHtml::encode($model->lastService->service->price); ?></td>
-				<td class="ths_3"><?php echo CHtml::encode($model->lastService->service->price); ?></td>
-			</tr>
-			<tr class="tr1">
-				<td class="ths2"></td>
-				<td class="ths">
-					Trabajo Realizado: 
-						<?php foreach ($model->order->works as $works) { ?>
-									<li><?php echo CHtml::encode($works->description); ?> </li>
-								<?php } ?>
-				</td>
-				<td class="ths"></td>
-				<td class="ths"></td>
+				<td class="ths_3"></td>
+				<td class="ths_3"></td>
 			</tr>
 			<?php if($model->order->spareParts != null){ ?>
 			<tr class="tr1">
@@ -96,6 +90,17 @@
 									<?php echo CHtml::encode($spare->price); ?><br>
 								<?php } ?>
 				</td>
+			</tr>
+			<tr class="tr1">
+				<td class="ths2"></td>
+				<td class="ths">
+					Trabajo Realizado: 
+						<?php foreach ($model->order->works as $works) { ?>
+									<li><?php echo CHtml::encode($works->description); ?> </li>
+								<?php } ?>
+				</td>
+				<td class="ths"></td>
+				<td class="ths"></td>
 			</tr>
 			<?php } ?>
 			<?php if($model->observation != null){ ?>
