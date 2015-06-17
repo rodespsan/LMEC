@@ -66,7 +66,6 @@ function send()
 		);?>
 		<?php // echo $form->textField($model,'activity_guarantee_id',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'activity_guarantee_id'); ?>
-		<?php echo CHtml::Button('Crear +', array('id' => 'agregar', 'name' => 'agregar', 'onclick' => 'send();')); ?>
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'date_hour'); ?>
@@ -104,6 +103,7 @@ function send()
 <br>
     <div class="row">
         <?php echo CHtml::submitButton('Crear', array('id' => 'guardar', 'name' => 'guardar')); ?>
+        <?php echo CHtml::Button('Crear +', array('id' => 'agregar', 'name' => 'agregar', 'onclick' => 'send();')); ?>
     </div>
 
 <?php $this->endWidget(); ?>
