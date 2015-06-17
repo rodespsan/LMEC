@@ -36,9 +36,9 @@
 			</tr>
 			<tr class="tr1">
 				<td class="ths2"> 1 </td>
-				<td class="ths">Servicio: <?php echo CHtml::encode($model->order->serviceOrder->service->name);?></td>
-				<td class="ths_3"><?php echo CHtml::encode($model->order->serviceOrder->service->price); ?></td>
-				<td class="ths_3"><?php echo CHtml::encode($model->order->serviceOrder->service->price); ?></td>
+				<td class="ths">Servicio: <?php echo CHtml::encode($model->lastService->service->name);?></td>
+				<td class="ths_3"><?php echo CHtml::encode($model->lastService->price); ?></td>
+				<td class="ths_3"><?php echo CHtml::encode($model->lastService->price); ?></td>
 			</tr>
 			<tr class="tr1">
 				<td class="ths2"> </td>
