@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 /* @var $this StatusOrderController */
 /* @var $model StatusOrder */
 
@@ -44,6 +45,7 @@ o <b>=</b>) al comienzo de cada uno de los valores de su búsqueda para especifi
 	'id'=>'status-order-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'columns'=>array(
 		'id',
 		'status',

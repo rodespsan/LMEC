@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 $this->breadcrumbs=array(
 	'Tipos de cliente'=>array('index'),
 	'Administrar tipos de cliente',
@@ -48,6 +49,7 @@ Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=
 	'id'=>'customer-type-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+    'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'columns'=>array(
 		'id',
 		'type',

@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 $this->breadcrumbs=array(
 	'Tipos de equipo'=>array('index'),
 	'Administrar',
@@ -27,6 +28,7 @@ o <b>=</b>) al principio de cada uno de los valores de busqueda, para especifica
 	'id'=>'equipment-type-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'columns'=>array(
 		'id',
 		'type',

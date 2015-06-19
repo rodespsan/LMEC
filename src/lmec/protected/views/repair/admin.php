@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 /* @var $this RepairController */
 /* @var $model Repair */
 
@@ -53,6 +54,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'id' => 'repair-grid',
     'dataProvider' => $model->search(),
     'filter' => $model,
+    'afterAjaxUpdate'=>'afterAjaxUpdate',
     'columns' => array(
 //		'id',
         array(
@@ -72,7 +74,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'template' => '{view}{delete}{update}',
             'buttons' => array(
                 'update' => array(
-                    'url' => 'Yii::app()->createUrl("/repair/update",array("id"=>$data->order_id))',
+                    'url' => 'Yii::app()->createUrl("/repair/update",array("id"=>$data->id))',
                 )
             ),
         )

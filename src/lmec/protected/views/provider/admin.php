@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 $this->breadcrumbs = array(
     'Proveedores' => array('index'),
     'Administrar proveedores',
@@ -39,6 +40,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'id' => 'provider-grid',
     'dataProvider' => $model->search(),
     'filter' => $model,
+    'afterAjaxUpdate'=>'afterAjaxUpdate',
     'enableSorting' => true,
     'columns' => array(
         'id',

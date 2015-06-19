@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 /* @var $this OutOrderController */
 /* @var $model OutOrder */
 
@@ -40,6 +41,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'out-order-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'enableSorting' => true,
 	'columns'=>array(
 		array(

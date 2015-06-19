@@ -1,6 +1,7 @@
 <?php
 /* @var $this BrandController */
 /* @var $model Brand */
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 
 $this->breadcrumbs=array(
 	'Marcas'=>array('index'),
@@ -30,6 +31,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'enableSorting' => true,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'columns'=>array(
 		'id' ,
 		'name' ,

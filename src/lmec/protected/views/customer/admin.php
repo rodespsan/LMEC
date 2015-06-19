@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 $this->breadcrumbs=array(
 	'Clientes'=>array('index'),
 	'Administrar clientes',
@@ -39,6 +40,7 @@ Si lo desea, puede introducir un operador de comparación (<b>&lt;</b>, <b>&lt;=
 	'id'=>'customer-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'columns'=>array(
 		'id',
 		array(

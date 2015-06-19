@@ -1,6 +1,7 @@
 <?php
 /* @var $this ActivityVerificationController */
 /* @var $model ActivityVerification */
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 
 $this->breadcrumbs=array(
 	'Actividad de Verificación'=>array('index'),
@@ -50,6 +51,7 @@ $pageSizeActivity=Yii::app()->user->getState('pageSize',Yii::app()->params['defa
 	'id'=>'activity-verification-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'columns'=>array(
 		'id',
 		array(

@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 /* @var $this SparePartsOrderController */
 /* @var $model SparePartsOrder */
 
@@ -39,6 +40,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'spare-parts-order-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'enableSorting' => true,
 	'columns'=>array(
 		'id',

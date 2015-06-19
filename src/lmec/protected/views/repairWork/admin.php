@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 /* @var $this RepairWorkController */
 /* @var $model RepairWork */
 
@@ -44,6 +45,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'id'=>'repair-work-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'columns'=>array(
 		'id',
 		'work_id',

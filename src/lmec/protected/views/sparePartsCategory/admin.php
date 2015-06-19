@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 /* @var $this SparePartsCategoryController */
 /* @var $model SparePartsCategory */
 
@@ -44,6 +45,7 @@ or <b>=</b>) al principio de cada uno de los valores de busqueda, para especific
 	'id'=>'spare-parts-category-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'columns'=>array(
 		'id',
 		'code',

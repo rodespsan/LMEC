@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 /* @var $this WorkController */
 /* @var $model Work */
 
@@ -28,6 +29,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'work-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'enableSorting' => true,
 	'columns'=>array(
 		'id',

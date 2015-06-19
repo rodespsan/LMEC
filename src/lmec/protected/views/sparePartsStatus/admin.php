@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 /* @var $this SparePartsStatusController */
 /* @var $model SparePartsStatus */
 
@@ -47,6 +48,7 @@ $pageSize=Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageS
 	'id'=>'spare-parts-status-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'enableSorting' => true,
 	'columns'=>array(
 		'id',

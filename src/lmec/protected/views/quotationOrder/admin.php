@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 /* @var $this QuotationOrderController */
 /* @var $model QuotationOrder */
 
@@ -48,6 +49,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 	'id'=>'quotation-order-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+    'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'columns'=>array(
 		'id',
 		array(

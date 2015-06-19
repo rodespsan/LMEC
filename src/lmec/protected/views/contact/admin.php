@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 $this->breadcrumbs = array(
     'Contactos' => array('index'),
     'Administrar contactos',
@@ -39,6 +40,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'id' => 'contact-grid',
     'dataProvider' => $model->search(),
     'filter' => $model,
+    'afterAjaxUpdate'=>'afterAjaxUpdate',
     'columns' => array(
         'id',
         array(

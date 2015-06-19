@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 /* @var $this PaymentTypeController */
 /* @var $model PaymentType */
 
@@ -50,6 +51,7 @@ $pageSize=Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageS
 	'id'=>'payment-type-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'columns'=>array(
 		'id',
 		'name',

@@ -1,4 +1,5 @@
 <?php
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl."/js/filterFocus.js", CClientScript::POS_END);
 /* @var $this DiagnosticController */
 /* @var $model Diagnostic */
 
@@ -43,8 +44,8 @@ or <b>=</b>) al principio de cada uno de los valores de busqueda para especifica
 	'id'=>'diagnostic-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'afterAjaxUpdate'=>'afterAjaxUpdate',
 	'columns'=>array(
-		'id',
 		array(
 		 'name'=>'order_id',
 		 'value'=>'Order::model()->getFolio_($data->order_id)',
