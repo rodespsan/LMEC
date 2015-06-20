@@ -35,11 +35,20 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 )); ?>
 <?php 
 	
-	$this->widget('zii.widgets.grid.CGridView', array(
+	$this->widget('EExcelView', array(
 	'id'=>'order-grid',
 	'dataProvider'=>  $model->search(),
 	'filter'=>$model,
 	'afterAjaxUpdate'=>'afterAjaxUpdate',
+	// Los siguientes valores son para la creación del archivo .xlsx
+	'creator'=>Yii::app()->user->name,
+	'title'=>'Órdenes de entrada - Reporte',
+	'autoWidth'=>true,
+	'template'=>"{summary}\n{items}\n{exportbuttons}\n{pager}",
+	'disablePaging'=>false,
+	'filename'=>'order-report',
+	'stream'=>true,
+	
 	'columns'=>array(
 
 		array(

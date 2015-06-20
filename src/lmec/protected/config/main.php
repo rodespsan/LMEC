@@ -21,7 +21,7 @@ return array(
 		'application.components.*',
 		'application.extensions.CJuiDateTimePicker.*',
                 'application.extensions.eckeditor.*',
-                
+		'ext.EExcelView.*',                
 	),
 
 	'modules'=>array(
