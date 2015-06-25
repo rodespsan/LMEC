@@ -30,10 +30,11 @@
 			'items'=>array(
 				array('label'=>'Entrar', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Inicio', 'url'=>array('/order/admin'), 'visible'=>Yii::app()->user->checkAccess('administrador','recepcionista','Tecnico')),
-				array('label'=>'Ordenes', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
+				array('label'=>'Órdenes', 'url'=>array(''), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'),
 					'items'=>array(
-						array('label'=>'Entrada Equipo', 'url'=>array('/order/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
-						array('label'=>'Salida de Orden', 'url'=>array('/outOrder/index'), 'visible'=>Yii::app()->user->checkAccess('administrador')),
+						array('label'=>'Entrada Equipo', 'url'=>array('/order/index'), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista')),
+						array('label'=>'Salida de Orden', 'url'=>array('/outOrder/index'), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista')),
+						array('label'=>'Ver órdenes asignadas', 'url'=>array('/order/viewAssignedOrders'), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista','Tecnico')),
 						array('label'=>'Buscar', 'url'=>array('/order/search'), 'visible'=>Yii::app()->user->checkAccess('administrador','Recepcionista'))
 					)
 				),

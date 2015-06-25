@@ -254,6 +254,42 @@ class Order extends CActiveRecord {
         ));
     }
 
+    public function searchAssignedOrders() {
+        // Warning: Please modify the following code to remove attributes that
+        // should not be searched.
+
+        $criteria = new CDbCriteria;
+
+        $criteria->with = array('modelo.EquipmentType', 'serviceType', 'technicianUser', 'statusOrder', 'customer', 'outOrder', 'lastService', 'failureDescription');
+
+        $criteria->compare('t.id', $this->id, true);
+        $criteria->compare('customer.name', $this->customer_id, true);
+        $criteria->compare('receptionist_user_id', $this->receptionist_user_id, true);
+        $criteria->compare('payment_type_id', $this->payment_type_id, true);
+        $criteria->compare('serviceType.name', $this->service_type_id, true);
+        $criteria->compare('lastService.name', $this->service, true);
+        $criteria->compare('t.date_hour', $this->date_hour, true);
+        $criteria->compare('outOrder.date_hour', $this->out_date_hour, true);
+        $criteria->compare('advance_payment', $this->advance_payment, true);
+        $criteria->compare('serial_number', $this->serial_number, true);
+        $criteria->compare('_dependences', $this->_dependences, true);
+        $criteria->compare('stock_number', $this->stock_number, true);
+        $criteria->compare('name_deliverer_equipment', $this->name_deliverer_equipment, true);
+        $criteria->addSearchCondition('LOWER(modelo.name)', strtolower($this->model_id));
+        $criteria->compare('EquipmentType.type', $this->type_search, true);
+        $criteria->compare('statusOrder.status', $this->status_order_id, true);
+        $criteria->compare('technicianUser.user', $this->technician_order_id, true);
+        $criteria->addColumnCondition(array('technicianUser.user'=>Yii::app()->user->name));
+        $criteria->compare('t.active', $this->active, true);
+
+        return new CActiveDataProvider($this, array(
+            'criteria' => $criteria,
+            'pagination' => array(
+                'pageSize' => Yii::app()->user->getState('pageSize', Yii::app()->params['defaultPageSize']),
+            )
+        ));
+    }
+
     public function getUserLogued() {
         $user = User::model()->findByPk(Yii::app()->user->id);
         return $user->name . " " . $user->last_name;

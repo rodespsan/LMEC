@@ -25,16 +25,16 @@ class OrderController extends Controller {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index', 'view' and 'search' actions
-                'actions' => array('index', 'view', 'search'),
+            array('allow', // allow all users to perform 'index' and 'view' actions
+                'actions' => array('index', 'view'),
                 'users' => array('*'),
             ),
-            array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'contactsFromCustomer', 'servicesFromServiceType', 'brandsFromEquipment', 'modelsFromBrand', 'advancePaymentFromPaymentType'),
+            array('allow', // allow authenticated user to perform 'create', 'update' and 'viewAssignedOrders' actions
+                'actions' => array('create', 'update', 'contactsFromCustomer', 'servicesFromServiceType', 'brandsFromEquipment', 'modelsFromBrand', 'advancePaymentFromPaymentType', 'viewAssignedOrders'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete', 'brandsFromEquipment', 'modelsFromBrand', 'advancePaymentFromPaymentType', 'ajaxupdate', 'activate', 'print'),
+                'actions' => array('admin', 'delete', 'brandsFromEquipment', 'modelsFromBrand', 'advancePaymentFromPaymentType', 'ajaxupdate', 'activate', 'print', 'search'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -403,6 +403,24 @@ class OrderController extends Controller {
 
 
         $this->render('search', array(
+            'model' => $model,
+        ));
+    }
+
+    public function actionViewAssignedOrders() {
+        $model = new Order('viewAssignedOrders');
+
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Order'])) {
+            $model->attributes = $_GET['Order'];
+        }
+
+        if (isset($_GET['pageSize'])) {
+            Yii::app()->user->setState('pageSize', (int) $_GET['pageSize']);
+            unset($_GET['pageSize']);
+        }
+
+        $this->render('viewAssignedOrders', array(
             'model' => $model,
         ));
     }
