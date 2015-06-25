@@ -13,6 +13,7 @@ $this->menu=array(
 //	array('label'=>'Create BlogGuarantee', 'url'=>array('create')),
 //	array('label'=>'Ver Bitágora de Garantía', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Administrar Bitácoras de Garantías', 'url'=>array('admin')),
+	array('label'=>'Finalizar Bitacora de Garantía', 'url'=>array('blogGuarantee/finish', 'id'=>$model->order_id)),
 );
 ?>
 

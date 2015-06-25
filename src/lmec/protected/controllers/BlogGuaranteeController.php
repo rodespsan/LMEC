@@ -34,7 +34,7 @@ class BlogGuaranteeController extends Controller {
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete', 'activate', 'ajaxUpdate', 'deleteBlogGuarantee'),
+                'actions' => array('admin', 'delete', 'activate', 'ajaxUpdate', 'deleteBlogGuarantee', 'finish'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -73,35 +73,21 @@ class BlogGuaranteeController extends Controller {
 
         if (isset($_POST['BlogGuarantee'])) {
             $model->order_id = $id;
+            $model->finished = 0;
             $model->observation = $_POST['BlogGuarantee']['observation'];
             $model->attributes = $_POST['BlogGuarantee'];
             $logs = BlogGuarantee::model()->findByAttributes(array('order_id' => $modelOrder->id));
-            if ($model->save()) {
-                if ($_POST['BlogGuarantee']['finished'] == 1) {
-                    $modelOrder->scenario = 'ajaxupdate';
-                    $modelOrder->status_order_id = 2;
-                    $modelOrder->save();
-                    
-                    $log = new BlogOrder();
-                    $log->order_id = $modelOrder->id;
-                    $log->activity = "La orden salió de garantía";                    
-                    $log->user_technical_id = Yii::app()->user->id;
-                    $log->date_hour = date('Y-m-d H:i:s');
-                    $log->save();
-                }
-                else{
-                    if($logs==NULL){
-                        $log = new BlogOrder();
-                        $log->order_id = $model->id;
-                        $log->activity = "La orden entró a garantía";
-                        $log->user_technical_id = Yii::app()->user->id;
-                        $log->date_hour = date('Y-m-d H:i:s');
-                        $log->save();
-                    }
-                }
+            if ($model->save() && $logs==NULL) {
+                $log = new BlogOrder();
+                $log->order_id = $model->id;
+                $log->activity = "La orden entró a garantía";
+                $log->user_technical_id = Yii::app()->user->id;
+                $log->date_hour = date('Y-m-d H:i:s');
+                $log->save();
                 $this->redirect(array('view', 'id' => $model->id));
                 //$this->redirect(array('viewDiagnostic','id'=>$modelDiagnostic->id));
-            }
+            }else
+                var_dump($model->errors);
         }
 
         $this->render('create', array(
@@ -123,6 +109,7 @@ class BlogGuaranteeController extends Controller {
         $model->technician_user_id = Yii::app()->user->id;
         $model->date_hour = date('Y-m-d H:i:s');
         $model->order_id = $modelOrder->id;
+        $model->finished = 0;
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
@@ -131,30 +118,14 @@ class BlogGuaranteeController extends Controller {
             $model->observation = $_POST['BlogGuarantee']['observation'];
             $model->attributes = $_POST['BlogGuarantee'];
 
-            $logs = BlogGuarantee::model()->findByAttributes(array('order_id' => $modelOrder->id));
-            if ($model->save()) {
-                if ($_POST['BlogGuarantee']['finished'] == 1) {
-                    $modelOrder->scenario = 'ajaxupdate';
-                    $modelOrder->status_order_id = 2;
-                    $modelOrder->save();
-                    
-                    $log = new BlogOrder();
-                    $log->order_id = $modelOrder->id;
-                    $log->activity = "La orden salió de garantía";                    
-                    $log->user_technical_id = Yii::app()->user->id;
-                    $log->date_hour = date('Y-m-d H:i:s');
-                    $log->save();
-                }
-                else{
-                    if($logs==NULL){
-                        $log = new BlogOrder();
-                        $log->order_id = $model->id;
-                        $log->activity = "La orden entró a garantía";
-                        $log->user_technical_id = Yii::app()->user->id;
-                        $log->date_hour = date('Y-m-d H:i:s');
-                        $log->save();
-                    }
-                }
+            $logs = BlogGuarantee::model()->findByAttributes(array('order_id' => $modelOrder->id, 'activity' => 'La orden entró a garantía'));
+            if ($model->save() && $logs==NULL) {
+                $log = new BlogOrder();
+                $log->order_id = $model->id;
+                $log->activity = "La orden entró a garantía";
+                $log->user_technical_id = Yii::app()->user->id;
+                $log->date_hour = date('Y-m-d H:i:s');
+                $log->save();
                 $this->redirect(array('view', 'id' => $model->id));
             }
         }
@@ -226,6 +197,27 @@ class BlogGuaranteeController extends Controller {
     }
 
     /**
+     * Finish the guarantee process.
+     */
+    public function actionFinish($id)
+    {
+        $modelOrder = Order::model()->findByPk($id);
+        $modelOrder->scenario = 'ajaxupdate';
+        $modelOrder->status_order_id = 2;
+        $modelOrder->save();
+
+        $log = new BlogOrder();
+        $log->order_id = $modelOrder->id;
+        $log->activity = "La orden salió de garantía";
+        $log->user_technical_id = Yii::app()->user->id;
+        $log->date_hour = date('Y-m-d H:i:s');
+        $log->save();
+
+        if(!isset($_GET['ajax']))
+            $this->redirect(array('index', 'id' => $modelOrder->id));
+    }
+
+    /**
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
      * @param integer $id the ID of the model to be loaded
@@ -274,37 +266,24 @@ class BlogGuaranteeController extends Controller {
         $blog = new BlogGuarantee();
         $modelOrder = Order::model()->findByPk($id);
         if(isset($_POST['BlogGuarantee'])){
-            $logs = BlogGuarantee::model()->findByAttributes(array('order_id' => $id));
             $blog->observation = $_POST['BlogGuarantee']['observation'];
-            $blog->finished = $_POST['BlogGuarantee']['finished'];
+            $blog->finished = 0;
             $blog->attributes = $_POST['BlogGuarantee'];
             $blog->technician_user_id = Yii::app()->user->id;
             $blog->order_id = $id;
 
-            if ($blog->save()) {
-                if ($_POST['BlogGuarantee']['finished'] == 1) {
-                    $modelOrder->scenario = 'ajaxupdate';
-                    $modelOrder->status_order_id = 2;
-                    $modelOrder->save();
-
-                    $log = new BlogOrder();
-                    $log->order_id = $modelOrder->id;
-                    $log->activity = "La orden salió de garantía";                    
-                    $log->user_technical_id = Yii::app()->user->id;
-                    $log->date_hour = date('Y-m-d H:i:s');
-                    $log->save();
-                    $this->redirect(array('view', 'id' => $blog->id));
-                }
-                else{
-                    if($logs==NULL){
-                        $log = new BlogOrder();
-                        $log->order_id = $blog->id;
-                        $log->activity = "La orden entró a garantía";
-                        $log->user_technical_id = Yii::app()->user->id;
-                        $log->date_hour = date('Y-m-d H:i:s');
-                        $log->save();
-                    }
-                }
+            $logs = BlogOrder::model()->findByAttributes(array('order_id' => $id, 'activity' => 'La orden entró a garantía'));
+            if ($blog->save() && $logs==NULL) {
+                $log = new BlogOrder();
+                $log->order_id = $id;
+                $log->activity = "La orden entró a garantía";
+                $log->user_technical_id = Yii::app()->user->id;
+                $log->date_hour = date('Y-m-d H:i:s');
+                $log->save();
+                $this->redirect(array('view', 'id' => $model->id));
+            }else{
+                var_dump($blog->errors);
+                var_dump($logs->errors);
             }
         }
     }

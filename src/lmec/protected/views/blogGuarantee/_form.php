@@ -94,12 +94,12 @@ function send()
         <?php echo $form->checkBox($model,'active',array('value' => 1, 'uncheckValue' => 0)); ?>
         <?php echo $form->error($model, 'active'); ?> 
     </div>
-<br>
+<!--<br>
     <div class="row">
-        <?php echo $form->labelEx($model, 'finished'); ?>
-        <?php echo $form->checkBox($model, 'finished', array('value' => 1, 'uncheckValue' => 0)); ?>
-        <?php echo $form->error($model, 'finished'); ?>
-    </div>
+        <?php //echo $form->labelEx($model, 'finished'); ?>
+        <?php //echo $form->checkBox($model, 'finished', array('value' => 1, 'uncheckValue' => 0)); ?>
+        <?php //echo $form->error($model, 'finished'); ?>
+    </div>-->
 <br>
     <div class="row">
         <?php echo CHtml::submitButton('Crear', array('id' => 'guardar', 'name' => 'guardar')); ?>

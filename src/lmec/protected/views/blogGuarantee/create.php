@@ -10,6 +10,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Listar Bitácoras de Garantías', 'url'=>array('index', 'id' => $model->order_id)),
 	array('label'=>'Administrar Bitácoras de Garantías', 'url'=>array('admin')),
+	array('label'=>'Finalizar Bitacora de Garantía', 'url'=>array('blogGuarantee/finish', 'id'=>$model->order_id)),
 );
 ?>
 
