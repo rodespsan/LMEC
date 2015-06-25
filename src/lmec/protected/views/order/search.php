@@ -45,7 +45,6 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 	'title'=>'Órdenes de entrada - Reporte',
 	'autoWidth'=>true,
 	'template'=>"{summary}\n{items}\n{exportbuttons}\n{pager}",
-	'disablePaging'=>false,
 	'filename'=>'order-report',
 	'stream'=>true,
 	
