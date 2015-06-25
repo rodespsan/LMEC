@@ -107,6 +107,16 @@ class BlogGuarantee extends CActiveRecord {
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
+            'sort' => array(
+                'multiSort' => true,
+                'attributes' => array(
+                    'order_id', 'date_hour',
+                ),
+                'defaultOrder' => array(
+                    'order_id' => CSort::SORT_DESC, 
+                    'date_hour' => CSort::SORT_DESC,
+                ),
+            ),
             'pagination' => array(
                 'pageSize' => Yii::app()->user->getState('pageSize', Yii::app()->params['defaultPageSize']),
             ),
