@@ -92,6 +92,7 @@ class OrderController extends Controller {
         if (isset($_POST['Order'])) {
             $model->observation = $_POST['Order']['observation'];
             $model->attributes = $_POST['Order'];
+            $model->status_order_id=2;
 
             if ($model->save()) {
 
