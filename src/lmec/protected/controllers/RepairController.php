@@ -137,6 +137,7 @@ class RepairController extends Controller {
         $this->render('update', array(
             'model' => $model,
             'modelRepairWork' => new RepairWork(),
+            'modelOrder'=>$modelOrder,
         ));
     }
 
@@ -232,7 +233,7 @@ class RepairController extends Controller {
 
             if (empty($modelRepairWork)) {
                 $modelRepairWork = new RepairWork();
-                $modelRepairWork->repair_id = $modelRepair->order_id;
+                $modelRepairWork->repair_id = $modelRepair->id;
                 $modelRepairWork->user_id = Yii::app()->user->id;
                 $modelRepairWork->date_hour = date('Y-m-d H:i:s');
                 $modelRepairWork->work_id = $_POST['RepairWork']['work_id'];

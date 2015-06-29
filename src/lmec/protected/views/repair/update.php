@@ -10,7 +10,6 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Listar Reparaciones', 'url'=>array('index')),
-//	array('label'=>'Crear Reparación', 'url'=>array('create')),
 	array('label'=>'Ver Reparación', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Administrar Reparaciones', 'url'=>array('admin')),
 );
@@ -30,4 +29,4 @@ if ($flashMessages) {
 }
 ?>
 
-<?php $this->renderPartial('_form', array('model'=>$model,'modelRepairWork'=>$modelRepairWork)); ?>
+<?php $this->renderPartial('_formUpdate', array('model'=>$model,'modelRepairWork'=>$modelRepairWork,'modelOrder'=>$modelOrder)); ?>
