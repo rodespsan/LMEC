@@ -136,8 +136,7 @@
 			<tr class="tr1">
 				<th colspan="2"></th>
 				<td class= "td_u"><b>Total:</b></td>
-				<td class= "tdu">
-				<?php echo '<b>'.CHtml::encode($model->getDebit()).'<b>'; ?></td>
+				<td class= "tdu"><?php echo '<b>'.CHtml::encode($model->getDebit()).'</b>'; ?></td>
 			</tr>
 		</table>
 	</div>

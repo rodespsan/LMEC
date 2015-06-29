@@ -86,8 +86,8 @@
 			</tr>
 			<tr class="tr1">
 				<th colspan="2"></th>
-				<td class= "td_u">Total:</td>
-				<td class= "tdu"><?php echo Chtml::encode($model->serviceOrder->price); ?></td>
+				<td class= "td_u"><b>Total:</b></td>
+				<td class= "tdu"><?php echo '<b>'.Chtml::encode($model->serviceOrder->price).'</b>'; ?></td>
 			</tr>
 		</table>
 	</div>

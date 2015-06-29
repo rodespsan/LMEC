@@ -167,6 +167,7 @@ class OutOrder extends CActiveRecord
 	public function getDebit()
 	{
 		$result = $this->total_price - $this->order->advance_payment;
+		$result = number_format($result,2,'.','');
 		if($result > 0)
 			return $result;
 		else

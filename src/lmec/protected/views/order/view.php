@@ -119,7 +119,11 @@ $this->menu=array(
 	)),
 	'columns'=>array(
 		'activity',
-		'userTechnical.fullName',
+		array(
+			'name'=>'user_technical_id',
+			'value'=>'$data->userTechnical->fullname',
+		),
+		//'userTechnical.fullName',
 		'date_hour',
 	),
 )); ?>
