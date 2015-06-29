@@ -63,11 +63,11 @@ class BlogOrder extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'order_id' => 'Order',
-			'activity' => 'Activity',
-			'detailed_activity' => 'Detailed Activity',
-			'user_technical_id' => 'User Technical',
-			'date_hour' => 'Date Hour',
+			'order_id' => 'Orden',
+			'activity' => 'Actividad',
+			'detailed_activity' => 'Actividad Detallada',
+			'user_technical_id' => 'Técnico',
+			'date_hour' => 'Fecha',
 		);
 	}
 
