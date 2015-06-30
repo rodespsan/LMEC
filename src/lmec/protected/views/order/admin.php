@@ -33,6 +33,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 
 <?php $form=$this->beginWidget('CActiveForm', array(
     'enableAjaxValidation'=>true,
+    'id'=>'order-form',
 )); ?>
 <?php 
 	
@@ -109,7 +110,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 			'value'=>'CHtml::dropDownList(
 				"OrderGrid[$data->id][status_order_id]",
 				$data->status_order_id,
-			CHtml::listData(
+				CHtml::listData(
 					($data->statusOrder->active)?
 						statusOrder::model()->findAll("active=1") : 
 						statusOrder::model()->findAll(array(
@@ -120,8 +121,11 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 						)),
 					"id",
 					"status"
+				),
+				array(
+					"onchange" => "changeHrefStatus(this,$data->id)",
 				)
-				)',
+			)',
 			'type'=>'raw',
 			// 'filter'=>CHtml::listData(statusOrder::model()->findAll(array(
 			// 				"condition" => "active=1",
@@ -171,6 +175,9 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 							)),
 						"id",
 						"user"
+					),
+					array(
+						"onchange" => "changeHrefTechnician(this,$data->id)",
 					)
 			)',
 			// 'filter'=>CHtml::listData(
@@ -199,7 +206,7 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 		'name_deliverer_equipment',
 		*/
 		array(
-			'class'=>'CButtonColumn',
+			'class'=>'ButtonColumn',
 			'header'=>CHtml::dropDownList(
                 'pageSize',
                 $pageSize,
@@ -209,7 +216,8 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 					'onchange'=>"$.fn.yiiGridView.update('order-grid',{ data:{ pageSize: $(this).val() }})",
 				)
             ),
-			'template'=>'{update}{view}{delete}{activate}',
+			'template'=>'{update}{view}{delete}{activate}{save}',
+			'evaluateID'=>true,
 			'deleteConfirmation'=>'¿Desactivar Orden?',
 			'buttons' => array(
 
@@ -239,6 +247,24 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
                     'label' => 'Desactivar',
                     'imageUrl' => Yii::app()->request->baseUrl . '/images/deactive.png',
 				),
+				'save' => array(
+					'label'=>'Guardar',
+					'url'=>'Yii::app()->createUrl("order/save", array("id"=>$data->id, "status"=>$data->status_order_id, "technician"=>$data->technician_order_id))',
+					'imageUrl'=>Yii::app()->request->baseUrl . '/images/save.png',
+					'options'=>array('id'=>'\'save_\'.$data->id',),
+					'click'=>'function(){
+						$.fn.yiiGridView.update(\'order-grid\',{
+							type: \'POST\',
+							url: $(this).attr(\'href\'),
+							success:function(data) {
+								$.fn.yiiGridView.update(\'order-grid\');
+							},
+							complete:function(data) {
+								$.fn.yiiGridView.update(\'order-grid\');
+							},
+						});
+					}',
+				),
 			),
 			
 		),
@@ -250,9 +276,30 @@ o <b>=</b>) al principio de cada uno de los valores de b&uacute;squeda, para esp
 function reloadGrid(data) {
     $.fn.yiiGridView.update('order-grid');
 }
+
+function changeHrefStatus(element,id){
+	var indice = element.selectedIndex + 1;
+	var hrefElement = document.getElementById('save_'+id);
+	var mainUrl = hrefElement.getAttribute('href').split("?");
+	var elements = mainUrl[1].split("&");
+	var href = mainUrl[0]+'?status='+indice+'&'+elements[1];
+	hrefElement.setAttribute('href', href);
+	//alert("'"+href+"'");
+}
+
+function changeHrefTechnician(element,id){
+	var indice = element.selectedIndex + 1;
+	var hrefElement = document.getElementById('save_'+id);
+	var mainUrl = hrefElement.getAttribute('href').split("?");
+	var elements = mainUrl[1].split("&");
+	var href = mainUrl[0]+'?status='+indice+'&'+elements[0];
+	var href = mainUrl[0]+'?'+elements[0]+'&technician='+indice;
+	hrefElement.setAttribute('href', href);
+	//alert("'"+href+"'");
+}
 </script>
 <?php echo CHtml::ajaxSubmitButton('Filter',array('order/ajaxupdate'), array(),array("style"=>"display:none;")); ?>
-<?php echo CHtml::ajaxSubmitButton('Actualizar',array('order/ajaxupdate','act'=>'doUpdate'), array('success'=>'reloadGrid')); ?>
+<?php //echo CHtml::ajaxSubmitButton('Actualizar',array('order/ajaxupdate','act'=>'doUpdate'), array('success'=>'reloadGrid')); ?>
 <?php $this->endWidget(); ?>
 
  

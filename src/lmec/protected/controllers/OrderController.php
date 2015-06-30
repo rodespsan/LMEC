@@ -34,7 +34,7 @@ class OrderController extends Controller {
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete', 'brandsFromEquipment', 'modelsFromBrand', 'advancePaymentFromPaymentType', 'ajaxupdate', 'activate', 'print', 'search'),
+                'actions' => array('admin', 'delete', 'brandsFromEquipment', 'modelsFromBrand', 'advancePaymentFromPaymentType', 'ajaxupdate', 'activate', 'print', 'search', 'save'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -93,7 +93,6 @@ class OrderController extends Controller {
             $model->observation = $_POST['Order']['observation'];
             $model->attributes = $_POST['Order'];
             $model->status_order_id=2;
-
             if ($model->save()) {
 
                 if (isset($_POST['Order']['accesory'])) {
@@ -408,6 +407,7 @@ class OrderController extends Controller {
         ));
     }
 
+    
     public function actionViewAssignedOrders() {
         $model = new Order('viewAssignedOrders');
 
@@ -425,7 +425,7 @@ class OrderController extends Controller {
             'model' => $model,
         ));
     }
-
+    
     /**
      * 
      */
@@ -601,6 +601,16 @@ class OrderController extends Controller {
         $this->render('print', array(
             'model' => $model,
         ));
+    }
+
+    public function actionSave($id,$status,$technician){
+        $modelOrder = $this->loadModel($id);
+        $modelOrder->scenario = "ajaxupdate";
+        $modelOrder->status_order_id=$status;
+        $modelOrder->technician_order_id=$technician;
+        $modelOrder->save();
+        if (!isset($_GET['ajax']))
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
     }
 
 }
