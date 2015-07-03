@@ -634,7 +634,7 @@ CREATE TABLE IF NOT EXISTS `tbl_role` (
 
 INSERT INTO `tbl_role` (`id`, `name`, `url_initial`, `priority`, `active`) VALUES
 (1, 'administrador', 'user/admin', 100, 1),
-(2, 'Tecnico', 'user/tecnico', 50, 1),
+(2, 'Tecnico', 'order/viewAssignedOrders', 50, 1),
 (3, 'Recepcionista', 'order/admin', 1, 1);
 
 -- --------------------------------------------------------
