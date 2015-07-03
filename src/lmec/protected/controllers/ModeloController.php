@@ -24,20 +24,9 @@ class ModeloController extends Controller {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
-                'roles' => array('administrador'),
-            ),
-            array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
-                'roles' => array('administrador'),
-            ),
-            array('allow', // allow admin user to perform 'admin', 'delete' and 'activate' actsions
-                'actions' => array('admin', 'delete', 'activate'),
-                'roles' => array('administrador'),
-            ),
-            array('deny', // deny all users
-                'users' => array('*'),
+            array('allow', // Acciones permitidas al administrador y al recepcionista
+                'actions' => array('index', 'view', 'create', 'update', 'admin', 'delete', 'activate'),
+                'roles' => array('administrador', 'recepcionista'),
             ),
         );
     }

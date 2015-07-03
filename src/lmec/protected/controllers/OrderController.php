@@ -25,20 +25,13 @@ class OrderController extends Controller {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
-                'users' => array('*'),
+            array('allow', // Acciones permitidas al administrador y al recepcionista
+                'actions' => array('index', 'view', 'create', 'update', 'admin', 'delete', 'brandsFromEquipment', 'modelsFromBrand', 'advancePaymentFromPaymentType', 'ajaxupdate', 'activate', 'contactsFromCustomer', 'servicesFromServiceType', 'brandsFromEquipment', 'modelsFromBrand', 'advancePaymentFromPaymentType', 'viewAssignedOrders', 'print', 'search', 'save'),
+                'roles' => array('administrador', 'recepcionista'),
             ),
-            array('allow', // allow authenticated user to perform 'create', 'update' and 'viewAssignedOrders' actions
-                'actions' => array('create', 'update', 'contactsFromCustomer', 'servicesFromServiceType', 'brandsFromEquipment', 'modelsFromBrand', 'advancePaymentFromPaymentType', 'viewAssignedOrders'),
-                'users' => array('@'),
-            ),
-            array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete', 'brandsFromEquipment', 'modelsFromBrand', 'advancePaymentFromPaymentType', 'ajaxupdate', 'activate', 'print', 'search', 'save'),
-                'users' => array('admin'),
-            ),
-            array('deny', // deny all users
-                'users' => array('*'),
+            array('allow', // Acciones permitidas al técnico
+                'actions' => array('viewAssignedOrders'),
+                'roles' => array('tecnico'),
             ),
         );
     }
