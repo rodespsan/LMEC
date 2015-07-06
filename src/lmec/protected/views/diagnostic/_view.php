@@ -31,13 +31,5 @@
 	<?php echo CHtml::encode($data->observation); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('finished')); ?>:</b>
-	<?php echo CHtml::encode($data->finishedText); ?>
-	<br />
-        
-        <b><?php echo CHtml::encode($data->getAttributeLabel('refection')); ?>:</b>
-	<?php echo CHtml::encode($data->refectionText); ?>
-	<br />
-
 
 </div>

@@ -37,16 +37,6 @@ $this->widget('zii.widgets.CDetailView', array(
         'date_hour',
         'observation',
         array(
-            'label' => 'Finalizado',
-            'type' => 'raw',
-            'value' => ($model->finished == 1) ? 'Si' : 'No'
-        ),
-        array(
-            'label' => 'Requiere refacción',
-            'type' => 'raw',
-            'value' => ($model->refection == 1) ? 'Si' : 'No'
-        ),
-        array(
             'label' => 'Trabajos',
             'type' => 'raw',
             'value' => $model->getWorks($model->id),

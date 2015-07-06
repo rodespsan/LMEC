@@ -68,15 +68,22 @@
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($model,'finished'); ?>
-		<?php echo $form->checkBox($model,'finished',array('value'=>1,'uncheckValue'=>0)); ?>
-		<?php echo $form->error($model,'finished'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'refection'); ?>
-		<?php echo $form->checkBox($model,'refection',array('value'=>1,'uncheckValue'=>0)); ?>
-		<?php echo $form->error($model,'refection'); ?>
+		<?php echo $form->labelEx($model,'status_order_id');?>
+		<?php 
+		$statusArray = array(5,8,13);
+		echo $form->dropDownList(
+			$model,
+			'status_order_id',
+			Chtml::listData(
+				StatusOrder::model()->findAllByAttributes(array("id"=>$statusArray)),
+				'id',
+				'status'
+			),
+			array(
+				'prompt'=>'Seleccionar'
+			)
+		);?>
+		<?php echo $form->error($model,'status_order_id'); ?>
 	</div>
 
 	<div class="row buttons">

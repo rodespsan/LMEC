@@ -41,16 +41,12 @@ class Diagnostic extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('order_id, user_id, service_type_id, date_hour', 'required'),
-			array('finished', 'numerical', 'integerOnly'=>true),
-			array('refection', 'numerical', 'integerOnly'=>true),
-			array('order_id, user_id, service_type_id', 'length', 'max'=>10),
+			array('order_id, user_id, service_type_id, status_order_id', 'length', 'max'=>10),
             //array('work_id','exist','className'=>'Work','attributeName'=>'id'), 
 			array('observation', 'safe'),
-			array('finished', 'boolean'),
-			array('refection','boolean'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, order_id, user_id, service_type_id, date_hour, observation, finished, refection', 'safe', 'on'=>'search'),
+			array('id, order_id, user_id, service_type_id, date_hour, observation', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,6 +60,7 @@ class Diagnostic extends CActiveRecord
 		return array(
 			'order' => array(self::BELONGS_TO, 'Order', 'order_id'),
 			'serviceType' => array(self::BELONGS_TO, 'ServiceType', 'service_type_id'),
+			'statusOrder' => array(self::BELONGS_TO, 'StatusOrder', 'status_order_id'),
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 			'works' => array(self::MANY_MANY, 'Work', '{{diagnostic_work}}(diagnostic_id, work_id)'),
 		);
@@ -81,8 +78,7 @@ class Diagnostic extends CActiveRecord
 			'service_type_id' => 'Tipo de Servicio',
 			'date_hour' => 'Fecha',
 			'observation' => 'Observación',
-			'finished' => 'Finalizado',
-			'refection'=>'Refacción'
+			'status_order_id' => 'Estado de la Orden'
 			
 		);
 	}
@@ -111,8 +107,6 @@ class Diagnostic extends CActiveRecord
 		$criteria->compare('service_type_id',$this->service_type_id,true);
 		$criteria->compare('date_hour',$this->date_hour,true);
 		$criteria->compare('observation',$this->observation,true);
-		$criteria->compare('finished',$this->finished);
-		$criteria->compare('refection',$this->finished);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
