@@ -265,6 +265,14 @@ class SparePartsController extends Controller
 		$modelOrder->scenario = 'ajaxupdate';
         $modelOrder->status_order_id = 8;
 		$modelOrder->save();
+		$log = new BlogOrder();
+        $log->order_id = $modelOrder->id;
+        $log->activity = "Finalizó la asignación de refacciones a la orden con ID: " . $modelOrder->id;
+        //$log->detailed_activity = "$this->renderPartial('view',array( 'model' => $modelOrder ), true)";
+        $log->user_technical_id = Yii::app()->user->id;
+        $log->date_hour = date('Y-m-d H:i:s');
+        $log->save();
+		
 
         // if AJAX request (triggered by activation via admin grid view), we should not redirect the browser
         if(!isset($_GET['ajax']))
