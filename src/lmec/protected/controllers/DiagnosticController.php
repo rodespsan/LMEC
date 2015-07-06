@@ -123,6 +123,9 @@ class DiagnosticController extends Controller
 							$log->save();
 							$this->redirect(array('diagnostic/view','id'=>$modelDiagnostic->id));
 						}
+						else{
+							$this->redirect(array('diagnostic/view','id'=>$modelDiagnostic->id));
+						}
                     	
 					}
 				}
@@ -194,6 +197,9 @@ class DiagnosticController extends Controller
 							$log->user_technical_id = Yii::app()->user->id;
 							$log->date_hour = date('Y-m-d H:i:s');
 							$log->save();
+							$this->redirect(array('diagnostic/view','id'=>$model->id));
+						}
+						else{
 							$this->redirect(array('diagnostic/view','id'=>$model->id));
 						}
                     	
