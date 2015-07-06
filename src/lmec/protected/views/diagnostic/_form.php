@@ -52,7 +52,7 @@
 			Chtml::listData(
 				Work::model()->findAll('active=1 AND service_type_id='.$modelOrder->service_type_id),
 				'id',
-				'status'
+				'name'
 			),
 			array(
 				'prompt'=>'Seleccionar'
