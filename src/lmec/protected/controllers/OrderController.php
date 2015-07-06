@@ -333,10 +333,10 @@ class OrderController extends Controller {
     }
 
     //public function actionOutOrder(){
-    //	$model = Order::model()->findByPk($id);
+    //  $model = Order::model()->findByPk($id);
     //$model-outOrder::model();
     //$outOrder->$model->findAll();
-//	}
+//  }
 
     /**
      * Lists all models.

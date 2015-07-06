@@ -86,8 +86,8 @@ class Order extends CActiveRecord {
             array('contact_id', 'exist', 'className' => 'Contact', 'attributeName' => 'id'),
             array('receptionist_user_id', 'exist', 'className' => 'User', 'attributeName' => 'id'),
             array('payment_type_id', 'exist', 'className' => 'PaymentType', 'attributeName' => 'id'),
-			array('equipment_type_id', 'exist', 'className' => 'EquipmentType', 'attributeName' => 'id'),
-			array('brand_id', 'exist', 'className' => 'Brand', 'attributeName' => 'id'),
+            array('equipment_type_id', 'exist', 'className' => 'EquipmentType', 'attributeName' => 'id'),
+            array('brand_id', 'exist', 'className' => 'Brand', 'attributeName' => 'id'),
             array('customer_id, receptionist_user_id, payment_type_id, model_id, service_type_id', 'length', 'max' => 10),
             array('date_hour', 'date', 'format' => 'yyyy-MM-dd HH:mm:ss'),
             array('advance_payment', 'length', 'max' => 7),
@@ -98,9 +98,7 @@ class Order extends CActiveRecord {
             array('accesory', 'CExistInArrayValidator', 'className' => 'Accesory', 'attributeName' => 'id'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, customer_id, active, receptionist_user_id, technician_order_id, payment_type_id, model_id,status_order_id, service_type_id, date_hour, advance_payment, serial_number, stock_number, name_deliverer_equipment, _dependences, out_date_hour, service, _failureDescription', 'safe', 'on' => 'search'),
-            array('type_search', 'safe', 'on'=>'search'),
-            array('status_search, id_search', 'safe', 'on'=>'search'),
+            array('id, customer_id, active, receptionist_user_id, technician_order_id, payment_type_id, model_id,status_order_id, service_type_id, date_hour, advance_payment, serial_number, stock_number, name_deliverer_equipment, _dependences, out_date_hour, service, _failureDescription, type_search, status_search, id_search', 'safe', 'on' => array('search', 'viewAssignedOrders') ),
         );
     }
 
@@ -123,7 +121,7 @@ class Order extends CActiveRecord {
 //            'tblFailureDescriptions' => array(self::HAS_MANY, 'TblFailureDescription', 'order_id'),
 //            'tblFinalStatusOrders' => array(self::HAS_MANY, 'TblFinalStatusOrder', 'order_id'),
 //            'tblObservationOrders' => array(self::HAS_MANY, 'TblObservationOrder', 'order_id'),
-//			//'observationOrder' => array(self::BELONGS_TO, 'ObservationOrder', 'order_id'),
+//          //'observationOrder' => array(self::BELONGS_TO, 'ObservationOrder', 'order_id'),
             'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
             'observationOrders' => array(self::HAS_ONE, 'ObservationOrder', 'order_id'),
             'contact' => array(self::BELONGS_TO, 'Contact', 'contact_id'),
@@ -156,8 +154,8 @@ class Order extends CActiveRecord {
             'technicianUser' => array(self::BELONGS_TO, 'User', 'technician_order_id'),
             'equipmentStatuses' => array(self::HAS_MANY, 'EquipmentStatus', 'order_id'),
             'failureDescription' => array(self::HAS_ONE, 'FailureDescription', 'order_id'),
-			'spareParts' => array(self::MANY_MANY, 'SpareParts', 'tbl_spare_parts_order(order_id,spare_parts_id)'),
-			'works' => array(self::MANY_MANY, 'Work', 'tbl_work_order(order_id,work_id)'),
+            'spareParts' => array(self::MANY_MANY, 'SpareParts', 'tbl_spare_parts_order(order_id,spare_parts_id)'),
+            'works' => array(self::MANY_MANY, 'Work', 'tbl_work_order(order_id,work_id)'),
         );
     }
 
@@ -245,6 +243,8 @@ class Order extends CActiveRecord {
         $criteria->compare('statusOrder.status', $this->status_order_id, true);
         $criteria->compare('technicianUser.user', $this->technician_order_id, true);
         $criteria->compare('t.active', $this->active, true);
+        $criteria->compare('failureDescription.description', $this->_failureDescription, true);
+        
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -281,6 +281,7 @@ class Order extends CActiveRecord {
         $criteria->compare('technicianUser.user', $this->technician_order_id, true);
         $criteria->addColumnCondition(array('technicianUser.user'=>Yii::app()->user->name));
         $criteria->compare('t.active', $this->active, true);
+        $criteria->compare('failureDescription.description', $this->_failureDescription, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -345,16 +346,16 @@ class Order extends CActiveRecord {
         $listData = array($foundContact->id => $foundContact->name) /*+ $contactActive[1];*/;
         return $listData;
     }
-	
-	public function getServiceOrder(){
-		return ServiceOrder::model()->find(array(
-			'condition' => 'order_id = :order_id',
-			'order' => 'date DESC',
-			'params' => array(
-				':order_id' => $this->id
-			)
-		));
-	}
+    
+    public function getServiceOrder(){
+        return ServiceOrder::model()->find(array(
+            'condition' => 'order_id = :order_id',
+            'order' => 'date DESC',
+            'params' => array(
+                ':order_id' => $this->id
+            )
+        ));
+    }
 
     /*
       public function getcontact()
@@ -456,34 +457,34 @@ class Order extends CActiveRecord {
       public function getStatus_diagnostic_order($id)
     {
         $model=Order::model()->findByPk($id);
-		if($model->technician_order_id==Yii::app()->user->id)
-		{
+        if($model->technician_order_id==Yii::app()->user->id)
+        {
                 if($model->status_order_id==4) //si la orden esta en diagnóstico finalizado
-                return false;				
-				$modelUserRole = UserRole::model()->find(
-				'user_id=:user_id  AND role_id=:role_id',
-				array(
-					':user_id'=>$model->technician_order_id,
-					':role_id'=>2,
-				));		
-				if (!empty($modelUserRole))
-				{
-					if($model->status_order_id==2 || $model->status_order_id==3) // si la orden esta en espera o en diagnóstico
-					{
-						return true;
-					}
-					else{
-						return false;
-					}
-				}else{
-					return false;
-				}
-			
-		}else{
-			return false;		
-		}
+                return false;               
+                $modelUserRole = UserRole::model()->find(
+                'user_id=:user_id  AND role_id=:role_id',
+                array(
+                    ':user_id'=>$model->technician_order_id,
+                    ':role_id'=>2,
+                ));     
+                if (!empty($modelUserRole))
+                {
+                    if($model->status_order_id==2 || $model->status_order_id==3) // si la orden esta en espera o en diagnóstico
+                    {
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }else{
+                    return false;
+                }
+            
+        }else{
+            return false;       
+        }
     }
-	
+    
     public function getStatus_refection_order($id)
     {
         $model=Order::model()->findByPk($id);
@@ -507,8 +508,8 @@ class Order extends CActiveRecord {
         }
      
     }
-	
-	public function getStatus_repair_order($id) {
+    
+    public function getStatus_repair_order($id) {
         $model = Order::model()->findByPk($id);
         if ($model->status_order_id == 8 || $model->status_order_id == 9) {
             return true;
@@ -520,33 +521,33 @@ class Order extends CActiveRecord {
     /*public function getStatus_repair_order($id)
     {
         $model=Order::model()->findByPk($id);
-		if($model->technician_order_id==Yii::app()->user->id)
-		{
+        if($model->technician_order_id==Yii::app()->user->id)
+        {
                 if($model->status_order_id==11)    //si la orden esta reparada
-                return false;				
-				$modelUserRole = UserRole::model()->find(
-				'user_id=:user_id  AND role_id=:role_id',
-				array(
-					':user_id'=>$model->technician_order_id,
-					':role_id'=>2,
-				));		
-				if (!empty($modelUserRole))
-				{
-					if($model->status_order_id==8 || $model->status_order_id==9) //si la orden esta en espera de reparacion o en refaccion
-					{
-						return true;
-					}
-					else{
-						return false;
-					}
-				}else{
-					return false;
-				}
-			
-		}else{
-			return false;		
-		}	
-	}*/
+                return false;               
+                $modelUserRole = UserRole::model()->find(
+                'user_id=:user_id  AND role_id=:role_id',
+                array(
+                    ':user_id'=>$model->technician_order_id,
+                    ':role_id'=>2,
+                ));     
+                if (!empty($modelUserRole))
+                {
+                    if($model->status_order_id==8 || $model->status_order_id==9) //si la orden esta en espera de reparacion o en refaccion
+                    {
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }else{
+                    return false;
+                }
+            
+        }else{
+            return false;       
+        }   
+    }*/
 
     public function getStatus_ready_order($id) {
         $model = Order::model()->findByPk($id);
@@ -557,12 +558,12 @@ class Order extends CActiveRecord {
         }
     }
 
-	public function getFirstService() {
-		$services = $this->serviceOrders;
-		$result = reset($services);
+    public function getFirstService() {
+        $services = $this->serviceOrders;
+        $result = reset($services);
 
-		return $result; 
-	}
+        return $result; 
+    }
 
     public function getLastService() {
         $services = $this->serviceOrders;
