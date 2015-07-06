@@ -211,6 +211,27 @@ class User extends CActiveRecord {
 
     public function getActiveRoles() {
         return Role::model()->findAll('active = 1');
+    } 
+
+    public function hasRole($roles){
+        if(!Yii::app()->user->isGuest){
+            $user_id = Yii::app()->user->id;
+            $user = $this->find(array(
+                'condition' => 't.id=:id AND roles.active = 1',
+                'with' => array('roles'),
+                'params' => array(
+                    ':id' => $user_id,
+                ),
+            ));
+            $activeRoles = array();
+            foreach ($user->roles as $role) {
+                $activeRoles[] = $role->name;
+            }
+            if(!empty(array_intersect($roles, $activeRoles))){
+                return true;
+            }
+        }
+        return false;
     }
 
     public function assignRolesToUser($user_id) {
