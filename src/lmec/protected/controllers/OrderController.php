@@ -613,10 +613,11 @@ class OrderController extends Controller {
         $log->order_id = $id;
         if($order_id_old!=$status){
             $sstatus = StatusOrder::model()->findByPk($status);
-            $log->activity = "La orden cambio de estado";
+            $log->activity = 'La orden cambio a "'.$sstatus->status.'"';
         }
         if($technician_old!=$technician){
-            $log->activity = "La orden se reasignó";
+            $suser = User::model()->findByPk($technician);
+            $log->activity = "La orden se reasignó a ".$suser->name." ".$suser->last_name;
         }
         $log->user_technical_id = Yii::app()->user->id;
         $log->date_hour = date('Y-m-d H:i:s');
