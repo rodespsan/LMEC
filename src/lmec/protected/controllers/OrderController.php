@@ -601,10 +601,26 @@ class OrderController extends Controller {
 
     public function actionSave($id,$status,$technician){
         $modelOrder = $this->loadModel($id);
+
+        $order_id_old = $modelOrder->status_order_id;
+        $technician_old = $modelOrder->technician_order_id;
+
         $modelOrder->scenario = "ajaxupdate";
         $modelOrder->status_order_id=$status;
         $modelOrder->technician_order_id=$technician;
         $modelOrder->save();
+        $log = new BlogOrder();
+        $log->order_id = $id;
+        if($order_id_old!=$status){
+            $sstatus = StatusOrder::model()->findByPk($status);
+            $log->activity = "La orden cambio de estado";
+        }
+        if($technician_old!=$technician){
+            $log->activity = "La orden se reasignó";
+        }
+        $log->user_technical_id = Yii::app()->user->id;
+        $log->date_hour = date('Y-m-d H:i:s');
+        $log->save();
         if (!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
     }
