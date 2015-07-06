@@ -30,7 +30,7 @@ class OrderController extends Controller {
                 'roles' => array('administrador', 'recepcionista'),
             ),
             array('allow', // Acciones permitidas al técnico
-                'actions' => array('viewAssignedOrders'),
+                'actions' => array('view','viewAssignedOrders'),
                 'roles' => array('tecnico'),
             ),
             array('deny',

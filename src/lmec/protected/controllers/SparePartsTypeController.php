@@ -31,6 +31,9 @@ class SparePartsTypeController extends Controller
 				'actions'=>array('index','view', 'create','update', 'admin','delete', 'activate'),
 				'roles'=>array('administrador', 'recepcionista'),
 			),
+            array('deny',
+                'users'=>array('*'),
+            ),
 		);
 	}
 

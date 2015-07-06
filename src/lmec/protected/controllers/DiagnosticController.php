@@ -31,7 +31,7 @@ class DiagnosticController extends Controller
 				'roles'=>array('administrador', 'recepcionista'),
 			),
 			array('allow', // Acciones permitidas al técnico
-				'actions'=>array('create', 'createDiagnosticWork'),
+				'actions'=>array('create', 'createDiagnosticWork', 'view'),
 				'roles'=>array('tecnico'),
 			),
             array('deny',
@@ -76,6 +76,7 @@ class DiagnosticController extends Controller
 			$modelDiagnostic->user_id = Yii::app()->user->id;
 			$modelDiagnostic->service_type_id = $modelOrder->service_type_id;
 			$modelDiagnostic->date_hour = date('Y-m-d H:i:s');
+			$modelDiagnostic->status_order_id = 5;
 			$modelDiagnostic->save();
 			$modelDiagnostic->attributes = $_POST['Diagnostic'];
 
@@ -272,6 +273,7 @@ class DiagnosticController extends Controller
 			$modelDiagnostic->user_id = Yii::app()->user->id;
 			$modelDiagnostic->service_type_id = $modelOrder->service_type_id;
 			$modelDiagnostic->date_hour = date('Y-m-d H:i:s');
+			$modelDiagnostic->status_order_id = 5;
 			$modelDiagnostic->save();
 		}
 		if( isset($_POST['DiagnosticWork']) )
@@ -296,6 +298,7 @@ class DiagnosticController extends Controller
 		if( isset($_POST['Diagnostic']) )
 		{
 			$modelDiagnostic->attributes = $_POST['Diagnostic'];
+			$modelDiagnostic->status_order_id = 5;
 			$modelDiagnostic->save();
 		}
 
@@ -315,6 +318,7 @@ class DiagnosticController extends Controller
 			$modelDiagnostic->order_id = $id;
 			$modelDiagnostic->user_id = Yii::app()->user->id;
 			$modelDiagnostic->service_type_id = $modelOrder->service_type_id;
+			$modelDiagnostic->status_order_id = 5;
 			$modelDiagnostic->date_hour = date('Y-m-d H:i:s');
 			$modelDiagnostic->save();
 		}
@@ -332,7 +336,7 @@ class DiagnosticController extends Controller
 		    if( empty($modelDiagnosticWork) )
 		    {
 		      $modelDiagnosticWork = new DiagnosticWork();
-			  $modelDiagnosticWork->diagnostic_id = $modelDiagnostic->order_id;
+			  $modelDiagnosticWork->diagnostic_id = $modelDiagnostic->id;
 			  $modelDiagnosticWork->work_id = $_POST['DiagnosticWork']['work_id'];
 			  $modelDiagnosticWork->save(false);
 		    }
@@ -342,6 +346,7 @@ class DiagnosticController extends Controller
 		if( isset($_POST['Diagnostic']) )
 		{
 			$modelDiagnostic->attributes = $_POST['Diagnostic'];
+			$modelDiagnostic->status_order_id = 5;
 			$modelDiagnostic->save();
 		}
 	

@@ -29,6 +29,9 @@ class WorkController extends Controller {
                 'actions' => array('index', 'view', 'create', 'update', 'admin', 'delete', 'activate'),
                 'roles' => array('administrador', 'recepcionista', 'tecnico'),
             ),
+            array('deny',
+                'users'=>array('*'),
+            ),
         );
     }
 
@@ -57,7 +60,7 @@ class WorkController extends Controller {
             if ($model->save()){
                 if (!empty($_POST['yt1'])) 
                 {
-                    Yii::app()->user->setFlash('work-created', "¡El trabajo <b><i>&quot;$model->description&quot;</i></b> fue creado exitosamente!");
+                    Yii::app()->user->setFlash('work-created', "¡El trabajo <b><i>&quot;$model->name&quot;</i></b> fue creado exitosamente!");
                     $modelSaved = $model;
                     $model=new Work;
                     $model ->service_type_id = $modelSaved ->service_type_id;

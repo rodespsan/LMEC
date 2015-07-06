@@ -29,6 +29,9 @@ class SparePartsOrderController extends Controller {
                 'actions' => array('index', 'view', 'create', 'update', 'sparePartsFromType', 'admin', 'delete', 'activate'),
                 'roles'=>array('administrador', 'recepcionista'),
             ),
+            array('deny',
+                'users'=>array('*'),
+            ),
         );
     }
 

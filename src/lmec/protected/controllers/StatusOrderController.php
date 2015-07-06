@@ -31,6 +31,9 @@ class StatusOrderController extends Controller
 				'actions'=>array('index','view', 'create','update', 'admin','delete', 'activate'),
 				'roles'=>array('administrador'),
 			),
+            array('deny',
+                'users'=>array('*'),
+            ),
 		);
 	}
 
