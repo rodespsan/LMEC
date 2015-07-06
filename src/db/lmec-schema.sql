@@ -293,12 +293,12 @@ CREATE TABLE IF NOT EXISTS `tbl_diagnostic` (
   `service_type_id` int(10) unsigned NOT NULL,
   `date_hour` datetime NOT NULL,
   `observation` text COLLATE utf8_unicode_ci,
-  `finished` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `refection` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `status_order_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_tbl_diagnostic_tbl_order_idx` (`order_id`),
   KEY `fk_tbl_diagnostic_tbl_user_idx` (`user_id`),
-  KEY `fk_tbl_diagnostic_tbl_service_type_idx` (`service_type_id`)
+  KEY `fk_tbl_diagnostic_tbl_service_type_idx` (`service_type_id`),
+  KEY `fk_tbl_diagnostic_tbl_status_order_idx` (`status_order_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------

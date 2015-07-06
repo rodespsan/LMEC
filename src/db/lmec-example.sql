@@ -120,9 +120,9 @@ INSERT INTO `tbl_dependence` (`id`, `name`, `address`, `telephone_number`, `exte
 -- Dumping data for table `tbl_diagnostic`
 --
 
-INSERT INTO `tbl_diagnostic` (`id`, `order_id`, `user_id`, `service_type_id`, `date_hour`, `observation`, `finished`, `refection`) VALUES
-(1, 1, 1, 1, '2015-02-04 18:13:37', 'Diagnóstico', 0, 0),
-(2, 2, 1, 1, '2015-02-06 18:37:53', 'Diagnóstico de prueba', 0, 0);
+INSERT INTO `tbl_diagnostic` (`id`, `order_id`, `user_id`, `service_type_id`, `date_hour`, `observation`, `status_order_id`) VALUES
+(1, 1, 1, 1, '2015-02-04 18:13:37', 'Diagnóstico', 3),
+(2, 2, 1, 1, '2015-02-06 18:37:53', 'Diagnóstico de prueba', 3);
 
 --
 -- Dumping data for table `tbl_diagnostic_work`
