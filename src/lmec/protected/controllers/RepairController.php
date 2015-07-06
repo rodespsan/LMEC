@@ -25,24 +25,17 @@ class RepairController extends Controller {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
-                'users' => array('*'),
+            array('allow',
+                'actions'=>array('index','view','create','update','admin','delete','createRepairWork','deleteRepairWork','updateAjax'),
+                'roles'=>array('administrador','tecnico'),
             ),
-            array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
-                'users' => array('@'),
-            ),
-            array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete', 'createRepairWork', 'deleteRepairWork', 'updateAjax'),
-                'users' => array('admin'),
-            ),
-            array('deny', // deny all users
-                'users' => array('*'),
+            array('deny',
+                'users'=>array('*'),
             ),
         );
     }
 
+    
     /**
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed
@@ -52,17 +45,14 @@ class RepairController extends Controller {
             'model' => $this->loadModel($id),
         ));
     }
-
     /**
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate($id) {
-
         $modelOrder = Order::model()->findByPk($id);
         if ($modelOrder === null)
             throw new CHttpException(404, 'La Orden solicitada no existe.');
-
         $modelOrder = Order::model()->findByPk($id);
         $modelRepair = Repair::model()->find('order_id=:order_id ', array(':order_id' => $id));
         if ($modelOrder->status_order_id == 8) {
@@ -73,17 +63,11 @@ class RepairController extends Controller {
         if (empty($modelRepair)) {
             $modelRepair = new Repair();
         }
-
-
         if (isset($_POST['Repair'])) {
-
             $modelRepair->order_id = $id;
             $modelRepair->description = $_POST['Repair']['description'];
             $modelRepair->attributes = $_POST['Repair'];
-
-
             if ($modelRepair->save()) {
-
                 if ($modelRepair->finished == 1) {
                     $modelOrder->scenario = 'ajaxupdate';
                     $modelOrder->status_order_id = 11;
@@ -96,15 +80,12 @@ class RepairController extends Controller {
                 }
             }
         }
-
-
         $this->render('create', array(
             'model' => $modelRepair,
             'modelRepairWork' => new RepairWork(),
             'modelOrder' => $modelOrder,
         ));
     }
-
     /**
      * Updates a particular model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -116,10 +97,8 @@ class RepairController extends Controller {
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
         if (isset($_POST['Repair'])) {
-
             $model->description = $_POST['Repair']['description'];
             $model->attributes = $_POST['Repair'];
-
             if ($model->save()) {
                 if ($model->finished == 1) {
                     $modelOrder->scenario = 'ajaxupdate';
@@ -133,14 +112,12 @@ class RepairController extends Controller {
                 }
             }
         }
-
         $this->render('update', array(
             'model' => $model,
             'modelRepairWork' => new RepairWork(),
             'modelOrder'=>$modelOrder,
         ));
     }
-
     /**
      * Deletes a particular model.
      * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -148,12 +125,10 @@ class RepairController extends Controller {
      */
     public function actionDelete($id) {
         $this->loadModel($id)->delete();
-
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
     }
-
     /**
      * Lists all models.
      */
@@ -163,7 +138,6 @@ class RepairController extends Controller {
             'dataProvider' => $dataProvider,
         ));
     }
-
     /**
      * Manages all models.
      */
@@ -174,17 +148,14 @@ class RepairController extends Controller {
             $model->attributes = $_GET['Repair'];
             $model->order_id = ltrim($model->order_id, '0');
         }
-
         if (isset($_GET['pageSize'])) {
             Yii::app()->user->setState('pageSize', (int) $_GET['pageSize']);
             unset($_GET['pageSize']);
         }
-
         $this->render('admin', array(
             'model' => $model,
         ));
     }
-
     /**
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
@@ -198,7 +169,6 @@ class RepairController extends Controller {
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
     }
-
     /**
      * Performs the AJAX validation.
      * @param Repair $model the model to be validated
@@ -209,14 +179,11 @@ class RepairController extends Controller {
             Yii::app()->end();
         }
     }
-
     public function actionDeleteRepairWork($id) {
         RepairWork::model()->findByPk($id)->delete();
     }
-
     public function actionCreateRepairWork($id) {
         $modelRepair = Repair::model()->find('order_id=:order_id', array(':order_id' => $id));
-
         if (empty($modelRepair)) {
             $modelRepair = new Repair();
             $modelRepair->order_id = $id;
@@ -224,13 +191,11 @@ class RepairController extends Controller {
             $modelRepair->finished = $_POST['Repair']['finished'];
             $modelRepair->save();
         }
-
         if (isset($_POST['RepairWork'])) {
             $modelRepairWork = RepairWork::model()->find('repair_id=:repair_id AND work_id=:work_id', array(
                 ':repair_id' => $modelRepair->id,
                 ':work_id' => $_POST['RepairWork']['work_id']
             ));
-
             if (empty($modelRepairWork)) {
                 $modelRepairWork = new RepairWork();
                 $modelRepairWork->repair_id = $modelRepair->id;
@@ -242,24 +207,19 @@ class RepairController extends Controller {
             }
         }
     }
-
     public function actionUpdateAjax($id) {
         $modelRepair = Repair::model()->find('order_id=:order_id', array(
             ':order_id' => $id,
         ));
-
         if (empty($modelRepair)) {
             $modelRepair = new Repair();
             $modelRepair->order_id = $id;
         }
-
         if (isset($_POST['RepairWork'])) {
-
             $modelRepairWork = RepairWork::model()->find('repair_id=:repair_id AND work_id=:work_id', array(
                 ':repair_id' => $modelRepair->id,
                 ':work_id' => $_POST['RepairWork']['work_id']
             ));
-
             if (empty($modelRepairWork)) {
                 $modelRepairWork = new RepairWork();
                 $modelRepairWork->repair_id = $modelRepair->id;
@@ -270,7 +230,6 @@ class RepairController extends Controller {
                 $modelRepairWork->save(false);
             }
         }
-
         if (isset($_POST['Repair'])) {
             $modelRepair->attributes = $_POST['Repair'];
             $modelRepair->save();
@@ -279,5 +238,4 @@ class RepairController extends Controller {
             }
         }
     }
-
 }

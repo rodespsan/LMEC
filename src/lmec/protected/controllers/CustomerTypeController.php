@@ -28,6 +28,9 @@ class CustomerTypeController extends Controller {
                 'actions' => array('index', 'view', 'create', 'update', 'activate', 'admin', 'delete'),
                 'roles' => array('administrador', 'recepcionista'),
             ),
+            array('deny',
+                'users'=>array('*'),
+            ),
         );
     }
 

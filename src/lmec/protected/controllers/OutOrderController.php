@@ -30,6 +30,9 @@ class OutOrderController extends Controller
 				'actions'=>array('index','view', 'create','update','print','onChange', 'admin','delete','activate'),
 				'roles'=>array('administrador', 'recepcionista'),
 			),
+            array('deny',
+                'users'=>array('*'),
+            ),
 		);
 	}
 

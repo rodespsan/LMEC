@@ -33,6 +33,9 @@ class OrderController extends Controller {
                 'actions' => array('viewAssignedOrders'),
                 'roles' => array('tecnico'),
             ),
+            array('deny',
+                'users'=>array('*'),
+            ),
         );
     }
 

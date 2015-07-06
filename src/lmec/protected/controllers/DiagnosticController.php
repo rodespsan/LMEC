@@ -34,6 +34,9 @@ class DiagnosticController extends Controller
 				'actions'=>array('create', 'createDiagnosticWork'),
 				'roles'=>array('tecnico'),
 			),
+            array('deny',
+                'users'=>array('*'),
+            ),
 		);
 	}
 

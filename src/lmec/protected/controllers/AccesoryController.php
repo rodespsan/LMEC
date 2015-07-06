@@ -25,17 +25,9 @@ class AccesoryController extends Controller {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
-                'roles' => array('*'),
-            ),
-            array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
-                'roles' => array('*'),
-            ),
-            array('allow', // allow admin user to perform 'admin', 'delete' and 'activate' actions
-                'actions' => array('admin', 'delete', 'activate'),
-                'roles' => array('administrador'),
+            array('allow',
+                'actions' => array('admin','view','create','index','update', 'delete', 'activate'),
+                'roles' => array('administrador','recepcionista'),
             ),
             array('deny', // deny all users
                 'users' => array('*'),

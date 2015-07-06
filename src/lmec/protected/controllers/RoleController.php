@@ -24,12 +24,12 @@ class RoleController extends Controller {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
-                'roles' => array('*'),
+            array('allow',
+                'actions'=>array('index','view'),
+                'roles'=>array('administrador','recepcionista'),
             ),
-            array('deny', // deny all users
-                'users' => array('*'),
+            array('deny',
+                'users'=>array('*'),
             ),
         );
     }
