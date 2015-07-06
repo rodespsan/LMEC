@@ -72,10 +72,25 @@ class RepairController extends Controller {
                     $modelOrder->scenario = 'ajaxupdate';
                     $modelOrder->status_order_id = 11;
                     $modelOrder->save();
+                    $log = new BlogOrder();
+                    $log->order_id = $modelOrder->id;
+                    $log->activity = "Se asignó el estado 'en espera de verificación' a la orden con ID: " . $modelOrder->id;
+                    //$log->detailed_activity = "$this->renderPartial('view',array( 'model' => $modelOrder ), true)";
+                    $log->user_technical_id = Yii::app()->user->id;
+                    $log->date_hour = date('Y-m-d H:i:s');
+                    $log->save();
                     $this->redirect(array('repair/view', 'id' => $modelRepair->id));
                 } else {
                     $modelOrder->scenario = 'ajaxupdate';
                     $modelOrder->status_order_id = 9;
+                    $modelOrder->save();
+                    $log = new BlogOrder();
+                    $log->order_id = $modelOrder->id;
+                    $log->activity = "Se asignó el estado 'en Reparación' a la orden con ID: " . $modelOrder->id;
+                    //$log->detailed_activity = "$this->renderPartial('view',array( 'model' => $modelOrder ), true)";
+                    $log->user_technical_id = Yii::app()->user->id;
+                    $log->date_hour = date('Y-m-d H:i:s');
+                    $log->save();
                     Yii::app()->user->setFlash('success', "¡Se ha guardado correctamente !");
                 }
             }
@@ -104,10 +119,25 @@ class RepairController extends Controller {
                     $modelOrder->scenario = 'ajaxupdate';
                     $modelOrder->status_order_id = 11;
                     $modelOrder->save();
+                    $log = new BlogOrder();
+                    $log->order_id = $modelOrder->id;
+                    $log->activity = "Se asignó el estado 'en espera de verificación' a la orden con ID: " . $modelOrder->id;
+                    //$log->detailed_activity = "$this->renderPartial('view',array( 'model' => $modelOrder ), true)";
+                    $log->user_technical_id = Yii::app()->user->id;
+                    $log->date_hour = date('Y-m-d H:i:s');
+                    $log->save();
                     $this->redirect(array('view', 'id' => $model->id));
                 } else {
                     $modelOrder->scenario = 'ajaxupdate';
                     $modelOrder->status_order_id = 9;
+                    $modelOrder->save();
+                    $log = new BlogOrder();
+                    $log->order_id = $modelOrder->id;
+                    $log->activity = "Se asignó el estado 'en Reparación' a la orden con ID: " . $modelOrder->id;
+                    //$log->detailed_activity = "$this->renderPartial('view',array( 'model' => $modelOrder ), true)";
+                    $log->user_technical_id = Yii::app()->user->id;
+                    $log->date_hour = date('Y-m-d H:i:s');
+                    $log->save();
                     Yii::app()->user->setFlash('success', "¡Se ha actualizado correctamente !");
                 }
             }
