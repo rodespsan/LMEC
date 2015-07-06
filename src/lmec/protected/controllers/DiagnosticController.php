@@ -31,7 +31,7 @@ class DiagnosticController extends Controller
 				'roles'=>array('administrador', 'recepcionista'),
 			),
 			array('allow', // Acciones permitidas al técnico
-				'actions'=>array('create', 'createDiagnosticWork', 'view'),
+				'actions'=>array('create', 'createDiagnosticWork', 'view', 'update'),
 				'roles'=>array('tecnico'),
 			),
             array('deny',
